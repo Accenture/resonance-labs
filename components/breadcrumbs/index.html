@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breadcrumbs Demo - Resonance</title>
+    <link rel="stylesheet" href="../../assets/style/global.css" />
+    <link rel="stylesheet" href="breadcrumbs.css" />
+    <link
+      rel="icon"
+      href="../../assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../../index.html" class="back-link">
+        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+      <h1>Breadcrumbs</h1>
+        <p class="component-tagline">Breadcrumbs provide a horizontal trail of links reflecting the user's position within a site hierarchy. They help users understand where they are and navigate back to higher-level pages without relying on the browser's back button. The current page can be displayed as a link or as plain text depending on the use case.</p>
+
+      <!-- Scenario 1: Current page as a link -->
+      <div class="section">
+        <h2>Scenario: Current page as a link</h2>
+        <div class="mount"></div>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html-1">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css-1">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js-1">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html-1" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html-1" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html-1">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css-1" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css-1" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css-1">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js-1" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js-1" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js-1">Copy Code</button>
+        </div>
+      </div>
+
+      <!-- Scenario 2: Current page is NOT a link -->
+      <div class="section">
+        <h2>Scenario: Current page is NOT a link</h2>
+        <div class="mount"></div>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html-2">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css-2">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js-2">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html-2" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html-2" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html-2">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css-2" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css-2" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css-2">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js-2" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js-2" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js-2">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Resources</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
+          </li>
+          <li>
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/HectorOsborneRodriguez/resonance_code_demo"
+              >GitHub Code</a
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      var mounts = document.querySelectorAll(".mount");
+
+      // Scenario 1: Current page as a link
+      fetch("./breadcrumbs-link.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          mounts[0].innerHTML = html;
+
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/g, "").trim();
+          var codeHtml = document.getElementById("code-html-1");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+
+          // Load component JS once
+          var s = document.createElement("script");
+          s.src = "./breadcrumbs.js";
+          document.body.appendChild(s);
+        });
+
+      // Scenario 2: Current page is NOT a link
+      fetch("./breadcrumbs-nolink.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          mounts[1].innerHTML = html;
+
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/g, "").trim();
+          var codeHtml = document.getElementById("code-html-2");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS — populate both panels
+      fetch("./breadcrumbs.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          ["code-css-1", "code-css-2"].forEach(function (id) {
+            var el = document.getElementById(id);
+            el.textContent = css;
+            Prism.highlightElement(el);
+          });
+        });
+
+      // Fetch JS — populate both panels
+      fetch("./breadcrumbs.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          ["code-js-1", "code-js-2"].forEach(function (id) {
+            var el = document.getElementById(id);
+            el.textContent = js;
+            Prism.highlightElement(el);
+          });
+        });
+
+      // Tab switching — scoped per tab group
+      document.querySelectorAll(".code-tabs").forEach(function (tabBar) {
+        var tabs = tabBar.querySelectorAll(".code-tabs__tab");
+        tabs.forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            tabs.forEach(function (t) {
+              t.classList.remove("code-tabs__tab--active");
+              t.setAttribute("aria-selected", "false");
+            });
+            tabs.forEach(function (t) {
+              var panel = document.getElementById("panel-" + t.dataset.tab);
+              if (panel) panel.hidden = true;
+            });
+            tab.classList.add("code-tabs__tab--active");
+            tab.setAttribute("aria-selected", "true");
+            document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+          });
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

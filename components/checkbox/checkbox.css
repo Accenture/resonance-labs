@@ -1,0 +1,33 @@
+/* Checkbox field */
+.checkbox-field__control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-field__control label {
+  font-weight: 600;
+}
+
+.checkbox-field__desc {
+  display: block;
+  margin-top: 4px;
+  padding-left: 32px;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+/* Make the native checkbox target at least 24x24 (WCAG 2.2 2.5.8 AA) */
+input[type="checkbox"] {
+  inline-size: 24px;
+  block-size: 24px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Visible focus indicator (WCAG 2.4.7 / 2.4.11) */
+input[type="checkbox"]:focus-visible {
+  outline: 3px solid #0b5fff;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
