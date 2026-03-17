@@ -1,0 +1,21 @@
+<svg width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="249" height="249" fill="#F3F3F3"/>
+<rect x="0.5" y="0.5" width="249" height="249" stroke="#BFBEC4"/>
+<g clip-path="url(#clip0_2_28)">
+<rect x="55.5" y="86.5" width="139" height="53" fill="#FEFEFE" stroke="#BABABA"/>
+<path d="M62 116C62 114.343 63.3431 113 65 113H179C180.657 113 182 114.343 182 116C182 117.657 180.657 119 179 119H65C63.3431 119 62 117.657 62 116Z" fill="#BABABA"/>
+<path d="M62 126C62 124.343 63.3431 123 65 123H151C152.657 123 154 124.343 154 126C154 127.657 152.657 129 151 129H65C63.3431 129 62 127.657 62 126Z" fill="#BABABA"/>
+<rect x="55.5" y="86.5" width="139" height="19" fill="#FEFEFE" stroke="#BABABA"/>
+<path d="M177 98.25L182 93L187 98.25" stroke="#BABABA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="55.5" y="139.5" width="139" height="19" fill="#FEFEFE" stroke="#BABABA"/>
+<path d="M187 146L182 151.25L177 146" stroke="#BABABA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M187 146L182 151.25L177 146" stroke="#BABABA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="55.5" y="158.5" width="139" height="19" fill="#FEFEFE" stroke="#BABABA"/>
+<path d="M187 165L182 170.25L177 165" stroke="#BABABA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_2_28">
+<rect width="140" height="106" fill="white" transform="translate(55 72)"/>
+</clipPath>
+</defs>
+</svg>
