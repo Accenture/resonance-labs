@@ -26,10 +26,10 @@
   padding: 0.25rem;
 
   cursor: pointer;
-  color: #1a1a1a;
-  border: 2px solid #555;
+  color: var(--text-color-strong);
+  border: 2px solid var(--text-color-muted);
   border-radius: 50%;
-  background: #fff;
+  background: var(--surface-color);
 }
 
 /* Pattern 2 trigger is a <button>; reset native button chrome */
@@ -44,10 +44,10 @@
   padding: 0.25rem;
 
   cursor: pointer;
-  color: #1a1a1a;
-  border: 2px solid #555;
+  color: var(--text-color-strong);
+  border: 2px solid var(--text-color-muted);
   border-radius: 50%;
-  background: #fff;
+  background: var(--surface-color);
 }
 
 /* -------------------------------------------------------
@@ -55,7 +55,7 @@
    ------------------------------------------------------- */
 .tooltip-trigger:focus-visible,
 .tooltip-trigger--click:focus-visible {
-  outline: var(--focus-ring-width, 3px) solid var(--focus-ring-color, #005fcc);
+  outline: var(--focus-ring-width, 3px) solid var(--focus-ring-color, var(--focus-color));
   outline-offset: var(--focus-ring-offset, 2px);
 }
 
@@ -86,10 +86,10 @@
 
   font-size: 0.875rem;
   line-height: 1.5;
-  color: #1a1a1a;
-  background: #fefefe;
-  border: 1px solid #555;
-  border-radius: 4px;
+  color: var(--text-color-strong);
+  background: var(--surface-color);
+  border: 1px solid var(--text-color-muted);
+  border-radius: var(--border-radius);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 
   z-index: 100;

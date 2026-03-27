@@ -37,22 +37,30 @@
       case 'ArrowRight':
         event.preventDefault();
         newIndex = (index + 1) % tabs.length;
+        currentTab.setAttribute('tabindex', '-1');
+        tabs[newIndex].setAttribute('tabindex', '0');
         tabs[newIndex].focus();
         break;
 
       case 'ArrowLeft':
         event.preventDefault();
         newIndex = (index - 1 + tabs.length) % tabs.length;
+        currentTab.setAttribute('tabindex', '-1');
+        tabs[newIndex].setAttribute('tabindex', '0');
         tabs[newIndex].focus();
         break;
 
       case 'Home':
         event.preventDefault();
+        currentTab.setAttribute('tabindex', '-1');
+        tabs[0].setAttribute('tabindex', '0');
         tabs[0].focus();
         break;
 
       case 'End':
         event.preventDefault();
+        currentTab.setAttribute('tabindex', '-1');
+        tabs[tabs.length - 1].setAttribute('tabindex', '0');
         tabs[tabs.length - 1].focus();
         break;
 

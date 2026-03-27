@@ -1,0 +1,95 @@
+/* Star Rating Component Styles */
+
+/* Interactive Star Rating */
+.star-rating {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.5rem 0;
+}
+
+.star-rating__star {
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  color: var(--text-color-muted);
+  transition: color 0.15s ease, transform 0.15s ease;
+  user-select: none;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  padding: 0.125rem;
+}
+
+.star-rating__star:hover {
+  transform: scale(1.15);
+}
+
+/* Focus indicator - visible outline >= 3:1 */
+.star-rating__star:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Filled star (selected) - uses filled shape distinct from empty */
+.star-rating__star[aria-checked="true"] {
+  color: var(--text-color-strong);
+}
+
+/* Change star character via content replacement for filled state */
+.star-rating__star[aria-checked="true"]::after {
+  content: "";
+}
+
+.star-rating__status {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-top: 0.25rem;
+}
+
+/* Read-Only Display */
+.star-rating-display {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.star-rating-display__text {
+  font-size: 1rem;
+  color: var(--primary-color-hover);
+  font-weight: 600;
+}
+
+.star-rating-display__stars {
+  display: inline-flex;
+  gap: 0.125rem;
+}
+
+.star-rating-display__star {
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--text-color-faint);
+}
+
+.star-rating-display__star--filled {
+  color: var(--text-color-strong);
+}
+
+/* Half star uses a gradient clip to show partial fill */
+.star-rating-display__star--half {
+  background: linear-gradient(90deg, var(--text-color-strong) 50%, var(--text-color-faint) 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* High contrast / forced-colors support */
+@media (forced-colors: active) {
+  .star-rating__star[aria-checked="true"] {
+    forced-color-adjust: none;
+    color: LinkText;
+  }
+
+  .star-rating__star:focus {
+    outline: 3px solid Highlight;
+  }
+}

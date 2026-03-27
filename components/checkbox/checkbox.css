@@ -14,7 +14,7 @@
   margin-top: 4px;
   padding-left: 32px;
   font-size: 0.875rem;
-  color: #555;
+  color: var(--text-color-muted);
 }
 
 /* Make the native checkbox target at least 24x24 (WCAG 2.2 2.5.8 AA) */
@@ -27,7 +27,7 @@ input[type="checkbox"] {
 
 /* Visible focus indicator (WCAG 2.4.7 / 2.4.11) */
 input[type="checkbox"]:focus-visible {
-  outline: 3px solid #0b5fff;
+  outline: 3px solid var(--focus-color);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
 }

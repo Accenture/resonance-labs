@@ -23,10 +23,10 @@ fieldset {
 .radio__hint {
   display: block;
   font-size: 0.85rem;
-  color: #666;
+  color: var(--text-color-subtle);
 }
 
 :focus {
-  outline: 3px solid #000;
+  outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }

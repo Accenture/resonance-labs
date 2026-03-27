@@ -1,9 +1,9 @@
 .breadcrumb {
   --breadcrumb-font-size: var(--font-size-small);
-  --breadcrumb-text-color: #1f2937;
-  --breadcrumb-link-hover-color: #2563eb;
-  --breadcrumb-separator-color: #6b7280;
-  --breadcrumb-current-color: #4b5563;  
+  --breadcrumb-text-color: var(--text-color-strong);
+  --breadcrumb-link-hover-color: var(--text-color-strong);
+  --breadcrumb-separator-color: var(--gray-400);
+  --breadcrumb-current-color: var(--text-color-muted);
 }
 
 .breadcrumb {
@@ -28,7 +28,7 @@
 
 /* Separator (purely visual) */
 .breadcrumb__item + .breadcrumb__item::before {
-  content: "/";
+  content: "/" / "";
   margin: 0 0.5rem;
   color: var(--breadcrumb-separator-color); /* neutral gray */
 }

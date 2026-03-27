@@ -1,2 +1,2 @@
 select { padding: 8px; min-height: 44px; }
-:focus { outline: 3px solid #000; outline-offset: 2px; }
+:focus { outline: 3px solid var(--focus-color); outline-offset: 2px; }

@@ -1,0 +1,65 @@
+<!-- Star Rating Component Demo -->
+<div class="section">
+  <section class="star-rating-demo" data-star-rating-demo>
+    <h2>Interactive Star Rating</h2>
+    <div
+      class="star-rating"
+      role="radiogroup"
+      aria-label="Rate this product"
+    >
+      <span
+        class="star-rating__star"
+        role="radio"
+        aria-checked="false"
+        aria-label="1 star"
+        tabindex="0"
+        data-value="1"
+      >&#9734;</span>
+      <span
+        class="star-rating__star"
+        role="radio"
+        aria-checked="false"
+        aria-label="2 stars"
+        tabindex="-1"
+        data-value="2"
+      >&#9734;</span>
+      <span
+        class="star-rating__star"
+        role="radio"
+        aria-checked="false"
+        aria-label="3 stars"
+        tabindex="-1"
+        data-value="3"
+      >&#9734;</span>
+      <span
+        class="star-rating__star"
+        role="radio"
+        aria-checked="false"
+        aria-label="4 stars"
+        tabindex="-1"
+        data-value="4"
+      >&#9734;</span>
+      <span
+        class="star-rating__star"
+        role="radio"
+        aria-checked="false"
+        aria-label="5 stars"
+        tabindex="-1"
+        data-value="5"
+      >&#9734;</span>
+    </div>
+    <p class="star-rating__status" aria-live="polite">No rating selected</p>
+
+    <h2>Read-Only Display</h2>
+    <div class="star-rating-display" aria-label="Rating: 4.5 out of 5 stars">
+      <span class="star-rating-display__text">4.5 out of 5 stars</span>
+      <span class="star-rating-display__stars" aria-hidden="true">
+        <span class="star-rating-display__star star-rating-display__star--filled">&#9733;</span>
+        <span class="star-rating-display__star star-rating-display__star--filled">&#9733;</span>
+        <span class="star-rating-display__star star-rating-display__star--filled">&#9733;</span>
+        <span class="star-rating-display__star star-rating-display__star--filled">&#9733;</span>
+        <span class="star-rating-display__star star-rating-display__star--half">&#9733;</span>
+      </span>
+    </div>
+  </section>
+</div>

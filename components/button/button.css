@@ -11,10 +11,10 @@
 
 .btn-demo {
   appearance: none;
-  border: 1px solid #666;
-  background: #fff;
-  color: #111;
-  /* border-radius: 0.6rem; */
+  border: 1px solid var(--border-color-strong);
+  background: var(--surface-color);
+  color: var(--text-color-strong);
+  /* border-radius: var(--border-radius); */
   padding: 0.7rem 1rem;
   font-size: 1rem;
   line-height: 1.2;
@@ -31,14 +31,14 @@
 
 /* Visible focus indicator */
 .btn:focus-visible {
-  outline: 3px solid #005fcc;
+  outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Example panel */
 .btn-panel {
-  border: 1px solid #bbb;
-  border-radius: 0.6rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
   padding: 0.75rem 1rem;
   margin-top: 0.5rem;
 }

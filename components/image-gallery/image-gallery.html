@@ -1,0 +1,99 @@
+<!-- Image Gallery component -->
+<section class="image-gallery" aria-label="Product images">
+  <div class="image-gallery__main">
+    <img
+      class="image-gallery__main-image"
+      src="https://picsum.photos/id/10/600/400"
+      alt="Landscape with a calm lake and surrounding forest"
+    />
+  </div>
+
+  <div class="image-gallery__controls">
+    <button
+      class="image-gallery__nav image-gallery__nav--prev"
+      type="button"
+      aria-label="Previous image"
+    >
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <ul class="image-gallery__thumbnails" role="list">
+      <li>
+        <button
+          class="image-gallery__thumb"
+          type="button"
+          aria-current="true"
+          aria-label="View image 1: Landscape with a calm lake and surrounding forest"
+          data-full="https://picsum.photos/id/10/600/400"
+          data-alt="Landscape with a calm lake and surrounding forest"
+        >
+          <img src="https://picsum.photos/id/10/120/80" alt="" />
+        </button>
+      </li>
+      <li>
+        <button
+          class="image-gallery__thumb"
+          type="button"
+          aria-current="false"
+          aria-label="View image 2: Close-up of green leaves with morning dew"
+          data-full="https://picsum.photos/id/28/600/400"
+          data-alt="Close-up of green leaves with morning dew"
+        >
+          <img src="https://picsum.photos/id/28/120/80" alt="" />
+        </button>
+      </li>
+      <li>
+        <button
+          class="image-gallery__thumb"
+          type="button"
+          aria-current="false"
+          aria-label="View image 3: Winding road through an autumn mountain pass"
+          data-full="https://picsum.photos/id/29/600/400"
+          data-alt="Winding road through an autumn mountain pass"
+        >
+          <img src="https://picsum.photos/id/29/120/80" alt="" />
+        </button>
+      </li>
+      <li>
+        <button
+          class="image-gallery__thumb"
+          type="button"
+          aria-current="false"
+          aria-label="View image 4: Rocky coastline with crashing ocean waves"
+          data-full="https://picsum.photos/id/42/600/400"
+          data-alt="Rocky coastline with crashing ocean waves"
+        >
+          <img src="https://picsum.photos/id/42/120/80" alt="" />
+        </button>
+      </li>
+      <li>
+        <button
+          class="image-gallery__thumb"
+          type="button"
+          aria-current="false"
+          aria-label="View image 5: Snow-capped mountain peaks at sunset"
+          data-full="https://picsum.photos/id/76/600/400"
+          data-alt="Snow-capped mountain peaks at sunset"
+        >
+          <img src="https://picsum.photos/id/76/120/80" alt="" />
+        </button>
+      </li>
+    </ul>
+
+    <button
+      class="image-gallery__nav image-gallery__nav--next"
+      type="button"
+      aria-label="Next image"
+    >
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <div class="image-gallery__counter" aria-live="polite" aria-atomic="true">
+    Image 1 of 5
+  </div>
+</section>

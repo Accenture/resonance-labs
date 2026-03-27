@@ -1,0 +1,37 @@
+<div class="section">
+  <section class="dialog-demo" data-dialog-demo>
+    <button
+      id="dialog-trigger"
+      type="button"
+      aria-haspopup="dialog"
+      aria-controls="info-dialog"
+      class="dialog-trigger"
+    >
+      More Information
+    </button>
+
+    <div
+      id="info-dialog"
+      role="dialog"
+      aria-labelledby="dialog-heading"
+      aria-describedby="dialog-desc"
+      class="dialog-panel"
+      hidden
+    >
+      <h2 id="dialog-heading">Additional Information</h2>
+      <p id="dialog-desc">
+        This non-modal dialog provides supplementary details without blocking
+        access to the rest of the page. You can still interact with background
+        content while this panel is open.
+      </p>
+      <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/" class="dialog-panel__link">
+        Learn more about the dialog pattern
+      </a>
+      <button id="dialog-close" type="button" class="dialog-panel__close">
+        Close
+      </button>
+    </div>
+
+    <div aria-live="polite" class="visually-hidden" id="dialog-status"></div>
+  </section>
+</div>

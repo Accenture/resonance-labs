@@ -1,0 +1,52 @@
+<!--
+  Component-only reference
+  Variant Selector — accessible size and color option groups
+-->
+
+<section aria-label="Product Variants">
+  <div class="variant-selector">
+
+    <!-- Size Group -->
+    <fieldset class="variant-selector__group">
+      <legend class="variant-selector__label">Size</legend>
+      <div class="variant-selector__options" role="radiogroup" aria-label="Size">
+        <span class="variant-selector__option" role="radio" aria-checked="false" tabindex="0" data-value="S">
+          S
+        </span>
+        <span class="variant-selector__option" role="radio" aria-checked="false" tabindex="-1" data-value="M">
+          M
+        </span>
+        <span class="variant-selector__option" role="radio" aria-checked="false" tabindex="-1" data-value="L">
+          L
+        </span>
+        <span class="variant-selector__option variant-selector__option--disabled" role="radio" aria-checked="false" aria-disabled="true" tabindex="-1" data-value="XL">
+          <span class="variant-selector__option-label">XL</span>
+          <span class="variant-selector__option-stock">Out of stock</span>
+        </span>
+      </div>
+    </fieldset>
+
+    <!-- Color Group -->
+    <fieldset class="variant-selector__group">
+      <legend class="variant-selector__label">Color</legend>
+      <div class="variant-selector__options" role="radiogroup" aria-label="Color">
+        <span class="variant-selector__option variant-selector__option--swatch" role="radio" aria-checked="false" tabindex="0" data-value="Black">
+          <span class="variant-selector__swatch" style="background-color: #1a1a1a;" aria-hidden="true"></span>
+          <span class="variant-selector__color-name">Black</span>
+        </span>
+        <span class="variant-selector__option variant-selector__option--swatch" role="radio" aria-checked="false" tabindex="-1" data-value="Blue">
+          <span class="variant-selector__swatch" style="background-color: #0b57d0;" aria-hidden="true"></span>
+          <span class="variant-selector__color-name">Blue</span>
+        </span>
+        <span class="variant-selector__option variant-selector__option--swatch variant-selector__option--disabled" role="radio" aria-checked="false" aria-disabled="true" tabindex="-1" data-value="Red">
+          <span class="variant-selector__swatch" style="background-color: #c5221f;" aria-hidden="true"></span>
+          <span class="variant-selector__color-name">Red</span>
+          <span class="variant-selector__option-stock">Out of stock</span>
+        </span>
+      </div>
+    </fieldset>
+
+  </div>
+
+  <div class="variant-selector__live-region" aria-live="polite" aria-atomic="true"></div>
+</section>

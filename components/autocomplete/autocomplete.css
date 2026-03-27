@@ -10,8 +10,9 @@ input[type="text"] {
   border: 1px solid var(--border-color);
 }
 
-:root {
-    --autocomplete-bg-color: #e6f0ff;
+input[type="text"]:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 .autocomplete-container {
@@ -40,11 +41,11 @@ input[type="text"] {
 
 .autocomplete-suggestions [role="option"][aria-selected="true"],
 .autocomplete-suggestions [role="option"]:hover {
-  background-color: var(--autocomplete-bg-color);
+  background-color: var(--surface-muted);
 }
 
 .autocomplete-suggestions [role="option"][aria-disabled="true"] {
-  /* color: #333; Meets 4.5:1 contrast on white */
+  /* color: var(--text-color); Meets 4.5:1 contrast on white */
   font-style: italic;
   cursor: default;
   background: none;

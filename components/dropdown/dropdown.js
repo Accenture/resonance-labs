@@ -27,7 +27,9 @@
 
   function clearActive() {
     options().forEach(o => o.classList.remove('is-active'));
-    trigger.setAttribute('aria-activedescendant', '');
+    // Keep aria-activedescendant pointing to selected option when closed
+    const selected = options().find(o => o.getAttribute('aria-selected') === 'true');
+    trigger.setAttribute('aria-activedescendant', selected ? selected.id : '');
     activeIndex = -1;
   }
 
@@ -90,6 +92,11 @@
 
     if (key === 'Escape') {
       e.preventDefault();
+      if (isOpen()) setOpen(false);
+      return;
+    }
+
+    if (key === 'Tab') {
       if (isOpen()) setOpen(false);
     }
   });

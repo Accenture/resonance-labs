@@ -1,0 +1,116 @@
+/* Alert Dialog Component */
+
+.alert-dialog-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Trigger button */
+.alert-dialog-trigger {
+  font-size: var(--font-size-base);
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-color);
+  color: var(--text-color-inverse);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.alert-dialog-trigger:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.alert-dialog-trigger:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Overlay / backdrop */
+.alert-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.alert-dialog-overlay[hidden] {
+  display: none;
+}
+
+/* Dialog panel */
+.alert-dialog-panel {
+  position: relative;
+  background: var(--surface-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+}
+
+.alert-dialog-panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.alert-dialog-panel p {
+  margin: 0 0 1.5rem;
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* Action buttons row */
+.alert-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.alert-dialog-btn {
+  font-size: var(--font-size-base);
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.alert-dialog-btn:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.alert-dialog-btn--cancel {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.alert-dialog-btn--cancel:hover {
+  background-color: var(--surface-hover);
+}
+
+.alert-dialog-btn--confirm {
+  background-color: var(--primary-color);
+  color: var(--text-color-inverse);
+}
+
+.alert-dialog-btn--confirm:hover {
+  background-color: var(--primary-color-hover);
+}
+
+/* Live region status */
+.alert-dialog-status {
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+  min-height: 1.5em;
+  margin-top: 0.5rem;
+}

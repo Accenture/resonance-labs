@@ -1,0 +1,155 @@
+/* ── Review List ── */
+.review-comment-list {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Review Card ── */
+.review-comment {
+  border: 1px solid var(--gray-200);
+  background: var(--surface-color);
+  padding: 1.25rem;
+}
+
+/* ── Header ── */
+.review-comment__header {
+  margin-bottom: 0.75rem;
+}
+
+/* ── Star Rating ── */
+.review-comment__rating {
+  margin-bottom: 0.5rem;
+}
+
+.review-comment__rating-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.review-comment__stars {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.review-comment__star {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.review-comment__star--filled {
+  color: var(--text-color-strong);
+}
+
+.review-comment__star--empty {
+  color: var(--border-color);
+}
+
+/* ── Meta (author, date, badge) ── */
+.review-comment__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color-muted);
+}
+
+.review-comment__author {
+  font-weight: 700;
+  color: var(--text-color-strong);
+}
+
+.review-comment__date {
+  color: var(--gray-500);
+}
+
+/* ── Verified Badge ── */
+.review-comment__badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-color-strong);
+  background: var(--surface-muted);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--border-radius);
+}
+
+/* ── Body ── */
+.review-comment__body {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--primary-color-hover);
+}
+
+.review-comment__body p {
+  margin: 0 0 0.75rem;
+}
+
+.review-comment__image {
+  display: block;
+  max-width: 200px;
+  border: 1px solid var(--surface-subtle);
+  margin-top: 0.5rem;
+}
+
+/* ── Action Buttons ── */
+.review-comment__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.review-comment__helpful-btn,
+.review-comment__report-btn {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid var(--gray-200);
+  background: var(--surface-color);
+  color: var(--primary-color-hover);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.review-comment__helpful-btn:hover {
+  background: var(--surface-muted);
+  border-color: var(--text-color-strong);
+  color: var(--text-color-strong);
+}
+
+.review-comment__report-btn:hover {
+  background: var(--surface-muted);
+  border-color: var(--text-color-strong);
+  color: var(--text-color-strong);
+}
+
+.review-comment__helpful-btn:focus-visible,
+.review-comment__report-btn:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* ── Live Region (visually hidden) ── */
+.review-comment__live-region {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

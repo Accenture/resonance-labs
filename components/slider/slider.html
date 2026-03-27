@@ -1,0 +1,50 @@
+<!-- Slider component demos -->
+<div class="section">
+  <section class="slider-demo" data-slider-demo>
+    <h2 id="volume-label">Volume</h2>
+    <div class="slider-container">
+      <div class="slider-track" data-slider-track>
+        <div class="slider-track__fill" data-slider-fill></div>
+        <div
+          role="slider"
+          tabindex="0"
+          class="slider-thumb"
+          aria-labelledby="volume-label"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="50"
+          data-slider-thumb
+          data-step="1"
+          data-large-step="10"
+        ></div>
+      </div>
+      <output class="slider-value" data-slider-output>50</output>
+    </div>
+  </section>
+</div>
+
+<div class="section">
+  <section class="slider-demo" data-slider-demo>
+    <h2 id="price-label">Maximum Price</h2>
+    <div class="slider-container">
+      <div class="slider-track" data-slider-track>
+        <div class="slider-track__fill" data-slider-fill></div>
+        <div
+          role="slider"
+          tabindex="0"
+          class="slider-thumb"
+          aria-labelledby="price-label"
+          aria-valuemin="0"
+          aria-valuemax="500"
+          aria-valuenow="150"
+          aria-valuetext="$150"
+          data-slider-thumb
+          data-step="5"
+          data-large-step="50"
+          data-value-prefix="$"
+        ></div>
+      </div>
+      <output class="slider-value" data-slider-output>$150</output>
+    </div>
+  </section>
+</div>

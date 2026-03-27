@@ -1,0 +1,84 @@
+/* Avatar component */
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--primary-color);
+  color: var(--primary-color-inverse);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Sizes */
+.avatar--sm {
+  width: 32px;
+  height: 32px;
+  font-size: var(--font-size-xsmall);
+}
+
+.avatar--md {
+  width: 48px;
+  height: 48px;
+  font-size: var(--font-size-base);
+}
+
+.avatar--lg {
+  width: 64px;
+  height: 64px;
+  font-size: var(--font-size-large);
+}
+
+/* Image */
+.avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Initials fallback — #fefefe on #222 = ~17.4:1 contrast */
+.avatar__initials {
+  line-height: 1;
+  user-select: none;
+  letter-spacing: 0.05em;
+}
+
+/* Layout helpers */
+.avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-name {
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+}
+
+.avatar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  padding: 4px;
+  transition: background-color var(--transition-duration);
+}
+
+.avatar-link:hover {
+  background-color: var(--secondary-color);
+}
+
+.avatar-demo h3 {
+  font-size: var(--font-size-small);
+  color: var(--text-color-subtle);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

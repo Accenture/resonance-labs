@@ -1,15 +1,28 @@
-document.querySelectorAll('.accordion-trigger').forEach(button => {
-  button.addEventListener('mousedown', function() {
-    const expanded = this.getAttribute('aria-expanded') === 'true';
-    this.setAttribute('aria-expanded', !expanded);
-  }); 
+(function () {
+  function toggleAccordion(button) {
+    var expanded = button.getAttribute('aria-expanded') === 'true';
+    var panel = document.getElementById(button.getAttribute('aria-controls'));
+    if (!panel) return;
 
-  button.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' || event.key === 'Space') {
-      const panel = document.getElementById(this.getAttribute('aria-controls'));
-      event.preventDefault();
-      const expanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', !expanded);
+    button.setAttribute('aria-expanded', String(!expanded));
+
+    if (expanded) {
+      panel.setAttribute('hidden', '');
+    } else {
+      panel.removeAttribute('hidden');
     }
+  }
+
+  document.querySelectorAll('.accordion-trigger').forEach(function (button) {
+    button.addEventListener('click', function () {
+      toggleAccordion(this);
+    });
+
+    button.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleAccordion(this);
+      }
+    });
   });
-});
+})();

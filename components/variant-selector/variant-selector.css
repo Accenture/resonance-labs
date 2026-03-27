@@ -1,0 +1,125 @@
+/* ── Variant Selector Container ── */
+.variant-selector {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Group ── */
+.variant-selector__group {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.variant-selector__label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color-strong);
+  margin-bottom: 0.75rem;
+  padding: 0;
+}
+
+/* ── Options Row ── */
+.variant-selector__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ── Individual Option ── */
+.variant-selector__option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color-hover);
+  background: var(--surface-color);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  user-select: none;
+  position: relative;
+  text-align: center;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.variant-selector__option:hover:not(.variant-selector__option--disabled) {
+  border-color: var(--text-color-strong);
+  background: var(--surface-muted);
+}
+
+/* ── Selected State ── */
+.variant-selector__option[aria-checked="true"] {
+  border-color: var(--text-color-strong);
+  background: var(--surface-muted);
+  color: var(--text-color-strong);
+  box-shadow: 0 0 0 1px var(--text-color-strong);
+}
+
+/* ── Disabled / Out of Stock ── */
+.variant-selector__option--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+
+.variant-selector__option--disabled:hover {
+  border-color: var(--border-color);
+  background: var(--surface-color);
+}
+
+.variant-selector__option-stock {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--text-color-faint);
+  line-height: 1;
+}
+
+/* ── Color Swatch ── */
+.variant-selector__option--swatch {
+  padding: 0.5rem 0.75rem;
+  gap: 0.35rem;
+}
+
+.variant-selector__swatch {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.variant-selector__color-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* ── Focus Indicators ── */
+.variant-selector__option:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* ── Live Region (visually hidden) ── */
+.variant-selector__live-region {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

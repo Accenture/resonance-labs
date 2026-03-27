@@ -66,6 +66,14 @@
         }, 100);
       });
 
+      // Escape key dismisses tooltip without moving focus
+      trigger.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && panel.getAttribute('data-visible') === 'true') {
+          event.preventDefault();
+          hidePanel(panel);
+        }
+      });
+
       // Allow hovering over the panel itself without hiding it
       panel.addEventListener('mouseenter', function () {
         showPanel(panel);

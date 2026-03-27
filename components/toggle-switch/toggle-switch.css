@@ -2,20 +2,6 @@
    Focus: visibility, contrast, layout, hit area sizing, and state distinction
 */
 
-:root {
-  --tgs-track-width: 50px;
-  --tgs-track-height: 26px;
-  --tgs-handle-size: 22px;
-  --tgs-handle-offset: 2px;
-  --tgs-track-off-bg: #767676;
-  --tgs-track-on-bg: #0b6e23;
-  --tgs-handle-bg: #fff;
-  --tgs-focus-ring-color: #005fcc;
-  --tgs-focus-ring-width: 3px;
-  --tgs-focus-ring-offset: 2px;
-  --tgs-disabled-opacity: 0.4;
-}
-
 /* Group layout */
 .toggle-switch-group {
   max-width: 480px;
@@ -30,7 +16,7 @@
   justify-content: space-between;
   gap: 16px;
   padding: 12px 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--gray-200);
 }
 
 .toggle-switch:last-child {
@@ -42,7 +28,7 @@
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.4;
-  color: #1a1a1a;
+  color: var(--text-color-strong);
   cursor: pointer;
 }
 
@@ -51,7 +37,7 @@
   margin-top: 4px;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #333;
+  color: var(--primary-color-hover);
 }
 
 /* Switch button — reset + track */
@@ -65,17 +51,17 @@
   cursor: pointer;
 
   /* Satisfy minimum 24x24 target size (WCAG 2.2 2.5.8 AA) */
-  min-width: var(--tgs-track-width);
-  min-height: var(--tgs-track-height);
+  min-width: var(--tgs-track-width, 50px);
+  min-height: var(--tgs-track-height, 26px);
 }
 
 /* Track */
 .toggle-switch__track {
   display: block;
-  width: var(--tgs-track-width);
-  height: var(--tgs-track-height);
-  background-color: var(--tgs-track-off-bg);
-  border-radius: calc(var(--tgs-track-height) / 2);
+  width: var(--tgs-track-width, 50px);
+  height: var(--tgs-track-height, 26px);
+  background-color: var(--border-color-input);
+  border-radius: calc(var(--tgs-track-height, 26px) / 2);
   position: relative;
   transition: background-color 0.2s ease;
 }
@@ -83,35 +69,35 @@
 /* Handle */
 .toggle-switch__handle {
   display: block;
-  width: var(--tgs-handle-size);
-  height: var(--tgs-handle-size);
-  background-color: var(--tgs-handle-bg);
+  width: var(--tgs-handle-size, 22px);
+  height: var(--tgs-handle-size, 22px);
+  background-color: var(--surface-color);
   border-radius: 50%;
   position: absolute;
-  top: var(--tgs-handle-offset);
-  left: var(--tgs-handle-offset);
+  top: var(--tgs-handle-offset, 2px);
+  left: var(--tgs-handle-offset, 2px);
   transition: transform 0.2s ease;
 }
 
 /* On state — track color change + handle position */
 .toggle-switch button[aria-checked="true"] .toggle-switch__track {
-  background-color: var(--tgs-track-on-bg);
+  background-color: var(--primary-color);
 }
 
 .toggle-switch button[aria-checked="true"] .toggle-switch__handle {
-  transform: translateX(calc(var(--tgs-track-width) - var(--tgs-handle-size) - var(--tgs-handle-offset) * 2));
+  transform: translateX(calc(var(--tgs-track-width, 50px) - var(--tgs-handle-size, 22px) - var(--tgs-handle-offset, 2px) * 2));
 }
 
 /* Focus visibility (WCAG 2.4.7 / 2.4.11) */
 .toggle-switch button[role="switch"]:focus-visible {
-  outline: var(--tgs-focus-ring-width) solid var(--tgs-focus-ring-color);
-  outline-offset: var(--tgs-focus-ring-offset);
-  border-radius: calc(var(--tgs-track-height) / 2);
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+  border-radius: calc(var(--tgs-track-height, 26px) / 2);
 }
 
 /* Disabled state */
 .toggle-switch button[aria-disabled="true"] {
-  opacity: var(--tgs-disabled-opacity);
+  opacity: 0.4;
   cursor: not-allowed;
   pointer-events: none;
 }

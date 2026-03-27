@@ -1,0 +1,81 @@
+<!-- Cookie Consent Component Demo -->
+<div class="section">
+  <section class="cookie-consent-demo" data-cookie-consent-demo>
+    <p class="cookie-consent-demo__trigger-text">
+      <button class="cookie-consent-demo__reset-btn" type="button" id="cookie-reset-btn">Reset Cookie Preferences</button>
+    </p>
+
+    <div
+      class="cookie-banner"
+      role="dialog"
+      aria-labelledby="cookie-banner-title"
+      aria-describedby="cookie-banner-desc"
+      id="cookie-banner"
+    >
+      <div class="cookie-banner__content">
+        <h3 class="cookie-banner__title" id="cookie-banner-title">We value your privacy</h3>
+        <p class="cookie-banner__description" id="cookie-banner-desc">
+          We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic.
+          Please choose your cookie preferences below.
+          <a href="https://example.com/cookie-policy" class="cookie-banner__link" aria-label="Read our full cookie policy">Cookie Policy</a>
+        </p>
+        <div class="cookie-banner__actions">
+          <button class="cookie-banner__btn cookie-banner__btn--accept" type="button" id="cookie-accept-btn">Accept All</button>
+          <button class="cookie-banner__btn cookie-banner__btn--reject" type="button" id="cookie-reject-btn">Reject All</button>
+          <button class="cookie-banner__btn cookie-banner__btn--preferences" type="button" id="cookie-preferences-btn">Manage Preferences</button>
+        </div>
+      </div>
+
+      <div class="cookie-preferences" id="cookie-preferences-panel" hidden>
+        <h4 class="cookie-preferences__title">Cookie Preferences</h4>
+        <fieldset class="cookie-preferences__group">
+          <legend class="cookie-preferences__legend">Select which cookies you allow</legend>
+
+          <div class="cookie-preferences__category">
+            <label class="cookie-preferences__label">
+              <input
+                type="checkbox"
+                class="cookie-preferences__checkbox"
+                name="essential"
+                checked
+                disabled
+              />
+              <span class="cookie-preferences__label-text">Essential Cookies</span>
+            </label>
+            <p class="cookie-preferences__explanation">Required for the website to function. These cannot be disabled.</p>
+          </div>
+
+          <div class="cookie-preferences__category">
+            <label class="cookie-preferences__label">
+              <input
+                type="checkbox"
+                class="cookie-preferences__checkbox"
+                name="analytics"
+                id="cookie-analytics"
+              />
+              <span class="cookie-preferences__label-text">Analytics Cookies</span>
+            </label>
+            <p class="cookie-preferences__explanation">Help us understand how visitors interact with our website.</p>
+          </div>
+
+          <div class="cookie-preferences__category">
+            <label class="cookie-preferences__label">
+              <input
+                type="checkbox"
+                class="cookie-preferences__checkbox"
+                name="marketing"
+                id="cookie-marketing"
+              />
+              <span class="cookie-preferences__label-text">Marketing Cookies</span>
+            </label>
+            <p class="cookie-preferences__explanation">Used to deliver relevant advertisements and track campaign performance.</p>
+          </div>
+        </fieldset>
+
+        <div class="cookie-preferences__actions">
+          <button class="cookie-banner__btn cookie-banner__btn--save" type="button" id="cookie-save-btn">Save Preferences</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

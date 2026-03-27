@@ -1,0 +1,68 @@
+/* ── Slider component styles ── */
+
+.slider-demo {
+  margin-bottom: 2rem;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 400px;
+  padding: 1rem 0;
+}
+
+/* Track */
+.slider-track {
+  position: relative;
+  flex: 1;
+  height: 8px;
+  background: var(--gray-200);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+/* Filled portion of track */
+.slider-track__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--focus-color);
+  border-radius: var(--border-radius);
+  pointer-events: none;
+}
+
+/* Thumb (>= 24x24 target) */
+.slider-thumb {
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 3px solid var(--focus-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  touch-action: none;
+}
+
+.slider-thumb:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--surface-color);
+}
+
+.slider-thumb:active {
+  cursor: grabbing;
+}
+
+/* Value display */
+.slider-value {
+  min-width: 3rem;
+  text-align: center;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--text-color);
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,110 @@
+.alert-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Base alert styles */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--surface-color);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+.alert__icon {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.alert__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.alert__label {
+  font-weight: 700;
+  margin-right: 0.25rem;
+}
+
+/* Info variant */
+.alert--info {
+  border-left-color: var(--primary-color);
+  background: var(--surface-muted);
+}
+
+.alert--info .alert__icon {
+  color: var(--text-color-strong);
+}
+
+.alert--info .alert__label {
+  color: var(--text-color-strong);
+}
+
+/* Success variant */
+.alert--success {
+  border-left-color: var(--primary-color);
+  background: var(--surface-muted);
+}
+
+.alert--success .alert__icon {
+  color: var(--text-color-strong);
+}
+
+.alert--success .alert__label {
+  color: var(--text-color-strong);
+}
+
+/* Error variant */
+.alert--error {
+  border-left-color: var(--primary-color);
+  background: var(--surface-muted);
+}
+
+.alert--error .alert__icon {
+  color: var(--text-color-strong);
+}
+
+.alert--error .alert__label {
+  color: var(--text-color-strong);
+}
+
+/* Trigger button */
+.alert-demo__trigger {
+  appearance: none;
+  border: 1px solid var(--border-color-strong);
+  background: var(--surface-color);
+  color: var(--text-color-strong);
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  line-height: 1.2;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+/* Visible focus indicator for interactive elements */
+.alert-demo__trigger:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Live region container */
+.alert-demo__live-region {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

@@ -61,17 +61,17 @@
   <p id="ttp-p1-context">Provide your email address for account recovery.</p>
 
   <div class="tooltip-wrapper" data-ttp-role="wrapper" data-ttp-id="wrapper-p1">
-    <div
+    <button
       class="tooltip-trigger tooltip-trigger--hover"
       id="ttp-p1-trigger"
-      tabindex="0"
-      aria-labelledby="ttp-p1-icon-title"
+      type="button"
+      aria-label="More information"
       aria-describedby="ttp-p1-context ttp-p1-panel"
       data-ttp-role="trigger"
       data-ttp-id="trigger-p1"
     >
-      <span>?</span>
-    </div>
+      <span aria-hidden="true">?</span>
+    </button>
     <div
       class="tooltip-panel"
       id="ttp-p1-panel"
@@ -115,6 +115,7 @@
     <div
       class="tooltip-panel"
       id="ttp-p2-panel"
+      role="tooltip"
       data-ttp-role="panel"
       data-ttp-id="panel-p2"
     >

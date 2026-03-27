@@ -1,0 +1,95 @@
+<!--
+  Component-only reference
+  Date Picker with calendar popup, keyboard navigation, and manual text entry.
+-->
+
+<div class="section">
+  <section class="date-picker-demo" data-date-picker-demo>
+    <div class="date-picker" data-dp="root">
+      <label id="dp-label" for="dp-input">Select a date</label>
+      <div class="date-picker__input-wrap">
+        <input
+          id="dp-input"
+          class="date-picker__input"
+          type="text"
+          role="combobox"
+          aria-labelledby="dp-label"
+          aria-describedby="dp-hint"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="dp-calendar"
+          autocomplete="off"
+          placeholder="MM/DD/YYYY"
+          data-dp="input"
+        />
+        <button
+          class="date-picker__toggle"
+          type="button"
+          aria-label="Open calendar"
+          data-dp="toggle"
+        >
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="4" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 8h16" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 2v4M14 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <span class="date-picker__hint" id="dp-hint">Format: MM/DD/YYYY</span>
+
+      <div
+        id="dp-calendar"
+        class="date-picker__calendar"
+        role="dialog"
+        aria-label="Choose a date"
+        hidden
+        data-dp="calendar"
+      >
+        <div class="date-picker__nav">
+          <button
+            class="date-picker__nav-btn"
+            type="button"
+            aria-label="Previous Month"
+            data-dp="prev"
+          >
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div
+            class="date-picker__month-year"
+            id="dp-month-year"
+            aria-live="polite"
+            aria-atomic="true"
+            data-dp="month-year"
+          ></div>
+          <button
+            class="date-picker__nav-btn"
+            type="button"
+            aria-label="Next Month"
+            data-dp="next"
+          >
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <table class="date-picker__grid" role="grid" aria-labelledby="dp-month-year" data-dp="grid">
+          <thead>
+            <tr>
+              <th scope="col" abbr="Sunday">Su</th>
+              <th scope="col" abbr="Monday">Mo</th>
+              <th scope="col" abbr="Tuesday">Tu</th>
+              <th scope="col" abbr="Wednesday">We</th>
+              <th scope="col" abbr="Thursday">Th</th>
+              <th scope="col" abbr="Friday">Fr</th>
+              <th scope="col" abbr="Saturday">Sa</th>
+            </tr>
+          </thead>
+          <tbody data-dp="grid-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>

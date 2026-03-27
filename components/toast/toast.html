@@ -1,0 +1,39 @@
+<div class="section">
+  <section class="toast-demo" data-toast-demo>
+    <div class="toast-demo__controls">
+      <button
+        id="toast-success-btn"
+        type="button"
+        class="toast-trigger toast-trigger--success"
+        data-toast-type="success"
+      >
+        Show Success Toast
+      </button>
+      <button
+        id="toast-info-btn"
+        type="button"
+        class="toast-trigger toast-trigger--info"
+        data-toast-type="info"
+      >
+        Show Info Toast
+      </button>
+      <button
+        id="toast-warning-btn"
+        type="button"
+        class="toast-trigger toast-trigger--warning"
+        data-toast-type="warning"
+      >
+        Show Warning Toast
+      </button>
+    </div>
+
+    <!-- Live region container — must exist in DOM before toasts fire -->
+    <div
+      id="toast-region"
+      role="status"
+      aria-live="polite"
+      aria-relevant="additions"
+      class="toast-region"
+    ></div>
+  </section>
+</div>

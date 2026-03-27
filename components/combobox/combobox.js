@@ -137,18 +137,8 @@
       return;
     }
 
-    if (key === ' ') {
-      // Space opens when collapsed; when open, selects active option (demo behavior)
-      if (!isOpen()) {
-        e.preventDefault();
-        open();
-        if (filtered.length) setActive(0);
-      } else if (activeIndex >= 0) {
-        e.preventDefault();
-        selectIndex(activeIndex);
-      }
-      return;
-    }
+    // Space is treated as normal text input in an editable combobox
+    // (no special handling needed)
 
     if (key === 'Escape') {
       if (isOpen()) {

@@ -1,0 +1,99 @@
+/* Dialog trigger */
+.dialog-trigger {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  color: var(--primary-color-inverse);
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background var(--transition-duration), color var(--transition-duration);
+}
+
+.dialog-trigger:hover {
+  background: var(--hover-color);
+  border-color: var(--hover-color);
+}
+
+/* Dialog panel – floating, non-modal */
+.dialog-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  width: 380px;
+  max-width: 90vw;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  z-index: 100;
+}
+
+.dialog-panel[hidden] {
+  display: none;
+}
+
+/* Position the section as the anchor for absolute positioning */
+.dialog-demo {
+  position: relative;
+  display: inline-block;
+}
+
+/* Heading inside the dialog */
+.dialog-panel h2 {
+  margin: 0 0 8px;
+  font-size: var(--font-size-large);
+  color: var(--primary-color);
+}
+
+/* Description */
+.dialog-panel p {
+  margin: 0 0 12px;
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* Link */
+.dialog-panel__link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--focus-color);
+  text-decoration: underline;
+  font-size: var(--font-size-small);
+}
+
+.dialog-panel__link:hover {
+  color: var(--hover-color);
+}
+
+/* Close button */
+.dialog-panel__close {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: var(--font-size-small);
+  font-family: inherit;
+  color: var(--primary-color-inverse);
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background var(--transition-duration);
+}
+
+.dialog-panel__close:hover {
+  background: var(--hover-color);
+  border-color: var(--hover-color);
+}
+
+/* Focus indicators */
+.dialog-trigger:focus,
+.dialog-panel__close:focus,
+.dialog-panel__link:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}

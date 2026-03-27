@@ -1,0 +1,62 @@
+/* Tag Component */
+
+.tag-demo h2 {
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.tag-demo h2 + .tag-group {
+  margin-bottom: 1.5rem;
+}
+
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Base tag */
+.tag-demo .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.75rem;
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.tag-demo .tag__icon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+/* Status: New */
+.tag-demo .tag--new {
+  background-color: var(--surface-muted);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Status: Sale */
+.tag-demo .tag--sale {
+  background-color: var(--surface-muted);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Status: Popular */
+.tag-demo .tag--popular {
+  background-color: var(--surface-muted);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}

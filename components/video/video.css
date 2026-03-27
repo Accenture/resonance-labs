@@ -13,8 +13,8 @@
 
 .vid-player {
   position: relative;
-  background: #000;
-  border-radius: 0.5rem;
+  background: var(--black);
+  border-radius: var(--border-radius);
   overflow: hidden;
 }
 
@@ -30,16 +30,47 @@
   or when the video element itself receives focus.
 */
 .vid-player__video:focus-visible {
-  outline: 3px solid #005fcc;
+  outline: 3px solid var(--focus-color);
   outline-offset: 2px;
+}
+
+/* ── Custom controls ── */
+
+.vid-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.vid-controls__btn {
+  appearance: none;
+  border: 1px solid var(--border-color-strong);
+  background: var(--surface-muted);
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.vid-controls__btn:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.vid-controls__btn[aria-pressed="true"] {
+  background: var(--primary-color);
+  color: var(--text-color-inverse);
+  border-color: var(--primary-color);
 }
 
 /* ── Transcript ── */
 
 .vid-transcript {
   margin-top: 1rem;
-  border: 1px solid #666;
-  border-radius: 0.5rem;
+  border: 1px solid var(--border-color-strong);
+  border-radius: var(--border-radius);
   overflow: hidden;
 }
 
@@ -48,14 +79,14 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  color: #111;
-  background: #f5f5f5;
+  color: var(--black);
+  background: var(--surface-muted);
   list-style: revert;
 }
 
-/* Visible focus indicator — 3:1 contrast (#005fcc on #f5f5f5) */
+/* Visible focus indicator — 3:1 contrast (#222 on #f5f5f5) */
 .vid-transcript__toggle:focus-visible {
-  outline: 3px solid #005fcc;
+  outline: 3px solid var(--focus-color);
   outline-offset: -3px;
 }
 
@@ -63,8 +94,8 @@
   padding: 0.75rem 1rem;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #222;
-  background: #fff;
+  color: var(--text-color-strong);
+  background: var(--surface-color);
 }
 
 .vid-transcript__content p {
@@ -81,7 +112,7 @@
   margin-top: 1rem;
   min-height: 1.25rem;
   font-size: 0.9rem;
-  color: #555;
+  color: var(--text-color-muted);
 }
 
 /* ── Captions styling (::cue pseudo-element) ── */
@@ -92,7 +123,7 @@
 */
 video::cue {
   background: rgba(0, 0, 0, 0.8);
-  color: #fff;
+  color: var(--text-color-inverse);
   font-size: 1rem;
   line-height: 1.4;
 }

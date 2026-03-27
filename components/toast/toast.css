@@ -1,0 +1,132 @@
+/* Toast trigger buttons */
+.toast-demo__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.toast-trigger {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  color: var(--primary-color-inverse);
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background var(--transition-duration), color var(--transition-duration);
+}
+
+.toast-trigger:hover {
+  background: var(--hover-color);
+  border-color: var(--hover-color);
+}
+
+.toast-trigger:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Toast region — fixed at bottom-right */
+.toast-region {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  max-width: 380px;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Individual toast */
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  font-size: var(--font-size-base);
+  line-height: 1.4;
+  pointer-events: auto;
+  animation: toast-slide-in 0.3s ease-out;
+}
+
+.toast--removing {
+  animation: toast-slide-out 0.25s ease-in forwards;
+}
+
+/* Toast types — all meet 4.5:1 contrast */
+.toast--success {
+  background: var(--primary-color);
+  color: var(--text-color-inverse);
+  border-left: 4px solid var(--gray-400);
+}
+
+.toast--info {
+  background: var(--primary-color-hover);
+  color: var(--text-color-inverse);
+  border-left: 4px solid var(--text-color-faint);
+}
+
+.toast--warning {
+  background: var(--text-color);
+  color: var(--text-color-inverse);
+  border-left: 4px solid var(--gray-400);
+}
+
+/* Toast text */
+.toast__text {
+  flex: 1;
+}
+
+/* Dismiss button */
+.toast__dismiss {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: var(--font-size-large);
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: var(--border-radius);
+  font-family: inherit;
+}
+
+.toast__dismiss:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.toast__dismiss:focus {
+  outline: 2px solid var(--text-color-inverse);
+  outline-offset: 2px;
+}
+
+/* Slide-in animation */
+@keyframes toast-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide-out animation */
+@keyframes toast-slide-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,118 @@
+/* ===========================
+   Image Gallery Component
+   =========================== */
+
+.image-gallery {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* --- Main image --- */
+.image-gallery__main {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  background-color: var(--surface-muted);
+  margin-bottom: 16px;
+}
+
+.image-gallery__main-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Controls row (prev + thumbnails + next) --- */
+.image-gallery__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* --- Navigation buttons --- */
+.image-gallery__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border: 2px solid var(--border-color-input);
+  border-radius: 50%;
+  background: var(--surface-color);
+  color: var(--primary-color-hover);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.image-gallery__nav:hover {
+  background-color: var(--gray-200);
+  border-color: var(--primary-color-hover);
+}
+
+.image-gallery__nav:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* --- Thumbnail strip --- */
+.image-gallery__thumbnails {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.image-gallery__thumb {
+  display: block;
+  width: 80px;
+  height: 54px;
+  padding: 0;
+  border: 3px solid transparent;
+  border-radius: var(--border-radius);
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.image-gallery__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Selected thumbnail */
+.image-gallery__thumb[aria-current="true"] {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Focus indicator for thumbnails (3:1+ contrast) */
+.image-gallery__thumb:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Hover */
+.image-gallery__thumb:hover {
+  border-color: var(--border-color-input);
+}
+
+.image-gallery__thumb[aria-current="true"]:hover {
+  border-color: var(--primary-color);
+}
+
+/* --- Image counter live region --- */
+.image-gallery__counter {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--text-color-muted);
+}

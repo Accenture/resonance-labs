@@ -1,5 +1,5 @@
 .modal[hidden] { display: none; }
 .modal { position: fixed; inset: 0; z-index: 1000; }
 .modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
-.modal__panel { position: relative; margin: 10vh auto; max-width: 520px; background: #fff; padding: 16px; border-radius: 12px; }
-:focus { outline: 3px solid #000; outline-offset: 2px; }
+.modal__panel { position: relative; margin: 10vh auto; max-width: 520px; background: var(--surface-color); padding: 16px; border-radius: var(--border-radius); }
+:focus { outline: 3px solid var(--text-color-strong); outline-offset: 2px; }

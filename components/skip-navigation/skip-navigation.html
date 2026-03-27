@@ -1,0 +1,26 @@
+<!--
+  Component-only reference
+  Conforms to:
+    - Skip Navigation accessibility pattern
+    - WCAG 2.4.1 Bypass Blocks
+-->
+
+<div class="section">
+  <section class="skip-nav-demo" data-skip-nav-demo>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <nav class="skip-nav-demo__nav" aria-label="Demo site navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="main-content" class="skip-nav-demo__main" tabindex="-1">
+      <h3>Main Content Area</h3>
+      <p>This is the target of the skip navigation link. Press <kbd>Tab</kbd> to focus the skip link at the top of this demo, then press <kbd>Enter</kbd> to jump directly here, bypassing the navigation above.</p>
+    </div>
+  </section>
+</div>

@@ -1,6 +1,5 @@
-:root { color-scheme: light dark; }
 .page { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 24px; max-width: 720px; }
-.dropdown { width: 320px; position: relative; }
+.dropdown { max-width: 320px; width: 100%; position: relative; }
 .dropdown__label { display: block; margin-bottom: 8px; font-weight: 600; }
 .dropdown__trigger {
   display: flex;
@@ -9,11 +8,11 @@
   min-height: 44px;
   padding: 10px 12px;
   border: 1px solid;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   user-select: none;
 }
-.dropdown__trigger:focus {
-  outline: 2px solid;
+.dropdown__trigger:focus-visible {
+  outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 .dropdown__listbox {
@@ -22,7 +21,7 @@
   right: 0;
   top: calc(100% + 6px);
   border: 1px solid;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   padding: 6px 0;
   margin: 0;
   list-style: none;
