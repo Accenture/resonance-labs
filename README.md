@@ -46,7 +46,7 @@ Each component is self-contained with HTML, CSS, and JS for easy learning and re
 1. Clone the repository:
 
 ```bash
-git clone https://dev.azure.com/DDPInternal/Accessibility%20Sub-Practice/_git/resonance_labs
+git clone https://github.com/Accenture/resonance-labs.git
 ```
 
 2. Start a local HTTP server from the project root:
@@ -54,14 +54,14 @@ git clone https://dev.azure.com/DDPInternal/Accessibility%20Sub-Practice/_git/re
 **macOS / Linux** (Python is pre-installed):
 
 ```bash
-cd resonance_labs
+cd resonance-labs
 python3 -m http.server 8080
 ```
 
 **Windows** (Python):
 
 ```bash
-cd resonance_labs
+cd resonance-labs
 python -m http.server 8080
 ```
 
