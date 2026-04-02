@@ -3,38 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Disclosure Demo - Resonance</title>
+    <title>Disclosure - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="disclosure.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
+    <header>
+      <a href="../../index.html" class="back-link">
+        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
     <main>
-      <div class="section">
+      <section>
         <h1>Disclosure</h1>
-        <p class="component-tagline">A disclosure widget allows users to toggle the visibility of additional content. The trigger button communicates its expanded or collapsed state to assistive technology, ensuring all users understand whether content is currently shown or hidden.</p>
+        <p class="component-tagline">A disclosure widget lets users toggle the visibility of additional content, with a trigger button that communicates its expanded or collapsed state to assistive technology.</p>
+      </section>
+
+      <section>
+        <h2>Demo</h2>
+        <p>Activate the disclosure trigger button below using a mouse click or by pressing <kbd>Enter</kbd> or <kbd>Space</kbd> while it has keyboard focus. Watch how the hidden content region appears and disappears. Pay attention to how the button label or icon changes to reflect the current state, and verify that a screen reader would announce the change.</p>
         <div class="mount"></div>
-      </div>
-      <div class="section">
+      </section>
+
+      <section>
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The trigger button's <code>aria-expanded</code> attribute switches between <code>true</code> and <code>false</code> as the content is shown or hidden.</li>
+          <li>The controlled content region is associated with the trigger via <code>aria-controls</code>, giving screen reader users a programmatic link between the two.</li>
+          <li>The button receives a clear visible focus indicator when navigated to with the keyboard.</li>
+          <li>Content is hidden using a method that removes it from the accessibility tree (not just visually), so screen readers do not read collapsed content.</li>
+          <li>The button text or accompanying icon conveys the current state in a way that makes sense without seeing the content area.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Trigger button</strong> — A <code>&lt;button&gt;</code> element that controls the disclosure; carries <code>aria-expanded</code> to reflect the current state and <code>aria-controls</code> to point to the content panel.</li>
+          <li><strong>State indicator</strong> — A visual cue (such as a chevron icon) that rotates or changes to signal whether the content is expanded or collapsed.</li>
+          <li><strong>Content panel</strong> — The collapsible region linked to the trigger; hidden or shown in a way that keeps it in sync with the accessibility tree.</li>
+          <li><strong>Panel content</strong> — Any text, links, or other elements inside the panel that become available only when the disclosure is open.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The trigger must be a native <code>&lt;button&gt;</code> element (or have <code>role="button"</code> with full keyboard support) so it is keyboard-operable by default.</li>
+          <li><code>aria-expanded</code> must be set on the trigger and updated every time the panel is toggled — never left static.</li>
+          <li>The content panel must be hidden in a way that removes it from the accessibility tree when collapsed, such as using the <code>hidden</code> attribute or <code>display: none</code>.</li>
+          <li>The relationship between the trigger and the panel must be programmatically expressed using <code>aria-controls</code>.</li>
+          <li>Activating the trigger with <kbd>Enter</kbd> or <kbd>Space</kbd> must toggle the panel, matching the behavior of a native button.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> as the trigger instead of a <code>&lt;button&gt;</code>, which breaks keyboard access entirely.</li>
+          <li>Hiding the panel with <code>visibility: hidden</code> or <code>opacity: 0</code> instead of removing it from the DOM flow, so screen readers still read the collapsed content.</li>
+          <li>Forgetting to update <code>aria-expanded</code> when the state changes, leaving screen reader users with stale information.</li>
+          <li>Using icon-only triggers (like a bare chevron) without any text or <code>aria-label</code>, making the button's purpose undiscoverable to screen reader users.</li>
+          <li>Omitting <code>aria-controls</code>, breaking the programmatic association between the trigger and the panel.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why This Matters</h2>
+        <p>Disclosure widgets are the foundation for FAQs, accordion sections, "read more" patterns, and sidebar navigation groups. When built incorrectly — especially when a non-button element is used as the trigger or <code>aria-expanded</code> is missing — screen reader users cannot tell whether content is available, and keyboard-only users may be completely unable to open the section. A pattern as fundamental as show/hide should be one of the most reliable in any component library.</p>
+      </section>
+
+      <section>
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section>
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
         </div>
-        <div class="code-preview" id="panel-html" role="tabpanel"><pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre><button class="code-preview__copy" data-target="code-html">Copy Code</button></div>
-        <div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div>
-        <div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div>
-      </div>
-      <div class="section">
-        <h2>Resources</h2>
-        <ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul>
-      </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
     </main>
-    <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>

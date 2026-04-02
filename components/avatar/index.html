@@ -3,21 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avatar Demo - Resonance</title>
+    <title>Avatar - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="avatar.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
+    <header>
+      <a href="../../index.html" class="back-link">
+        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
     <main>
       <div class="section">
         <h1>Avatar</h1>
         <p class="component-tagline">A visual representation of a user or entity, displayed as an image or initials fallback with proper accessible labelling.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Review the avatar variants shown below. Observe how each is labelled, how the fallback displays when an image is unavailable, and whether an avatar used purely for decoration communicates anything to assistive technology.</p>
         <div class="mount"></div>
       </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Avatars with meaningful identity information carry an accessible name that conveys who or what they represent</li>
+          <li>Decorative avatars are hidden from assistive technology so they do not produce redundant announcements</li>
+          <li>The initials fallback provides the same identity information as the image it replaces</li>
+          <li>Avatars used as interactive controls (for example, a profile link) have an accessible name on the control, not only on the image</li>
+          <li>Color is not the sole means of conveying identity or status associated with the avatar</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Avatar Container</strong> — the wrapping element that establishes the circular or shaped boundary and handles overflow clipping</li>
+          <li><strong>Image</strong> — the photo or illustration representing the user or entity; must carry a descriptive alternative text when meaningful</li>
+          <li><strong>Initials Fallback</strong> — text-based content displayed when the image fails to load or is unavailable; conveys the same identity as the image</li>
+          <li><strong>Status Indicator</strong> — an optional badge or dot overlaid on the avatar to show presence or activity status, which must have a text equivalent</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Provide a descriptive alternative text on avatar images when they convey meaningful identity information, such as a user's name</li>
+          <li>Mark avatar images as decorative when the person's name or identity is already present in adjacent text, to avoid announcing the same information twice</li>
+          <li>Ensure the initials fallback conveys the same identity as the image it replaces, either through visible text or an accessible name on the container</li>
+          <li>When the avatar is part of an interactive control such as a link or button, ensure the control itself carries a clear accessible name describing its destination or action</li>
+          <li>Any status indicator overlaid on the avatar must have a text equivalent available to assistive technology</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using an empty or missing alt attribute on a meaningful avatar image, causing screen readers to announce the filename instead</li>
+          <li>Marking a meaningful avatar as decorative when it is the only representation of a user's identity in that context</li>
+          <li>Wrapping an avatar in a link without giving the link an accessible name, leaving keyboard and screen reader users unable to understand the destination</li>
+          <li>Relying on a colored border or dot to convey status without providing any text alternative for that status</li>
+          <li>Using initials-only avatars without any accessible name, leaving assistive technology users unable to identify whose avatar it is</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Avatars appear throughout social and collaborative interfaces — comment threads, user lists, profile menus — and are often treated as purely decorative. When an avatar is the only visual cue identifying who posted something or who is online, its information matters. Screen reader users relying on alternative text, and keyboard users activating avatar links, need the same contextual information that sighted users receive at a glance. Correct labelling ensures the identity information embedded in avatars is available to everyone.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </div>
+
       <div class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
@@ -29,9 +96,13 @@
         <div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div>
         <div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div>
       </div>
+
       <div class="section">
-        <h2>Resources</h2>
-        <ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul>
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
+        </ul>
       </div>
     </main>
     <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>

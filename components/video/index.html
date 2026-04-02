@@ -3,28 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Video Demo - Resonance</title>
+    <title>Video - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="video.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header>
-      <a href="../../index.html" class="back-link">
-        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
-      </a>
-    </header>
+    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
     <main>
+
       <div class="section">
         <h1>Video</h1>
-        <p class="component-tagline">A video component embeds a media player with accessible controls for play, pause, volume, and captions. It ensures keyboard operability and provides text alternatives or transcripts for users who cannot see or hear the content. Proper use of the video element and track elements covers the core requirements.</p>
+        <p class="component-tagline">A video component embeds a media player with accessible controls for play, pause, volume, and captions, ensuring keyboard operability and text alternatives for users who cannot see or hear the content.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Use the playback controls below the video to play, pause, and adjust volume using only the keyboard. Tab through the controls and press <strong>Space</strong> or <strong>Enter</strong> to activate each one. Enable captions if available and observe how the caption track is announced and displayed. Check whether a transcript is also provided alongside the player.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>All player controls — play, pause, volume, seek, and captions toggle — are reachable and operable by keyboard alone.</li>
+          <li>Each control has an accessible label so screen readers can announce its purpose rather than just "button."</li>
+          <li>Captions can be enabled and are synchronized with the spoken audio content in the video.</li>
+          <li>A text transcript of the video's audio content is provided so users who cannot play the video at all can still access the information.</li>
+          <li>The video does not autoplay with sound, avoiding a disorienting experience for screen reader users whose audio output would be interrupted.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Video element:</strong> The native <code>&lt;video&gt;</code> element that contains the media source and hosts child track elements for captions and descriptions.</li>
+          <li><strong>Caption track:</strong> A <code>&lt;track&gt;</code> element with <code>kind="captions"</code> pointing to a WebVTT file that provides synchronized text for spoken dialogue and important audio cues.</li>
+          <li><strong>Playback controls:</strong> Buttons for play/pause, volume, mute, and full-screen, each with an accessible name through visible text or <code>aria-label</code>.</li>
+          <li><strong>Progress/seek bar:</strong> A slider or range input allowing users to move to any point in the video, labeled so screen readers can announce the current playback position.</li>
+          <li><strong>Captions toggle:</strong> A button that enables or disables the caption track, with its current state (on or off) communicated to assistive technology.</li>
+          <li><strong>Transcript:</strong> A separate section of the page containing the full text of the video's audio content, available to users regardless of their ability to play the media.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The video must not autoplay with audio — doing so disrupts screen reader users who rely on audio output to navigate the page.</li>
+          <li>All custom player controls must be operable by keyboard and must have accessible labels describing their function and, where applicable, their current state.</li>
+          <li>Captions must be provided for all spoken dialogue and meaningful audio content, synchronized with the playback timeline.</li>
+          <li>An audio description track or a descriptive transcript must be available for visual content in the video that is not conveyed through the audio alone.</li>
+          <li>A full text transcript must be provided so users who cannot play the video can still access its content.</li>
+          <li>If the video contains flashing or strobing content, a warning must precede it so users with photosensitive conditions can make an informed choice before playing.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Autoplaying video with sound, which interrupts screen readers and can disorient users who are not expecting audio to begin.</li>
+          <li>Providing no captions or providing auto-generated captions without reviewing them for accuracy, leaving deaf and hard-of-hearing users with inaccurate or missing dialogue.</li>
+          <li>Building custom player controls as non-interactive <code>&lt;div&gt;</code> elements that cannot receive keyboard focus or be activated without a mouse.</li>
+          <li>Omitting a transcript, which is the only way some users — including those on metered connections, in quiet environments, or with certain cognitive disabilities — can access the content.</li>
+          <li>Labeling the play button only with an icon and no text alternative, leaving screen reader users with no way to identify or activate it.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Video is one of the richest formats for delivering information, but it is also one of the most exclusive when implemented without accessibility in mind. Deaf users miss all spoken content without captions. Blind users miss all visual-only information without audio descriptions. Users on slow connections or in noise-sensitive environments need transcripts. Users with motor disabilities need keyboard-operable controls. Each of these groups is shut out entirely by a single missing accommodation. Video is also increasingly used for onboarding, training, and compliance content — areas where being locked out has direct consequences for participation and employment. Getting video accessibility right means the content reaches every person it was intended for.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,29 +107,20 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
-          <li>
-            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
-          </li>
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
         </ul>
       </div>
-    </main>
 
+    </main>
     <footer>
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-
     <script>
       // Fetch HTML fragment
       fetch("./video.html")

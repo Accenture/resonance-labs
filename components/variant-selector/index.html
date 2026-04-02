@@ -1,22 +1,134 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Variant Selector Demo - Resonance</title>
-    <link rel="stylesheet" href="../../assets/style/global.css" /><link rel="stylesheet" href="variant-selector.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variant Selector - Resonance Labs</title>
+    <link rel="stylesheet" href="../../assets/style/global.css" />
+    <link rel="stylesheet" href="variant-selector.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
+    <header>
+      <a href="../../index.html" class="back-link">
+        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
     <main>
-      <div class="section"><h1>Variant Selector</h1><p class="component-tagline">A variant selector lets users choose product options — such as size and color — using a radio-group pattern with roving tabindex. Each group provides a single tab stop, arrow-key navigation between options, and clear visual and programmatic indication of selected, unselected, and unavailable states.</p><div class="mount"></div></div>
-      <div class="section"><h2>Code</h2><div class="code-tabs" role="tablist"><button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button><button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button><button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button></div><div class="code-preview" id="panel-html" role="tabpanel"><pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre><button class="code-preview__copy" data-target="code-html">Copy Code</button></div><div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div><div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div></div>
-      <div class="section"><h2>Resources</h2><ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul></div>
+
+      <section class="section">
+        <h1>Variant Selector</h1>
+        <p class="component-tagline">A variant selector lets users choose product options — such as size and color — using a radio-group pattern with roving tabindex, providing a single tab stop, arrow-key navigation, and clear programmatic indication of selected, unselected, and unavailable states.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Tab into the size and color option groups below. Use the arrow keys to move between options within each group and press Space to select an option. Notice how the selected state and unavailable states are communicated as you navigate. Try toggling between groups with Tab to verify each group has a single tab stop.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each variant group (e.g., "Size", "Color") has a single Tab stop — arrow keys navigate between options inside the group, reducing the Tab burden on keyboard users.</li>
+          <li>The group label ("Size", "Color") is programmatically associated with its options so screen reader users know which attribute they are configuring when they Tab into the group.</li>
+          <li>The currently selected option is identified both visually and programmatically — a screen reader announces it as selected when the user navigates to it.</li>
+          <li>Unavailable variants (e.g., a size that is out of stock) are marked as unavailable or disabled, not just grayed out visually, so keyboard users cannot accidentally select them.</li>
+          <li>Selecting a variant does not cause unexpected page navigation or disrupt the user's focus position.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Variant group:</strong> A labeled container (e.g., "Size" or "Color") that wraps a set of mutually exclusive options; uses a radio group or equivalent pattern.</li>
+          <li><strong>Group label:</strong> A visible heading or label that names the attribute being selected; programmatically associated with the group's option set.</li>
+          <li><strong>Option button / radio:</strong> An individual selectable control representing a single variant value (e.g., "Medium" or "Blue"); keyboard-navigable via arrow keys.</li>
+          <li><strong>Selected state indicator:</strong> The visual and programmatic marker on the currently chosen option; announced by screen readers when the option receives focus.</li>
+          <li><strong>Unavailable state indicator:</strong> A visual and programmatic disabled or unavailable marker applied to options that cannot be selected due to stock or configuration constraints.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Each variant group implements roving tabindex so only one option in the group receives focus via Tab; arrow keys move focus within the group.</li>
+          <li>The group label is programmatically associated with its options so screen readers announce the group name alongside the option value when the user navigates into the group.</li>
+          <li>The selected option is marked with a programmatic selected or checked state so assistive technologies always reflect the current selection accurately.</li>
+          <li>Unavailable options are disabled using the disabled attribute or equivalent, preventing them from being selected by keyboard and announcing their unavailability to screen readers.</li>
+          <li>Selecting a new option does not trigger an automatic page reload or change of context — users remain in control of when they proceed to the next step.</li>
+          <li>Color swatches include text labels or accessible names that identify the color by name (e.g., "Forest Green") rather than relying on hue alone.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Making every option a separate Tab stop, forcing keyboard users to Tab through all sizes and colors before reaching the add-to-cart button.</li>
+          <li>Omitting the group label so screen readers announce individual option values like "Medium" and "Large" without any indication that these are size choices.</li>
+          <li>Showing unavailable variants as visually grayed-out buttons without disabling them programmatically, so keyboard users can focus and activate them unexpectedly.</li>
+          <li>Using color swatches with no text labels or accessible names, making color variants completely inaccessible to blind users and users with color-vision differences.</li>
+          <li>Applying a CSS-only selected state (e.g., a border highlight) without a programmatic selected attribute, so the selection is invisible to screen readers.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Choosing a size or color is a mandatory step before adding most products to the cart. If a keyboard user must Tab through every size and color option individually, the interaction becomes exhausting on pages with many variants. If a screen reader user cannot tell which size is currently selected, or whether a color is unavailable, they may add the wrong variant to their cart and only discover the error at checkout. Accessible variant selectors ensure that all users can configure a product to meet their needs efficiently and with confidence before committing to a purchase.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
+
     </main>
-    <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
       fetch("./variant-selector.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./variant-selector.js";document.body.appendChild(s)});
       fetch("./variant-selector.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});

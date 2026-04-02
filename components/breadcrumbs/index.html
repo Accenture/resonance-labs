@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Breadcrumbs Demo - Resonance</title>
+    <title>Breadcrumbs - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="breadcrumbs.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +18,79 @@
       </a>
     </header>
     <main>
-      <h1>Breadcrumbs</h1>
-        <p class="component-tagline">Breadcrumbs provide a horizontal trail of links reflecting the user's position within a site hierarchy. They help users understand where they are and navigate back to higher-level pages without relying on the browser's back button. The current page can be displayed as a link or as plain text depending on the use case.</p>
+      <div class="section">
+        <h1>Breadcrumbs</h1>
+        <p class="component-tagline">A navigation landmark that displays a trail of links reflecting the user's current position within a site hierarchy, helping them understand context and navigate to higher-level pages.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Review both breadcrumb scenarios below. Tab through the links and observe how each is identified and announced. Notice how the current page item is distinguished from the preceding navigation links, and how the separator characters are handled by assistive technology.</p>
+        <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The breadcrumb trail is contained within a navigation landmark with a distinct accessible name</li>
+          <li>Separator characters between items are hidden from assistive technology and not announced</li>
+          <li>The current page item is marked programmatically so screen readers identify it as the active location</li>
+          <li>When the current page is a link, it is distinguishable from ancestor links both visually and semantically</li>
+          <li>When the current page is plain text, it is not focusable and does not behave like a link</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Navigation Landmark</strong> — the wrapping nav element with a label that distinguishes this breadcrumb from other navigation regions on the page</li>
+          <li><strong>Ordered List</strong> — the semantic list container that groups breadcrumb items and communicates their count and sequential relationship to screen readers</li>
+          <li><strong>Ancestor Link</strong> — a standard anchor element linking to a higher-level page in the site hierarchy</li>
+          <li><strong>Current Page Item</strong> — the final item representing the user's current location, marked to indicate it is the active page; may be a link or plain text depending on the implementation</li>
+          <li><strong>Separator</strong> — a visual-only character or icon between items that is hidden from assistive technology</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Wrap the breadcrumb in a navigation landmark and give it an accessible name that distinguishes it from other navigation regions on the page</li>
+          <li>Use an ordered list to convey the hierarchical and sequential nature of the breadcrumb trail</li>
+          <li>Mark the current page item programmatically so assistive technology can identify the user's active location within the trail</li>
+          <li>Hide separator characters from assistive technology so they are not read aloud as part of the breadcrumb content</li>
+          <li>Ensure ancestor links have meaningful and descriptive link text that reflects the destination page</li>
+          <li>If the current page item is rendered as a link, it should still be identifiable as the current location rather than just another navigation link</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Placing the breadcrumb outside a navigation landmark, making it invisible to users who navigate by landmarks</li>
+          <li>Using an unordered list or a flat sequence of links without a list element, losing the semantic structure that communicates hierarchy</li>
+          <li>Failing to mark the current page item, leaving screen reader users without a clear indication of their location</li>
+          <li>Not hiding separator characters, causing them to be read aloud and cluttering the screen reader's output</li>
+          <li>Using generic link text such as "click here" or truncated labels that do not describe the destination page</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Breadcrumbs are a wayfinding tool. For sighted users, the visual trail makes location obvious at a glance. For screen reader users navigating by landmarks or links, the breadcrumb's structure — its landmark label, list semantics, and current-page marker — is what makes location comprehensible. When these elements are absent, screen reader users may have no way to understand where they are in a site's structure or how to return to a parent page without using the browser's back button. A correctly implemented breadcrumb gives all users an equivalent sense of orientation.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </div>
 
       <!-- Scenario 1: Current page as a link -->
       <div class="section">
-        <h2>Scenario: Current page as a link</h2>
-        <div class="mount"></div>
+        <h2>Code</h2>
+        <h3>Scenario: Current page as a link</h3>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html-1">HTML</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css-1">CSS</button>
@@ -49,8 +112,7 @@
 
       <!-- Scenario 2: Current page is NOT a link -->
       <div class="section">
-        <h2>Scenario: Current page is NOT a link</h2>
-        <div class="mount"></div>
+        <h3>Scenario: Current page is NOT a link</h3>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html-2">HTML</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css-2">CSS</button>
@@ -71,18 +133,10 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
-          <li>
-            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
-          </li>
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
         </ul>
       </div>
     </main>

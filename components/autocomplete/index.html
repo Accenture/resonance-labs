@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autocomplete Demo - Resonance</title>
+    <title>Autocomplete - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="autocomplete.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -23,8 +20,71 @@
     <main>
       <div class="section">
         <h1>Autocomplete</h1>
-        <p class="component-tagline">An autocomplete input offers filtered suggestions as the user types, reducing effort and improving accuracy. It combines a text field with a dynamically updated listbox, supporting keyboard navigation and screen reader announcements. This pattern is useful for search fields, address forms, and any input where the list of valid options is large.</p>
+        <p class="component-tagline">An input that offers filtered suggestions as the user types, combining a text field with a dynamically updated listbox that supports keyboard navigation and screen reader announcements.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Type into the input field to see matching suggestions appear. Use the Down Arrow key to move into the list and navigate options. Press Enter to select an option or Escape to dismiss the suggestion list and return focus to the input.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The suggestion list appears and updates dynamically as characters are typed</li>
+          <li>Screen readers announce the number of available suggestions when the list opens</li>
+          <li>Arrow key navigation moves through options without leaving the input field</li>
+          <li>The currently highlighted option is announced by assistive technology as focus moves through the list</li>
+          <li>Selecting an option populates the input and closes the listbox cleanly</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Label</strong> — a visible text label associated with the input that persists even when the suggestion list is open</li>
+          <li><strong>Text Input</strong> — the editable field where the user types; it controls the expansion state and active descendant of the listbox</li>
+          <li><strong>Listbox</strong> — the container that holds the list of suggestion options and is shown or hidden based on input activity</li>
+          <li><strong>Option</strong> — an individual selectable suggestion within the listbox, each with a unique identity for programmatic reference</li>
+          <li><strong>Status Announcement</strong> — a live region that communicates the number of available results to screen reader users</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Associate the input with a visible label so screen reader users understand the field's purpose at all times</li>
+          <li>Use the combobox role on the input and the listbox role on the suggestion container to define the relationship between them</li>
+          <li>Communicate whether the suggestion list is open or closed using an expanded state attribute on the input</li>
+          <li>Track the currently highlighted option by referencing it from the input, so screen readers can announce it without moving DOM focus away from the field</li>
+          <li>Support keyboard navigation: Down Arrow to enter the list, Up Arrow to move back, Enter to select, and Escape to close the list</li>
+          <li>Announce the number of available suggestions to screen reader users when the list updates</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Moving DOM focus into the listbox when the user presses the Down Arrow, which disconnects the typing experience for screen reader users</li>
+          <li>Omitting the expanded state attribute on the input, so screen readers cannot tell whether the suggestion list is open or closed</li>
+          <li>Failing to announce result counts, leaving screen reader users unaware that suggestions are available</li>
+          <li>Not supporting Escape to dismiss the list, trapping keyboard users without a clear exit</li>
+          <li>Using a custom-styled div without proper roles, making the combobox invisible to assistive technology</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Autocomplete is one of the more complex interactive patterns on the web, and its accessibility depends on an exact combination of roles, states, and keyboard behaviors working together. When any piece is missing — an unlabelled input, an unannounced list, a missing keyboard exit — screen reader and keyboard users are left without a functional experience. When implemented correctly, autocomplete dramatically reduces the effort required to fill in fields with large sets of valid options, benefiting all users including those with cognitive and motor disabilities.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,18 +109,10 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
-          <li>
-            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
-          </li>
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
         </ul>
       </div>
     </main>

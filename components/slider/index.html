@@ -3,21 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slider Demo - Resonance</title>
+    <title>Slider - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="slider.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
     <main>
+
       <div class="section">
         <h1>Slider</h1>
-        <p class="component-tagline">A slider lets users select a value from a continuous or discrete range by dragging a thumb or using the keyboard. It supports accessible labels, value announcements, and both simple and formatted value displays.</p>
+        <p class="component-tagline">A slider lets users select a value from a continuous or discrete range by dragging a thumb or using the keyboard, with accessible labels and live value announcements.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Click or tap the slider thumb and drag it left or right to change the value. You can also click the track to jump to a position. With keyboard focus on the thumb, use the <strong>Arrow keys</strong> to increment or decrement the value one step at a time, and <strong>Home</strong> / <strong>End</strong> to jump to the minimum or maximum.</p>
         <div class="mount"></div>
       </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The current value is displayed alongside the slider and updates in real time as the thumb moves.</li>
+          <li>A screen reader announces the slider's label, current value, and the full range when focus lands on the thumb.</li>
+          <li>Arrow key presses move the thumb by a defined step and the updated value is announced without requiring manual interaction.</li>
+          <li>The slider label is persistently visible — it does not disappear or rely on a placeholder inside the track.</li>
+          <li>Focus styling on the thumb is clearly visible against any background color used in the component.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Label:</strong> A visible text label that identifies what the slider controls, associated with the input through a <code>for</code>/id relationship or <code>aria-labelledby</code>.</li>
+          <li><strong>Track:</strong> The horizontal or vertical bar that represents the full range of possible values.</li>
+          <li><strong>Thumb:</strong> The draggable handle that the user moves to select a value; it carries the ARIA role and value attributes.</li>
+          <li><strong>Value display:</strong> A text output showing the currently selected value, updated live as the thumb moves.</li>
+          <li><strong>Range indicators:</strong> Optional min and max labels at the ends of the track that give users context for the scale.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The thumb must have a programmatic label so screen readers can announce what the slider controls.</li>
+          <li>The current value, minimum, maximum, and step size must all be communicated to assistive technology.</li>
+          <li>Arrow keys must change the value by the defined step amount; Home and End must jump to the minimum and maximum.</li>
+          <li>The current value must be announced by a screen reader whenever it changes via keyboard or pointer interaction.</li>
+          <li>The slider must be fully operable by keyboard alone — mouse interaction must not be the only way to change the value.</li>
+          <li>Focus indication on the thumb must meet minimum contrast and size requirements so all users can see where focus is.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Building the slider as a custom drag surface without the correct ARIA role, leaving it invisible to screen readers.</li>
+          <li>Omitting or hiding the label so users have no context for what value they are adjusting.</li>
+          <li>Not wiring up keyboard support, making the component unusable without a mouse or touch device.</li>
+          <li>Failing to update the live value announcement, so screen reader users must tab away and back to hear the new value.</li>
+          <li>Setting step sizes so small that keyboard navigation becomes impractical across a wide range.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Sliders are common in settings panels, media players, and data filters — contexts where users with motor disabilities, tremors, or visual impairments are just as likely to need control over values. A slider built only for mouse or touch dragging is completely inaccessible to keyboard users and provides no meaningful feedback to screen reader users about what they are adjusting or what value they have reached. Implementing the correct ARIA attributes and keyboard handlers transforms a frustrating barrier into a fully usable control for everyone.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </div>
+
       <div class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
@@ -29,10 +95,12 @@
         <div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div>
         <div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div>
       </div>
+
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul>
       </div>
+
     </main>
     <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>

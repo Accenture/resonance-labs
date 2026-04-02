@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkbox Demo - Resonance</title>
+    <title>Checkbox - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="checkbox.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +22,86 @@
       </a>
     </header>
     <main>
-      <h1>Checkbox</h1>
-        <p class="component-tagline">A checkbox lets users toggle an option on or off, or select multiple items from a set. It is built from a native input element paired with a visible label and optional description text. Proper association between the input, label, and any hint or error message ensures the control is fully accessible.</p>
+      <section>
+        <h1>Checkbox</h1>
+        <p class="component-tagline">A checkbox lets users toggle an option on or off, or select multiple items from a set, using a native input element paired with a visible label.</p>
+      </section>
 
-      <!-- Scenario 1: Checkbox with label -->
-      <div class="section">
-        <h2>Scenario: Checkbox with label</h2>
-        <div class="mount"></div>
+      <section>
+        <h2>Demo</h2>
+        <p>Interact with the checkboxes below using a mouse or keyboard. Press <kbd>Tab</kbd> to move focus to a checkbox and <kbd>Space</kbd> to toggle its checked state. Try both the simple labeled variant and the variant with additional description text.</p>
+
+        <!-- Scenario 1: Checkbox with label -->
+        <h3>Scenario: Checkbox with label</h3>
+        <div class="mount" id="mount-1"></div>
+
+        <!-- Scenario 2: Checkbox with additional state information -->
+        <h3>Scenario: Checkbox with additional state information</h3>
+        <div class="mount" id="mount-2"></div>
+      </section>
+
+      <section>
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each checkbox receives a visible focus ring when navigated to with the keyboard.</li>
+          <li>The label is programmatically associated with the input so screen readers announce the full control name.</li>
+          <li>In the second scenario, supplemental description text is linked via <code>aria-describedby</code> and read after the label.</li>
+          <li>The checked and unchecked states are communicated to assistive technology without requiring visual cues alone.</li>
+          <li>Clicking anywhere on the label text toggles the checkbox, increasing the effective click target.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Input element</strong> — The native <code>&lt;input type="checkbox"&gt;</code> that holds the checked state and receives keyboard focus.</li>
+          <li><strong>Label</strong> — A <code>&lt;label&gt;</code> element associated with the input via <code>for</code>/<code>id</code>, providing the accessible name.</li>
+          <li><strong>Description text</strong> — Optional hint or context copy linked to the input via <code>aria-describedby</code>.</li>
+          <li><strong>Error message</strong> — Inline validation text that can also be linked via <code>aria-describedby</code> when the field is invalid.</li>
+          <li><strong>Group container</strong> — A <code>&lt;fieldset&gt;</code> with a <code>&lt;legend&gt;</code> used when multiple checkboxes form a logical set.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The checkbox must have a visible, programmatically associated label — never rely on placeholder text or visual positioning alone.</li>
+          <li>Focus must be clearly visible on the checkbox control when navigated to with a keyboard.</li>
+          <li>Pressing <kbd>Space</kbd> must toggle the checked state; no other key should be required.</li>
+          <li>Any supplemental hint text or error message must be linked to the input so screen readers announce it automatically.</li>
+          <li>When checkboxes belong to a group (for example, a list of preferences), the group must be wrapped in a <code>&lt;fieldset&gt;</code> with a <code>&lt;legend&gt;</code> that names the group.</li>
+          <li>An indeterminate state, when used, must be set programmatically and communicated to assistive technology.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a custom <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> as a checkbox without adding the correct ARIA role, state, and keyboard handling.</li>
+          <li>Omitting the <code>for</code>/<code>id</code> association between label and input, making the control anonymous to screen readers.</li>
+          <li>Hiding the native input visually without ensuring it remains keyboard-focusable and accessible.</li>
+          <li>Placing hint or error text in the DOM without linking it to the input via <code>aria-describedby</code>.</li>
+          <li>Grouping related checkboxes in a plain <code>&lt;div&gt;</code> instead of a <code>&lt;fieldset&gt;</code>/<code>&lt;legend&gt;</code>, so the group name is never announced.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why This Matters</h2>
+        <p>Checkboxes are among the most common form controls on the web. When they lack proper labeling or keyboard support, users who rely on screen readers hear nothing meaningful when they focus the control, and users who navigate by keyboard cannot interact at all. This creates a complete barrier to submitting forms — affecting sign-ups, preference settings, consent flows, and any other interaction that depends on binary choices.</p>
+      </section>
+
+      <section>
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section>
+        <h2>Code</h2>
+
+        <h3>Scenario: Checkbox with label</h3>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html-1">HTML</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css-1">CSS</button>
@@ -45,12 +119,8 @@
           <pre class="line-numbers"><code id="code-js-1" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js-1">Copy Code</button>
         </div>
-      </div>
 
-      <!-- Scenario 2: Checkbox with additional state information -->
-      <div class="section">
-        <h2>Scenario: Checkbox with additional state information</h2>
-        <div class="mount"></div>
+        <h3>Scenario: Checkbox with additional state information</h3>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html-2">HTML</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css-2">CSS</button>
@@ -68,10 +138,10 @@
           <pre class="line-numbers"><code id="code-js-2" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js-2">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -84,7 +154,7 @@
             >
           </li>
         </ul>
-      </div>
+      </section>
     </main>
 
     <footer>

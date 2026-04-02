@@ -3,38 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Star Rating Demo - Resonance</title>
+    <title>Star Rating - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="star-rating.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
+    <header>
+      <a href="../../index.html" class="back-link">
+        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
     <main>
-      <div class="section">
+
+      <section class="section">
         <h1>Star Rating</h1>
-        <p class="component-tagline">An accessible star rating control with interactive and read-only variants.</p>
+        <p class="component-tagline">An accessible star rating control with interactive and read-only variants, communicating both the selected value and the available range to screen readers through a radio-group pattern or equivalent text alternative.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>The demo below includes both a read-only rating display and an interactive rating input. For the read-only variant, use a screen reader and navigate to it to hear how the score and total are announced without any visual dependency. For the interactive variant, Tab to it and use arrow keys to move through star options, then press Space or Enter to select a rating.</p>
         <div class="mount"></div>
-      </div>
-      <div class="section">
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The read-only rating communicates its value as text (e.g., "4.2 out of 5 stars") rather than relying on five partially filled star icons alone.</li>
+          <li>The interactive rating uses a radio-group pattern, giving each star a label that describes the rating it represents (e.g., "3 stars").</li>
+          <li>Arrow key navigation moves between star options in the interactive variant, matching the expected behavior for a group of radio buttons.</li>
+          <li>The currently selected star is identified both visually and programmatically so screen reader users can confirm which rating they have chosen.</li>
+          <li>The label "out of 5" or equivalent is available to provide the scale context, not just the selected value.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Rating group label:</strong> A visible or accessible label that introduces the rating control (e.g., "Rate this product") and scopes its purpose.</li>
+          <li><strong>Star options (interactive):</strong> Individual radio inputs or equivalent controls, each labeled with the rating value it represents (e.g., "1 star", "2 stars").</li>
+          <li><strong>Selected state indicator:</strong> The visual and programmatic marker that identifies the currently chosen rating within the interactive variant.</li>
+          <li><strong>Read-only display:</strong> A text-based or ARIA-labeled element that communicates a pre-existing average rating score and total for display-only contexts.</li>
+          <li><strong>Review count (optional):</strong> A numeric or textual indication of how many reviews contributed to the displayed average rating.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The read-only rating provides a text alternative such as "Rated 4 out of 5 stars" that is accessible to screen readers regardless of whether the star icons are visible.</li>
+          <li>The interactive variant uses a radio-group pattern with a group label and individual radio inputs, so each star has a named, focusable, selectable role.</li>
+          <li>Arrow key navigation within the interactive variant moves focus between stars without requiring Tab for each option, consistent with radio group keyboard behavior.</li>
+          <li>The selected star is programmatically marked as the chosen value so that when a user navigates away and returns, the correct star is reported as selected.</li>
+          <li>Neither the read-only nor the interactive variant relies on star color alone to convey its meaning — the selected value is always available as text.</li>
+          <li>The total scale (e.g., "out of 5") is always communicated so users understand the selected value relative to the maximum possible rating.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Rendering a row of star SVG icons with no text equivalent, leaving screen reader users with five unlabeled graphics and no rating value.</li>
+          <li>Implementing the interactive variant with individual buttons or div elements instead of a radio group, breaking expected keyboard navigation and selection behavior.</li>
+          <li>Omitting the "out of 5" scale context so screen reader users hear a number like "4" without knowing the maximum possible rating.</li>
+          <li>Using yellow fill color as the only indicator of the selected star, which is invisible to users in high-contrast mode or with certain color-vision differences.</li>
+          <li>Requiring mouse hover to display the rating labels for each star option, making the control unusable for keyboard-only users exploring the choices before selecting.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Star ratings appear on nearly every product page and review section, and they heavily influence purchase decisions. A screen reader user who encounters five unlabeled star graphics receives no useful product feedback at all. For interactive rating inputs — used on order confirmation pages, review forms, and feedback surveys — an inaccessible control means the user cannot complete a task that is available to everyone else. Whether read-only or interactive, accessible star ratings ensure that every user can access product reputation data and submit their own feedback equally.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
         </div>
-        <div class="code-preview" id="panel-html" role="tabpanel"><pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre><button class="code-preview__copy" data-target="code-html">Copy Code</button></div>
-        <div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div>
-        <div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div>
-      </div>
-      <div class="section">
-        <h2>Resources</h2>
-        <ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul>
-      </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
+
     </main>
-    <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>

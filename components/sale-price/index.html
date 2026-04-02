@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sale Price Demo - Resonance</title>
+    <title>Sale Price - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="sale-price.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -17,13 +18,77 @@
       </a>
     </header>
     <main>
-      <div class="section">
-        <h1>Sale Price</h1>
-        <p class="component-tagline">A sale price display communicates the was/now price relationship using semantic HTML. Original prices use the deleted text element with strikethrough, and sale prices use the inserted text element, ensuring screen readers perceive the full context.</p>
-        <div class="mount"></div>
-      </div>
 
-      <div class="section">
+      <section class="section">
+        <h1>Sale Price</h1>
+        <p class="component-tagline">A sale price display communicates the was/now price relationship using semantic HTML so screen readers perceive the full context — including which price has been replaced — without relying on visual strikethrough alone.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Review the sale price examples below. With a screen reader, navigate to each price pair and listen to how the original and sale prices are announced. Notice that the original price is not simply read as a number — its semantic role as a removed or outdated value is communicated through the element used to mark it up.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The original price uses a semantic deleted-text element, which some screen readers announce as "deleted" or "strikethrough", conveying that this is the old, no-longer-valid price.</li>
+          <li>The sale price uses a complementary inserted-text element or is otherwise distinguished so its role as the current price is clear programmatically.</li>
+          <li>Neither price relies on color alone (e.g., red for sale price) to communicate its role — the text and markup carry the meaning independently of styling.</li>
+          <li>Both prices are rendered as real text, allowing them to be read by screen readers and resized with browser zoom without loss of information.</li>
+          <li>Visible labels such as "Was:" and "Now:" may supplement the semantic markup to reinforce the relationship in plain language for all users.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Price container:</strong> The wrapper that holds the original and sale price together, establishing them as a related unit.</li>
+          <li><strong>Original price:</strong> The previous, higher price marked up with the deleted text element to indicate it is no longer current; may also carry a "Was:" prefix label.</li>
+          <li><strong>Sale price:</strong> The current discounted price, marked up with the inserted text element or otherwise distinguished as the active price; may carry a "Now:" prefix label.</li>
+          <li><strong>Currency indicator:</strong> The symbol or code identifying the monetary unit, included within the accessible text of each price value.</li>
+          <li><strong>Discount badge (optional):</strong> A label such as "Save 30%" that supplements the price pair with a plain-language savings summary.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The original price uses the deleted text element so that screen readers that support this element can communicate its "removed" or "outdated" semantic meaning.</li>
+          <li>The sale price uses the inserted text element or is clearly labeled as the current price through visible text or an accessible name, not color alone.</li>
+          <li>Both prices are real text, not images, so they scale with browser text settings and are readable by any assistive technology.</li>
+          <li>Color is not the sole differentiator between the original and sale price — structural markup, labels, or accessible names provide the distinction independently.</li>
+          <li>If a discount percentage or savings amount is shown, it is also expressed as text so screen reader users receive the full promotional context.</li>
+          <li>The price pair maintains a logical reading order: original price first, then sale price, matching the natural "was $X, now $Y" narrative.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Applying a CSS text-decoration strikethrough to the original price instead of using the deleted text element, so screen readers have no semantic cue that the price is outdated.</li>
+          <li>Using only red color to signal the sale price and only gray color for the original price, making the distinction invisible to users with color-vision differences.</li>
+          <li>Rendering prices as images — such as a promotional banner — making them impossible to read with a screen reader or resize with browser zoom.</li>
+          <li>Placing the sale price before the original price in the DOM, creating a confusing reading order where the current price is announced before users know there was a higher original price.</li>
+          <li>Omitting currency context from either price value so screen readers announce bare numbers without the unit they represent.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Sale prices are a primary driver of purchase decisions. When a screen reader user hears two numbers without understanding which is current and which is outdated — or cannot tell that a discount exists at all — they are denied the promotional information that motivates many purchases. Relying on red color and strikethrough styling alone excludes users with color-vision differences and those browsing in high-contrast mode. Semantic sale-price markup ensures that every user, regardless of how they access the page, receives the complete "was/now" context and can make an informed, confident purchase decision.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -42,10 +107,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -54,7 +119,8 @@
             <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
           </li>
         </ul>
-      </div>
+      </section>
+
     </main>
 
     <footer>

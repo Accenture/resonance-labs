@@ -3,38 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cookie Consent Demo - Resonance</title>
+    <title>Cookie Consent - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="cookie-consent.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
+    <header>
+      <a href="../../index.html" class="back-link">
+        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
     <main>
-      <div class="section">
+      <section>
         <h1>Cookie Consent</h1>
-        <p class="component-tagline">An accessible cookie consent banner with granular preference controls.</p>
+        <p class="component-tagline">An accessible cookie consent banner with granular preference controls that lets users make informed choices about data collection.</p>
+      </section>
+
+      <section>
+        <h2>Demo</h2>
+        <p>Review the cookie consent banner below. Use <kbd>Tab</kbd> to move between the preference toggles and action buttons. Toggle individual cookie categories on or off, then use the primary action buttons to accept, reject, or save your preferences. Notice how the banner communicates its purpose and all controls are reachable without a mouse.</p>
         <div class="mount"></div>
-      </div>
-      <div class="section">
+      </section>
+
+      <section>
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The banner is announced as a landmark or region so screen reader users can navigate to it directly.</li>
+          <li>Each cookie category toggle has a clear label and communicates its current on/off state to assistive technology.</li>
+          <li>All action buttons — accept, reject, and save preferences — are reachable and operable with the keyboard alone.</li>
+          <li>Required categories are marked as disabled and their locked state is communicated to screen readers.</li>
+          <li>After a preference action is taken, the banner is dismissed and focus returns to a logical location in the page.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Banner container</strong> — The outermost region, typically marked with <code>role="dialog"</code> or an appropriate landmark, that holds all consent content.</li>
+          <li><strong>Heading</strong> — A descriptive title that names the purpose of the banner and serves as the accessible name for the region.</li>
+          <li><strong>Description text</strong> — A plain-language explanation of what cookies are used for and how preferences affect the experience.</li>
+          <li><strong>Category toggles</strong> — Individual switch controls for each cookie category (for example, analytics, marketing), each with a label and state.</li>
+          <li><strong>Action buttons</strong> — Primary and secondary buttons for bulk actions such as "Accept All," "Reject All," and "Save Preferences."</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The banner must be identified as a distinct region so screen reader users are aware of its presence without having to stumble across it.</li>
+          <li>Each toggle must communicate its current state — on or off — to assistive technology, not just visually.</li>
+          <li>Mandatory cookie categories must be marked as non-interactive and that restriction must be conveyed programmatically, not only through visual styling.</li>
+          <li>All interactive controls must be operable using only a keyboard, in a logical tab order.</li>
+          <li>When the banner is dismissed, focus must move to a predictable location so keyboard users are not stranded.</li>
+          <li>The banner must not trap focus — users should be able to bypass it and return to page content if they choose to act later.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Rendering the banner as a purely visual overlay with no ARIA landmark or role, making it invisible to screen reader navigation.</li>
+          <li>Using CSS-only toggle switches without underlying checkboxes or buttons, so the state is never communicated to assistive technology.</li>
+          <li>Disabling required-category toggles only with a visual style change rather than a <code>disabled</code> attribute or <code>aria-disabled</code>, leaving the restriction unexplained.</li>
+          <li>Not managing focus when the banner closes, leaving keyboard users positioned at the top of the page or in an undefined location.</li>
+          <li>Writing button labels like "OK" or "Yes" that have no meaning out of context, making it impossible to distinguish accept from reject by label alone.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why This Matters</h2>
+        <p>Cookie consent is a legal requirement in many jurisdictions, and inaccessible consent mechanisms mean that users with disabilities cannot exercise their data privacy rights on equal terms. A screen reader user who cannot operate the preference toggles has no meaningful choice — they are effectively forced into whatever the default configuration is. Beyond the legal risk, inaccessible consent flows undermine user trust and signal that the product was not designed with all users in mind.</p>
+      </section>
+
+      <section>
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section>
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
         </div>
-        <div class="code-preview" id="panel-html" role="tabpanel"><pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre><button class="code-preview__copy" data-target="code-html">Copy Code</button></div>
-        <div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div>
-        <div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div>
-      </div>
-      <div class="section">
-        <h2>Resources</h2>
-        <ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul>
-      </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
     </main>
-    <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>

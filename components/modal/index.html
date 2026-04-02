@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modal Demo - Resonance</title>
+    <title>Modal - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="modal.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +22,78 @@
       </a>
     </header>
     <main>
-      <div class="section">
-        <h1>Modal</h1>
-        <p class="component-tagline">A modal dialog overlays the page to present content or ask for a decision, blocking interaction with the rest of the interface until it is dismissed. Focus is trapped inside the dialog, and pressing Escape closes it. Modals should be used sparingly — only when the user's immediate attention is required.</p>
-        <div class="mount"></div>
-      </div>
 
-      <div class="section">
+      <section class="section">
+        <h1>Modal</h1>
+        <p class="component-tagline">A modal dialog overlays the page to present content or request a decision, blocking interaction with the rest of the interface until it is dismissed.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Click the "Open Modal" button to launch the dialog. While the modal is open, try pressing Tab to cycle through focusable elements and Escape to close it. Confirm that focus returns to the trigger button after the modal closes.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Focus moves into the modal immediately when it opens, landing on the first focusable element.</li>
+          <li>Tab and Shift+Tab cycle only through elements inside the modal — focus cannot escape to the page behind it.</li>
+          <li>Pressing Escape closes the modal and returns focus to the element that triggered it.</li>
+          <li>Screen readers announce the dialog role and its accessible name when it opens.</li>
+          <li>The content behind the modal is inert — it cannot be clicked, scrolled, or reached by keyboard while the dialog is open.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Backdrop / overlay:</strong> The dimmed layer covering the page that signals the modal is active and prevents interaction with background content.</li>
+          <li><strong>Dialog container:</strong> The panel that holds all modal content, marked up with the dialog role and an accessible name.</li>
+          <li><strong>Dialog title:</strong> The heading inside the dialog that names the purpose of the modal, used as its accessible label.</li>
+          <li><strong>Body content:</strong> The main message, form, or information displayed within the dialog.</li>
+          <li><strong>Action buttons:</strong> Buttons that confirm, cancel, or otherwise resolve the modal's purpose.</li>
+          <li><strong>Close button:</strong> An explicit control, typically in the header area, that dismisses the modal.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The dialog element must have an accessible name, typically derived from its visible title.</li>
+          <li>When the modal opens, focus must move inside it automatically — do not leave focus on the trigger or on the document body.</li>
+          <li>Focus must be trapped within the modal while it is open; Tab and Shift+Tab must not allow focus to reach elements behind the overlay.</li>
+          <li>Pressing Escape must close the modal and return focus to the element that originally opened it.</li>
+          <li>Background content must be hidden from assistive technologies while the modal is open.</li>
+          <li>All interactive controls inside the modal must be reachable and operable by keyboard.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Not trapping focus inside the modal, allowing keyboard users to Tab into hidden background content.</li>
+          <li>Failing to return focus to the trigger when the modal closes, leaving keyboard users at the top of the page.</li>
+          <li>Using a div instead of a proper dialog element or not applying the correct role, so screen readers do not identify it as a dialog.</li>
+          <li>Omitting an accessible name on the dialog, so screen readers announce it without context.</li>
+          <li>Relying solely on clicking the backdrop to close the modal, with no keyboard-accessible dismissal path.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Modals interrupt the normal page flow and demand a user's attention. When focus management is broken, keyboard and screen reader users can become disoriented — either stuck inside a dialog they cannot exit or dropped back at the top of the page after closing one. Proper focus trapping and restoration ensure that modals feel predictable and safe for everyone, preventing the frustration of losing one's place in a complex workflow.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -46,10 +112,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -62,7 +128,8 @@
             >
           </li>
         </ul>
-      </div>
+      </section>
+
     </main>
 
     <footer>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Select Demo - Resonance</title>
+    <title>Select - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="select.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +22,78 @@
       </a>
     </header>
     <main>
-      <div class="section">
-        <h1>Select</h1>
-        <p class="component-tagline">A select control presents a dropdown list from which the user picks a single value. The native select element provides reliable keyboard interaction and screen reader support across platforms. Custom styling is kept minimal to preserve the built-in behavior.</p>
-        <div class="mount"></div>
-      </div>
 
-      <div class="section">
+      <section class="section">
+        <h1>Select</h1>
+        <p class="component-tagline">A select control presents a dropdown list from which users choose a single value, leveraging the native element for reliable keyboard interaction and screen reader support.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Tab to the select control and press Space or Enter to open the option list. Use the arrow keys to move through options and press Enter or Space to confirm a selection. Verify that both the field label and the chosen option are announced by a screen reader.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The select has a persistent visible label that is programmatically associated with the control.</li>
+          <li>The control is reachable by Tab and fully operable by keyboard — no mouse is needed to open, navigate, or select an option.</li>
+          <li>The currently selected option is communicated to screen readers both when the control receives focus and after a selection is made.</li>
+          <li>If a default placeholder option is present, it is not selectable as a real value after the user has made a choice.</li>
+          <li>The select respects browser and OS conventions for the option list, ensuring consistent behavior across platforms.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Field label:</strong> The visible text label linked to the select control that describes what the user is choosing.</li>
+          <li><strong>Select element:</strong> The native HTML select control that renders the collapsed trigger and manages the option list.</li>
+          <li><strong>Trigger / collapsed state:</strong> The visible button-like surface showing the current selection that opens the option list when activated.</li>
+          <li><strong>Option list:</strong> The expanded dropdown containing all available choices, rendered by the browser or operating system.</li>
+          <li><strong>Option items:</strong> The individual selectable values within the list, each with a visible text label.</li>
+          <li><strong>Option groups:</strong> Optional groupings of related options under a shared non-selectable heading, created with the optgroup element.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The select control must have a visible label that is programmatically associated using a for/id pairing.</li>
+          <li>The control must be operable by keyboard: Tab to focus, Space or Enter to open, arrow keys to navigate options, and Enter or Space to confirm.</li>
+          <li>The selected option must be communicated to screen readers when focus enters the control and when the selection changes.</li>
+          <li>Placeholder options that represent no real value should carry an empty value and be disabled to prevent them from being re-selected.</li>
+          <li>Groupings of options must use the optgroup element with a label attribute so the category name is announced for screen reader users.</li>
+          <li>An error state, if present, must be communicated through text and linked to the select — not conveyed by a border color change alone.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a custom div-based dropdown instead of a native select element, losing all built-in keyboard and screen reader support.</li>
+          <li>Omitting a visible label and relying on a placeholder option as the only identifier, which disappears after the user makes a selection.</li>
+          <li>Failing to associate the label with the select programmatically, so screen readers do not announce the field's purpose.</li>
+          <li>Including a placeholder option that can be re-selected as a valid value, causing ambiguous or empty submissions.</li>
+          <li>Indicating an error state only through a red border color, with no text message linked to the control.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>The native select element is one of the most universally supported form controls across browsers, operating systems, and assistive technologies. When teams replace it with custom-built dropdowns, they take on the full responsibility of replicating every keyboard interaction and screen reader behavior — a burden that is often underestimated and leads to broken experiences. Retaining the native element with thoughtful labeling and option structure delivers the best accessibility outcome for the least implementation effort.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -46,10 +112,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -62,7 +128,8 @@
             >
           </li>
         </ul>
-      </div>
+      </section>
+
     </main>
 
     <footer>

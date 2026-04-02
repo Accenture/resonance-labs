@@ -36,6 +36,57 @@
   }
 }
 
+/* Info sections (homepage) */
+.info-section {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+  max-width: 75ch;
+}
+
+.info-section__desc {
+  margin-bottom: 0.75rem;
+}
+
+.info-section__note {
+  margin-top: 1rem;
+  font-size: var(--font-size-small);
+  color: var(--text-color-muted);
+}
+
+/* Component search */
+.component-search {
+  margin: 2rem 0 0;
+}
+
+.component-search__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.component-search__input {
+  width: 100%;
+  max-width: 480px;
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color-input);
+  background: var(--surface-color);
+  color: var(--text-color);
+}
+
+.component-search__input:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.component-search__status {
+  margin-top: 0.5rem;
+  min-height: 1.4em;
+  font-size: var(--font-size-small);
+  color: var(--text-color-muted);
+}
+
 /* Section titles */
 .section-title {
   font-size: 1.5rem;

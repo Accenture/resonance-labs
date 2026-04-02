@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Card List Demo - Resonance</title>
+    <title>Card List - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="card-list.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -23,8 +20,71 @@
     <main>
       <div class="section">
         <h1>Card List</h1>
-        <p class="component-tagline">A card list presents a collection of cards as a structured group, typically in a vertical or grid layout. Each card links to a detail view, and the entire card surface is clickable via a CSS overlay technique. This pattern is common for listing articles, products, or resources.</p>
+        <p class="component-tagline">A structured group of cards presented in a vertical or grid layout, where each card links to a detail view with a single keyboard-accessible link and a large clickable surface.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Tab through the card list and observe that each card contributes exactly one stop to the tab order. Notice how the list structure communicates the number of items to screen reader users, and how each card's link is labeled distinctly from the others.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The list container communicates the total number of cards to screen reader users</li>
+          <li>Each card contributes a single focusable element, keeping the tab sequence efficient</li>
+          <li>Every card's link is uniquely and descriptively labeled — no two cards share the same accessible name</li>
+          <li>The visual grouping of cards into a list is reflected semantically in the markup</li>
+          <li>Keyboard focus order follows the visual reading order of the cards</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>List Container</strong> — a semantic list element that groups all cards and communicates their count and relationship to screen readers</li>
+          <li><strong>List Item</strong> — the wrapper for each individual card within the list, establishing it as a discrete member of the group</li>
+          <li><strong>Card</strong> — the individual content unit containing an image, title, description, and a primary link that covers the full card surface</li>
+          <li><strong>Primary Link</strong> — the single interactive element per card, with a descriptive accessible name that identifies the card's destination uniquely within the list</li>
+          <li><strong>Section Heading</strong> — an optional heading above the card list that names the collection and helps users navigate to it by landmark or heading</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Use a semantic list element to wrap the collection of cards so assistive technology communicates the total item count and list structure</li>
+          <li>Ensure each card has exactly one keyboard-reachable link so users can move through the list efficiently without encountering redundant tab stops</li>
+          <li>Give each card's link a unique and descriptive accessible name that identifies its specific destination within the list</li>
+          <li>Maintain a focus order that matches the visual layout so keyboard users and sighted users encounter cards in the same sequence</li>
+          <li>Ensure the list is preceded by a heading or label that gives context for what the card collection represents</li>
+          <li>Handle card images as decorative when the card title already conveys the card's subject, to avoid redundant announcements</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a div container instead of a semantic list, causing screen readers to miss the item count and grouping information</li>
+          <li>Giving all cards the same link text such as "Read more," making it impossible for screen reader users to distinguish between items when navigating by links</li>
+          <li>Including multiple links per card that all point to the same destination, requiring extra tab stops for no informational benefit</li>
+          <li>Placing interactive elements inside the card in a DOM order that does not match the visual layout, creating a confusing focus sequence</li>
+          <li>Omitting a heading or label for the card list, leaving users without context for what the collection represents</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>A card list is a collection, and collections carry meaning for screen reader users — the item count tells them how much content to expect, the list structure tells them they can navigate item by item, and unique link names tell them what each item leads to. When these structural and naming conventions are absent, screen reader users must listen to or read through every card's full content to understand what is available, rather than scanning efficiently by links. For keyboard users, redundant links and mismatched DOM order can make navigating a card list exhausting. Getting the structure right respects all users' time and effort.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,18 +109,10 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
-          <li>
-            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
-          </li>
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
         </ul>
       </div>
     </main>

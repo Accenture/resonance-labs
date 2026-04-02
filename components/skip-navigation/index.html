@@ -3,21 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skip Navigation Demo - Resonance</title>
+    <title>Skip Navigation - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="skip-navigation.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
     <main>
+
       <div class="section">
         <h1>Skip Navigation</h1>
-        <p class="component-tagline">A skip navigation link allows keyboard and assistive technology users to bypass repetitive content and jump directly to the main content area. It is visually hidden by default and becomes visible when it receives keyboard focus, ensuring it is the first focusable element in the tab order.</p>
+        <p class="component-tagline">A skip navigation link allows keyboard and assistive technology users to bypass repetitive content and jump directly to the main content area.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Press <strong>Tab</strong> to move keyboard focus into this page. The skip link will appear at the top of the screen when it receives focus. Press <strong>Enter</strong> to activate it and observe where focus lands.</p>
         <div class="mount"></div>
       </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The skip link is invisible until it receives keyboard focus, then becomes fully visible.</li>
+          <li>It is always the very first focusable element in the tab order, before any navigation or header content.</li>
+          <li>Activating the link moves focus directly to the main content landmark, skipping all repeated header links.</li>
+          <li>Screen readers announce the link text and its destination when it receives focus.</li>
+          <li>Mouse users are unaffected — the link does not appear during pointer interaction.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Skip link anchor:</strong> An <code>&lt;a&gt;</code> element with an href pointing to the main content landmark's ID, placed as the first element in the document body.</li>
+          <li><strong>Visually hidden state:</strong> CSS that positions the link off-screen or clips it to zero size until it is focused.</li>
+          <li><strong>Focus-visible state:</strong> Styles applied on <code>:focus</code> or <code>:focus-visible</code> that restore the link to a fully visible, high-contrast position on screen.</li>
+          <li><strong>Target landmark:</strong> The <code>&lt;main&gt;</code> element (or a container with an appropriate <code>id</code>) that the link points to and where focus lands after activation.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The skip link must be the first focusable element on the page, appearing before the site header and navigation.</li>
+          <li>The link must become visible when it receives keyboard focus so sighted keyboard users can see and activate it.</li>
+          <li>Activating the link must move focus to the main content area, not just scroll the page visually.</li>
+          <li>The link text must clearly describe the destination, such as "Skip to main content."</li>
+          <li>The target element must be reachable by the browser's focus mechanism — if it is a non-interactive element, it must have <code>tabindex="-1"</code> to accept programmatic focus.</li>
+          <li>The link must remain operable when CSS is disabled or overridden by user stylesheets.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Making the link permanently hidden with <code>display: none</code> or <code>visibility: hidden</code>, which removes it from focus order entirely.</li>
+          <li>Placing the skip link after other focusable elements, so users must tab through navigation before reaching it.</li>
+          <li>Scrolling the page to the target visually but failing to move keyboard focus, leaving screen reader and keyboard users stranded at the top.</li>
+          <li>Using vague link text such as "Skip" without indicating the destination.</li>
+          <li>Targeting an element that cannot receive focus, causing the link to appear broken when activated.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Keyboard-only users and screen reader users must navigate through every link and interactive element in the site header before reaching the page's main content — on every single page load. Without a skip link, a user with motor disabilities or someone relying on a switch device may have to press Tab dozens of times just to reach the content they came for. This creates a frustrating, time-consuming experience that effectively blocks access to the page. A properly implemented skip link solves this with a single keypress and costs almost nothing to build.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </div>
+
       <div class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
@@ -29,10 +94,12 @@
         <div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div>
         <div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div>
       </div>
+
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul>
       </div>
+
     </main>
     <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>

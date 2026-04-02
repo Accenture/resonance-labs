@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Combobox Demo - Resonance</title>
+    <title>Combobox - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="combobox.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +22,76 @@
       </a>
     </header>
     <main>
-      <div class="section">
+      <section>
         <h1>Combobox</h1>
-        <p class="component-tagline">A combobox combines a text input with a dropdown listbox, allowing users to either type a value or select from the available options. As the user types, the list filters to show matching results. This pattern bridges the gap between free-text input and constrained selection.</p>
-        <div class="mount"></div>
-      </div>
+        <p class="component-tagline">A combobox combines a text input with a dropdown listbox, letting users either type a value or select from filtered suggestions.</p>
+      </section>
 
-      <div class="section">
+      <section>
+        <h2>Demo</h2>
+        <p>Click or tab into the input field and start typing to filter the list of options. Use the <kbd>Down Arrow</kbd> key to move into the suggestion list, <kbd>Up</kbd> and <kbd>Down</kbd> to navigate between options, <kbd>Enter</kbd> to select one, and <kbd>Escape</kbd> to dismiss the list and return focus to the input.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section>
+        <h2>What to Observe</h2>
+        <ul>
+          <li>As you type, the suggestion list updates and screen readers announce the number of available options.</li>
+          <li>Arrow key navigation moves through the list without losing the typed value in the input.</li>
+          <li>The currently highlighted option is announced by assistive technology as focus moves through the list.</li>
+          <li>Pressing <kbd>Escape</kbd> closes the list and returns focus cleanly to the text input.</li>
+          <li>Selecting an option populates the input field and closes the list, communicating the completed selection.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Text input</strong> — The editable field where the user types to filter options; carries <code>role="combobox"</code> and controls the popup visibility via <code>aria-expanded</code>.</li>
+          <li><strong>Label</strong> — A <code>&lt;label&gt;</code> associated with the input that names the control for all users.</li>
+          <li><strong>Listbox popup</strong> — The dropdown container with <code>role="listbox"</code> that holds the filterable options.</li>
+          <li><strong>Option items</strong> — Individual items inside the listbox, each carrying <code>role="option"</code> and an <code>aria-selected</code> state.</li>
+          <li><strong>Toggle button</strong> — An optional button to open or close the popup without typing, often represented as a chevron icon.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The input must carry <code>aria-expanded</code> to communicate whether the suggestion list is open or closed.</li>
+          <li>The active option in the list must be indicated via <code>aria-activedescendant</code> on the input, so screen readers track focus without moving DOM focus out of the input.</li>
+          <li>Each option must have <code>role="option"</code> and an <code>aria-selected</code> attribute that updates when the option is chosen.</li>
+          <li>The number of available suggestions should be announced when the list opens or updates.</li>
+          <li>Keyboard users must be able to open, navigate, select from, and close the list without a mouse.</li>
+          <li>If no results match the typed value, that empty state must be communicated rather than silently hiding all options.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Omitting <code>aria-expanded</code> on the input, leaving screen reader users unaware that a suggestion list exists.</li>
+          <li>Moving DOM focus into the listbox instead of using <code>aria-activedescendant</code>, which clears the typed text and disorients users.</li>
+          <li>Filtering options visually but not updating the accessible list, so screen readers announce stale or hidden items.</li>
+          <li>Failing to handle <kbd>Escape</kbd>, trapping keyboard users inside an open list they cannot dismiss.</li>
+          <li>Using a plain <code>&lt;ul&gt;</code> without ARIA roles, making the suggestion list invisible to assistive technology.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why This Matters</h2>
+        <p>Comboboxes are frequently used in search bars, address fields, and product filters — high-traffic interactions where inaccessibility has a large impact. When the ARIA states are missing or incorrect, screen reader users cannot tell whether a list is open, which option is highlighted, or whether their selection was accepted. This effectively prevents them from completing tasks that sighted users accomplish in seconds, reinforcing a two-tiered experience on the most visible parts of a product.</p>
+      </section>
+
+      <section>
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section>
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -46,10 +110,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -62,7 +126,7 @@
             >
           </li>
         </ul>
-      </div>
+      </section>
     </main>
 
     <footer>

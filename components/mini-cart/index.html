@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini Cart Demo - Resonance</title>
+    <title>Mini Cart - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="mini-cart.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -17,13 +18,78 @@
       </a>
     </header>
     <main>
-      <div class="section">
-        <h1>Mini Cart</h1>
-        <p class="component-tagline">A lightweight flyout cart panel triggered by a button in the page header. The panel is non-modal so the rest of the page remains operable. Item counts, removals, and state changes are announced to assistive technology via live regions.</p>
-        <div class="mount"></div>
-      </div>
 
-      <div class="section">
+      <section class="section">
+        <h1>Mini Cart</h1>
+        <p class="component-tagline">A lightweight flyout cart panel that opens from the page header, keeping the rest of the page accessible and operable while item counts and removals are announced to assistive technology.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Click the cart trigger button to open the mini cart panel. Once open, try removing an item and observe how the item count and total update. Press Escape or click outside the panel to close it. Use the keyboard to verify that focus moves into the panel on open and returns to the trigger button on close.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Opening the panel moves keyboard focus inside it, so users do not have to Tab through the entire page to reach the cart contents.</li>
+          <li>Closing the panel — whether by pressing Escape, using the close button, or clicking outside — returns focus to the trigger button that opened it.</li>
+          <li>The cart is non-modal: the rest of the page remains operable and visible, and background content is not made inert.</li>
+          <li>Removing an item from the mini cart triggers a live-region announcement of the updated item count so screen reader users are informed immediately.</li>
+          <li>The trigger button badge that shows the item count is a decorative count only; the button's accessible name conveys the count in text (e.g., "Cart, 3 items").</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Cart trigger button:</strong> A header button that opens and closes the mini cart panel; its accessible name includes the current item count.</li>
+          <li><strong>Item count badge:</strong> A visual indicator overlaid on the cart icon showing the number of items; decorative and backed by text in the button's accessible name.</li>
+          <li><strong>Mini cart panel:</strong> The flyout container that holds the item list, order summary, and action buttons; it is non-modal and does not trap focus.</li>
+          <li><strong>Line item:</strong> A compact row displaying a product's image, name, quantity, and price, along with a remove action.</li>
+          <li><strong>Remove button:</strong> Deletes a line item from the cart; its accessible name includes the product name to distinguish it from other remove buttons.</li>
+          <li><strong>Live region:</strong> An ARIA live region that announces item removals and updated totals to screen readers without requiring manual navigation.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>When the panel opens, focus moves to its heading or first focusable element so keyboard and screen reader users can immediately interact with cart contents.</li>
+          <li>When the panel closes, focus returns to the cart trigger button that opened it, preserving the user's place in the page.</li>
+          <li>The panel does not trap focus — Tab can move out of it into the rest of the page, reinforcing the non-modal nature of the control.</li>
+          <li>Each remove button uses a unique accessible name that includes the product name, preventing all remove buttons from sounding identical to screen reader users.</li>
+          <li>Item removal and total changes are communicated via a polite live region, giving users feedback without interrupting other announcements.</li>
+          <li>The cart trigger button's accessible name reflects the current item count so screen reader users can check their cart status without opening the panel.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Failing to move focus into the panel when it opens, forcing keyboard users to Tab through the entire page before they can interact with cart contents.</li>
+          <li>Not returning focus to the trigger button on close, leaving keyboard users stranded at an unpredictable location in the document.</li>
+          <li>Implementing the panel as a modal (trapping focus and using role="dialog") when the page behind it remains fully visible and operable, creating a confusing modal experience.</li>
+          <li>Using generic "Remove" labels on all remove buttons so screen reader users cannot tell which item they are about to delete.</li>
+          <li>Omitting a live region so that item removal produces no screen reader feedback and users must navigate away to confirm the action took effect.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>The mini cart is often the fastest path to checkout, so its accessibility directly affects whether users with disabilities can complete a purchase. A keyboard user who cannot get focus into the panel, or who loses their place in the page when it closes, faces a significant barrier at the most critical step of the shopping journey. Screen reader users who receive no feedback when removing an item may remove the wrong product or repeat the action unnecessarily. A well-implemented mini cart ensures that every user can review and manage their cart quickly and with confidence.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -42,10 +108,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -54,7 +120,8 @@
             <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
           </li>
         </ul>
-      </div>
+      </section>
+
     </main>
 
     <footer>

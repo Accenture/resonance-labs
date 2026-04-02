@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Gallery Demo - Resonance</title>
+    <title>Image Gallery - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="image-gallery.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +18,78 @@
       </a>
     </header>
     <main>
-      <div class="section">
-        <h1>Image Gallery</h1>
-        <p class="component-tagline">An accessible image gallery with keyboard-navigable thumbnails, previous/next controls, and a live region that announces the current image position to assistive technology.</p>
-        <div class="mount"></div>
-      </div>
 
-      <div class="section">
+      <section class="section">
+        <h1>Image Gallery</h1>
+        <p class="component-tagline">An accessible product image gallery with keyboard-navigable thumbnails, previous/next controls, and a live region that announces the current image position to assistive technology.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Click the Previous and Next buttons to cycle through the main product image. Click any thumbnail to jump directly to that image. Use the keyboard — Tab to reach the controls, then Enter or Space to activate them — and listen for the position announcement that updates as images change.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The main image has a descriptive alt text that changes as each new image is displayed, conveying the visual content to screen reader users.</li>
+          <li>A live region announces the current image position (e.g., "Image 2 of 5") each time the displayed image changes.</li>
+          <li>Thumbnail buttons each have an accessible name indicating what they show, so users can choose a specific view without activating it first.</li>
+          <li>The currently active thumbnail is indicated both visually and programmatically, allowing screen reader users to identify which image is selected.</li>
+          <li>Previous and Next buttons are disabled at the boundaries and communicate their disabled state to assistive technology, not just visually.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Main image:</strong> The large featured product image displayed in the gallery viewport; its alt text reflects the specific view shown.</li>
+          <li><strong>Previous button:</strong> Navigates to the preceding image in the set; disabled when the first image is active.</li>
+          <li><strong>Next button:</strong> Navigates to the following image in the set; disabled when the last image is active.</li>
+          <li><strong>Thumbnail strip:</strong> A row of smaller images representing each item in the gallery; each thumbnail is a focusable button.</li>
+          <li><strong>Position live region:</strong> A visually displayed or visually hidden element that announces the current image index and total count to screen readers.</li>
+          <li><strong>Selected thumbnail indicator:</strong> A visual and programmatic marker on the thumbnail that corresponds to the currently shown main image.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The main image's alt text updates programmatically each time the active image changes, ensuring screen reader users always receive a description of what is displayed.</li>
+          <li>A polite live region announces the image position (e.g., "Image 3 of 5") after each navigation action so users can track their place in the gallery.</li>
+          <li>Each thumbnail button carries an accessible name that describes the view it represents (e.g., "Side view") rather than generic labels like "thumbnail 2".</li>
+          <li>The currently selected thumbnail is marked with a programmatic selected or pressed state so it is distinguishable by screen reader users, not just visually.</li>
+          <li>Previous and Next buttons communicate their disabled state both visually and to assistive technology when the gallery is at its first or last image.</li>
+          <li>All controls are reachable and operable by keyboard with a natural tab order: previous, thumbnails, next.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a static or empty alt attribute on the main image so that it never describes the currently displayed photo, leaving screen reader users with no information.</li>
+          <li>Implementing thumbnails as styled divs or images without wrapping them in buttons, making them unreachable by keyboard.</li>
+          <li>Omitting a live region so that image transitions produce no feedback and users must navigate to the main image to discover what changed.</li>
+          <li>Visually disabling Previous and Next at the boundaries without setting the disabled attribute, so keyboard users can still Tab to and activate a broken control.</li>
+          <li>Relying solely on a highlighted border to mark the active thumbnail, which becomes invisible for users who cannot distinguish the highlight color.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Product images are often the most persuasive content on a product detail page. A blind shopper who receives no description of the currently displayed image — or who cannot navigate the gallery at all — is denied the same product information that sighted users take for granted. Inadequate live-region feedback means users must hunt through the page to confirm that navigation worked. Accessible image galleries give every user the ability to inspect a product from multiple angles, read each view's description, and make an informed purchase decision.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -46,23 +108,20 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
           </li>
           <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
           </li>
         </ul>
-      </div>
+      </section>
+
     </main>
 
     <footer>

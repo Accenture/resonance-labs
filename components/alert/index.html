@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alert Demo - Resonance</title>
+    <title>Alert - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="alert.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -20,11 +21,73 @@
       <div class="section">
         <h1>Alert</h1>
         <p class="component-tagline">An inline notification that announces important information automatically via a live region, without requiring user interaction.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Trigger an alert using the available controls. Observe how the message appears visually and listen for how a screen reader announces it without any focus change or user action required.</p>
         <div class="mount"></div>
       </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The alert message is announced automatically by screen readers when it appears</li>
+          <li>No focus shift occurs — the user's current position remains unchanged</li>
+          <li>The alert container is present in the DOM even before content is injected</li>
+          <li>Different alert types (such as error or success) are visually and semantically distinct</li>
+          <li>Dismissible alerts remove themselves cleanly without disrupting focus</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Live Region Container</strong> — the element with a live region role that is present in the DOM before any content is injected, allowing the browser to detect subsequent changes</li>
+          <li><strong>Message Text</strong> — the content injected into the live region that will be announced by assistive technology</li>
+          <li><strong>Status Icon</strong> — an optional visual icon indicating alert type (informational, success, warning, error); decorative icons should be hidden from assistive technology</li>
+          <li><strong>Dismiss Button</strong> — an optional interactive control to close the alert, which must have an accessible name</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Use a live region role so that assistive technology announces the message as soon as it appears, without requiring a focus change</li>
+          <li>Ensure the live region container is already in the DOM when the page loads; injecting the container and content simultaneously can prevent the announcement from firing</li>
+          <li>Use an assertive live region only for urgent, time-sensitive errors; use a polite live region for general status messages that should not interrupt the user</li>
+          <li>Do not move focus to the alert automatically — alerts are intended for passive announcements, not modal interruptions</li>
+          <li>If the alert includes a dismiss button, ensure it has a clear and descriptive accessible name so users understand what will be dismissed</li>
+          <li>Decorative icons or status indicators within the alert should be hidden from assistive technology to prevent redundant announcements</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Injecting the live region element and its content at the same time, which prevents many screen readers from detecting the change</li>
+          <li>Using an assertive live region for non-urgent messages, causing disruptive interruptions during normal user activity</li>
+          <li>Moving focus to the alert when it appears, which conflates alert behavior with dialog behavior</li>
+          <li>Omitting an accessible name on a dismiss button, leaving screen reader users without context for what the button does</li>
+          <li>Displaying alert content only through color or icon without accompanying text, which fails users who cannot perceive color</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Alerts are one of the most commonly misimplemented patterns in web interfaces. When the live region is injected at the same time as its content, screen readers often fail to announce anything — leaving blind and low-vision users completely unaware of critical status messages. Using an assertive live region inappropriately can interrupt users mid-task. Relying on color alone to convey alert type excludes users with color vision deficiencies. A correctly implemented alert reaches all users, regardless of how they access the page.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </div>
+
       <div class="section">
         <h2>Code</h2>
-        <!-- code tabs for HTML/CSS/JS with same pattern as button -->
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
@@ -43,8 +106,9 @@
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
       </div>
+
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
           <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>

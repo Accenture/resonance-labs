@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search Input Demo - Resonance</title>
+    <title>Search Input - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="search-input.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +22,78 @@
       </a>
     </header>
     <main>
-      <div class="section">
-        <h1>Search Input</h1>
-        <p class="component-tagline">A search input is a text field styled and semantically marked up for search queries. It typically includes a search icon, a clear button, and the search role on the input or its container. This pattern helps users quickly find content within a site or application.</p>
-        <div class="mount"></div>
-      </div>
 
-      <div class="section">
+      <section class="section">
+        <h1>Search Input</h1>
+        <p class="component-tagline">A search input is a semantically marked-up text field for submitting queries, typically including a visible label, search icon, and an accessible clear button.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Type a query into the search field and observe how the clear button appears. Try activating the clear button with a keyboard. Check that the field's purpose is announced by a screen reader when it receives focus, and that submitting with Enter triggers the search action.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The search field has a visible label that persists even when the input contains text.</li>
+          <li>The input is marked up as a search field so assistive technologies can surface it through the landmark list.</li>
+          <li>The clear button appears when the field has a value and disappears when the field is empty, removing it from the tab order when not needed.</li>
+          <li>The clear button has a descriptive accessible name so screen reader users know its purpose.</li>
+          <li>Pressing Enter in the field triggers the search action without requiring a separate button click.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Search landmark:</strong> The wrapping element with the search role that allows assistive technologies to identify and navigate to the search region.</li>
+          <li><strong>Field label:</strong> The visible text label associated with the input that persists at all times and describes the field's purpose.</li>
+          <li><strong>Search icon:</strong> A decorative visual indicator that reinforces the field's search purpose; hidden from screen readers.</li>
+          <li><strong>Text input:</strong> The input field where users type their query, marked up as a search input type.</li>
+          <li><strong>Clear button:</strong> An interactive button that clears the field contents, visible only when the field has a value.</li>
+          <li><strong>Submit button:</strong> An optional explicit control to submit the search, supplementing Enter key submission.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The search field must have a visible, persistent label — placeholder text must not serve as the only label.</li>
+          <li>The input or its container should carry the search landmark role so screen reader users can jump to it directly.</li>
+          <li>The clear button must only be present in the tab order when the field contains a value; when the field is empty it must not be reachable.</li>
+          <li>The clear button must have an accessible name that describes its action, not just an icon with no text.</li>
+          <li>The search icon, if decorative, must be hidden from assistive technologies so it is not announced redundantly.</li>
+          <li>Submitting the search must be possible by keyboard, either via Enter or a keyboard-accessible submit button.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using placeholder text as the only label, so the field's purpose disappears as soon as the user starts typing.</li>
+          <li>Leaving the clear button in the tab order even when the field is empty, adding an unnecessary stop for keyboard users.</li>
+          <li>Implementing the clear button as a non-interactive element such as a span, making it unreachable by keyboard.</li>
+          <li>Giving the clear button only an icon with no accessible name, so screen reader users hear "button" with no context about what it does.</li>
+          <li>Omitting the search landmark, so users cannot navigate directly to the search field from the page's landmark list.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Search is one of the most critical pathways users take to find content on a site or in an application. When the field has no persistent label, users who need the label most — those using screen readers or those with cognitive disabilities — lose their bearings as soon as they begin typing. A clear button that is inaccessible by keyboard traps users who cannot use a mouse with a field they cannot efficiently reset. Treating search as a first-class accessible component ensures that the fastest path to content is open to everyone.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>Resonance Specs enables consistent definition, validation, and testing of accessibility requirements across components.</p>
+        <p>If you'd like to learn more about Resonance Specs, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -46,10 +112,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -62,7 +128,8 @@
             >
           </li>
         </ul>
-      </div>
+      </section>
+
     </main>
 
     <footer>
