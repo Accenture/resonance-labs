@@ -264,6 +264,36 @@
     return nav;
   }
 
+  // ── Footer version ───────────────────────────────────────────────────────
+
+  function injectFooterVersion() {
+    var footer = document.querySelector('footer');
+    if (!footer) return;
+
+    var copyrightLine = footer.querySelector('p:last-of-type');
+    if (!copyrightLine) return;
+
+    fetch('../../package.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (pkg) {
+        if (!pkg || !pkg.version) return;
+
+        var existing = copyrightLine.querySelector('.site-version');
+        if (existing) {
+          existing.textContent = ' | Version v' + pkg.version;
+          return;
+        }
+
+        var marker = document.createElement('span');
+        marker.className = 'site-version';
+        marker.textContent = ' | Version v' + pkg.version;
+        copyrightLine.appendChild(marker);
+      })
+      .catch(function () {
+        // Keep footer unchanged if metadata cannot be loaded.
+      });
+  }
+
   // ── Init ─────────────────────────────────────────────────────────────────────
 
   function init() {
@@ -288,6 +318,8 @@
     // Prev/Next nav appended inside main, after all sections
     var prevNext = buildPrevNext(folder);
     if (prevNext) main.appendChild(prevNext);
+
+    injectFooterVersion();
 
     // Scroll active left nav item into view
     var activeLink = layout.querySelector('.sidebar-left__link--active');

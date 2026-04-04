@@ -18,6 +18,7 @@
         <div class="banner__text">
           <h1 class="banner__title">Accessible component patterns for enterprise teams</h1>
           <p class="banner__tagline">Resonance Labs provides accessible component patterns for real-world applications. Each component helps teams learn structure, behavior, and accessibility expectations. Content is designed for implementation learning and training.</p>
+          <p class="banner__meta"><span class="version-chip" id="site-version-chip">Version loading...</span></p>
         </div>
         <img class="banner__image" src="assets/images/banner-programming.svg" alt="" />
       </div>
@@ -505,10 +506,24 @@
     </main>
     <footer>
       <p><strong>Created and maintained by Accenture Song</strong></p>
-      <p>&copy; 2026 Accenture - Resonance</p>
+      <p>&copy; 2026 Accenture - Resonance <span class="site-version" id="site-version-footer"></span></p>
     </footer>
     <script>
       (function () {
+        function applyVersion(version) {
+          var chip = document.getElementById('site-version-chip');
+          var footer = document.getElementById('site-version-footer');
+          var text = version ? 'v' + version : 'Version unavailable';
+
+          if (chip) chip.textContent = text;
+          if (footer) footer.textContent = version ? ' | Version ' + text : '';
+        }
+
+        fetch('./package.json')
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (pkg) { applyVersion(pkg && pkg.version); })
+          .catch(function () { applyVersion(null); });
+
         var input = document.getElementById('component-search-input');
         var status = document.querySelector('.component-search__status');
         var cards = Array.from(document.querySelectorAll('.component-card'));

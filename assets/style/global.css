@@ -410,6 +410,10 @@ footer {
   border-top: 1px solid var(--border-color);
 }
 
+.site-version {
+  color: var(--text-color-muted);
+}
+
 header {
   margin-bottom: 2rem;
 }

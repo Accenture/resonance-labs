@@ -26,6 +26,21 @@
   color: var(--text-color-muted);
 }
 
+.banner__meta {
+  margin-top: 1rem;
+}
+
+.version-chip {
+  display: inline-block;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-color-strong);
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+}
+
 .banner__image {
   width: 280px;
   flex-shrink: 0;
