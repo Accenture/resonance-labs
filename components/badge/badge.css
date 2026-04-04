@@ -9,8 +9,8 @@
   align-items: center;
   gap: 4px;
   border-radius: 999px;
-  border: 1px solid var(--primary-color-hover);
-  padding: 4px 8px 4px 12px;
+  border: 2px solid var(--border-color);
+  padding: 4px 6px 4px 12px;
   background: var(--surface-color);
   font-size: 0.875rem;
   line-height: 1.4;

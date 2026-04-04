@@ -1,17 +1,7 @@
-/* Combobox example styles (minimal, copy/paste friendly) */
+/* Combobox component styles */
 
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.4;
-  margin: 24px;
-}
-
-h1 { margin: 0 0 16px; }
-section { margin: 24px 0; padding: 16px; border: 1px solid var(--border-color); border-radius: var(--border-radius); }
-label { display: inline-block; font-weight: 700; margin-bottom: 8px; }
-
-.hint { margin-top: 6px; color: var(--text-color); }
-.error { margin-top: 6px; font-weight: 700; color: var(--text-color-strong); }
+.combobox-demo .hint { margin-top: 6px; color: var(--text-color); }
+.combobox-demo .error { margin-top: 6px; font-weight: 700; color: var(--text-color-strong); }
 
 /* Focus: visible + high contrast */
 .combobox {

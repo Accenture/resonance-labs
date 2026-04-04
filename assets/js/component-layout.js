@@ -26,7 +26,6 @@
     { name: 'Modal',                  href: '../modal/index.html' },
     { name: 'Pagination',             href: '../pagination/index.html' },
     { name: 'Password Input Toggle',  href: '../password-input-toggle/index.html' },
-    { name: 'Pill',                   href: '../pill/index.html' },
     { name: 'Popover',                href: '../popover/index.html' },
     { name: 'Progress Bar',           href: '../progress-bar/index.html' },
     { name: 'Radio Button',           href: '../radio-button/index.html' },
@@ -66,11 +65,23 @@
     nav.className = 'sidebar-left';
     nav.setAttribute('aria-label', 'Component navigation');
 
+    // Skip link
+    var skip = document.createElement('a');
+    skip.className = 'sidebar-left__skip';
+    skip.href = '#main-content';
+    skip.textContent = 'Skip to main content';
+    nav.appendChild(skip);
+
+    // Scrollable inner wrapper
+    var scroll = document.createElement('div');
+    scroll.className = 'sidebar-left__scroll';
+    nav.appendChild(scroll);
+
     function buildGroup(label, items) {
       var groupHeading = document.createElement('p');
       groupHeading.className = 'sidebar-left__group';
       groupHeading.textContent = label;
-      nav.appendChild(groupHeading);
+      scroll.appendChild(groupHeading);
 
       var ul = document.createElement('ul');
       ul.className = 'sidebar-left__list';
@@ -90,7 +101,7 @@
         ul.appendChild(li);
       });
 
-      nav.appendChild(ul);
+      scroll.appendChild(ul);
     }
 
     buildGroup('Core', CORE);
@@ -258,6 +269,8 @@
   function init() {
     var main = document.querySelector('main');
     if (!main) return;
+
+    if (!main.id) main.id = 'main-content';
 
     var folder = getComponentFolder();
 

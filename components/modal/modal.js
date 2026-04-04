@@ -40,9 +40,7 @@
     trapFocus(e);
   }
 
-  window.__initComponent = function() {
-    openBtn?.addEventListener("click", open);
-    closeBtn?.addEventListener("click", close);
-    backdrop?.addEventListener("click", close);
-  };
+  openBtn?.addEventListener("click", open);
+  closeBtn?.addEventListener("click", close);
+  backdrop?.addEventListener("click", close);
 })();

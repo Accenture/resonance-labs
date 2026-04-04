@@ -9,6 +9,7 @@
   padding: 10px 12px;
   border: 1px solid;
   border-radius: var(--border-radius);
+  background: var(--background-color);
   user-select: none;
 }
 .dropdown__trigger:focus-visible {

@@ -67,6 +67,9 @@
   font-size: 1rem;
   cursor: pointer;
   min-height: 24px;
+  background: var(--primary-color);
+  color: var(--primary-color-inverse);
+  border: none;
 }
 
 .text-input__submit:focus-visible {

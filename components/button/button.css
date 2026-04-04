@@ -11,7 +11,7 @@
 
 .btn-demo {
   appearance: none;
-  border: 1px solid var(--border-color-strong);
+  border: 1px solid var(--border-color);
   background: var(--surface-color);
   color: var(--text-color-strong);
   /* border-radius: var(--border-radius); */
