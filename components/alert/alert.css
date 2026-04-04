@@ -64,10 +64,41 @@
   background: var(--alert-red-surface);
 }
 
+/* Dismissible variant */
+.alert--dismissible {
+  padding-right: 0.5rem;
+}
+
+.alert__dismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 0.25rem;
+  min-width: 28px;
+  min-height: 28px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--text-color-muted);
+  transition: background-color var(--transition-duration);
+}
+
+.alert__dismiss:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.alert__dismiss:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
 /* Trigger button */
 .alert-demo__trigger {
   appearance: none;
-  border: 1px solid var(--border-color-strong);
+  border: 1px solid var(--border-color);
   background: var(--surface-color);
   color: var(--text-color-strong);
   padding: 0.7rem 1rem;

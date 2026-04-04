@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="file-upload.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
     <script src="../../assets/js/component-layout.js" defer></script>
   </head>
@@ -43,14 +43,14 @@
       <section>
         <h2>Anatomy</h2>
         <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
-        <ul>
+        <ol>
           <li><strong>Label</strong> — A visible <code>&lt;label&gt;</code> that names the file input and describes what files are expected.</li>
           <li><strong>File input</strong> — The native <code>&lt;input type="file"&gt;</code> that triggers the browser's file picker; may be visually hidden but must remain accessible.</li>
           <li><strong>Drop zone</strong> — A designated area that accepts dragged files; must also support keyboard activation as a fallback.</li>
           <li><strong>File list</strong> — A list of selected files, each showing the filename and a remove action.</li>
           <li><strong>Remove button</strong> — A per-file button that deletes the file from the selection; must have an accessible name identifying which file it removes.</li>
           <li><strong>Status / error region</strong> — A live region that announces upload progress, success confirmations, and validation errors.</li>
-        </ul>
+        </ol>
       </section>
 
       <section>

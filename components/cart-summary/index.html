@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="cart-summary.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
     <script src="../../assets/js/component-layout.js" defer></script>
   </head>
@@ -44,14 +44,14 @@
       <section class="section">
         <h2>Anatomy</h2>
         <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
-        <ul>
+        <ol>
           <li><strong>Cart table:</strong> Wraps all line items in a semantic table with appropriate column headers for product, quantity, unit price, and subtotal.</li>
           <li><strong>Line item row:</strong> A table row representing a single product, including its image, name, quantity stepper, and calculated subtotal.</li>
           <li><strong>Quantity stepper (inline):</strong> Decrement and increment buttons paired with a numeric display, scoped to the row's product context.</li>
           <li><strong>Remove button:</strong> A clearly labeled action that deletes the line item; its accessible name includes the product name to disambiguate it from other remove buttons.</li>
           <li><strong>Order summary panel:</strong> Displays subtotal, shipping estimate, taxes, and order total; updates live when quantities or items change.</li>
           <li><strong>Live region:</strong> A visually hidden element that announces cart changes — such as item removal or total updates — to screen readers.</li>
-        </ul>
+        </ol>
       </section>
 
       <section class="section">

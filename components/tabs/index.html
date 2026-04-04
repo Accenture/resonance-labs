@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="tabs.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
     <script src="../../assets/js/component-layout.js" defer></script>
   </head>
@@ -40,13 +40,13 @@
       <div class="section">
         <h2>Anatomy</h2>
         <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
-        <ul>
+        <ol>
           <li><strong>Tab list:</strong> A container with <code>role="tablist"</code> that groups all tab buttons and establishes the keyboard navigation context.</li>
           <li><strong>Tab button:</strong> Each tab has <code>role="tab"</code>, an <code>aria-selected</code> attribute reflecting its state, and an <code>aria-controls</code> attribute pointing to its associated panel.</li>
           <li><strong>Tab panel:</strong> A container with <code>role="tabpanel"</code> holding the content for one tab; it has an <code>aria-labelledby</code> attribute pointing back to its controlling tab.</li>
           <li><strong>Active indicator:</strong> A visual treatment — typically an underline or background change — that distinguishes the selected tab from inactive ones.</li>
           <li><strong>Hidden panels:</strong> Inactive panels are removed from the visual layout and hidden from the accessibility tree using the <code>hidden</code> attribute or equivalent.</li>
-        </ul>
+        </ol>
       </div>
 
       <div class="section">

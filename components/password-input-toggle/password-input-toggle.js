@@ -11,10 +11,8 @@
     if (live) live.textContent = visible ? "Password is visible." : "Password is hidden.";
   }
 
-  window.__initComponent = function() {
-    btn?.addEventListener("click", () => {
-      const pressed = btn.getAttribute("aria-pressed") === "true";
-      setState(!pressed);
-    });
-  };
+  btn?.addEventListener("click", () => {
+    const pressed = btn.getAttribute("aria-pressed") === "true";
+    setState(!pressed);
+  });
 })();

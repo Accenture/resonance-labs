@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="text-input.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
     <script src="../../assets/js/component-layout.js" defer></script>
   </head>
@@ -40,13 +40,13 @@
       <div class="section">
         <h2>Anatomy</h2>
         <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
-        <ul>
+        <ol>
           <li><strong>Label:</strong> A <code>&lt;label&gt;</code> element associated with the input through a matching <code>for</code> and <code>id</code> pair; it is always visible and never replaced by a placeholder.</li>
           <li><strong>Input field:</strong> The <code>&lt;input&gt;</code> element where the user types, with an appropriate <code>type</code> attribute and an <code>autocomplete</code> hint where applicable.</li>
           <li><strong>Hint text:</strong> An optional message below the label or field providing format guidance, linked to the input through <code>aria-describedby</code>.</li>
           <li><strong>Error message:</strong> A validation message displayed when input is invalid, injected into a live region or linked via <code>aria-describedby</code> so it is announced automatically.</li>
           <li><strong>Required indicator:</strong> A visual marker (typically an asterisk) accompanied by a text explanation, and the <code>required</code> or <code>aria-required</code> attribute on the input.</li>
-        </ul>
+        </ol>
       </div>
 
       <div class="section">
