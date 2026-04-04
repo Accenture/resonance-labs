@@ -3,22 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Date Picker Demo - Resonance</title>
+    <title>Date Picker - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="date-picker.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
+    <header>
+      <a href="../../index.html" class="back-link">
+        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
     <main>
-      <div class="section"><h1>Date Picker</h1><p class="component-tagline">A date input with calendar popup supporting keyboard navigation, manual text entry, and accessible date selection.</p><div class="mount"></div></div>
-      <div class="section"><h2>Code</h2><div class="code-tabs" role="tablist"><button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button><button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button><button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button></div><div class="code-preview" id="panel-html" role="tabpanel"><pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre><button class="code-preview__copy" data-target="code-html">Copy Code</button></div><div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div><div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div></div>
-      <div class="section"><h2>Resources</h2><ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul></div>
+      <section>
+        <h1>Date Picker</h1>
+        <p class="component-tagline">A date input with a calendar popup that supports keyboard navigation, manual text entry, and accessible date selection.</p>
+      </section>
+
+      <section>
+        <h2>Demo</h2>
+        <p>Type a date directly into the text field, or activate the calendar button to open the popup. Inside the calendar, use <kbd>Left</kbd> and <kbd>Right</kbd> arrows to move between days, <kbd>Up</kbd> and <kbd>Down</kbd> arrows to move between weeks, <kbd>Page Up</kbd> and <kbd>Page Down</kbd> to navigate months, and <kbd>Enter</kbd> or <kbd>Space</kbd> to select the focused date. Press <kbd>Escape</kbd> to close the calendar without selecting.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section>
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The calendar popup opens and receives focus automatically so keyboard users land in the correct location.</li>
+          <li>The currently focused date is announced by screen readers with its full name, including day of week, day, month, and year.</li>
+          <li>Navigation controls (previous month, next month) have descriptive accessible names, not just arrow symbols.</li>
+          <li>Selecting a date closes the calendar and populates the text input, with confirmation available to assistive technology.</li>
+          <li>The calendar is dismissed cleanly with <kbd>Escape</kbd>, returning focus to the trigger button.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Text input</strong> — The editable field where users can type a date directly; labeled with a visible <code>&lt;label&gt;</code> element.</li>
+          <li><strong>Calendar toggle button</strong> — A button that opens and closes the calendar popup; communicates popup state via <code>aria-expanded</code>.</li>
+          <li><strong>Calendar dialog</strong> — The popup container marked with <code>role="dialog"</code> and an accessible name that identifies it as a date picker.</li>
+          <li><strong>Month/year header</strong> — The heading inside the calendar that announces the currently displayed month and year.</li>
+          <li><strong>Day grid</strong> — A grid of day cells, each representing a selectable date with a full accessible label.</li>
+          <li><strong>Navigation buttons</strong> — Previous and next controls for advancing through months, with clearly descriptive labels.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The calendar popup must receive focus immediately when opened so keyboard users do not have to search for it.</li>
+          <li>Each day cell must have an accessible name that includes the complete date — not just the day number — so screen readers can announce it meaningfully.</li>
+          <li>The keyboard interaction pattern must follow the grid navigation model: arrow keys move between days, and <kbd>Tab</kbd> moves between the calendar controls.</li>
+          <li>The currently focused date must be visually distinct and programmatically indicated as the active element.</li>
+          <li>Today's date must be distinguishable from other dates for both sighted users and assistive technology users.</li>
+          <li>Pressing <kbd>Escape</kbd> must close the calendar and return focus to the trigger button without losing the previously selected value.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Opening the calendar popup without moving focus into it, leaving keyboard users stranded outside the widget.</li>
+          <li>Labeling day cells with only the number (for example, "15") instead of the full date, so screen readers announce meaningless single digits.</li>
+          <li>Building the day grid with <code>&lt;div&gt;</code> elements and click handlers only, with no keyboard navigation or ARIA grid semantics.</li>
+          <li>Not restoring focus to the trigger button when the calendar is dismissed, causing keyboard users to lose their place in the page.</li>
+          <li>Using icon-only navigation buttons (prev/next chevrons) without accessible names, so their purpose is unknown to screen reader users.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why This Matters</h2>
+        <p>Date pickers appear in booking flows, form submissions, scheduling tools, and profile settings — moments where users must provide precise information to complete a task. An inaccessible calendar forces screen reader users to abandon the widget and fall back on a plain text field with no format guidance, or to give up entirely. For users with motor disabilities who rely on keyboard navigation, a date picker with no arrow-key support is simply inoperable. Getting this component right is essential for any product where date entry is part of a critical path.</p>
+      </section>
+
+      <section>
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section>
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
     </main>
-    <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
       fetch("./date-picker.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./date-picker.js";document.body.appendChild(s)});
       fetch("./date-picker.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});

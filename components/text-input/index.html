@@ -3,28 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Text Input Demo - Resonance</title>
+    <title>Text Input - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="text-input.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header>
-      <a href="../../index.html" class="back-link">
-        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
-      </a>
-    </header>
+    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
     <main>
+
       <div class="section">
         <h1>Text Input</h1>
-        <p class="component-tagline">A text input accepts a single line of freeform text from the user. It is paired with a visible label and optional hint or error text, all connected through accessible attributes. Proper input types, autocomplete hints, and validation patterns help users enter data accurately.</p>
+        <p class="component-tagline">A text input accepts a single line of freeform text from the user, paired with a visible label and optional hint or error text connected through accessible attributes.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Tab to each input field and type to enter text. Observe how the label remains visible above the field at all times. Trigger a validation error by submitting or leaving a required field empty, and listen for how a screen reader announces the error message in relation to the input.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each input has a persistent visible label — no placeholder text is used as a substitute for a label.</li>
+          <li>When focus enters the field, a screen reader announces the label, the input type, and any associated hint text.</li>
+          <li>Error messages appear near the input and are associated programmatically so screen readers announce the error without requiring the user to hunt for it.</li>
+          <li>Required fields communicate that requirement through both a visible indicator and an accessible attribute on the input.</li>
+          <li>The focus ring on each input is clearly visible and has sufficient contrast against the surrounding background.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Label:</strong> A <code>&lt;label&gt;</code> element associated with the input through a matching <code>for</code> and <code>id</code> pair; it is always visible and never replaced by a placeholder.</li>
+          <li><strong>Input field:</strong> The <code>&lt;input&gt;</code> element where the user types, with an appropriate <code>type</code> attribute and an <code>autocomplete</code> hint where applicable.</li>
+          <li><strong>Hint text:</strong> An optional message below the label or field providing format guidance, linked to the input through <code>aria-describedby</code>.</li>
+          <li><strong>Error message:</strong> A validation message displayed when input is invalid, injected into a live region or linked via <code>aria-describedby</code> so it is announced automatically.</li>
+          <li><strong>Required indicator:</strong> A visual marker (typically an asterisk) accompanied by a text explanation, and the <code>required</code> or <code>aria-required</code> attribute on the input.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Every input must have a visible label that remains on screen at all times — placeholder text alone is never an acceptable label.</li>
+          <li>The label must be programmatically associated with its input so screen readers announce it when focus enters the field.</li>
+          <li>Hint and error messages must be connected to the input through <code>aria-describedby</code> so they are read alongside the field's label.</li>
+          <li>Error messages must be presented in a way that does not rely solely on color — text or an icon with a text alternative must also indicate the problem.</li>
+          <li>Required fields must communicate that requirement both visually and programmatically through the <code>required</code> attribute.</li>
+          <li>The input must use the appropriate <code>type</code> attribute and <code>autocomplete</code> hint to help users with cognitive disabilities and autofill tools complete the field accurately.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using placeholder text as the only label, which disappears as soon as the user starts typing and is never read reliably by all screen readers.</li>
+          <li>Displaying an error message visually without linking it to the input, so screen readers do not associate the message with the field that caused it.</li>
+          <li>Indicating a required field with an asterisk alone, without a visible legend explaining what the symbol means.</li>
+          <li>Using a generic <code>type="text"</code> for inputs that have a more specific type, such as email or telephone, losing autocomplete and keyboard optimization benefits.</li>
+          <li>Applying error styling only through a red border color, making the error state invisible to users with color vision deficiencies.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Text inputs appear on nearly every form in every application, and form completion is one of the most critical tasks users perform online — account creation, checkout, contact, and support all depend on it. A text input that lacks a persistent label, properly associated error message, or keyboard-accessible behavior can completely block a screen reader user or a keyboard-only user from completing a task. Because forms are so universal, getting this pattern right has the highest possible impact on the number of people who can successfully use an interface.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,29 +105,20 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
-          <li>
-            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
-          </li>
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
         </ul>
       </div>
-    </main>
 
+    </main>
     <footer>
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-
     <script>
       // Fetch HTML fragment
       fetch("./text-input.html")

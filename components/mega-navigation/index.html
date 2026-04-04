@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mega Navigation Demo - Resonance</title>
+    <title>Mega Navigation - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="mega-navigation.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +22,77 @@
       </a>
     </header>
     <main>
-      <div class="section">
-        <h1>Mega Navigation</h1>
-        <p class="component-tagline">A mega navigation presents a large, multi-column dropdown that appears from the site header, giving users an overview of available sections and pages. It is useful for content-rich sites where a simple dropdown would be too limiting. Keyboard support and clear focus management are critical for usability.</p>
-        <div class="mount"></div>
-      </div>
 
-      <div class="section">
+      <section class="section">
+        <h1>Mega Navigation</h1>
+        <p class="component-tagline">A mega navigation presents a large, multi-column dropdown from the site header, giving users a structured overview of available sections and pages.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Hover over or focus a top-level navigation item to open the mega panel. Use Tab to move between links inside the panel, and press Escape to close it and return focus to the trigger.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Top-level items open the mega panel when focused or activated by keyboard.</li>
+          <li>Focus moves into the panel automatically and cycles through all links in a logical order.</li>
+          <li>Pressing Escape closes the panel and returns focus to the item that opened it.</li>
+          <li>The expanded state of each trigger is communicated to screen readers via an attribute that toggles as the panel opens and closes.</li>
+          <li>Clicking or tabbing away from the open panel causes it to close without losing the user's place on the page.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Nav wrapper:</strong> The landmark element that wraps the entire navigation and provides a label for screen readers.</li>
+          <li><strong>Top-level trigger:</strong> The button or link in the header bar that opens its associated mega panel when activated.</li>
+          <li><strong>Mega panel:</strong> The large dropdown container holding grouped links, organized into columns or categories.</li>
+          <li><strong>Column heading:</strong> A visible label that groups a set of related links within the panel.</li>
+          <li><strong>Link list:</strong> The set of individual page or section links within each column of the panel.</li>
+          <li><strong>Overlay / backdrop:</strong> An optional dimmed layer behind the panel that signals the rest of the page is temporarily inactive.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Each top-level trigger must communicate whether its panel is currently open or closed.</li>
+          <li>When a panel opens, keyboard focus must move into the panel so users do not have to Tab through the entire header to reach panel content.</li>
+          <li>Pressing Escape must close the open panel and return focus to the trigger that opened it.</li>
+          <li>All links within the panel must be reachable and activatable by keyboard alone.</li>
+          <li>The navigation landmark must have an accessible label so screen reader users can identify it in the page's landmark list.</li>
+          <li>Focus must not escape to the rest of the page while the mega panel is open.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a non-interactive element such as a div or span as the panel trigger instead of a button, which makes it unreachable by keyboard.</li>
+          <li>Forgetting to update the expanded/collapsed state on the trigger when the panel opens or closes.</li>
+          <li>Not returning focus to the trigger after the panel is closed with Escape, leaving keyboard users lost in the page.</li>
+          <li>Opening the panel on hover only, with no keyboard-accessible way to open it.</li>
+          <li>Omitting an accessible name on the navigation landmark, making it indistinguishable from other nav elements on the same page.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Mega navigations are among the most complex interactive patterns on content-rich sites. When focus management is broken or triggers are mouse-only, keyboard users and screen reader users lose access to large portions of the site's structure. A user relying on a keyboard cannot browse categories, and a screen reader user receives no indication that an entire panel of links exists. Getting this pattern right ensures that everyone — regardless of input method — can navigate the full breadth of the site.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -46,10 +111,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -62,7 +127,8 @@
             >
           </li>
         </ul>
-      </div>
+      </section>
+
     </main>
 
     <footer>

@@ -3,28 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tabs Demo - Resonance</title>
+    <title>Tabs - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="tabs.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header>
-      <a href="../../index.html" class="back-link">
-        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
-      </a>
-    </header>
+    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
     <main>
+
       <div class="section">
         <h1>Tabs</h1>
-        <p class="component-tagline">Tabs organize content into multiple panels, only one of which is visible at a time. Each tab acts as a label for its associated panel, and keyboard users can move between tabs with arrow keys. This pattern is useful when content can be logically grouped into parallel sections.</p>
+        <p class="component-tagline">Tabs organize content into multiple panels, only one of which is visible at a time, allowing keyboard users to move between tabs with arrow keys and select content with Enter or Space.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Click any tab label to display its associated content panel. With keyboard focus on the tab list, use the <strong>Left</strong> and <strong>Right</strong> arrow keys to move between tabs. Press <strong>Tab</strong> to move focus into the active panel and interact with its content. Observe how only the active panel is exposed to keyboard navigation.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The tab list is announced as a group, and each tab announces its label and selected state when it receives focus.</li>
+          <li>Arrow keys move focus within the tab list; Tab moves focus out of the tab list into the active panel's content.</li>
+          <li>Only the active panel is visible and reachable by keyboard — content in inactive panels is hidden from both view and focus order.</li>
+          <li>The selected tab is visually distinct from inactive tabs and communicates its state programmatically, not just through color or position.</li>
+          <li>Each tab is associated with its panel through matching id and aria attributes, which assistive technology uses to confirm the relationship.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Tab list:</strong> A container with <code>role="tablist"</code> that groups all tab buttons and establishes the keyboard navigation context.</li>
+          <li><strong>Tab button:</strong> Each tab has <code>role="tab"</code>, an <code>aria-selected</code> attribute reflecting its state, and an <code>aria-controls</code> attribute pointing to its associated panel.</li>
+          <li><strong>Tab panel:</strong> A container with <code>role="tabpanel"</code> holding the content for one tab; it has an <code>aria-labelledby</code> attribute pointing back to its controlling tab.</li>
+          <li><strong>Active indicator:</strong> A visual treatment — typically an underline or background change — that distinguishes the selected tab from inactive ones.</li>
+          <li><strong>Hidden panels:</strong> Inactive panels are removed from the visual layout and hidden from the accessibility tree using the <code>hidden</code> attribute or equivalent.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The tab list container must have <code>role="tablist"</code>, and each tab button must have <code>role="tab"</code>.</li>
+          <li>The active tab must have <code>aria-selected="true"</code>; all inactive tabs must have <code>aria-selected="false"</code>.</li>
+          <li>Arrow keys must move focus between tabs within the tab list; Tab must move focus into the active panel rather than to the next tab.</li>
+          <li>Each tab panel must have <code>role="tabpanel"</code> and be labeled by its corresponding tab through <code>aria-labelledby</code>.</li>
+          <li>Inactive panels must be hidden from both the visual layout and the accessibility tree so their content is not reachable by keyboard or screen reader.</li>
+          <li>The selected tab must be visually distinguishable through more than color alone — shape, weight, or underline must also signal selection.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using plain <code>&lt;div&gt;</code> elements with click handlers instead of proper role attributes, which makes the tabs invisible to screen readers.</li>
+          <li>Implementing Tab key navigation between tabs instead of arrow keys, breaking the expected interaction pattern for keyboard users.</li>
+          <li>Forgetting to hide inactive panels from the accessibility tree, causing screen reader users to find and read content from panels that appear closed.</li>
+          <li>Only using color to indicate the selected tab, making the active state ambiguous for users with color vision deficiencies.</li>
+          <li>Not associating each panel with its tab through ARIA attributes, so the programmatic relationship between control and content is lost.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Tabs are one of the most common patterns for organizing dense content in dashboards, product pages, and settings screens. When implemented without proper roles and keyboard behavior, a screen reader user encounters a set of unlabeled buttons with no indication that they control content panels, and a keyboard user cannot navigate between them predictably. The ARIA tabs pattern is well-documented and widely supported — using it correctly ensures that users relying on assistive technology get the same efficient, structured access to content that sighted mouse users experience.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,29 +105,20 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
-          <li>
-            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
-          </li>
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
         </ul>
       </div>
-    </main>
 
+    </main>
     <footer>
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-
     <script>
       // Fetch HTML fragment
       fetch("./tabs.html")

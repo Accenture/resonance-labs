@@ -1,22 +1,135 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Review Comment Demo - Resonance</title>
-    <link rel="stylesheet" href="../../assets/style/global.css" /><link rel="stylesheet" href="review-comment.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Comment - Resonance Labs</title>
+    <link rel="stylesheet" href="../../assets/style/global.css" />
+    <link rel="stylesheet" href="review-comment.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
+    <header>
+      <a href="../../index.html" class="back-link">
+        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
     <main>
-      <div class="section"><h1>Review Comment</h1><p class="component-tagline">A review comment presents user-submitted feedback — star rating, reviewer identity, date, and review text — in an accessible article landmark. Each review exposes its rating, verified status, and interactive actions to assistive technology through programmatic associations.</p><div class="mount"></div></div>
-      <div class="section"><h2>Code</h2><div class="code-tabs" role="tablist"><button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button><button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button><button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button></div><div class="code-preview" id="panel-html" role="tabpanel"><pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre><button class="code-preview__copy" data-target="code-html">Copy Code</button></div><div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div><div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div></div>
-      <div class="section"><h2>Resources</h2><ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul></div>
+
+      <section class="section">
+        <h1>Review Comment</h1>
+        <p class="component-tagline">A review comment presents user-submitted feedback — star rating, reviewer identity, date, and review text — in an accessible article landmark that exposes all metadata and interactive actions to assistive technology.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Navigate through the review comment below using your keyboard or screen reader. Notice how the reviewer's name, star rating, verified purchase status, and review body are all announced as you enter the review. Try activating the helpful or report actions and observe how they are labeled so users know their purpose without surrounding visual context.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The review is wrapped in an article element with a meaningful accessible name so screen reader users can navigate between reviews using landmark shortcuts.</li>
+          <li>The star rating is communicated as text (e.g., "4 out of 5 stars") rather than as five purely decorative star icons.</li>
+          <li>The reviewer's name and review date are present as real text and appear in a logical reading order before the review body.</li>
+          <li>A "Verified Purchase" badge, when present, is expressed as text so its meaning is not conveyed by color or icon alone.</li>
+          <li>Interactive actions like "Helpful" or "Report" carry accessible names that include enough context to be understood when read out of the surrounding paragraph.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Article container:</strong> The semantic wrapper for the entire review; its accessible name or heading ties the content together as a named, navigable region.</li>
+          <li><strong>Reviewer identity:</strong> The name or username of the reviewer, presented as visible text in the DOM so it can be read by assistive technology.</li>
+          <li><strong>Star rating summary:</strong> A text representation of the rating score (e.g., "4 out of 5 stars") that supplements or replaces the visual star icons.</li>
+          <li><strong>Review date:</strong> A machine-readable and human-readable date stamp that contextualizes when the review was written.</li>
+          <li><strong>Verified badge:</strong> A textual label indicating the reviewer's purchase was verified, not relying solely on a checkmark icon or green color.</li>
+          <li><strong>Review body:</strong> The main text content of the review, which may include a title and extended body paragraph.</li>
+          <li><strong>Action buttons:</strong> Controls such as "Helpful" and "Report" with accessible names that include sufficient context to be usable without surrounding prose.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Each review is structured as an article with a heading or accessible name so screen reader users can jump between reviews using article or heading navigation shortcuts.</li>
+          <li>The star rating uses a text alternative (e.g., "Rated 4 out of 5 stars") that is either visible or accessible to screen readers, ensuring the score is always communicated.</li>
+          <li>The verified purchase status is expressed as text so it is not conveyed by icon or color alone, which would be inaccessible to users with color-vision differences or those using high-contrast mode.</li>
+          <li>Review dates are marked up using the time element with a machine-readable datetime attribute so assistive technologies and tools can interpret the date correctly.</li>
+          <li>Action buttons such as "Helpful" have accessible names that include the review's author or title (e.g., "Mark Sarah's review as helpful") so users know exactly what they are acting on.</li>
+          <li>The reading order of the article flows naturally: author, rating, date, badges, review title, review body, actions — matching the visual layout without relying on CSS positioning tricks.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Representing the star rating only as a row of star SVG icons with no text equivalent, leaving screen reader users with no indication of the rating value.</li>
+          <li>Marking the "Verified Purchase" badge as a purely visual icon or color-coded label without an accessible text description.</li>
+          <li>Labeling action buttons as simply "Helpful" and "Report" when multiple reviews appear on the same page, making them indistinguishable from one another by screen reader users navigating by button.</li>
+          <li>Using a generic div as the review container rather than an article element, preventing users from navigating the review list using landmark or article shortcuts.</li>
+          <li>Placing interactive actions before the review content in the DOM so keyboard users must Tab past buttons before they can read the review they relate to.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Customer reviews are a primary trust signal in online shopping — many users read them before deciding whether to purchase a product. A screen reader user who cannot determine a review's star rating, who cannot identify whether the reviewer is a verified purchaser, or who cannot tell which review a "Helpful" button refers to is denied the same social proof that sighted users rely on. When reviews are inaccessible, users with disabilities must make purchase decisions with less information, which is both inequitable and a business risk.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
+
     </main>
-    <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
       fetch("./review-comment.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./review-comment.js";document.body.appendChild(s)});
       fetch("./review-comment.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});

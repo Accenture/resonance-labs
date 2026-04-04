@@ -3,22 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Popover Demo - Resonance</title>
+    <title>Popover - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="popover.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
     <main>
-      <div class="section">
+
+      <section class="section">
         <h1>Popover</h1>
-        <p class="component-tagline">A floating panel that appears on demand, without blocking the rest of the page.</p>
+        <p class="component-tagline">A popover is a floating panel that appears on demand near its trigger, providing supplemental content or actions without blocking the rest of the page.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Click or activate the trigger button to open the popover. While the popover is open, Tab through any interactive elements inside it. Press Escape or click outside to close it, and observe where focus goes when the popover is dismissed.</p>
         <div class="mount"></div>
-      </div>
-      <div class="section">
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The trigger button communicates whether the popover is currently open or closed.</li>
+          <li>When the popover opens, keyboard focus moves into it so users do not have to Tab through unrelated content to reach it.</li>
+          <li>Pressing Escape closes the popover and returns focus to the trigger.</li>
+          <li>Unlike a modal, the popover does not trap focus — users can Tab past it to reach content beyond it.</li>
+          <li>The popover panel has an accessible name or description so screen readers announce its purpose when it opens.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Trigger button:</strong> The interactive element that opens and closes the popover, communicating the expanded/collapsed state.</li>
+          <li><strong>Popover panel:</strong> The floating container that holds the popover's content, positioned near the trigger.</li>
+          <li><strong>Panel heading:</strong> An optional title inside the popover that provides context for its contents.</li>
+          <li><strong>Body content:</strong> The supplemental information, links, or controls displayed within the popover.</li>
+          <li><strong>Close button:</strong> An explicit dismiss control inside the popover that closes it and returns focus to the trigger.</li>
+          <li><strong>Arrow / caret:</strong> An optional visual indicator pointing from the panel toward its trigger for spatial orientation.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The trigger must communicate whether the popover is expanded or collapsed at any given time.</li>
+          <li>When the popover opens, focus must move into the panel rather than remaining on the trigger.</li>
+          <li>Pressing Escape must close the popover and return focus to the trigger element.</li>
+          <li>The popover must have an accessible name or be associated with a heading inside it, so screen readers announce its purpose.</li>
+          <li>Unlike a dialog, a popover does not trap focus — users can Tab through and past its content freely.</li>
+          <li>Clicking outside the popover should close it, but keyboard-only users must also have a way to close it without a mouse.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Not updating the trigger's expanded/collapsed state when the popover opens or closes, so screen readers do not know the panel is present.</li>
+          <li>Failing to move focus into the popover on open, forcing keyboard users to Tab through all content between the trigger and the panel.</li>
+          <li>Not returning focus to the trigger when the popover closes, leaving keyboard users at an unexpected location on the page.</li>
+          <li>Treating the popover like a modal and fully trapping focus, which prevents users from Tabbing past it to reach other page content.</li>
+          <li>Providing no keyboard-accessible way to close the popover, relying entirely on clicking outside.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Popovers sit in a subtle middle ground between tooltips and modals. When focus management is neglected, keyboard users may never discover that a popover has appeared, or they may become stranded after it closes. Because popovers do not trap focus like modals, they carry a unique responsibility: the experience of entering, navigating, and exiting must feel natural and predictable. Done well, they surface additional context or actions without disrupting a user's flow through the page.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -28,11 +94,13 @@
         <div class="code-preview" id="panel-html" role="tabpanel"><pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre><button class="code-preview__copy" data-target="code-html">Copy Code</button></div>
         <div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div>
         <div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div>
-      </div>
-      <div class="section">
-        <h2>Resources</h2>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul>
-      </div>
+      </section>
+
     </main>
     <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>

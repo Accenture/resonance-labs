@@ -38,44 +38,30 @@
 
 /* Info variant */
 .alert--info {
-  border-left-color: var(--primary-color);
-  background: var(--surface-muted);
-}
-
-.alert--info .alert__icon {
-  color: var(--text-color-strong);
-}
-
-.alert--info .alert__label {
-  color: var(--text-color-strong);
+  border-left-color: var(--alert-blue);
+  background: var(--alert-blue-surface);
 }
 
 /* Success variant */
 .alert--success {
-  border-left-color: var(--primary-color);
-  background: var(--surface-muted);
+  border-left-color: var(--alert-green);
+  background: var(--alert-green-surface);
 }
 
-.alert--success .alert__icon {
-  color: var(--text-color-strong);
+/* Warning variant */
+.alert--warning {
+  border-left-color: var(--alert-yellow-dark);
+  background: var(--alert-yellow-surface);
 }
 
-.alert--success .alert__label {
-  color: var(--text-color-strong);
+.alert--warning .alert__label {
+  color: var(--alert-yellow-dark);
 }
 
 /* Error variant */
 .alert--error {
-  border-left-color: var(--primary-color);
-  background: var(--surface-muted);
-}
-
-.alert--error .alert__icon {
-  color: var(--text-color-strong);
-}
-
-.alert--error .alert__label {
-  color: var(--text-color-strong);
+  border-left-color: var(--alert-red);
+  background: var(--alert-red-surface);
 }
 
 /* Trigger button */

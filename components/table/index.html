@@ -3,28 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Table Demo - Resonance</title>
+    <title>Table - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="table.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header>
-      <a href="../../index.html" class="back-link">
-        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
-      </a>
-    </header>
+    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
     <main>
+
       <div class="section">
         <h1>Table</h1>
-        <p class="component-tagline">A table displays structured data in rows and columns, with header cells that label each column or row. Proper use of thead, tbody, th, and scope attributes ensures that assistive technology can convey the relationship between data and its headers. Tables should only be used for tabular data, never for layout.</p>
+        <p class="component-tagline">A table displays structured data in rows and columns, with properly scoped header cells so assistive technology can convey the relationship between each data cell and its headers.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Review the table below and use a screen reader to navigate it. Move cell by cell with arrow keys to hear how each data cell is announced together with its column and row header. Try sorting a column if the interaction is available, and note how the sort state is communicated.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each data cell is announced by a screen reader alongside its corresponding column header, providing full context without visual scanning.</li>
+          <li>The table has a visible caption or a heading immediately preceding it that identifies the data set being presented.</li>
+          <li>Header cells use the correct scope attribute to declare whether they apply to a column or a row.</li>
+          <li>If sorting is available, the current sort direction is reflected programmatically so screen readers can announce it.</li>
+          <li>The table is navigable by keyboard using Tab and arrow keys without any mouse interaction required.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Caption:</strong> An optional <code>&lt;caption&gt;</code> element inside the table that gives the entire table an accessible name describing its contents.</li>
+          <li><strong>Table head (<code>thead</code>):</strong> The section grouping all column header rows, which browsers and assistive technologies treat differently from data rows.</li>
+          <li><strong>Header cells (<code>th</code>):</strong> Cells that label a column or row, with a <code>scope</code> attribute set to <code>col</code> or <code>row</code> to define their relationship to data cells.</li>
+          <li><strong>Table body (<code>tbody</code>):</strong> The section containing all data rows, keeping structure semantic and parseable.</li>
+          <li><strong>Data cells (<code>td</code>):</strong> Individual cells containing the actual data values, associated with header cells through the table structure.</li>
+          <li><strong>Sort controls:</strong> Interactive elements within header cells that change column sort order, with <code>aria-sort</code> applied to the active header to communicate current direction.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The table must use native HTML table markup — screen readers rely on the table structure to associate data cells with their headers.</li>
+          <li>Column and row header cells must carry a <code>scope</code> attribute so assistive technology can announce context for every data cell.</li>
+          <li>The table must have an accessible name, either through a <code>&lt;caption&gt;</code> element or an <code>aria-label</code> / <code>aria-labelledby</code> attribute.</li>
+          <li>If columns are sortable, the active sort column must expose its sort direction through <code>aria-sort</code>, with values of <code>ascending</code> or <code>descending</code>.</li>
+          <li>All interactive controls within the table, such as sort buttons or row actions, must be reachable and operable by keyboard.</li>
+          <li>Tables must only be used to present tabular data — never for page layout purposes.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using <code>&lt;div&gt;</code> or CSS grid to visually replicate a table without providing any semantic table markup, making the data meaningless to screen readers.</li>
+          <li>Omitting the <code>scope</code> attribute on header cells, so assistive technology cannot determine which header belongs to which data cell.</li>
+          <li>Providing no accessible name for the table, leaving screen reader users without context for what the data represents.</li>
+          <li>Using a table for visual layout of non-tabular content, which confuses screen readers that announce row and column context.</li>
+          <li>Adding sort functionality without exposing the current sort state, requiring screen reader users to guess whether or how the data is ordered.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Tables are one of the most information-dense components on the web, and screen reader users depend entirely on the semantic structure to navigate them. Without proper headers and scope attributes, a screen reader user hears a stream of values with no indication of what column or row each value belongs to. In data-heavy applications — finance dashboards, schedule grids, comparison charts — this makes the content completely unusable. Correct table markup costs no additional effort once the pattern is understood, and it ensures that every user can interpret the data presented to them.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,29 +106,20 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
-          <li>
-            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
-          </li>
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
         </ul>
       </div>
-    </main>
 
+    </main>
     <footer>
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-
     <script>
       // Fetch HTML fragment
       fetch("./table.html")

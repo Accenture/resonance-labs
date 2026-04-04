@@ -1,0 +1,21 @@
+/* ===================================================
+   Self-hosted Fonts — Resonance Labs
+   =================================================== */
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist[wght].woff2') format('woff2 supports variations'),
+       url('../fonts/Geist[wght].woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/GeistMono[wght].woff2') format('woff2 supports variations'),
+       url('../fonts/GeistMono[wght].woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

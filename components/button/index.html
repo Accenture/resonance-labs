@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Button Demo - Resonance</title>
+    <title>Button - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="button.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -23,8 +20,69 @@
     <main>
       <div class="section">
         <h1>Button</h1>
-        <p class="component-tagline">A button triggers an action such as submitting a form, opening a dialog, or performing an operation. It communicates its purpose through a visible label and can carry different visual weights — primary for the main action, secondary for alternatives. Proper use of the button element ensures keyboard operability and correct semantics out of the box.</p>
+        <p class="component-tagline">A native button element that triggers an action and communicates its purpose through a visible label, supporting keyboard operability and correct semantics out of the box.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Tab to each button and press Enter or Space to activate it. Observe how the button responds to keyboard input, how its label is announced by a screen reader, and how disabled buttons are communicated without removing them from the tab order.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each button is reachable by Tab and activatable with Enter or Space</li>
+          <li>The button's label is announced by screen readers as soon as it receives focus</li>
+          <li>Primary and secondary visual variants do not change the button's semantic role or keyboard behavior</li>
+          <li>Icon-only buttons carry an accessible name that conveys the action without relying on the icon itself</li>
+          <li>Disabled buttons are communicated to assistive technology without hiding them from the focus order</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Button Element</strong> — the native HTML element that provides keyboard operability, focus management, and the implicit button role without any additional attributes</li>
+          <li><strong>Label Text</strong> — the visible text inside the button that describes the action it performs; this becomes the button's accessible name</li>
+          <li><strong>Icon</strong> — an optional visual symbol that supplements or replaces the text label; decorative icons are hidden from assistive technology, while meaningful icons require a text alternative</li>
+          <li><strong>Focus Indicator</strong> — the visible outline or ring that appears when the button receives keyboard focus, communicating the user's current position</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Use a native button element for all actions to inherit correct keyboard behavior and semantics without extra ARIA</li>
+          <li>Ensure every button has a clear, descriptive accessible name — either from visible label text or an accessible name technique for icon-only buttons</li>
+          <li>Support both Enter and Space key activation, which is the expected behavior for button elements</li>
+          <li>Maintain a visible focus indicator on all buttons so keyboard users can see which button currently has focus</li>
+          <li>When disabling a button, communicate the disabled state to assistive technology; consider whether a disabled button should remain focusable with an explanation of why it is unavailable</li>
+          <li>Do not use links styled as buttons for actions that do not navigate — use an actual button element so the semantics match the behavior</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a div or span as a button, losing keyboard operability, focus management, and the implicit role that screen readers rely on</li>
+          <li>Using an anchor element for actions that do not navigate to a new page or location, creating a mismatch between the element's semantics and its behavior</li>
+          <li>Providing no accessible name on an icon-only button, causing screen readers to announce only "button" with no indication of the action</li>
+          <li>Removing the focus indicator with CSS, making it impossible for keyboard users to see which button is currently focused</li>
+          <li>Disabling a button by removing it from the tab order without any explanation of why the action is unavailable</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Buttons are the most fundamental interactive element on the web, yet they are frequently replaced with styled divs or anchors that lack the native behavior keyboard and assistive technology users depend on. A div styled as a button does not respond to Enter or Space, is not reached by Tab, and is announced incorrectly by screen readers. Even when using a native button, missing labels, removed focus indicators, and ambiguous icon buttons create barriers that prevent users from understanding or completing actions. Using the correct element with a clear label is the simplest and most impactful accessibility decision in UI development.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,18 +107,10 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
-          <li>
-            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
-          </li>
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
         </ul>
       </div>
     </main>

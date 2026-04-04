@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Radio Button Demo - Resonance</title>
+    <title>Radio Button - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="radio-button.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +22,76 @@
       </a>
     </header>
     <main>
-      <div class="section">
-        <h1>Radio Button</h1>
-        <p class="component-tagline">Radio buttons let users choose exactly one option from a mutually exclusive set. Each radio is paired with a label, and the group is wrapped in a fieldset with a legend that describes the choice. Only native radio inputs are used here, ensuring built-in keyboard and screen reader support.</p>
-        <div class="mount"></div>
-      </div>
 
-      <div class="section">
+      <section class="section">
+        <h1>Radio Button</h1>
+        <p class="component-tagline">Radio buttons let users select exactly one option from a mutually exclusive set, grouped under a shared question or prompt conveyed through a fieldset and legend.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Tab into the radio group and use the arrow keys to move between options. Notice how selecting one option automatically deselects the others. Confirm that the group label and each option label are both announced by a screen reader when navigating.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Tab moves focus into the radio group, and arrow keys move selection between options within the group.</li>
+          <li>Selecting any radio automatically deselects the previously selected one, maintaining mutual exclusivity.</li>
+          <li>The fieldset legend is announced alongside each radio label, providing the group question as context.</li>
+          <li>Each radio is paired with a visible label that is clickable and expands the tap/click target.</li>
+          <li>The focused radio displays a clear focus indicator that meets contrast requirements.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Fieldset:</strong> The grouping element that wraps all radio options and their shared legend.</li>
+          <li><strong>Legend:</strong> The visible group label that describes the question or category the radio options answer.</li>
+          <li><strong>Radio input:</strong> The native input element of type radio that handles selection, keyboard navigation, and assistive technology announcements.</li>
+          <li><strong>Option label:</strong> The visible text label associated with each radio input via a for/id pairing.</li>
+          <li><strong>Focus indicator:</strong> The visible outline or highlight that appears on the currently focused radio control.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>All radio options in a group must share the same name attribute so they form a mutually exclusive set.</li>
+          <li>The group must be wrapped in a fieldset with a legend that describes the shared question — this is announced by screen readers alongside each option.</li>
+          <li>Each radio input must be paired with a visible label using a matching for and id relationship.</li>
+          <li>Keyboard navigation within a group uses arrow keys to move between options — Tab moves between groups, not between individual radios.</li>
+          <li>The currently selected radio must be communicated to screen readers as checked, not only through visual styling.</li>
+          <li>A radio group must have at least one option pre-selected by default, or the group must be validatable with appropriate error handling if left empty.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Omitting the fieldset and legend, so screen reader users hear each option label without any context about what they are choosing.</li>
+          <li>Using div elements styled to look like radio buttons without underlying native inputs, breaking built-in keyboard and screen reader behavior.</li>
+          <li>Giving each radio a unique name attribute instead of a shared one, preventing mutual exclusivity.</li>
+          <li>Associating labels with radios using proximity rather than a programmatic for/id link, so the label is not reliably announced.</li>
+          <li>Making only the radio circle clickable rather than including the label in the hit area, creating a small and difficult target.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Radio buttons appear in surveys, settings panels, and checkout flows where choosing the wrong option can have real consequences. When the group question is missing, a screen reader user hears a list of options with no understanding of what they are deciding. When native inputs are replaced with styled divs, the entire keyboard and screen reader experience breaks down. Using native HTML inputs inside a properly labeled fieldset costs nothing extra and guarantees robust, cross-platform support for all users.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -46,10 +110,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -62,7 +126,8 @@
             >
           </li>
         </ul>
-      </div>
+      </section>
+
     </main>
 
     <footer>

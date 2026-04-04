@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Password Input Toggle Demo - Resonance</title>
+    <title>Password Input Toggle - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="password-input-toggle.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -23,8 +24,68 @@
     <main>
       <div class="section">
         <h1>Password Input Toggle</h1>
-        <p class="component-tagline">A password input toggle adds a show/hide button alongside a password field, letting users verify what they have typed. The toggle switches the input type between password and text. The button label and accessible name update to reflect the current state so screen reader users know whether the password is visible.</p>
+        <p class="component-tagline">A password field with a show/hide toggle that lets users verify what they have typed, with the button's accessible name updating to reflect the current visibility state.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Tab to the password field and type a value. Tab to the show/hide button and press Enter or Space to toggle visibility. Observe how the input type and button label change with each activation.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The toggle button is reachable and operable by keyboard</li>
+          <li>The button label or accessible name updates to reflect whether the password is currently shown or hidden</li>
+          <li>The password field switches between masked and visible text when toggled</li>
+          <li>Focus remains on the toggle button after activation and does not jump unexpectedly</li>
+          <li>Screen readers announce the updated button state after toggling</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Password Input</strong> — the text field that accepts the user's password, masked by default</li>
+          <li><strong>Toggle Button</strong> — an interactive control that switches the field between masked and visible states</li>
+          <li><strong>Button Label / Icon</strong> — the visual and accessible indicator of the current show or hide state</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Use a native button element for the toggle to ensure keyboard and assistive technology support</li>
+          <li>Update the button's accessible name dynamically to reflect whether the password is currently shown or hidden</li>
+          <li>Associate the input field with a visible label using a native label element or aria-labelledby</li>
+          <li>Do not move focus away from the toggle button after activation</li>
+          <li>Ensure the toggle is positioned and announced in a way that makes its relationship to the password field clear</li>
+          <li>If using an icon-only button, provide an accessible text alternative that conveys the current action</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a static label such as "Show" that never updates when the password is revealed</li>
+          <li>Implementing the toggle as a non-interactive element such as a span or div</li>
+          <li>Moving focus to the input field after toggling, which disorients keyboard users</li>
+          <li>Using only a visual icon with no accessible text, leaving screen reader users without context</li>
+          <li>Failing to associate the password label with the input, making the field purpose unclear</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Password fields are high-stakes inputs where errors lead to failed logins. When the toggle button has a static or missing label, screen reader users cannot tell whether the password is currently visible or hidden. When focus moves unexpectedly after toggling, keyboard users lose their place. Getting this pattern right reduces friction at a critical point in the user journey and ensures that all users — including those relying on assistive technology — can verify their input confidently.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,7 +110,7 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>

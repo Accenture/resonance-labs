@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Price Demo - Resonance</title>
+    <title>Price - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="price.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -17,13 +18,76 @@
       </a>
     </header>
     <main>
-      <div class="section">
-        <h1>Price</h1>
-        <p class="component-tagline">A price display presents monetary values as real text with programmatically associated currency information. It supports standard prices, price ranges, free items, and explicit currency codes to ensure all users can perceive pricing.</p>
-        <div class="mount"></div>
-      </div>
 
-      <div class="section">
+      <section class="section">
+        <h1>Price</h1>
+        <p class="component-tagline">A price display presents monetary values as real text with programmatically associated currency information, supporting standard prices, ranges, free items, and explicit currency codes so all users can perceive pricing accurately.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Review the price variants shown below — a standard price, a price range, a free item, and an explicit currency code example. With a screen reader active, navigate through each price and listen to how the value and currency are announced. Notice how each variant is expressed as real, selectable text rather than an image or decorative element.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Price values are rendered as real text, not images or SVG, so they can be read by screen readers and resized by browser text settings.</li>
+          <li>The currency symbol or code is included within the accessible text so users are not left to guess whether "$" means US dollars, Canadian dollars, or another currency.</li>
+          <li>Price ranges use a text structure that reads naturally in sequence (e.g., "From $20 to $40") rather than relying on visual spacing alone to imply the range.</li>
+          <li>Free items are expressed as the word "Free" or a zero-value price with a currency, not as an empty element, ensuring the concept is communicated to all users.</li>
+          <li>Decorative currency symbols or ornamental styling are separated from the semantic price value so they do not interrupt the spoken output.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Price container:</strong> The wrapper element that holds the currency and value together as a unit, providing a consistent structure for all price variants.</li>
+          <li><strong>Currency indicator:</strong> The symbol (e.g., $) or code (e.g., USD) that identifies the monetary unit; included within accessible text for all variants.</li>
+          <li><strong>Price value:</strong> The numeric amount, rendered as plain text so it is accessible to screen readers, search engines, and browser zoom tools.</li>
+          <li><strong>Range separator:</strong> The element or text that connects the lower and upper bounds of a price range (e.g., "to" or "–"), made explicit for screen reader users.</li>
+          <li><strong>Free label:</strong> A textual expression of zero cost used in place of a $0.00 display, providing a clearer and more natural communication of the price.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The price is always rendered as selectable, real text — never as an image, canvas element, or purely visual decoration — so it can be read by any assistive technology.</li>
+          <li>The currency context is programmatically associated with the price value so screen reader users hear "fifty dollars" rather than "dollar sign fifty".</li>
+          <li>Price ranges expose both endpoints in a readable sequence, ensuring the relationship between low and high values is unambiguous when read linearly.</li>
+          <li>A price of zero is communicated as "Free" or as an explicit zero value rather than leaving the field empty, which would be meaningless to a screen reader.</li>
+          <li>The component respects user text-size preferences and browser zoom without truncating or obscuring the price value.</li>
+          <li>Color is not the only means of distinguishing price states — the text content itself carries the meaning regardless of styling.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Rendering the price as an image or SVG text, making it impossible for screen readers or browser text-zoom tools to access the value.</li>
+          <li>Using only the currency symbol without surrounding context, so a screen reader announces "dollar sign" instead of "US dollars" or reads nothing at all.</li>
+          <li>Expressing a price range with a visual dash between two numbers without any text connector, so users hear two unrelated numbers with no explanation of their relationship.</li>
+          <li>Leaving the price element empty or showing a placeholder character for free items, resulting in an empty or meaningless announcement.</li>
+          <li>Styling the currency symbol and value in separate elements without a shared accessible label, causing the two pieces to be announced separately or out of order.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Price is one of the most decision-critical pieces of information on any product page. A screen reader user who hears an ambiguous currency symbol, two disconnected numbers, or silence where a price should be cannot make an informed purchasing decision. Users who rely on browser text zoom must be able to read prices that scale with their settings. When price information is inaccessible, users with disabilities are effectively denied the ability to comparison shop — a fundamental part of the online retail experience.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -42,10 +106,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -54,7 +118,8 @@
             <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
           </li>
         </ul>
-      </div>
+      </section>
+
     </main>
 
     <footer>

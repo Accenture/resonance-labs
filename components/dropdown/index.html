@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dropdown Demo - Resonance</title>
+    <title>Dropdown - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="dropdown.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +22,75 @@
       </a>
     </header>
     <main>
-      <div class="section">
+      <section>
         <h1>Dropdown</h1>
-        <p class="component-tagline">A dropdown menu reveals a list of actions or links when a trigger button is activated. It manages focus so keyboard users can navigate the menu items with arrow keys and close it with Escape. Dropdowns are commonly used for navigation menus, action menus, and context menus.</p>
-        <div class="mount"></div>
-      </div>
+        <p class="component-tagline">A dropdown menu reveals a list of actions or links when a trigger button is activated, with full keyboard navigation and focus management.</p>
+      </section>
 
-      <div class="section">
+      <section>
+        <h2>Demo</h2>
+        <p>Activate the dropdown trigger button using a mouse click or by pressing <kbd>Enter</kbd> or <kbd>Space</kbd>. Once the menu is open, navigate between items with the <kbd>Down Arrow</kbd> and <kbd>Up Arrow</kbd> keys. Press <kbd>Home</kbd> to jump to the first item or <kbd>End</kbd> to jump to the last. Select an item with <kbd>Enter</kbd>, or dismiss the menu without selecting by pressing <kbd>Escape</kbd>.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section>
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The trigger button's <code>aria-expanded</code> attribute updates to reflect whether the menu is open or closed.</li>
+          <li>When the menu opens, focus moves to the first menu item so keyboard users can navigate immediately.</li>
+          <li>Arrow key navigation moves through menu items in a predictable order without scrolling the page.</li>
+          <li>Pressing <kbd>Escape</kbd> closes the menu and returns focus to the trigger button.</li>
+          <li>Clicking or tabbing outside the open menu closes it without requiring an explicit close action.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Trigger button</strong> — The button that opens and closes the menu; carries <code>aria-expanded</code> and <code>aria-haspopup="menu"</code> to signal its behavior.</li>
+          <li><strong>Menu container</strong> — The list element with <code>role="menu"</code> that wraps all menu items.</li>
+          <li><strong>Menu items</strong> — Individual interactive elements with <code>role="menuitem"</code> (or <code>menuitemcheckbox</code> / <code>menuitemradio</code> for stateful variants).</li>
+          <li><strong>Dividers</strong> — Optional separators with <code>role="separator"</code> that group related menu items visually and semantically.</li>
+          <li><strong>Menu item icons</strong> — Optional decorative icons accompanying item labels; must be hidden from assistive technology if the label already describes the action.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The trigger must carry <code>aria-haspopup="menu"</code> and <code>aria-expanded</code> so users know a menu exists before they open it.</li>
+          <li>Focus must move into the menu when it opens — typically to the first item — so keyboard users do not have to navigate there manually.</li>
+          <li>Arrow keys must cycle through menu items; <kbd>Tab</kbd> inside an open menu should close it and move focus to the next element in the page.</li>
+          <li>Each item must be operable with <kbd>Enter</kbd> and must have a clear, descriptive accessible name.</li>
+          <li>When the menu closes — by selection, <kbd>Escape</kbd>, or clicking outside — focus must return to the trigger button.</li>
+          <li>Disabled menu items must be communicated as non-interactive via <code>aria-disabled</code>, not simply removed from the tab order.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Building the menu as a plain <code>&lt;ul&gt;</code> of links without <code>role="menu"</code> and <code>role="menuitem"</code>, so screen readers treat it as a list rather than a menu.</li>
+          <li>Relying solely on <kbd>Tab</kbd> to navigate between items instead of arrow keys, which is the expected keyboard pattern for menus.</li>
+          <li>Not moving focus into the menu on open, leaving keyboard users unable to reach the items.</li>
+          <li>Omitting <code>aria-expanded</code> on the trigger, so screen readers cannot tell users whether the menu is currently open.</li>
+          <li>Failing to close the menu when focus moves outside it, leaving a persistent open menu that confuses orientation.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why This Matters</h2>
+        <p>Dropdown menus are used for navigation, user account actions, sorting controls, and context menus across nearly every application. When the keyboard interaction model is missing or wrong — particularly the arrow-key navigation pattern — users who cannot use a mouse are effectively locked out of entire sections of functionality. The menu pattern has well-established conventions that users of assistive technology have learned to rely on, and deviating from them without reason creates unpredictable, frustrating experiences.</p>
+      </section>
+
+      <section>
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section>
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -46,10 +109,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -62,7 +125,7 @@
             >
           </li>
         </ul>
-      </div>
+      </section>
     </main>
 
     <footer>

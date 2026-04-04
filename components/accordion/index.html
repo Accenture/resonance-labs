@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accordion Demo - Resonance</title>
+    <title>Accordion - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="accordion.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -23,8 +24,68 @@
     <main>
       <div class="section">
         <h1>Accordion</h1>
-        <p class="component-tagline">An accordion organizes content into collapsible sections, allowing users to expand only what they need. Each section header acts as a trigger that reveals or hides the associated panel. This pattern reduces visual clutter and helps users scan large amounts of content without losing context.</p>
+        <p class="component-tagline">An accessible accordion pattern that demonstrates expandable content sections, keyboard interaction, and state communication for screen readers.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Use Tab to reach each accordion trigger. Press Enter or Space to expand or collapse a panel. Observe how focus and state change as you interact.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each trigger is reachable and activatable by keyboard</li>
+          <li>Expanded and collapsed state updates visually and programmatically</li>
+          <li>The trigger and its associated panel remain connected</li>
+          <li>Focus behavior stays predictable throughout interaction</li>
+          <li>Collapsed content is not reachable via keyboard or assistive technology</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Trigger (Heading Button)</strong> — the interactive control inside a heading that expands or collapses the associated panel</li>
+          <li><strong>Icon</strong> — a visual indicator showing the current expanded or collapsed state of the panel</li>
+          <li><strong>Content Panel</strong> — the region that is revealed when the trigger is activated</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Use a native button element for each trigger to ensure keyboard and assistive technology support</li>
+          <li>Communicate expanded and collapsed state programmatically using aria-expanded on the trigger</li>
+          <li>Associate each trigger with its corresponding panel using aria-controls</li>
+          <li>Support keyboard interaction with Tab to reach triggers and Enter or Space to activate them</li>
+          <li>Ensure collapsed content is completely hidden from all users, including screen reader users</li>
+          <li>Maintain a logical and predictable focus order throughout the component</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using non-semantic elements such as div or span as triggers instead of native buttons</li>
+          <li>Failing to update aria-expanded when panels expand or collapse</li>
+          <li>Leaving collapsed content reachable or focusable by keyboard or screen readers</li>
+          <li>Breaking the programmatic association between a trigger and its panel</li>
+          <li>Placing triggers outside of a heading element, disrupting page structure for screen reader users</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Accordion components are frequently implemented incorrectly. When the trigger is not a native button, keyboard users cannot activate it. When aria-expanded is missing or not updated, screen readers announce the wrong state. When collapsed content remains in the DOM and reachable, users encounter content they cannot see. Getting this pattern right ensures that all users can navigate and understand the interface equally.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,7 +110,7 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>

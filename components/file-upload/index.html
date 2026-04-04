@@ -3,38 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>File Upload Demo - Resonance</title>
+    <title>File Upload - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="file-upload.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
+    <header>
+      <a href="../../index.html" class="back-link">
+        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
     <main>
-      <div class="section">
+      <section>
         <h1>File Upload</h1>
         <p class="component-tagline">A file input with drag-and-drop support, file list management, progress reporting, and accessible validation feedback.</p>
+      </section>
+
+      <section>
+        <h2>Demo</h2>
+        <p>Use the upload control below to select one or more files. You can click the labeled button to open the native file browser, or drag files onto the drop zone. After selecting files, observe how the file list is updated and how status messages are communicated. Try removing a file from the list and notice how the change is announced. If validation errors occur — such as an unsupported file type — observe how the error is surfaced.</p>
         <div class="mount"></div>
-      </div>
-      <div class="section">
+      </section>
+
+      <section>
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The file input is triggered by a visible, labeled button so keyboard users can open the file browser without a mouse.</li>
+          <li>When files are added or removed, the updated file list is announced to screen reader users through a live region or focus management.</li>
+          <li>Each file in the list has an associated remove button with an accessible name that includes the filename (for example, "Remove report.pdf").</li>
+          <li>Upload progress is communicated to assistive technology, not conveyed through visual animation alone.</li>
+          <li>Validation errors — such as file type or size restrictions — are announced and linked to the relevant control.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Label</strong> — A visible <code>&lt;label&gt;</code> that names the file input and describes what files are expected.</li>
+          <li><strong>File input</strong> — The native <code>&lt;input type="file"&gt;</code> that triggers the browser's file picker; may be visually hidden but must remain accessible.</li>
+          <li><strong>Drop zone</strong> — A designated area that accepts dragged files; must also support keyboard activation as a fallback.</li>
+          <li><strong>File list</strong> — A list of selected files, each showing the filename and a remove action.</li>
+          <li><strong>Remove button</strong> — A per-file button that deletes the file from the selection; must have an accessible name identifying which file it removes.</li>
+          <li><strong>Status / error region</strong> — A live region that announces upload progress, success confirmations, and validation errors.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The file input or its visible trigger button must have a descriptive label that names the control and indicates any file type or size restrictions.</li>
+          <li>The drag-and-drop drop zone must not be the only way to select files — a keyboard-operable button must also be available.</li>
+          <li>Changes to the file list (additions and removals) must be communicated to assistive technology, either through a live region or by moving focus appropriately.</li>
+          <li>Remove buttons must have accessible names that identify which specific file they will delete, not generic labels like "Remove" or "X".</li>
+          <li>Upload progress and completion status must be conveyed programmatically, not only through a progress bar or spinner.</li>
+          <li>Validation errors must be linked to the control and announced without requiring the user to search for them.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Making drag-and-drop the only interaction method, with no keyboard-accessible alternative for selecting files.</li>
+          <li>Using identically labeled "Remove" buttons for every file in the list, making it impossible for screen reader users to distinguish which file each button affects.</li>
+          <li>Hiding the native file input with <code>display: none</code> and replacing it with a styled element that has no accessible label or keyboard trigger.</li>
+          <li>Displaying upload progress only as a visual progress bar with no corresponding text or ARIA live update.</li>
+          <li>Showing validation errors in a location far from the input without programmatically linking them, so users must hunt for the error message.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why This Matters</h2>
+        <p>File upload is a critical interaction in document management systems, profile setup, support workflows, and many other task flows. When the drag-and-drop zone is the only supported method, users who navigate by keyboard — including many users with motor disabilities — are completely blocked. Poor labeling of remove buttons turns a simple task into a guessing game for screen reader users. And silent upload progress leaves users uncertain whether anything is happening at all. These failures are particularly costly because file upload often sits at a high-stakes point in a workflow, such as submitting an application or attaching evidence to a case.</p>
+      </section>
+
+      <section>
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section>
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
           <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
         </div>
-        <div class="code-preview" id="panel-html" role="tabpanel"><pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre><button class="code-preview__copy" data-target="code-html">Copy Code</button></div>
-        <div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div>
-        <div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div>
-      </div>
-      <div class="section">
-        <h2>Resources</h2>
-        <ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul>
-      </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
     </main>
-    <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>

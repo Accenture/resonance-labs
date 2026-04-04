@@ -12,6 +12,7 @@ fieldset {
 }
 
 .radio__option input[type="radio"] {
+  accent-color: var(--primary-color);
   margin-top: 0.25rem;
 }
 

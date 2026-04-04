@@ -1,16 +1,27 @@
-.accordion__item [role="region"] {
-  display: none;
-}
-
+/* Show/hide — rely on `hidden` attribute to hide, :has() to reveal */
 .accordion__item:has(button[aria-expanded="true"]) [role="region"] {
   display: block;
 }
 
-
-
 /* STYLES FOR ACCORDION COMPONENT */
-/* For basic styling of the accordion component */
-/* Demo only */
+
+.accordion {
+  border: none;
+}
+
+.accordion__item {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.accordion__item:last-child {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.accordion__item h3 {
+  margin: 0;
+}
 
 .accordion-trigger:focus-visible {
   outline: 3px solid var(--focus-color);
@@ -18,32 +29,29 @@
 }
 
 .accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   text-align: left;
-  padding: 0.5rem;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
-  background: var(--gray-200);
+  background: var(--surface-color);
   cursor: pointer;
-  border: 1px solid var(--border-color);
+  border: none;
 }
 
-.accordion-trigger::after {
-  content: "▼";
-  float: right;
-  color: var(--text-color-subtle);
+.accordion-trigger__icon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  pointer-events: none;
 }
 
-.accordion-trigger[aria-expanded="true"]::after {
-  content: "▲";
-}
-
-.accordion__item {
-  /* border-bottom: 1px solid var(--border-color); */
-  padding: 0.5rem 0;
+.accordion-trigger[aria-expanded="true"] .accordion-trigger__icon {
+  transform: rotate(180deg);
 }
 
 .accordion__item [role="region"] {
-  padding: 0.5rem;
-  background: var(--background-color);
-  border: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  background: var(--surface-color);
 }

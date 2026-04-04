@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cart Summary Demo - Resonance</title>
+    <title>Cart Summary - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="cart-summary.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -17,13 +18,77 @@
       </a>
     </header>
     <main>
-      <div class="section">
-        <h1>Cart Summary</h1>
-        <p class="component-tagline">A full shopping cart view that presents line items in an accessible table with quantity controls, removal actions, and a live-updating order summary. Focus management and live-region announcements keep assistive-technology users informed of every change.</p>
-        <div class="mount"></div>
-      </div>
 
-      <div class="section">
+      <section class="section">
+        <h1>Cart Summary</h1>
+        <p class="component-tagline">A full shopping cart view that presents line items in an accessible table with quantity controls, removal actions, and a live-updating order summary.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Interact with the cart below. Try adjusting item quantities using the stepper controls, then remove an item using its remove button. Observe how the order summary totals update in real time and how a screen reader would be informed of those changes.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each line item row is clearly labeled, including the product name, quantity, and price, so the table is meaningful when read linearly.</li>
+          <li>Quantity controls are associated with their product context so a screen reader user knows which item is being changed.</li>
+          <li>Removing an item triggers a live-region announcement so users do not need to navigate back to notice the change.</li>
+          <li>The order summary total updates dynamically and the updated value is communicated to assistive technology without a page reload.</li>
+          <li>Keyboard focus is managed predictably — after removing an item, focus does not drop to the top of the page.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Cart table:</strong> Wraps all line items in a semantic table with appropriate column headers for product, quantity, unit price, and subtotal.</li>
+          <li><strong>Line item row:</strong> A table row representing a single product, including its image, name, quantity stepper, and calculated subtotal.</li>
+          <li><strong>Quantity stepper (inline):</strong> Decrement and increment buttons paired with a numeric display, scoped to the row's product context.</li>
+          <li><strong>Remove button:</strong> A clearly labeled action that deletes the line item; its accessible name includes the product name to disambiguate it from other remove buttons.</li>
+          <li><strong>Order summary panel:</strong> Displays subtotal, shipping estimate, taxes, and order total; updates live when quantities or items change.</li>
+          <li><strong>Live region:</strong> A visually hidden element that announces cart changes — such as item removal or total updates — to screen readers.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The cart uses a standard HTML table so column headers are associated with every data cell, allowing screen reader users to understand each value in context.</li>
+          <li>Each quantity stepper has a label that references its product name, preventing confusion when multiple steppers exist on the same page.</li>
+          <li>Each remove button carries a unique accessible name that includes the product name (e.g., "Remove Wool Cardigan from cart") rather than generic "Remove" text.</li>
+          <li>Changes to the order total and item count are announced via a polite live region, so users are informed without an intrusive interruption.</li>
+          <li>After a row is removed, keyboard focus moves to a logical target — either the next item's remove button or the cart heading — so users are not left without a focus position.</li>
+          <li>The entire component is operable by keyboard alone, with no interactions that require a mouse or pointer device.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a generic list or divs instead of a table, causing screen readers to lose the relationship between product names, quantities, and prices.</li>
+          <li>Labeling all remove buttons identically as "Remove" without including the product name, making it impossible for screen reader users to distinguish between them.</li>
+          <li>Updating the order total visually without adding a live region, leaving screen reader users unaware that the total has changed.</li>
+          <li>Dropping focus to the document body after item removal, forcing keyboard users to navigate from the top to continue shopping.</li>
+          <li>Disabling quantity buttons without communicating their disabled state programmatically, so users cannot tell why the control is unresponsive.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>The cart summary is one of the most transactional areas of any eCommerce experience. A screen reader user who cannot understand the relationship between items and their prices, or who misses an announcement that their total has changed, may complete a purchase with incorrect quantities or an unexpected cost. Poor focus management after item removal means keyboard users must navigate through the entire page to resume their task. Getting this component right means all users can review, adjust, and confirm their order with the same confidence as anyone using a mouse.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -42,10 +107,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -54,7 +119,8 @@
             <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
           </li>
         </ul>
-      </div>
+      </section>
+
     </main>
 
     <footer>

@@ -1,22 +1,133 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quantity Stepper Demo - Resonance</title>
-    <link rel="stylesheet" href="../../assets/style/global.css" /><link rel="stylesheet" href="quantity-stepper.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantity Stepper - Resonance Labs</title>
+    <link rel="stylesheet" href="../../assets/style/global.css" />
+    <link rel="stylesheet" href="quantity-stepper.css" />
     <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
+    <header>
+      <a href="../../index.html" class="back-link">
+        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
     <main>
-      <div class="section"><h1>Quantity Stepper</h1><p class="component-tagline">Accessible number input with increment and decrement controls.</p><div class="mount"></div></div>
-      <div class="section"><h2>Code</h2><div class="code-tabs" role="tablist"><button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button><button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button><button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button></div><div class="code-preview" id="panel-html" role="tabpanel"><pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre><button class="code-preview__copy" data-target="code-html">Copy Code</button></div><div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div><div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div></div>
-      <div class="section"><h2>Resources</h2><ul class="btn-group"><li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li><li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li></ul></div>
+
+      <section class="section">
+        <h1>Quantity Stepper</h1>
+        <p class="component-tagline">An accessible number input with clearly labeled increment and decrement controls that communicates boundary states and current values to both sighted users and assistive technology.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Use the minus and plus buttons to adjust the quantity below. Try reaching the minimum value of 1 and observe how the decrement button responds. You can also type a value directly into the number field. Navigate the component using only a keyboard and listen for how the current value and any boundary states are communicated to a screen reader.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The decrement and increment buttons have accessible names that describe their action — they do not rely on "–" and "+" symbols alone, which can be ambiguous to screen readers.</li>
+          <li>The numeric input field is labeled so screen reader users know it represents a quantity, not just a generic number field.</li>
+          <li>When the minimum or maximum limit is reached, the corresponding button is disabled and its disabled state is communicated programmatically, not just visually grayed out.</li>
+          <li>Updating the value via the buttons or direct text entry does not cause unexpected page navigation or lose the user's focus position.</li>
+          <li>The component groups the two buttons and the input under a shared label so the relationship between them is clear when encountered out of context.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Group label:</strong> A visible or visually associated label that identifies the stepper's purpose in context (e.g., "Quantity" or "Number of items").</li>
+          <li><strong>Decrement button:</strong> Reduces the value by one step; labeled with text such as "Decrease quantity" rather than relying on the "–" character alone.</li>
+          <li><strong>Quantity input:</strong> A number input field showing the current value; directly editable by keyboard and associated with the group label.</li>
+          <li><strong>Increment button:</strong> Increases the value by one step; labeled with text such as "Increase quantity" rather than relying on the "+" character alone.</li>
+          <li><strong>Boundary state indicator:</strong> The disabled state applied to either button when the minimum or maximum limit is reached, communicated both visually and programmatically.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Both buttons carry descriptive accessible names that explain their function without relying on symbolic characters that may be read inconsistently by screen readers.</li>
+          <li>The quantity input is associated with its label through standard HTML labeling so screen readers announce the field's purpose when it receives focus.</li>
+          <li>When the value reaches its minimum or maximum, the appropriate button is disabled with the native disabled attribute so assistive technologies report it as unavailable.</li>
+          <li>The stepper accepts direct keyboard input in the number field, giving users a fast alternative to repeatedly clicking the increment or decrement buttons.</li>
+          <li>Adjusting the quantity does not trigger automatic form submission or page refresh, preserving the user's position on the page.</li>
+          <li>The entire stepper — label, decrement, input, and increment — is grouped so that navigating by form control exposes the full context at once.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using "–" and "+" as the sole accessible names for the buttons, which screen readers may announce as "minus" and "plus" with no indication of what is being changed.</li>
+          <li>Visually graying out a button at the boundary without setting its disabled attribute, so keyboard users can still Tab to and activate a control that should be inert.</li>
+          <li>Omitting a label on the number input so screen reader users encounter a field with no announced purpose when it receives focus.</li>
+          <li>Triggering form submission or a cart update automatically on every button press, causing unexpected page changes while the user is still adjusting the quantity.</li>
+          <li>Placing the group label far from the stepper controls in the DOM, breaking the programmatic association between the label and the interactive elements.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Quantity steppers appear at critical decision points: product detail pages, cart summaries, and checkout. A blind user who cannot determine which direction the unlabeled "+" button adjusts, or who cannot tell whether the control has reached a minimum, may add the wrong number of items to their cart and only discover the error at checkout. A keyboard-only user who finds the decrement button still focusable at the minimum limit may become confused when activating it produces no result. Accessible quantity steppers keep all users in control of one of the most consequential inputs in the shopping flow.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
+
     </main>
-    <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
       fetch("./quantity-stepper.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./quantity-stepper.js";document.body.appendChild(s)});
       fetch("./quantity-stepper.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});

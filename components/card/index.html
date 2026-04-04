@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Card Demo - Resonance</title>
+    <title>Card - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="card.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -23,8 +20,69 @@
     <main>
       <div class="section">
         <h1>Card</h1>
-        <p class="component-tagline">A card groups related content — such as a title, description, and call to action — into a single contained surface. The entire card can be made clickable by layering an anchor over it with CSS, providing a large tap target without nesting interactive elements. Cards work well for previewing items in a list or grid.</p>
+        <p class="component-tagline">A contained surface that groups related content — such as a title, description, and call to action — into a single clickable unit without nesting multiple interactive elements.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Tab to the card and activate it with Enter. Observe that a single link is reachable per card, that the link's accessible name reflects the card's content, and that no other interactive elements inside the card interrupt the tab order unexpectedly.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Exactly one focusable element per card is reachable by keyboard — the primary link</li>
+          <li>The link's accessible name is descriptive enough to identify the card's destination without surrounding context</li>
+          <li>The card image is either described through the link text or hidden from assistive technology if it is purely decorative</li>
+          <li>The clickable surface area is large without requiring multiple redundant links to the same destination</li>
+          <li>Visual hover and focus states are distinct and clearly communicate the card's interactive nature</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Card Container</strong> — the wrapping element that visually groups the card's content and provides position context for the full-surface link overlay</li>
+          <li><strong>Card Image</strong> — an optional visual element at the top of the card; decorative images are hidden from assistive technology, while meaningful images carry descriptive alternative text</li>
+          <li><strong>Card Title</strong> — a heading or prominently styled text that names the card's subject and provides the primary accessible name for the card's link</li>
+          <li><strong>Card Description</strong> — supporting text that gives additional context about the card's content or destination</li>
+          <li><strong>Primary Link</strong> — the anchor element whose stretched or overlaid click target covers the full card surface, providing a large interaction area without nesting multiple links</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Ensure the card has exactly one focusable element reachable by keyboard — typically the primary link — so keyboard users do not encounter multiple redundant paths to the same destination</li>
+          <li>Give the primary link an accessible name that is descriptive on its own, without requiring the surrounding card content to provide context</li>
+          <li>Use a CSS overlay or stretching technique to expand the link's click target to the full card surface, rather than wrapping all card content inside an anchor element</li>
+          <li>Mark decorative card images with empty alternative text so assistive technology does not announce them as part of the card's content</li>
+          <li>Ensure the card's focus indicator is visible and clearly indicates that the card surface is interactive</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Wrapping the entire card in an anchor element, which causes screen readers to announce all card content as part of the link text and produces an overwhelming announcement</li>
+          <li>Including multiple links inside a card pointing to the same destination, creating redundant tab stops that slow down keyboard navigation</li>
+          <li>Using a generic link label such as "Read more" or "Learn more" that provides no indication of the destination without the surrounding visual context</li>
+          <li>Omitting alternative text on meaningful card images, leaving screen reader users without the visual information the image conveys</li>
+          <li>Making the card clickable via JavaScript on the container div without providing a keyboard-operable link inside it</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Cards are ubiquitous in modern interfaces — article listings, product grids, resource libraries — yet they are routinely implemented in ways that create barriers. Wrapping an entire card in an anchor causes screen readers to read every line of content as one long link. Multiple redundant links force keyboard users to tab through unnecessary stops. Vague link text like "Read more" is meaningless when encountered in a links list. The card pattern requires deliberate decisions about link structure, accessible names, and image handling to work equally well for all users.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,18 +107,10 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
-          <li>
-            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
-          </li>
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
         </ul>
       </div>
     </main>

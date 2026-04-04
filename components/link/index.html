@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Link Demo - Resonance</title>
+    <title>Link - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="link.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +22,75 @@
       </a>
     </header>
     <main>
-      <div class="section">
+      <section>
         <h1>Link</h1>
-        <p class="component-tagline">A link navigates the user to another page, section, or resource. Unlike a button, it represents a destination rather than an action. Links should have descriptive text that makes sense out of context, and their visual styling should clearly distinguish them from surrounding body text.</p>
-        <div class="mount"></div>
-      </div>
+        <p class="component-tagline">A link navigates the user to another page, section, or resource, and should always have descriptive text that makes sense out of context.</p>
+      </section>
 
-      <div class="section">
+      <section>
+        <h2>Demo</h2>
+        <p>Tab through the link examples below and observe how each one is announced by assistive technology. Notice the visible focus styling, the link text that describes the destination, and how links that open in a new tab communicate that behavior. Compare links to buttons — both are interactive, but links represent destinations while buttons trigger actions.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section>
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each link receives a clear visible focus indicator when navigated to with the keyboard.</li>
+          <li>Link text is descriptive enough to convey the destination without relying on surrounding context (no "click here" or "read more").</li>
+          <li>Links that open in a new tab or window communicate that behavior in their accessible name or through visible supplemental text.</li>
+          <li>Links are visually distinguishable from surrounding body text through more than color alone — for example, by underline or other visual treatment.</li>
+          <li>Icon-only links include an accessible name via <code>aria-label</code> or visually hidden text so their purpose is not lost to screen reader users.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Anchor element</strong> — The native <code>&lt;a&gt;</code> element with an <code>href</code> attribute that defines the destination; provides keyboard operability and the "link" role by default.</li>
+          <li><strong>Link text</strong> — The visible label inside the anchor that describes where the link leads; forms the accessible name when no other override is present.</li>
+          <li><strong>Icon (optional)</strong> — A decorative or informational icon accompanying the link text; must be hidden from assistive technology if the text alone is sufficient.</li>
+          <li><strong>New-tab indicator (optional)</strong> — Visible or visually hidden text (for example, "opens in a new tab") appended when the link opens in a new context.</li>
+          <li><strong>External indicator (optional)</strong> — A visual signal, such as an external link icon, indicating the link leads to a different domain.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Links must use a native <code>&lt;a href&gt;</code> element so they are keyboard-focusable, activatable with <kbd>Enter</kbd>, and announced with the correct role.</li>
+          <li>Link text must describe the destination clearly enough to be understood without reading surrounding content.</li>
+          <li>Links that open a new browser tab or window must inform users of that behavior, either in the visible text or in an accessible name supplement.</li>
+          <li>Links must be distinguishable from non-link text using a visual cue beyond color alone, such as an underline.</li>
+          <li>The link's focus state must meet minimum contrast requirements and be clearly visible against the page background.</li>
+          <li>Links must not be used to trigger actions — that is the role of a button; using a link without a meaningful <code>href</code> creates confusion for both keyboard and screen reader users.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using vague link text such as "click here," "read more," or "learn more" that provides no meaning when read out of context by a screen reader.</li>
+          <li>Opening links in a new tab without warning users, which can disorient people using screen readers or those who rely on the browser's back button.</li>
+          <li>Distinguishing links from body text only by color, which fails users who cannot perceive color differences.</li>
+          <li>Using <code>&lt;a&gt;</code> elements without an <code>href</code> attribute to trigger JavaScript actions, producing elements that behave like buttons but are not keyboard-accessible by default.</li>
+          <li>Using icon-only links without an accessible name, making the link's destination completely unknown to screen reader users.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why This Matters</h2>
+        <p>Links are the most fundamental navigation mechanism on the web — they are how users move between pages, jump to sections, and access resources. Screen reader users frequently navigate by pulling up a list of all links on a page, which means a page full of "click here" or "read more" links becomes a list of identical, meaningless entries. Users who cannot distinguish links from body text visually may activate them accidentally or miss them entirely. Getting link semantics and text right is one of the highest-return accessibility investments because it affects every page of a product, every time a user navigates.</p>
+      </section>
+
+      <section>
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section>
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -46,10 +109,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -62,7 +125,7 @@
             >
           </li>
         </ul>
-      </div>
+      </section>
     </main>
 
     <footer>

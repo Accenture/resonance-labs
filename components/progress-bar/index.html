@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Progress Bar Demo - Resonance</title>
+    <title>Progress Bar - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="progress-bar.css" />
     <link
@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,13 +22,76 @@
       </a>
     </header>
     <main>
-      <div class="section">
-        <h1>Progress Bar</h1>
-        <p class="component-tagline">A progress bar communicates how far along a process is, such as a file upload or a multi-step form. It uses a visual fill and an accessible label or live region to keep all users informed. Determinate bars show exact progress, while indeterminate bars indicate that work is happening without a known endpoint.</p>
-        <div class="mount"></div>
-      </div>
 
-      <div class="section">
+      <section class="section">
+        <h1>Progress Bar</h1>
+        <p class="component-tagline">A progress bar communicates how far along a process is, using a visual fill and an accessible label or live region to keep all users informed of the current status.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Observe the progress bar as it advances. Pay attention to whether a screen reader would hear meaningful updates as the value changes. Check that the label clearly identifies what process is being tracked and that the current percentage or step is communicated without relying on the visual fill alone.</p>
+        <div class="mount"></div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The progress bar has a visible label that describes the process being tracked.</li>
+          <li>The current progress value is communicated to assistive technologies, not only shown through the visual fill width.</li>
+          <li>For determinate progress, the numeric value or percentage is conveyed to screen readers as it updates.</li>
+          <li>The component does not rely on color alone to communicate a completed, in-progress, or error state.</li>
+          <li>Live region updates are appropriately throttled — screen readers receive meaningful announcements without being flooded.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Track:</strong> The full-width background bar that represents the total range of progress from 0 to 100%.</li>
+          <li><strong>Fill / indicator:</strong> The colored portion of the track that grows to represent current completion.</li>
+          <li><strong>Label:</strong> The visible text that identifies what process or task the progress bar is measuring.</li>
+          <li><strong>Value text:</strong> An optional visible readout of the current numeric progress, such as a percentage or step count.</li>
+          <li><strong>Live region:</strong> The programmatic mechanism that announces progress updates to screen readers as the value changes.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The progress bar must have an accessible label that describes what is being measured, not just a generic "progress" announcement.</li>
+          <li>For determinate bars, the current value and maximum value must be communicated to assistive technologies.</li>
+          <li>For indeterminate bars, the component must signal that progress is happening without implying a known completion point.</li>
+          <li>Progress updates must be announced to screen readers through a live region or equivalent mechanism.</li>
+          <li>Completion and error states must be communicated through text or labels, not only through color changes.</li>
+          <li>The bar must not be keyboard-focusable since it is a status indicator, not an interactive control.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a plain div with CSS width changes and no accessible attributes, so screen readers receive no progress information.</li>
+          <li>Communicating the percentage visually only through the fill width, with no numeric value or text available to assistive technologies.</li>
+          <li>Setting up a live region that announces every fractional change, causing an overwhelming stream of updates for screen reader users.</li>
+          <li>Conveying a completed or failed state solely through a color change, which excludes users who cannot perceive color.</li>
+          <li>Omitting a descriptive label, so users only hear a number with no context about what task is being tracked.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Users rely on progress bars during file uploads, form submissions, and multi-step workflows. When progress is communicated only through a growing visual fill, screen reader users have no way to know that a process has started, how far along it is, or when it has finished. Poorly implemented live regions can also cause the opposite problem — bombarding users with constant announcements. The goal is meaningful, timely feedback that keeps everyone informed without being intrusive.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
         <h2>Code</h2>
         <div class="code-tabs" role="tablist">
           <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
@@ -46,10 +110,10 @@
           <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
           <button class="code-preview__copy" data-target="code-js">Copy Code</button>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
           <li>
             <a class="btn btn-primary" href="../../index.html">Back to Home</a>
@@ -62,7 +126,8 @@
             >
           </li>
         </ul>
-      </div>
+      </section>
+
     </main>
 
     <footer>

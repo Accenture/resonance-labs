@@ -2,11 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Resonance - Component Library Demo</title>
+    <title>Resonance Labs - Accessible Component Patterns</title>
     <link rel="stylesheet" href="assets/style/global.css" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-
   </head>
   <body>
     <header>
@@ -17,11 +16,59 @@
     <main>
       <div class="banner">
         <div class="banner__text">
-          <h1 class="banner__title">From criteria to working examples</h1>
-          <p class="banner__tagline">A growing set of code demos maintained as a shared reference for building accessible components and patterns across teams — useful for development, QA, and stakeholder alignment.</p>
+          <h1 class="banner__title">Accessible component patterns for real-world teams</h1>
+          <p class="banner__tagline">Resonance Labs provides accessible component patterns for real-world applications. Each component helps teams learn structure, behavior, and accessibility expectations. Content is designed for implementation learning and training.</p>
         </div>
         <img class="banner__image" src="assets/images/banner-programming.svg" alt="" />
       </div>
+
+      <div class="info-section">
+        <h2 class="info-section__title">How to use this site</h2>
+        <ol class="info-section__list">
+          <li>Select a component from the library below</li>
+          <li>Explore the interactive demo</li>
+          <li>Review the component anatomy</li>
+          <li>Understand expected accessibility behavior</li>
+          <li>Apply the pattern in your own implementation</li>
+        </ol>
+      </div>
+
+      <div class="info-section">
+        <h2 class="info-section__title">Who this is for</h2>
+        <ul class="info-section__list">
+          <li>Frontend developers building accessible interfaces</li>
+          <li>QA engineers validating component behavior</li>
+          <li>Designers understanding interaction and state requirements</li>
+          <li>Accessibility practitioners reviewing implementations</li>
+          <li>Team trainers and onboarding leads</li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h2 class="info-section__title">What every component page covers</h2>
+        <p class="info-section__desc">All components follow a consistent structure so teams can build a repeatable mental model:</p>
+        <ul class="info-section__list">
+          <li><strong>Demo</strong> — interactive example to explore in the browser</li>
+          <li><strong>Anatomy</strong> — labeled parts of the component</li>
+          <li><strong>Accessibility Behavior</strong> — what must be true for the component to work for all users</li>
+          <li><strong>Common Mistakes</strong> — implementation errors to watch for</li>
+          <li><strong>Why It Matters</strong> — the impact of getting it wrong</li>
+        </ul>
+        <p class="info-section__note">Components are reviewed against internal accessibility standards aligned with WCAG.</p>
+      </div>
+
+      <div class="component-search" role="search">
+        <label class="component-search__label" for="component-search-input">Search components</label>
+        <input
+          class="component-search__input"
+          type="search"
+          id="component-search-input"
+          placeholder="e.g. accordion, modal, button…"
+          autocomplete="off"
+        />
+        <p class="component-search__status" aria-live="polite" aria-atomic="true"></p>
+      </div>
+
       <h2 class="section-title">Core</h2>
       <div class="component-grid">
 
@@ -460,5 +507,48 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script>
+      (function () {
+        var input = document.getElementById('component-search-input');
+        var status = document.querySelector('.component-search__status');
+        var cards = Array.from(document.querySelectorAll('.component-card'));
+        var sectionTitles = Array.from(document.querySelectorAll('.section-title'));
+        var grids = Array.from(document.querySelectorAll('.component-grid'));
+
+        function filter(query) {
+          var q = query.trim().toLowerCase();
+
+          cards.forEach(function (card) {
+            var title = card.querySelector('.component-card__title').textContent.toLowerCase();
+            var desc = card.querySelector('.component-card__desc').textContent.toLowerCase();
+            var match = !q || title.includes(q) || desc.includes(q);
+            card.style.display = match ? '' : 'none';
+          });
+
+          grids.forEach(function (grid, i) {
+            var visible = Array.from(grid.querySelectorAll('.component-card')).filter(function (c) {
+              return c.style.display !== 'none';
+            });
+            if (sectionTitles[i]) sectionTitles[i].style.display = visible.length ? '' : 'none';
+            grid.style.display = visible.length ? '' : 'none';
+          });
+
+          if (!q) {
+            status.textContent = '';
+          } else {
+            var total = cards.filter(function (c) { return c.style.display !== 'none'; }).length;
+            status.textContent = total === 0
+              ? 'No components found.'
+              : total === 1 ? '1 component found.' : total + ' components found.';
+          }
+        }
+
+        input.addEventListener('input', function () { filter(input.value); });
+
+        input.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') { input.value = ''; filter(''); }
+        });
+      })();
+    </script>
   </body>
 </html>

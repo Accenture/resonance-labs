@@ -3,28 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Toggle Switch Demo - Resonance</title>
+    <title>Toggle Switch - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="toggle-switch.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
-    <header>
-      <a href="../../index.html" class="back-link">
-        <img src="../../assets/images/logo.svg" alt="Resonance Logo" />
-      </a>
-    </header>
+    <header><a href="../../index.html" class="back-link"><img src="../../assets/images/logo.svg" alt="Resonance Logo" /></a></header>
     <main>
+
       <div class="section">
         <h1>Toggle Switch</h1>
-        <p class="component-tagline">A toggle switch provides an immediate on/off control, similar to a physical light switch. Unlike a checkbox, a toggle takes effect right away without a separate submit action. The current state is communicated visually and through aria attributes for assistive technology.</p>
+        <p class="component-tagline">A toggle switch provides an immediate on/off control that takes effect right away, with its current state communicated visually and through ARIA attributes for assistive technology.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Click or tap the toggle to switch it between on and off. Then tab to it with the keyboard and press <strong>Space</strong> to activate it. Listen with a screen reader to confirm that the new state — "on" or "off" — is announced immediately after each interaction without requiring a page reload or form submission.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The toggle has a persistent visible label that identifies what setting it controls — the label does not disappear when the switch is activated.</li>
+          <li>A screen reader announces the label and the current state (on or off) when focus lands on the control.</li>
+          <li>Activating the toggle immediately announces the new state without requiring focus to leave and return.</li>
+          <li>The visual difference between on and off states is communicated through more than color alone — position or shape also changes.</li>
+          <li>The control is reachable and operable by keyboard using Space or Enter without any mouse interaction.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Label:</strong> A visible text label identifying what the toggle controls, persistently displayed regardless of the current state.</li>
+          <li><strong>Track:</strong> The elongated pill-shaped background element that visually represents the switch housing; its fill color typically changes between states.</li>
+          <li><strong>Thumb:</strong> The circular element that slides left (off) or right (on) within the track to indicate the current state.</li>
+          <li><strong>State indicator:</strong> Optional text inside or beside the track ("On" / "Off") providing an additional non-color cue for the current state.</li>
+          <li><strong>Interactive control:</strong> The underlying button or checkbox element that receives focus, carries the ARIA switch role and checked state, and handles keyboard activation.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The control must use <code>role="switch"</code> and <code>aria-checked</code> set to <code>true</code> or <code>false</code> to communicate state to assistive technology.</li>
+          <li>The label must be programmatically associated with the control so screen readers announce what the toggle controls, not just its state.</li>
+          <li>The current state must update immediately on activation, and the change must be announced to screen readers without a page reload.</li>
+          <li>The toggle must be operable by keyboard — pressing Space must toggle the state when the control has focus.</li>
+          <li>On and off states must be distinguishable through visual cues beyond color, such as the thumb position or supplementary text labels.</li>
+          <li>The control must have a visible focus indicator with sufficient contrast so keyboard users can identify where focus is.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Building the toggle as a styled <code>&lt;div&gt;</code> with a click handler but no role, label, or keyboard support, making it completely inaccessible.</li>
+          <li>Using only background color to differentiate the on and off states, which fails users with color vision deficiencies.</li>
+          <li>Omitting the label or placing it in a way that is not programmatically associated, so screen readers only announce "switch, on" without context for what is being toggled.</li>
+          <li>Requiring a form submission to apply the toggled state, which contradicts the expected immediate-effect behavior of a switch.</li>
+          <li>Not updating <code>aria-checked</code> when the visual state changes, leaving screen readers stuck reporting the old state.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Toggle switches appear in settings panels, feature flags, notification preferences, and privacy controls — all places where users need to make quick binary decisions. A toggle that communicates its state only through visual position or color gives blind users and keyboard-only users no way to know whether a setting is on or off. In critical contexts like privacy permissions or accessibility settings, this is not just an inconvenience — it means users cannot make informed choices about their own experience. Implementing the switch role and live state updates closes that gap entirely.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,29 +105,20 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
-          <li>
-            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
-          </li>
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
         </ul>
       </div>
-    </main>
 
+    </main>
     <footer>
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-
     <script>
       // Fetch HTML fragment
       fetch("./toggle-switch.html")

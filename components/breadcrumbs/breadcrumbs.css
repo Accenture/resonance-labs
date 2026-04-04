@@ -28,9 +28,16 @@
 
 /* Separator (purely visual) */
 .breadcrumb__item + .breadcrumb__item::before {
-  content: "/" / "";
-  margin: 0 0.5rem;
-  color: var(--breadcrumb-separator-color); /* neutral gray */
+  content: "" / "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0 0.25rem;
+  flex-shrink: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M10 6 8.6 7.4l4.58 4.6-4.58 4.6L10 18l6-6-6-6z' fill='%23999999'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Link items */

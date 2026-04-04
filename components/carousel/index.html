@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carousel Demo - Resonance</title>
+    <title>Carousel - Resonance Labs</title>
     <link rel="stylesheet" href="../../assets/style/global.css" />
     <link rel="stylesheet" href="carousel.css" />
-    <link
-      rel="icon"
-      href="../../assets/images/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+    <script src="../../assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -23,8 +20,71 @@
     <main>
       <div class="section">
         <h1>Carousel</h1>
-        <p class="component-tagline">A carousel cycles through a set of slides, typically images or content panels, using previous and next controls. Users can also navigate with keyboard arrows or swipe gestures on touch devices. Carousels should pause on hover or focus, and each slide should be announced to assistive technology.</p>
+        <p class="component-tagline">A carousel cycles through a set of slides using previous and next controls, pauses on hover or focus, and announces each slide to assistive technology so all users can access the content.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Use the previous and next buttons to advance through slides. Tab into the carousel and observe that autoplay pauses when focus enters. Use the keyboard to activate controls and listen for how slide changes are announced by a screen reader.</p>
         <div class="mount"></div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The previous and next controls are keyboard operable and have descriptive accessible names</li>
+          <li>Autoplay pauses when the mouse hovers over the carousel or when keyboard focus enters it</li>
+          <li>Each slide transition is announced to screen reader users, including the current slide position within the total</li>
+          <li>Hidden slides are not reachable by keyboard or assistive technology</li>
+          <li>The carousel region is identified with a label so screen reader users know where they are when they encounter it</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ul>
+          <li><strong>Carousel Region</strong> — the landmark or labelled container that identifies the carousel to screen reader users and holds all slides and controls</li>
+          <li><strong>Slide Track</strong> — the scrollable or animated container that holds all individual slides in sequence</li>
+          <li><strong>Slide</strong> — an individual content panel within the carousel; only the active slide is visible and reachable to all users</li>
+          <li><strong>Previous and Next Controls</strong> — native button elements that advance or reverse the slide position; each carries a descriptive accessible name</li>
+          <li><strong>Slide Indicators</strong> — optional dot or tab controls that show total slide count and allow direct navigation to a specific slide; each must have an accessible name identifying its target slide</li>
+          <li><strong>Live Region</strong> — an announcement area that communicates slide changes to screen reader users without requiring focus to move</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Wrap the carousel in a labelled region so users navigating by landmarks can identify and locate it</li>
+          <li>Pause autoplay whenever the mouse hovers over the carousel or keyboard focus is within it, so users are not timed out of content</li>
+          <li>Announce slide changes to screen reader users, including position information such as "slide 2 of 5," so users understand what has changed and how much content remains</li>
+          <li>Ensure hidden slides are completely inaccessible to keyboard and assistive technology — not merely visually hidden</li>
+          <li>Give previous and next buttons descriptive accessible names that clarify their action; avoid naming them only with directional symbols</li>
+          <li>Provide a way to stop autoplay entirely, giving users full control over moving content</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Continuing autoplay while the user is focused on or hovering over the carousel, which can disorient users before they finish reading a slide</li>
+          <li>Failing to announce slide changes, leaving screen reader users unaware that the content has updated</li>
+          <li>Allowing hidden slides to remain keyboard focusable, causing users to interact with content they cannot see</li>
+          <li>Labelling navigation buttons only with icons such as arrows without providing an accessible name, making them ambiguous to screen reader users</li>
+          <li>Omitting slide position context from announcements, so users have no sense of how many slides exist or where they are in the sequence</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Carousels are among the most accessibility-challenged components in common use. Autoplay that does not pause creates a time pressure that disproportionately affects users with cognitive and motor disabilities. Hidden slides that remain keyboard-reachable create a confusing and disorienting experience. Without slide announcements, screen reader users have no way to know the content has changed. When controls lack accessible names, users cannot tell what the buttons do. The carousel requires more careful accessibility engineering than almost any other component — done well, it gives all users access to the full content; done poorly, it effectively hides content from a significant portion of the audience.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
       </div>
 
       <div class="section">
@@ -49,18 +109,10 @@
       </div>
 
       <div class="section">
-        <h2>Resources</h2>
+        <h2>Reference Implementation</h2>
         <ul class="btn-group">
-          <li>
-            <a class="btn btn-primary" href="../../index.html">Back to Home</a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/Accenture/resonance-labs"
-              >GitHub Code</a
-            >
-          </li>
+          <li><a class="btn btn-primary" href="../../index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
         </ul>
       </div>
     </main>
