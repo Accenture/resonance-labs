@@ -1,17 +1,8 @@
-<!--
-  Component-only reference
-  Conforms to:
-    - WAI-ARIA alert role (implicit aria-live="assertive")
-    - Colour alone does not convey purpose — each alert uses icon + text label
-    - Content is programmatically determinable
-    - Does not require user interaction to be announced
-    - Does not move keyboard focus when it appears
--->
 <div class="section">
   <section class="alert-demo" data-alert-demo>
     <!-- Info alert -->
     <div class="alert alert--info" role="alert">
-      <span class="alert__icon" aria-hidden="true">&#9432;</span>
+      <img class="alert__icon" src="../../assets/images/alert-information.svg" alt="" width="20" height="20" aria-hidden="true" />
       <div class="alert__content">
         <strong class="alert__label">Info:</strong>
         <span class="alert__message">Your session will expire in 10 minutes.</span>
@@ -20,16 +11,25 @@
 
     <!-- Success alert -->
     <div class="alert alert--success" role="alert">
-      <span class="alert__icon" aria-hidden="true">&#10003;</span>
+      <img class="alert__icon" src="../../assets/images/alert-success.svg" alt="" width="20" height="20" aria-hidden="true" />
       <div class="alert__content">
         <strong class="alert__label">Success:</strong>
         <span class="alert__message">Your changes have been saved.</span>
       </div>
     </div>
 
+    <!-- Warning alert -->
+    <div class="alert alert--warning" role="alert">
+      <img class="alert__icon" src="../../assets/images/alert-warning.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="alert__content">
+        <strong class="alert__label">Warning:</strong>
+        <span class="alert__message">Some fields require your attention before continuing.</span>
+      </div>
+    </div>
+
     <!-- Error alert -->
     <div class="alert alert--error" role="alert">
-      <span class="alert__icon" aria-hidden="true">&#10007;</span>
+      <img class="alert__icon" src="../../assets/images/alert-error.svg" alt="" width="20" height="20" aria-hidden="true" />
       <div class="alert__content">
         <strong class="alert__label">Error:</strong>
         <span class="alert__message">Unable to process your request. Please try again.</span>

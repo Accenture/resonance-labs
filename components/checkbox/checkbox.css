@@ -19,6 +19,7 @@
 
 /* Make the native checkbox target at least 24x24 (WCAG 2.2 2.5.8 AA) */
 input[type="checkbox"] {
+  accent-color: var(--primary-color);
   inline-size: 24px;
   block-size: 24px;
   margin: 0;

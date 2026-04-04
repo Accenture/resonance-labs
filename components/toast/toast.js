@@ -34,7 +34,13 @@
     dismiss.type = "button";
     dismiss.className = "toast__dismiss";
     dismiss.setAttribute("aria-label", "Dismiss notification");
-    dismiss.textContent = "\u00D7";
+    var closeImg = document.createElement("img");
+    closeImg.src = "../../assets/images/close.svg";
+    closeImg.alt = "";
+    closeImg.width = 16;
+    closeImg.height = 16;
+    closeImg.setAttribute("aria-hidden", "true");
+    dismiss.appendChild(closeImg);
 
     toast.appendChild(text);
     toast.appendChild(dismiss);

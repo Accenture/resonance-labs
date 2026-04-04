@@ -27,16 +27,14 @@
 }
 
 /* Chevron indicator */
-.disclosure__trigger::after {
-  content: "\25B6";
-  display: inline-block;
-  font-size: 0.75rem;
+.disclosure__icon {
+  flex-shrink: 0;
   color: var(--text-color-subtle);
   transition: transform 0.2s ease;
 }
 
-.disclosure__trigger[aria-expanded="true"]::after {
-  transform: rotate(90deg);
+.disclosure__trigger[aria-expanded="true"] .disclosure__icon {
+  transform: rotate(180deg);
 }
 
 /* Expanded trigger styling */

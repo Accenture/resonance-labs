@@ -14,6 +14,7 @@
 
 .banner__title {
   font-size: 2.25rem;
+  font-weight: var(--font-weight-bold);
   line-height: 1.2;
   color: var(--text-color-strong);
   margin-bottom: 0.75rem;
@@ -31,8 +32,35 @@
 }
 
 @media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    padding: 2rem 0;
+    gap: 1rem;
+  }
+
+  .banner__title {
+    font-size: 1.75rem;
+  }
+
+  .banner__tagline {
+    font-size: var(--font-size-base);
+  }
+
   .banner__image {
     display: none;
+  }
+
+  .section-title {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .info-section {
+    max-width: 100%;
+  }
+
+  .component-search__input {
+    max-width: 100%;
   }
 }
 
@@ -90,7 +118,7 @@
 /* Section titles */
 .section-title {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--text-color-strong);
   margin-top: 3rem;
   margin-bottom: 1.5rem;
@@ -143,7 +171,7 @@
 
 .component-card__title {
   font-size: var(--font-size-base);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .component-card__desc {
