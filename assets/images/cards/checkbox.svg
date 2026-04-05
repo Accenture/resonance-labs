@@ -1,13 +1,24 @@
 <svg width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="0.5" y="0.5" width="249" height="249" fill="#F3F3F3"/>
 <rect x="0.5" y="0.5" width="249" height="249" stroke="#BFBEC4"/>
-<path d="M75 145C75 142.791 76.7909 141 79 141H171C173.209 141 175 142.791 175 145C175 147.209 173.209 149 171 149H79C76.7909 149 75 147.209 75 145Z" fill="#BABABA"/>
-<rect x="58.5" y="140.5" width="9" height="9" fill="#FEFEFE" stroke="#BABABA"/>
-<rect width="10" height="10" transform="translate(58 110)" fill="white"/>
-<path d="M75 115C75 112.791 76.7909 111 79 111H171C173.209 111 175 112.791 175 115C175 117.209 173.209 119 171 119H79C76.7909 119 75 117.209 75 115Z" fill="#8D8D8D"/>
-<rect x="58.5" y="110.5" width="9" height="9" fill="#FEFEFE" stroke="#8D8D8D"/>
-<path d="M61 114.667L62.5385 116L65 113" stroke="#8D8D8D" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M75 130C75 127.791 76.7909 126 79 126H171C173.209 126 175 127.791 175 130C175 132.209 173.209 134 171 134H79C76.7909 134 75 132.209 75 130Z" fill="#8D8D8D"/>
-<rect x="58.5" y="125.5" width="9" height="9" fill="#FEFEFE" stroke="#8D8D8D"/>
-<path d="M61 129.667L62.5385 131L65 128" stroke="#8D8D8D" stroke-linecap="round" stroke-linejoin="round"/>
+<g clip-path="url(#clip0_30_376)">
+<rect x="47" y="82" width="22" height="22" rx="3" fill="#222222" stroke="#222222" stroke-width="2"/>
+<path d="M51 93.5556L56.3846 98L65 88" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path d="M75 93C75 90.2386 77.2386 88 80 88H190C192.761 88 195 90.2386 195 93C195 95.7614 192.761 98 190 98H80C77.2386 98 75 95.7614 75 93Z" fill="#222222"/>
+<g clip-path="url(#clip1_30_376)">
+<rect x="47" y="122" width="22" height="22" rx="3" fill="#222222" stroke="#222222" stroke-width="2"/>
+<path d="M51 133.556L56.3846 138L65 128" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path d="M75 133C75 130.239 77.2386 128 80 128H190C192.761 128 195 130.239 195 133C195 135.761 192.761 138 190 138H80C77.2386 138 75 135.761 75 133Z" fill="#222222"/>
+<rect x="47" y="162" width="22" height="22" rx="3" fill="#FEFEFE" stroke="#222222" stroke-width="2"/>
+<path d="M75 173C75 170.239 77.2386 168 80 168H190C192.761 168 195 170.239 195 173C195 175.761 192.761 178 190 178H80C77.2386 178 75 175.761 75 173Z" fill="#222222"/>
+<defs>
+<clipPath id="clip0_30_376">
+<rect x="42" y="77" width="32" height="32" rx="4" fill="white"/>
+</clipPath>
+<clipPath id="clip1_30_376">
+<rect x="42" y="117" width="32" height="32" rx="4" fill="white"/>
+</clipPath>
+</defs>
 </svg>

@@ -355,11 +355,19 @@ a.link-underlined:hover:before {
   background-position: 0 50%;
 }
 
+main > .section:first-child:not(.rl-hero)
+main > section:nth-child(1):not(.rl-hero) {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .section,
 main > section {
   margin-top: 2rem;
   padding: 1.5rem 0 0;
 }
+
+
 
 .section:has(.code-tabs),
 .section:has(.mount),
@@ -593,7 +601,7 @@ code, pre, kbd, samp {
 */
 
 .section:has(.code-tabs) {
-  background: #1d1f21;
+  background: var(--primary-color);
   padding: 2rem;
   border-radius: 0.5rem;
   margin-top: 2rem;
@@ -623,7 +631,7 @@ code, pre, kbd, samp {
 }
 
 .section:has(.code-tabs) .code-preview pre[class*="language-"] {
-  background: #1d1f21;
+  background: var(--primary-color);
   border-color: #373b41;
   margin-top: 0.75rem;
 }

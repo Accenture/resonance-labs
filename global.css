@@ -1,24 +1,403 @@
-/* ===================================================
-   Base HTML styles
-   Tokens defined in assets/style/global.css
-   =================================================== */
+/* Homepage hero */
+.rl-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 3rem;
+  align-items: center;
+  padding: 3.5rem 0 4.5rem;
+}
 
-* {
-  box-sizing: border-box;
+.rl-hero__content {
+  max-width: 42rem;
+}
+
+.rl-hero__eyebrow {
+  margin: 0 0 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-color-muted);
+}
+
+.rl-hero__title {
   margin: 0;
+  max-width: 11ch;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--text-color-strong);
+}
+
+.rl-hero__text {
+  margin: 1.25rem 0 0;
+  max-width: 60ch;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text-color-muted);
+}
+
+.rl-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  margin-top: 1.75rem;
+}
+
+.rl-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.125rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform var(--transition-duration), box-shadow var(--transition-duration), background-color var(--transition-duration);
+}
+
+.rl-button:hover {
+  transform: translateY(-1px);
+}
+
+.rl-button:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.rl-button--primary {
+  background: var(--text-color-strong);
+  color: var(--surface-color);
+  border-color: var(--text-color-strong);
+}
+
+.rl-button--secondary {
+  background: var(--surface-color);
+  color: var(--text-color-strong);
+}
+
+.rl-hero__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem 0.75rem;
+  margin: 1.5rem 0 0;
   padding: 0;
+  list-style: none;
 }
 
-html {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: var(--background-color);
-  color: var(--text-color);
+.rl-hero__highlights li {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--surface-color);
+  color: var(--text-color-muted);
+  font-size: 0.9375rem;
+}
+
+.rl-hero__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.rl-hero-diagram {
+  position: relative;
+  width: min(100%, 540px);
+  min-height: 360px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98));
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.05);
+}
+
+.rl-hero-diagram__grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 85%);
+  pointer-events: none;
+}
+
+.rl-hero-diagram__panel {
+  position: relative;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.rl-hero-diagram__panel--trigger {
+  width: 76%;
+  min-height: 86px;
+  padding: 1rem 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.rl-hero-diagram__panel--icon {
+  position: absolute;
+  top: 2.2rem;
+  right: 1.5rem;
+  width: 88px;
+  min-height: 88px;
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-main {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
+.rl-hero-diagram__panel--content {
+  min-height: 170px;
+  padding: 1rem 1rem 1.25rem;
+  margin-top: 0.5rem;
 }
+
+.rl-hero-diagram__tag {
+  display: inline-block;
+  margin-bottom: 0.875rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--text-color-strong);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.rl-hero-diagram__line {
+  height: 10px;
+  margin-top: 0.75rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.1);
+}
+
+.rl-hero-diagram__line--short {
+  width: 48%;
+}
+
+.rl-hero-diagram__line--medium {
+  width: 68%;
+}
+
+.rl-hero-diagram__dot {
+  width: 38px;
+  height: 38px;
+  border: 2px solid var(--focus-color);
+  border-radius: 999px;
+  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.12);
+}
+
+.rl-hero-diagram__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.rl-hero-diagram__meta span {
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--text-color-muted);
+  font-size: 0.8125rem;
+}
+
+.info-section {
+  padding: 2rem 0;
+  max-width: 75ch;
+}
+
+.info-section--wide {
+  max-width: none;
+}
+
+.info-section__title {
+  margin-top: 0;
+}
+
+.info-section__desc {
+  margin-bottom: 0.75rem;
+}
+
+.info-section__note {
+  margin-top: 1rem;
+  font-size: var(--font-size-small);
+  color: var(--text-color-muted);
+}
+
+.rl-featured {
+  padding: 1rem 0 0.5rem;
+}
+
+.rl-featured__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.rl-featured__title {
+  margin-bottom: 0;
+}
+
+.rl-featured__text {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--text-color-muted);
+}
+
+.rl-featured__grid,
+.rl-coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.rl-feature-card,
+.rl-coverage-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  background: var(--surface-color);
+}
+
+.rl-feature-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.rl-feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.rl-feature-card__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-color-muted);
+}
+
+.rl-feature-card__title,
+.rl-coverage-card__title {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-color-strong);
+}
+
+.rl-feature-card__desc,
+.rl-coverage-card__desc {
+  margin: 0;
+  color: var(--text-color-muted);
+  line-height: 1.6;
+}
+
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.component-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: var(--surface-color);
+  transition: box-shadow var(--transition-duration), transform var(--transition-duration);
+}
+
+.component-card:hover {
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  transform: translateY(-2px);
+}
+
+.component-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.component-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.component-card__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.component-card__desc {
+  font-size: var(--font-size-small);
+  color: var(--text-color-subtle);
+  line-height: 1.4;
+}
+
+@media (max-width: 960px) {
+  .rl-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0 3rem;
+  }
+
+  .rl-hero__title {
+    max-width: none;
+  }
+
+  .rl-hero__visual {
+    justify-content: flex-start;
+  }
+
+  .rl-featured__grid,
+  .rl-coverage-grid,
+  .component-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .rl-hero-diagram {
+    min-height: 320px;
+    padding: 1rem;
+  }
+
+  .rl-hero-diagram__panel--trigger {
+    width: 72%;
+  }
+
+  .rl-hero-diagram__panel--icon {
+    width: 76px;
+    min-height: 76px;
+    top: 1.75rem;
+    right: 1rem;
+  }
+
+  .rl-hero__highlights {
+    gap: 0.5rem;
+  }
+
+  .rl-hero__highlights li {
+    font-size: 0.875rem;
+  }
+
+  .rl-featured__grid,
+  .rl-coverage-grid,
+  .component-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

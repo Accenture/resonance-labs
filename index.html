@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Resonance Labs - Accessible Component Patterns</title>
+    <title>Resonance - Component Library Demo</title>
     <link rel="stylesheet" href="assets/style/global.css" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+
   </head>
   <body>
     <header>
@@ -14,78 +15,289 @@
       </a>
     </header>
     <main>
-      <div class="banner">
-        <div class="banner__text">
-          <h1 class="banner__title">Accessible component patterns for enterprise teams</h1>
-          <p class="banner__tagline">Resonance Labs provides accessible component patterns for real-world applications. Each component helps teams learn structure, behavior, and accessibility expectations. Content is designed for implementation learning and training.</p>
-          <p class="banner__meta"><span class="version-chip" id="site-version-chip">Version loading...</span></p>
+      <section class="rl-hero rl-hero--editorial" aria-labelledby="rl-hero-title">
+  <div class="rl-hero__content">
+    <div class="rl-hero__tags" aria-label="Highlights">
+      <span class="rl-hero__tag rl-hero__tag--active">Accessibility</span>
+      <span class="rl-hero__tag">Training</span>
+      <span class="rl-hero__tag">Components</span>
+    </div>
+
+    <h1 id="rl-hero-title" class="rl-hero__title">
+      A practical guide to accessible UI components
+    </h1>
+
+    <p class="rl-hero__text">
+      Explore interactive demos, component anatomy, and expected behavior in a format designed for implementation learning and team training.
+    </p>
+
+    <div class="rl-hero__actions">
+      <a class="rl-button rl-button--primary" href="#components">Explore components</a>
+    </div>
+  </div>
+
+  <div class="rl-hero__media" aria-hidden="true">
+    <img
+      class="rl-hero__image"
+      src="assets/images/hero/resonance-hero.png"
+      alt=""
+    />
+  </div>
+</section>
+
+
+      <div class="info-section-pair">
+        <section class="info-section" id="how-to-use">
+          <h2 class="info-section__title">How to use this site</h2>
+          <ol class="info-section__list">
+            <li>Select a component from the library below</li>
+            <li>Explore the interactive demo</li>
+            <li>Review the component anatomy</li>
+            <li>Understand expected accessibility behavior</li>
+            <li>Apply the pattern in your own implementation</li>
+          </ol>
+        </section>
+
+        <section class="info-section">
+          <h2 class="info-section__title">Who this is for</h2>
+          <ul class="info-section__list">
+            <li>Frontend developers building accessible interfaces</li>
+            <li>QA engineers validating component behavior</li>
+            <li>Designers understanding interaction and state requirements</li>
+            <li>Accessibility practitioners reviewing implementations</li>
+            <li>Team trainers and onboarding leads</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="rl-featured" aria-labelledby="featured-components-title">
+        <div class="rl-featured__header">
+          <h2 class="section-title rl-featured__title" id="featured-components-title">Start with these components</h2>
+          <p class="rl-featured__text">These foundational patterns are especially useful for onboarding and accessibility training.</p>
         </div>
-        <img class="banner__image" src="assets/images/banner-programming.svg" alt="" />
-      </div>
+        <div class="rl-featured__grid">
+          <a class="rl-feature-card" href="components/accordion/index.html">
+            <span class="rl-feature-card__eyebrow">Core pattern</span>
+            <span class="rl-feature-card__title">Accordion</span>
+            <span class="rl-feature-card__desc">Learn structure, state, and keyboard behavior in an expandable disclosure pattern.</span>
+          </a>
+          <a class="rl-feature-card" href="components/modal/index.html">
+            <span class="rl-feature-card__eyebrow">Focus management</span>
+            <span class="rl-feature-card__title">Modal</span>
+            <span class="rl-feature-card__desc">Explore focus flow, dismissal, and interaction constraints in layered interfaces.</span>
+          </a>
+          <a class="rl-feature-card" href="components/tabs/index.html">
+            <span class="rl-feature-card__eyebrow">Navigation pattern</span>
+            <span class="rl-feature-card__title">Tabs</span>
+            <span class="rl-feature-card__desc">Review relationships between controls and panels in a compact navigation model.</span>
+          </a>
+        </div>
+      </section>
 
-      <div class="info-section">
-        <h2 class="info-section__title">How to use this site</h2>
-        <ol class="info-section__list">
-          <li>Select a component from the library below</li>
-          <li>Explore the interactive demo</li>
-          <li>Review the component anatomy</li>
-          <li>Understand expected accessibility behavior</li>
-          <li>Apply the pattern in your own implementation</li>
-        </ol>
-      </div>
-
-      <div class="info-section">
-        <h2 class="info-section__title">Who this is for</h2>
-        <ul class="info-section__list">
-          <li>Frontend developers building accessible interfaces</li>
-          <li>QA engineers validating component behavior</li>
-          <li>Designers understanding interaction and state requirements</li>
-          <li>Accessibility practitioners reviewing implementations</li>
-          <li>Team trainers and onboarding leads</li>
-        </ul>
-      </div>
-
-      <div class="info-section">
+      <section class="info-section info-section--wide">
         <h2 class="info-section__title">What every component page covers</h2>
         <p class="info-section__desc">All components follow a consistent structure so teams can build a repeatable mental model:</p>
-        <ul class="info-section__list">
-          <li><strong>Demo</strong> — interactive example to explore in the browser</li>
-          <li><strong>Anatomy</strong> — labeled parts of the component</li>
-          <li><strong>Accessibility Behavior</strong> — what must be true for the component to work for all users</li>
-          <li><strong>Common Mistakes</strong> — implementation errors to watch for</li>
-          <li><strong>Why It Matters</strong> — the impact of getting it wrong</li>
-        </ul>
+        <div class="rl-coverage-grid">
+          <article class="rl-coverage-card">
+            <h3 class="rl-coverage-card__title">Demo</h3>
+            <p class="rl-coverage-card__desc">An interactive example to explore directly in the browser.</p>
+          </article>
+          <article class="rl-coverage-card">
+            <h3 class="rl-coverage-card__title">Anatomy</h3>
+            <p class="rl-coverage-card__desc">Labeled parts that define the structure of the component.</p>
+          </article>
+          <article class="rl-coverage-card">
+            <h3 class="rl-coverage-card__title">Accessibility Behavior</h3>
+            <p class="rl-coverage-card__desc">Expected outcomes that support inclusive interaction and understanding.</p>
+          </article>
+          <article class="rl-coverage-card">
+            <h3 class="rl-coverage-card__title">Common Mistakes</h3>
+            <p class="rl-coverage-card__desc">Frequent implementation problems teams should watch for.</p>
+          </article>
+          <article class="rl-coverage-card">
+            <h3 class="rl-coverage-card__title">Why It Matters</h3>
+            <p class="rl-coverage-card__desc">A quick explanation of what breaks when the pattern is implemented incorrectly.</p>
+          </article>
+        </div>
         <p class="info-section__note">Components are reviewed against internal accessibility standards aligned with WCAG.</p>
-      </div>
+      </section>
 
-      <div class="component-search" role="search">
-        <label class="component-search__label" for="component-search-input">Search components</label>
-        <input
-          class="component-search__input"
-          type="search"
-          id="component-search-input"
-          placeholder="e.g. accordion, modal, button…"
-          autocomplete="off"
-        />
-        <p class="component-search__status" aria-live="polite" aria-atomic="true"></p>
-      </div>
 
-      <h2 class="section-title">Core</h2>
-      <div class="component-grid">
+      <section class="component-group" aria-labelledby="group-0">
+        <h2 class="section-title" id="group-0">Input & Forms</h2>
+        <p class="info-section__desc">Components used to collect, filter, and modify user input.</p>
+        <div class="component-grid">
+        <a class="component-card" href="components/autocomplete/index.html">
+          <img src="assets/images/cards/autocomplete.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Autocomplete</span>
+            <span class="component-card__desc">Text input with filtered suggestions as the user types.</span>
+          </div>
+        </a>
 
+        <a class="component-card" href="components/checkbox/index.html">
+          <img src="assets/images/cards/checkbox.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
+          <div class="component-card__content">
+            <span class="component-card__title">Checkbox</span>
+            <span class="component-card__desc">Form control that allows one or more independent selections.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/combobox/index.html">
+          <img src="assets/images/cards/combobox.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Combobox</span>
+            <span class="component-card__desc">Text entry with suggestion popup and selectable options.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/date-picker/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Date Picker</span>
+            <span class="component-card__desc">Input for choosing a date using text entry or calendar UI.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/file-upload/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">File Upload</span>
+            <span class="component-card__desc">Control for selecting and uploading one or more files.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/password-input-toggle/index.html">
+          <img src="assets/images/cards/password-input-toggle.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Password Input Toggle</span>
+            <span class="component-card__desc">Password field with a control to reveal or hide entered text.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/radio-button/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Radio Button</span>
+            <span class="component-card__desc">Form control for selecting a single option from a set.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/search-input/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Search Input</span>
+            <span class="component-card__desc">Input field optimized for entering search queries.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/select/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Select</span>
+            <span class="component-card__desc">Collapsed control for choosing one option from a list.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/slider/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Slider</span>
+            <span class="component-card__desc">Control for selecting a value along a range.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/text-input/index.html">
+          <img src="assets/images/cards/text-input.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Text Input</span>
+            <span class="component-card__desc">Single-line field for entering freeform text.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/toggle-switch/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Toggle Switch</span>
+            <span class="component-card__desc">Binary on/off control presented as a switch.</span>
+          </div>
+        </a>
+
+        </div>
+      </section>
+
+      <section class="component-group" aria-labelledby="group-1">
+        <h2 class="section-title" id="group-1">Navigation</h2>
+        <p class="info-section__desc">Patterns that help users move across pages, destinations, and related views.</p>
+        <div class="component-grid">
+        <a class="component-card" href="components/breadcrumbs/index.html">
+          <img src="assets/images/cards/breadcrumbs.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
+          <div class="component-card__content">
+            <span class="component-card__title">Breadcrumbs</span>
+            <span class="component-card__desc">Navigation trail showing the user's location in a hierarchy.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/dropdown/index.html">
+          <img src="assets/images/cards/dropdown.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
+          <div class="component-card__content">
+            <span class="component-card__title">Dropdown</span>
+            <span class="component-card__desc">Trigger and popup list of actions or destinations.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/link/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Link</span>
+            <span class="component-card__desc">Interactive text or element that navigates to another destination.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/mega-navigation/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Mega Navigation</span>
+            <span class="component-card__desc">Large structured navigation menu with grouped destinations.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/pagination/index.html">
+          <img src="assets/images/cards/pagination.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
+          <div class="component-card__content">
+            <span class="component-card__title">Pagination</span>
+            <span class="component-card__desc">Navigation between pages or result sets.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/skip-navigation/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Skip Navigation</span>
+            <span class="component-card__desc">Bypass link that lets keyboard users jump to main content.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/tabs/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Tabs</span>
+            <span class="component-card__desc">Tabbed interface for switching between related panels.</span>
+          </div>
+        </a>
+
+        </div>
+      </section>
+
+      <section class="component-group" aria-labelledby="group-2">
+        <h2 class="section-title" id="group-2">Disclosure & Overlays</h2>
+        <p class="info-section__desc">Patterns that reveal, layer, or temporarily focus additional content.</p>
+        <div class="component-grid">
         <a class="component-card" href="components/accordion/index.html">
           <img src="assets/images/cards/accordion.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
           <div class="component-card__content">
             <span class="component-card__title">Accordion</span>
             <span class="component-card__desc">Expandable sections that show and hide content panels.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/alert/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Alert</span>
-            <span class="component-card__desc">Inline notification announced automatically via a live region.</span>
           </div>
         </a>
 
@@ -97,19 +309,66 @@
           </div>
         </a>
 
-        <a class="component-card" href="components/autocomplete/index.html">
+        <a class="component-card" href="components/cookie-consent/index.html">
           <img src="assets/images/cards/empty.svg" alt="" />
           <div class="component-card__content">
-            <span class="component-card__title">Autocomplete</span>
-            <span class="component-card__desc">Text input with filtered suggestions as the user types.</span>
+            <span class="component-card__title">Cookie Consent</span>
+            <span class="component-card__desc">Consent banner or dialog for privacy and cookie preferences.</span>
           </div>
         </a>
 
-        <a class="component-card" href="components/avatar/index.html">
+        <a class="component-card" href="components/dialog/index.html">
+          <img src="assets/images/cards/dialog.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
+          <div class="component-card__content">
+            <span class="component-card__title">Dialog</span>
+            <span class="component-card__desc">Overlay window that interrupts the page for focused interaction.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/disclosure/index.html">
           <img src="assets/images/cards/empty.svg" alt="" />
           <div class="component-card__content">
-            <span class="component-card__title">Avatar</span>
-            <span class="component-card__desc">User image or initials fallback with accessible labelling.</span>
+            <span class="component-card__title">Disclosure</span>
+            <span class="component-card__desc">Toggle pattern that reveals or hides associated content.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/modal/index.html">
+          <img src="assets/images/cards/modal.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
+          <div class="component-card__content">
+            <span class="component-card__title">Modal</span>
+            <span class="component-card__desc">Focused overlay requiring user interaction before returning to the page.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/popover/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Popover</span>
+            <span class="component-card__desc">Anchored floating surface with contextual information or actions.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/tooltip/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Tooltip</span>
+            <span class="component-card__desc">Supplemental hint shown on focus or hover.</span>
+          </div>
+        </a>
+
+        </div>
+      </section>
+
+      <section class="component-group" aria-labelledby="group-3">
+        <h2 class="section-title" id="group-3">Feedback & Status</h2>
+        <p class="info-section__desc">Components that communicate updates, progress, labels, and system responses.</p>
+        <div class="component-grid">
+        <a class="component-card" href="components/alert/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Alert</span>
+            <span class="component-card__desc">Inline notification announced automatically via a live region.</span>
           </div>
         </a>
 
@@ -121,11 +380,50 @@
           </div>
         </a>
 
-        <a class="component-card" href="components/breadcrumbs/index.html">
-          <img src="assets/images/cards/breadcrumbs.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
+        <a class="component-card" href="components/progress-bar/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
           <div class="component-card__content">
-            <span class="component-card__title">Breadcrumbs</span>
-            <span class="component-card__desc">Navigation trail showing the user's location in a hierarchy.</span>
+            <span class="component-card__title">Progress Bar</span>
+            <span class="component-card__desc">Visual indicator showing task completion progress.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/toast/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Toast</span>
+            <span class="component-card__desc">Transient status message shown without blocking the page.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/tag/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Tag</span>
+            <span class="component-card__desc">Small metadata label used for categorization or status.</span>
+          </div>
+        </a>
+
+        <a class="component-card" href="components/pill/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Pill</span>
+            <span class="component-card__desc">Compact rounded label or removable item.</span>
+          </div>
+        </a>
+
+        </div>
+      </section>
+
+      <section class="component-group" aria-labelledby="group-4">
+        <h2 class="section-title" id="group-4">Data Display & Media</h2>
+        <p class="info-section__desc">Patterns for presenting structured content, collections, and rich media.</p>
+        <div class="component-grid">
+        <a class="component-card" href="components/avatar/index.html">
+          <img src="assets/images/cards/empty.svg" alt="" />
+          <div class="component-card__content">
+            <span class="component-card__title">Avatar</span>
+            <span class="component-card__desc">User image or initials fallback with accessible labelling.</span>
           </div>
         </a>
 
@@ -161,235 +459,27 @@
           </div>
         </a>
 
-        <a class="component-card" href="components/checkbox/index.html">
-          <img src="assets/images/cards/checkbox.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
-          <div class="component-card__content">
-            <span class="component-card__title">Checkbox</span>
-            <span class="component-card__desc">Toggle control for selecting one or more options.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/combobox/index.html">
+        <a class="component-card" href="components/image-gallery/index.html">
           <img src="assets/images/cards/empty.svg" alt="" />
           <div class="component-card__content">
-            <span class="component-card__title">Combobox</span>
-            <span class="component-card__desc">Input with a dropdown list that supports typing and selection.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/cookie-consent/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Cookie Consent</span>
-            <span class="component-card__desc">Consent banner with accept, reject, and preference controls.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/date-picker/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Date Picker</span>
-            <span class="component-card__desc">Date input with calendar popup and keyboard navigation.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/dialog/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Dialog</span>
-            <span class="component-card__desc">Non-modal dialog surface that does not block background content.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/disclosure/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Disclosure</span>
-            <span class="component-card__desc">Toggle widget that shows or hides a section of content.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/dropdown/index.html">
-          <img src="assets/images/cards/dropdown.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
-          <div class="component-card__content">
-            <span class="component-card__title">Dropdown</span>
-            <span class="component-card__desc">Menu that appears on trigger, presenting a list of actions.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/file-upload/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">File Upload</span>
-            <span class="component-card__desc">File input with drag-and-drop, progress, and validation.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/link/index.html">
-          <img src="assets/images/cards/link.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
-          <div class="component-card__content">
-            <span class="component-card__title">Link</span>
-            <span class="component-card__desc">Inline navigation element that takes users to another page or section.</span>
+            <span class="component-card__title">Image Gallery</span>
+            <span class="component-card__desc">Collection of images with selection and preview behavior.</span>
           </div>
         </a>
 
         <a class="component-card" href="components/listbox/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
+          <img src="assets/images/cards/listbox.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
           <div class="component-card__content">
             <span class="component-card__title">Listbox</span>
-            <span class="component-card__desc">Single or multi-select list following the ARIA listbox pattern.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/mega-navigation/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Mega Navigation</span>
-            <span class="component-card__desc">Large multi-column dropdown for complex site navigation.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/modal/index.html">
-          <img src="assets/images/cards/modal.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
-          <div class="component-card__content">
-            <span class="component-card__title">Modal</span>
-            <span class="component-card__desc">Dialog overlay that requires user interaction before continuing.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/pagination/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Pagination</span>
-            <span class="component-card__desc">Navigation control for paging through multi-page content.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/password-input-toggle/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Password Input Toggle</span>
-            <span class="component-card__desc">Password field with a show/hide toggle for visibility.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/pill/index.html">
-          <img src="assets/images/cards/pill.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
-          <div class="component-card__content">
-            <span class="component-card__title">Pill</span>
-            <span class="component-card__desc">Compact label used to categorize or tag content.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/popover/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Popover</span>
-            <span class="component-card__desc">Non-modal floating panel toggled by a trigger button.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/progress-bar/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Progress Bar</span>
-            <span class="component-card__desc">Visual indicator showing completion status of a task.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/radio-button/index.html">
-          <img src="assets/images/cards/radio-button.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
-          <div class="component-card__content">
-            <span class="component-card__title">Radio Button</span>
-            <span class="component-card__desc">Selection control for choosing one option from a group.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/search-input/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Search Input</span>
-            <span class="component-card__desc">Text field designed for search queries with clear action.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/select/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Select</span>
-            <span class="component-card__desc">Dropdown control for choosing a single value from a list.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/skip-navigation/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Skip Navigation</span>
-            <span class="component-card__desc">Hidden link that lets keyboard users bypass repetitive navigation.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/slider/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Slider</span>
-            <span class="component-card__desc">Range input with draggable thumb and keyboard support.</span>
+            <span class="component-card__desc">Single- or multi-select list of options navigated with keyboard.</span>
           </div>
         </a>
 
         <a class="component-card" href="components/table/index.html">
-          <img src="assets/images/cards/table.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
+          <img src="assets/images/cards/empty.svg" alt="" />
           <div class="component-card__content">
             <span class="component-card__title">Table</span>
-            <span class="component-card__desc">Structured data display organized in rows and columns.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/tabs/index.html">
-          <img src="assets/images/cards/tabs.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
-          <div class="component-card__content">
-            <span class="component-card__title">Tabs</span>
-            <span class="component-card__desc">Tabbed interface for switching between content panels.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/tag/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Tag</span>
-            <span class="component-card__desc">Static non-interactive label for metadata or categories.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/text-input/index.html">
-          <img src="assets/images/cards/text-input.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
-          <div class="component-card__content">
-            <span class="component-card__title">Text Input</span>
-            <span class="component-card__desc">Single-line field for entering freeform text.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/toast/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Toast</span>
-            <span class="component-card__desc">Transient notification that appears and auto-dismisses.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/toggle-switch/index.html">
-          <img src="assets/images/cards/toggle-switch.svg" alt="" onerror="this.src='assets/images/cards/empty.svg';this.onerror=null" />
-          <div class="component-card__content">
-            <span class="component-card__title">Toggle Switch</span>
-            <span class="component-card__desc">On/off control for binary settings.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/tooltip/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Tooltip</span>
-            <span class="component-card__desc">Contextual popup that appears on hover or focus.</span>
+            <span class="component-card__desc">Structured rows and columns for displaying tabular data.</span>
           </div>
         </a>
 
@@ -397,20 +487,22 @@
           <img src="assets/images/cards/empty.svg" alt="" />
           <div class="component-card__content">
             <span class="component-card__title">Video</span>
-            <span class="component-card__desc">Embedded media player with accessible controls.</span>
+            <span class="component-card__desc">Embedded media player with accessible controls and captions.</span>
           </div>
         </a>
 
-      </div>
+        </div>
+      </section>
 
-      <h2 class="section-title">eCommerce</h2>
-      <div class="component-grid">
-
+      <section class="component-group" aria-labelledby="group-5">
+        <h2 class="section-title" id="group-5">Commerce Patterns</h2>
+        <p class="info-section__desc">Reusable patterns commonly used in shopping, merchandising, and transactional flows.</p>
+        <div class="component-grid">
         <a class="component-card" href="components/cart-summary/index.html">
           <img src="assets/images/cards/empty.svg" alt="" />
           <div class="component-card__content">
             <span class="component-card__title">Cart Summary</span>
-            <span class="component-card__desc">Full cart page with line items, quantities, and order totals.</span>
+            <span class="component-card__desc">Summary of cart totals, discounts, and checkout details.</span>
           </div>
         </a>
 
@@ -418,15 +510,7 @@
           <img src="assets/images/cards/empty.svg" alt="" />
           <div class="component-card__content">
             <span class="component-card__title">Faceted Filter</span>
-            <span class="component-card__desc">Filter panel with collapsible groups of checkbox options.</span>
-          </div>
-        </a>
-
-        <a class="component-card" href="components/image-gallery/index.html">
-          <img src="assets/images/cards/empty.svg" alt="" />
-          <div class="component-card__content">
-            <span class="component-card__title">Image Gallery</span>
-            <span class="component-card__desc">Product image viewer with thumbnails and navigation.</span>
+            <span class="component-card__desc">Filter controls for narrowing product or content results.</span>
           </div>
         </a>
 
@@ -434,7 +518,7 @@
           <img src="assets/images/cards/empty.svg" alt="" />
           <div class="component-card__content">
             <span class="component-card__title">Mini Cart</span>
-            <span class="component-card__desc">Cart flyout panel with items, remove actions, and checkout links.</span>
+            <span class="component-card__desc">Compact cart preview with quick access to cart contents.</span>
           </div>
         </a>
 
@@ -442,7 +526,7 @@
           <img src="assets/images/cards/empty.svg" alt="" />
           <div class="component-card__content">
             <span class="component-card__title">Price</span>
-            <span class="component-card__desc">Accessible price display with currency and range support.</span>
+            <span class="component-card__desc">Accessible display of product pricing information.</span>
           </div>
         </a>
 
@@ -502,68 +586,12 @@
           </div>
         </a>
 
-      </div>
+        </div>
+      </section>
     </main>
     <footer>
       <p><strong>Created and maintained by Accenture Song</strong></p>
-      <p>&copy; 2026 Accenture - Resonance <span class="site-version" id="site-version-footer"></span></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
-    <script>
-      (function () {
-        function applyVersion(version) {
-          var chip = document.getElementById('site-version-chip');
-          var footer = document.getElementById('site-version-footer');
-          var text = version ? 'v' + version : 'Version unavailable';
-
-          if (chip) chip.textContent = text;
-          if (footer) footer.textContent = version ? ' | Version ' + text : '';
-        }
-
-        fetch('./package.json')
-          .then(function (r) { return r.ok ? r.json() : null; })
-          .then(function (pkg) { applyVersion(pkg && pkg.version); })
-          .catch(function () { applyVersion(null); });
-
-        var input = document.getElementById('component-search-input');
-        var status = document.querySelector('.component-search__status');
-        var cards = Array.from(document.querySelectorAll('.component-card'));
-        var sectionTitles = Array.from(document.querySelectorAll('.section-title'));
-        var grids = Array.from(document.querySelectorAll('.component-grid'));
-
-        function filter(query) {
-          var q = query.trim().toLowerCase();
-
-          cards.forEach(function (card) {
-            var title = card.querySelector('.component-card__title').textContent.toLowerCase();
-            var desc = card.querySelector('.component-card__desc').textContent.toLowerCase();
-            var match = !q || title.includes(q) || desc.includes(q);
-            card.style.display = match ? '' : 'none';
-          });
-
-          grids.forEach(function (grid, i) {
-            var visible = Array.from(grid.querySelectorAll('.component-card')).filter(function (c) {
-              return c.style.display !== 'none';
-            });
-            if (sectionTitles[i]) sectionTitles[i].style.display = visible.length ? '' : 'none';
-            grid.style.display = visible.length ? '' : 'none';
-          });
-
-          if (!q) {
-            status.textContent = '';
-          } else {
-            var total = cards.filter(function (c) { return c.style.display !== 'none'; }).length;
-            status.textContent = total === 0
-              ? 'No components found.'
-              : total === 1 ? '1 component found.' : total + ' components found.';
-          }
-        }
-
-        input.addEventListener('input', function () { filter(input.value); });
-
-        input.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape') { input.value = ''; filter(''); }
-        });
-      })();
-    </script>
   </body>
 </html>
