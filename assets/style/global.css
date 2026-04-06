@@ -426,6 +426,10 @@ header {
   margin-bottom: 2rem;
 }
 
+header img {
+  width: 180px;
+}
+
 .btn-group {
   display: flex;
   gap: 1rem;
