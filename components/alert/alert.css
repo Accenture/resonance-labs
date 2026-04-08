@@ -97,24 +97,21 @@
 
 /* Trigger button */
 .alert-demo__trigger {
-  appearance: none;
-  border: 1px solid var(--border-color);
-  background: var(--surface-color);
-  color: var(--text-color-strong);
-  padding: 0.7rem 1rem;
-  font-size: 1rem;
-  line-height: 1.2;
+  font-size: var(--font-size-base);
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-color);
+  color: var(--text-color-inverse);
+  border: none;
+  border-radius: var(--border-radius);
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-  min-width: 24px;
-  min-height: 24px;
+  transition: background-color var(--transition-duration);
 }
 
-/* Visible focus indicator for interactive elements */
-.alert-demo__trigger:focus-visible {
+.alert-demo__trigger:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.alert-demo__trigger:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }

@@ -29,7 +29,7 @@ input[type="text"]:focus-visible {
   padding: 0;
   list-style: none;
   background: var(--background-color);
-  position: absolute;
+  position: relative;
   width: 100%;
   z-index: 10;
 }

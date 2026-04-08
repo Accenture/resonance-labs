@@ -27,6 +27,7 @@
   background: #ffffff;
   border-radius: 1.5rem;
   overflow: hidden;
+  border: 1px solid var(--border-color);
 }
 
 .rl-hero::before {
