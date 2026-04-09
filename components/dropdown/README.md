@@ -19,6 +19,26 @@ A custom single-select dropdown built with the combobox/listbox pattern, keeping
 | `Escape` | Close the dropdown without selecting |
 | `Tab` | Close the dropdown and move focus to the next element |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 24 |
+| Partial | 6 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `dropdown.html` — component markup
 - `dropdown.js` — open/close, option selection, and keyboard handling

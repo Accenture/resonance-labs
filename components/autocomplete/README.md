@@ -17,6 +17,26 @@ Text input that filters a listbox of options as the user types, with full keyboa
 | `Enter` | Select the highlighted suggestion |
 | `Escape` | Close the suggestion listbox |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 22 |
+| Partial | 12 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `autocomplete.html` — component markup
 - `autocomplete.js` — filtering, keyboard navigation, and ARIA management

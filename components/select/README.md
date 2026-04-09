@@ -15,6 +15,26 @@ A native `<select>` element with a visible `<label>`, providing a department pic
 | `Arrow Down` / `Arrow Up` | Move between options in the dropdown |
 | `Enter` / `Space` | Open the dropdown or confirm the selected option |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 3 |
+| Partial | 1 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `select.html` — component markup
 - `select.js` — placeholder (no behaviour)

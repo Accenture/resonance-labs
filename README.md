@@ -27,7 +27,6 @@ Each component is self-contained with HTML, CSS, and JS for easy learning and re
 | Mega Navigation | Large multi-column dropdown for complex site navigation | [Live Demo](components/mega-navigation/index.html) |
 | Modal | Dialog overlay that requires user interaction before continuing | [Live Demo](components/modal/index.html) |
 | Password Input Toggle | Password field with a show/hide toggle for visibility | [Live Demo](components/password-input-toggle/index.html) |
-| Pill | Compact label used to categorize or tag content | [Live Demo](components/pill/index.html) |
 | Progress Bar | Visual indicator showing completion status of a task | [Live Demo](components/progress-bar/index.html) |
 | Radio Button | Selection control for choosing one option from a group | [Live Demo](components/radio-button/index.html) |
 | Search Input | Text field designed for search queries with clear action | [Live Demo](components/search-input/index.html) |

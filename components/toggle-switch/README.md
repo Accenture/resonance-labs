@@ -16,6 +16,26 @@ A binary on/off switch using `role="switch"` with `aria-checked` state managemen
 | `Tab` | Move focus to the next switch |
 | `Space` / `Enter` | Toggle the focused switch on or off |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 13 |
+| Partial | 7 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `toggle-switch.html` — component markup with four variants (off, on, with hint, disabled)
 - `toggle-switch.js` — toggle logic and disabled guard

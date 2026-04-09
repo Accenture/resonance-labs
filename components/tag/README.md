@@ -12,6 +12,26 @@ Static non-interactive labels used to communicate status or category, with optio
 
 No keyboard interaction required.
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 3 |
+| Partial | 0 |
+| Missing | 1 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `tag.html` — component markup with status and category tag variants
 - `tag.js` — placeholder (no behaviour)

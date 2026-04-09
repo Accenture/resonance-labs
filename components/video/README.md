@@ -22,6 +22,26 @@ An accessible video player with captions, audio descriptions, a collapsible tran
 | `Arrow Up` | Increase volume by 10% (when the video element is focused) |
 | `Arrow Down` | Decrease volume by 10% (when the video element is focused) |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 16 |
+| Partial | 13 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `video.html` — component markup with video element, custom controls, and transcript
 - `video.js` — mute, audio description, keyboard seek/volume, and live region logic

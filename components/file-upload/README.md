@@ -16,6 +16,26 @@ A drag-and-drop file upload zone with file type/size validation, simulated progr
 | `Tab` | Move focus to the file input or a file remove button |
 | `Enter` / `Space` | Open the file picker when the input is focused; activate a remove button |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 7 |
+| Partial | 5 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `file-upload.html` — component markup
 - `file-upload.js` — drag-and-drop, validation, simulated upload, and removal logic

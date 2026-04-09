@@ -16,6 +16,26 @@ A cookie consent banner with accept, reject, and granular preference controls, p
 | `Tab` | Move focus between banner buttons and preference checkboxes |
 | `Enter` / `Space` | Activate the focused button or toggle a preference checkbox |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 8 |
+| Partial | 5 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `cookie-consent.html` — component markup including banner and preferences panel
 - `cookie-consent.js` — open/close logic, preference persistence, and focus management

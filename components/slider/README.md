@@ -19,6 +19,26 @@ A draggable range slider using `role="slider"` with keyboard navigation and an o
 | `Home` | Set the value to the minimum |
 | `End` | Set the value to the maximum |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 17 |
+| Partial | 3 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `slider.html` — component markup with volume and price examples
 - `slider.js` — keyboard and pointer drag logic

@@ -18,6 +18,26 @@ Radio-group option selectors for product attributes such as size and colour, wit
 | `Arrow Left` / `Arrow Up` | Move focus to the previous enabled option within a group |
 | `Space` / `Enter` | Select the focused option |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 5 |
+| Partial | 4 |
+| Missing | 2 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `variant-selector.html` — component markup with size and colour groups
 - `variant-selector.js` — selection, roving tabindex, and announcement logic

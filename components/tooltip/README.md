@@ -18,6 +18,26 @@ Contextual hint panels in two patterns: hover/focus reveal and click/toggle reve
 | `Enter` / `Space` (Pattern 2) | Toggle the tooltip panel open or closed |
 | `Escape` | Dismiss the tooltip without moving focus |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 17 |
+| Partial | 6 |
+| Missing | 1 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `tooltip.html` — component markup with both patterns
 - `tooltip.js` — hover/focus and click pattern logic

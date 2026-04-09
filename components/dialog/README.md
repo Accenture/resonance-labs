@@ -17,6 +17,26 @@ A non-modal dialog panel that provides supplementary information without blockin
 | `Enter` / `Space` | Activate the focused button |
 | `Escape` | Close the dialog and return focus to the trigger |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 10 |
+| Partial | 3 |
+| Missing | 1 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `dialog.html` — component markup
 - `dialog.js` — open/close and keyboard handling

@@ -19,6 +19,26 @@ A product image gallery with a main display image, thumbnail navigation, and Pre
 | `Home` | Move to the first thumbnail |
 | `End` | Move to the last thumbnail |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 8 |
+| Partial | 5 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `image-gallery.html` — component markup
 - `image-gallery.js` — thumbnail selection, prev/next navigation, and keyboard handling

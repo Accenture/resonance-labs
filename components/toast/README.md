@@ -16,6 +16,26 @@ Transient notification messages injected into a live region, with auto-dismiss a
 | `Tab` | Move focus to the dismiss button within a visible toast |
 | `Enter` / `Space` | Dismiss the focused toast |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 3 |
+| Partial | 6 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `toast.html` — component markup with trigger buttons and the live region container
 - `toast.js` — toast creation, timer management, queue, and removal logic

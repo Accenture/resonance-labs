@@ -17,6 +17,26 @@ Native checkbox inputs with associated labels and hint text, plus a custom ARIA 
 | `Space` | Toggle the focused checkbox |
 | `Enter` | Toggle the custom ARIA checkbox (cycles false → true → mixed) |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 9 |
+| Partial | 7 |
+| Missing | 1 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `checkbox-label.html` — native checkbox with label and description
 - `checkbox-state.html` — native checkbox demonstrating required-field pattern

@@ -15,6 +15,26 @@ Removable filter tags grouped inside a labelled container, with live region anno
 | `Tab` | Move focus to the next remove button |
 | `Enter` / `Space` | Remove the focused badge |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 4 |
+| Partial | 4 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `badge.html` — component markup
 - `badge.js` — removal logic, focus management, and live region updates

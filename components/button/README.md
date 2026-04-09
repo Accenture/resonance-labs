@@ -15,6 +15,26 @@ Demonstrates standard, icon-decorated, and stateful toggle button patterns.
 | `Tab` | Move focus to the next button |
 | `Enter` / `Space` | Activate the focused button |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 10 |
+| Partial | 12 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `button.html` — component markup with all variants
 - `button.js` — toggle and action handling

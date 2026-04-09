@@ -15,6 +15,26 @@ A content card that is fully clickable for pointer users while remaining keyboar
 | `Tab` | Move focus to the card link |
 | `Enter` | Navigate to the card destination |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 6 |
+| Partial | 12 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `card.html` — component markup
 - `card.js` — pointer click delegation

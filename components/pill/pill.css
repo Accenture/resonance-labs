@@ -1,5 +1,0 @@
-.pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.pill { border-radius: 999px; border: 1px solid var(--primary-color-hover); padding: 8px 12px; background: var(--surface-color); cursor: pointer; min-height: 44px; }
-.pill:hover { background: var(--surface-muted); }
-:focus { outline: 3px solid var(--focus-color); outline-offset: 2px; }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }

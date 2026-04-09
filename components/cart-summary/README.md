@@ -16,6 +16,26 @@ A shopping cart table with editable quantities, line total calculations, and ite
 | `Tab` | Move focus between quantity inputs, stepper buttons, and remove buttons |
 | `Enter` / `Space` | Activate the focused stepper or remove button |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 8 |
+| Partial | 5 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `cart-summary.html` — component markup
 - `cart-summary.js` — quantity management, totals calculation, and focus handling

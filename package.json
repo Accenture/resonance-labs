@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "Description": "Provides production-aligned implementation examples that demonstrate how accessibility criteria translate into real, usable interactions.",  
   "private": true,
+  "scripts": {
+    "sync:compliance": "node scripts/sync-compliance.mjs"
+  },
   "dependencies": {
     "@resonance/specs": "file:./resonance-specs-1.0.0.tgz"
   }

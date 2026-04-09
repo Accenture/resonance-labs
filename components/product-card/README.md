@@ -15,6 +15,26 @@ An e-commerce product card with image, name, price, star rating, and an add-to-c
 | `Tab` | Move focus to the Add to Cart button |
 | `Enter` / `Space` | Activate the Add to Cart button |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 4 |
+| Partial | 7 |
+| Missing | 1 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `product-card.html` — component markup with multiple card examples
 - `product-card.js` — add-to-cart announcement logic

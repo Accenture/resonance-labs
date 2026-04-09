@@ -1,59 +1,88 @@
 (function () {
 
-  var CORE = [
-    { name: 'Accordion',              href: '../accordion/index.html' },
-    { name: 'Alert',                  href: '../alert/index.html' },
-    { name: 'Alert Dialog',           href: '../alert-dialog/index.html' },
-    { name: 'Autocomplete',           href: '../autocomplete/index.html' },
-    { name: 'Avatar',                 href: '../avatar/index.html' },
-    { name: 'Badge',                  href: '../badge/index.html' },
-    { name: 'Breadcrumbs',            href: '../breadcrumbs/index.html' },
-    { name: 'Button',                 href: '../button/index.html' },
-    { name: 'Card',                   href: '../card/index.html' },
-    { name: 'Card List',              href: '../card-list/index.html' },
-    { name: 'Carousel',               href: '../carousel/index.html' },
-    { name: 'Checkbox',               href: '../checkbox/index.html' },
-    { name: 'Combobox',               href: '../combobox/index.html' },
-    { name: 'Cookie Consent',         href: '../cookie-consent/index.html' },
-    { name: 'Date Picker',            href: '../date-picker/index.html' },
-    { name: 'Dialog',                 href: '../dialog/index.html' },
-    { name: 'Disclosure',             href: '../disclosure/index.html' },
-    { name: 'Dropdown',               href: '../dropdown/index.html' },
-    { name: 'File Upload',            href: '../file-upload/index.html' },
-    { name: 'Link',                   href: '../link/index.html' },
-    { name: 'Listbox',                href: '../listbox/index.html' },
-    { name: 'Mega Navigation',        href: '../mega-navigation/index.html' },
-    { name: 'Modal',                  href: '../modal/index.html' },
-    { name: 'Pagination',             href: '../pagination/index.html' },
-    { name: 'Password Input Toggle',  href: '../password-input-toggle/index.html' },
-    { name: 'Popover',                href: '../popover/index.html' },
-    { name: 'Progress Bar',           href: '../progress-bar/index.html' },
-    { name: 'Radio Button',           href: '../radio-button/index.html' },
-    { name: 'Search Input',           href: '../search-input/index.html' },
-    { name: 'Select',                 href: '../select/index.html' },
-    { name: 'Skip Navigation',        href: '../skip-navigation/index.html' },
-    { name: 'Slider',                 href: '../slider/index.html' },
-    { name: 'Table',                  href: '../table/index.html' },
-    { name: 'Tabs',                   href: '../tabs/index.html' },
-    { name: 'Text Input',             href: '../text-input/index.html' },
-    { name: 'Toggle Switch',          href: '../toggle-switch/index.html' },
-    { name: 'Tooltip',                href: '../tooltip/index.html' },
-    { name: 'Video',                  href: '../video/index.html' },
-  ];
-
-  var ECOMMERCE = [
-    { name: 'Cart Summary',      href: '../cart-summary/index.html' },
-    { name: 'Faceted Filter',    href: '../faceted-filter/index.html' },
-    { name: 'Image Gallery',     href: '../image-gallery/index.html' },
-    { name: 'Mini Cart',         href: '../mini-cart/index.html' },
-    { name: 'Price',             href: '../price/index.html' },
-    { name: 'Product Card',      href: '../product-card/index.html' },
-    { name: 'Quantity Stepper',  href: '../quantity-stepper/index.html' },
-    { name: 'Review Comment',    href: '../review-comment/index.html' },
-    { name: 'Sale Price',        href: '../sale-price/index.html' },
-    { name: 'Star Rating',       href: '../star-rating/index.html' },
-    { name: 'Variant Selector',  href: '../variant-selector/index.html' },
-    { name: 'Wishlist Button',   href: '../wishlist-button/index.html' },
+  var GROUPS = [
+    {
+      label: 'Input & Forms',
+      items: [
+        { name: 'Autocomplete',          href: '../autocomplete/index.html' },
+        { name: 'Checkbox',              href: '../checkbox/index.html' },
+        { name: 'Combobox',              href: '../combobox/index.html' },
+        { name: 'Date Picker',           href: '../date-picker/index.html' },
+        { name: 'File Upload',           href: '../file-upload/index.html' },
+        { name: 'Password Input Toggle', href: '../password-input-toggle/index.html' },
+        { name: 'Radio Button',          href: '../radio-button/index.html' },
+        { name: 'Search Input',          href: '../search-input/index.html' },
+        { name: 'Select',                href: '../select/index.html' },
+        { name: 'Slider',                href: '../slider/index.html' },
+        { name: 'Text Input',            href: '../text-input/index.html' },
+        { name: 'Toggle Switch',         href: '../toggle-switch/index.html' }
+      ]
+    },
+    {
+      label: 'Navigation',
+      items: [
+        { name: 'Breadcrumbs',     href: '../breadcrumbs/index.html' },
+        { name: 'Dropdown',        href: '../dropdown/index.html' },
+        { name: 'Link',            href: '../link/index.html' },
+        { name: 'Mega Navigation', href: '../mega-navigation/index.html' },
+        { name: 'Pagination',      href: '../pagination/index.html' },
+        { name: 'Skip Navigation', href: '../skip-navigation/index.html' },
+        { name: 'Tabs',            href: '../tabs/index.html' }
+      ]
+    },
+    {
+      label: 'Disclosure & Overlays',
+      items: [
+        { name: 'Accordion',      href: '../accordion/index.html' },
+        { name: 'Alert Dialog',   href: '../alert-dialog/index.html' },
+        { name: 'Cookie Consent', href: '../cookie-consent/index.html' },
+        { name: 'Dialog',         href: '../dialog/index.html' },
+        { name: 'Disclosure',     href: '../disclosure/index.html' },
+        { name: 'Modal',          href: '../modal/index.html' },
+        { name: 'Popover',        href: '../popover/index.html' },
+        { name: 'Tooltip',        href: '../tooltip/index.html' }
+      ]
+    },
+    {
+      label: 'Feedback & Status',
+      items: [
+        { name: 'Alert',        href: '../alert/index.html' },
+        { name: 'Badge',        href: '../badge/index.html' },
+        { name: 'Progress Bar', href: '../progress-bar/index.html' },
+        { name: 'Tag',          href: '../tag/index.html' },
+        { name: 'Toast',        href: '../toast/index.html' }
+      ]
+    },
+    {
+      label: 'Data Display & Media',
+      items: [
+        { name: 'Avatar',        href: '../avatar/index.html' },
+        { name: 'Button',        href: '../button/index.html' },
+        { name: 'Card',          href: '../card/index.html' },
+        { name: 'Card List',     href: '../card-list/index.html' },
+        { name: 'Carousel',      href: '../carousel/index.html' },
+        { name: 'Image Gallery', href: '../image-gallery/index.html' },
+        { name: 'Listbox',       href: '../listbox/index.html' },
+        { name: 'Table',         href: '../table/index.html' },
+        { name: 'Video',         href: '../video/index.html' }
+      ]
+    },
+    {
+      label: 'Commerce Patterns',
+      items: [
+        { name: 'Cart Summary',     href: '../cart-summary/index.html' },
+        { name: 'Faceted Filter',   href: '../faceted-filter/index.html' },
+        { name: 'Mini Cart',        href: '../mini-cart/index.html' },
+        { name: 'Price',            href: '../price/index.html' },
+        { name: 'Product Card',     href: '../product-card/index.html' },
+        { name: 'Quantity Stepper', href: '../quantity-stepper/index.html' },
+        { name: 'Review Comment',   href: '../review-comment/index.html' },
+        { name: 'Sale Price',       href: '../sale-price/index.html' },
+        { name: 'Star Rating',      href: '../star-rating/index.html' },
+        { name: 'Variant Selector', href: '../variant-selector/index.html' },
+        { name: 'Wishlist Button',  href: '../wishlist-button/index.html' }
+      ]
+    }
   ];
 
   // ── Left nav ────────────────────────────────────────────────────────────────
@@ -104,8 +133,9 @@
       scroll.appendChild(ul);
     }
 
-    buildGroup('Core', CORE);
-    buildGroup('eCommerce', ECOMMERCE);
+    GROUPS.forEach(function (group) {
+      buildGroup(group.label, group.items);
+    });
 
     return nav;
   }
@@ -171,6 +201,99 @@
     return compIdx !== -1 ? parts[compIdx + 1] : null;
   }
 
+  function buildComplianceSectionSkeleton() {
+    var section = document.createElement('div');
+    section.className = 'section rl-compliance-snapshot';
+
+    var heading = document.createElement('h2');
+    heading.textContent = 'Compliance';
+    section.appendChild(heading);
+
+    var content = document.createElement('div');
+    content.className = 'rl-compliance-snapshot__content';
+    content.innerHTML = '<p>Loading compliance summary...</p>';
+    section.appendChild(content);
+
+    return { section: section, content: content };
+  }
+
+  function flagText(value) {
+    return value ? 'Pass (automated)' : 'Needs manual verification';
+  }
+
+  function countFor(value) {
+    return Array.isArray(value) ? value.length : 0;
+  }
+
+  function insertComplianceSnapshot(folder) {
+    if (!folder) return;
+
+    var main = document.querySelector('main');
+    if (!main) return;
+
+    var existing = main.querySelector('.rl-compliance-snapshot');
+    if (existing) return;
+
+    var skeleton = buildComplianceSectionSkeleton();
+    var section = skeleton.section;
+    var content = skeleton.content;
+
+    var codeHeading = Array.from(main.querySelectorAll('h2')).find(function (h2) {
+      return h2.textContent.trim() === 'Code';
+    });
+
+    var codeSection = codeHeading ? (codeHeading.closest('.section') || codeHeading.parentElement) : null;
+    if (codeSection && codeSection.parentNode) {
+      var nextSection = codeSection.nextElementSibling;
+      if (nextSection) {
+        codeSection.parentNode.insertBefore(section, nextSection);
+      } else {
+        codeSection.parentNode.appendChild(section);
+      }
+    } else {
+      main.appendChild(section);
+    }
+
+    fetch('./labs.manifest.json')
+      .then(function (r) {
+        if (!r.ok) throw new Error('manifest-not-found');
+        return r.json();
+      })
+      .then(function (manifest) {
+        var implemented = countFor(manifest.implements);
+        var partial = countFor(manifest.partial);
+        var missing = countFor(manifest.missing);
+        var notApplicable = countFor(manifest.notApplicable);
+
+        var verified = manifest.verified || {};
+
+        content.innerHTML = '' +
+          '<table class="rl-compliance-snapshot__table">' +
+            '<thead><tr><th scope="col">Status</th><th scope="col">AC Count</th></tr></thead>' +
+            '<tbody>' +
+              '<tr><td>Passed</td><td>' + implemented + '</td></tr>' +
+              '<tr><td>Partial</td><td>' + partial + '</td></tr>' +
+              '<tr><td>Missing</td><td>' + missing + '</td></tr>' +
+              '<tr><td>Not Applicable</td><td>' + notApplicable + '</td></tr>' +
+            '</tbody>' +
+          '</table>' +
+          '<p class="rl-compliance-snapshot__label">Validation flags:</p>' +
+          '<ul>' +
+            '<li>Keyboard: ' + flagText(verified.keyboard) + '</li>' +
+            '<li>Screen reader semantics: ' + flagText(verified.screenReader) + '</li>' +
+            '<li>200% zoom: ' + flagText(verified.zoom200) + '</li>' +
+            '<li>Focus contrast: ' + flagText(verified.focusContrast) + '</li>' +
+          '</ul>' +
+          '<p><strong>Proprietary notice:</strong> Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.</p>' +
+          '<p class="rl-compliance-snapshot__meta">See labs.manifest.json for AC identifier-level status.</p>';
+      })
+      .catch(function () {
+        content.innerHTML = '' +
+          '<p>Compliance summary is unavailable for this component.</p>' +
+          '<p class="rl-compliance-snapshot__meta">labs.manifest.json could not be loaded from this folder.</p>';
+      });
+  }
+
   // ── Remove Reference Implementation section ───────────────────────────────
 
   function removeReferenceSection() {
@@ -213,7 +336,9 @@
   function buildPrevNext(folder) {
     if (!folder) return null;
 
-    var ALL = CORE.concat(ECOMMERCE);
+    var ALL = GROUPS.reduce(function (acc, group) {
+      return acc.concat(group.items);
+    }, []);
     var currentIdx = -1;
     ALL.forEach(function (item, i) {
       var itemFolder = item.href.replace('../', '').replace('/index.html', '');
@@ -306,6 +431,7 @@
 
     removeReferenceSection();
     injectGithubButtons(folder);
+    insertComplianceSnapshot(folder);
 
     var layout = document.createElement('div');
     layout.className = 'page-layout';

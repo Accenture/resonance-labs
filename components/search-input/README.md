@@ -16,6 +16,26 @@ A search form with a labelled input, submit button, and a clear button that retu
 | `Enter` | Submit the search form |
 | `Enter` / `Space` | Activate the clear button when focused |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 5 |
+| Partial | 0 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `search-input.html` — component markup
 - `search-input.js` — submit and clear handling with live region updates

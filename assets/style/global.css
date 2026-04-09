@@ -596,99 +596,27 @@ code, pre, kbd, samp {
   text-decoration: none;
 }
 
-/* ── Code section dark theme ── */
-
-/* Tomorrow night palette:
-   bg:      #1d1f21  (4.5:1+ against #c5c8c6 body text)
-   surface: #282a2e  code block
-   border:  #373b41
-   muted:   #969896  (4.6:1 on #1d1f21 — AA for UI text)
-   active:  #c5c8c6  (10:1+ on #1d1f21 — AAA)
-   accent:  #81a2be  (tab underline — decorative only)
-*/
-
-.section:has(.code-tabs) {
-  background: var(--primary-color);
-  padding: 2rem;
-  border-radius: 0.5rem;
-  margin-top: 2rem;
-}
-
-.section:has(.code-tabs) h2 {
-  color: #c5c8c6;
-}
-
-.section:has(.code-tabs) .code-tabs {
-  border-bottom-color: #373b41;
-}
-
-.section:has(.code-tabs) .code-tabs__tab {
-  color: #969896;
-  border-bottom-color: #373b41;
-}
-
-.section:has(.code-tabs) .code-tabs__tab:hover {
-  color: #c5c8c6;
-}
-
-.section:has(.code-tabs) .code-tabs__tab--active {
-  color: #c5c8c6;
-  font-weight: var(--font-weight-semibold);
-  border-bottom-color: #81a2be;
-}
-
-.section:has(.code-tabs) .code-preview pre[class*="language-"] {
-  background: var(--primary-color);
+/* ── Code content dark theme (code only) ── */
+.code-preview pre[class*="language-"] {
+  background: #1d1f21;
   border-color: #373b41;
+  color: #c5c8c6;
   margin-top: 0.75rem;
 }
 
-/* Remove Prism text-shadow from all tokens */
-.section:has(.code-tabs) .code-preview code[class*="language-"],
-.section:has(.code-tabs) .code-preview pre[class*="language-"],
-.section:has(.code-tabs) .code-preview .token {
+/* Keep styling scoped to rendered code content only */
+.code-preview code[class*="language-"],
+.code-preview pre[class*="language-"],
+.code-preview .token {
   text-shadow: none;
 }
 
-/* Line numbers */
-.section:has(.code-tabs) .code-preview .line-numbers-rows {
+.code-preview .line-numbers-rows {
   border-right-color: #373b41;
 }
 
-.section:has(.code-tabs) .code-preview .line-numbers-rows > span::before {
-  color: #555;
-}
-
-.section:has(.code-tabs) .code-preview__copy {
-  color: #c5c8c6;
-  border-color: #373b41;
-  background: transparent;
-}
-
-.section:has(.code-tabs) .code-preview__copy::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23c5c8c6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z'%3E%3C/path%3E%3Cpath d='M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1'%3E%3C/path%3E%3C/svg%3E");
-}
-
-.section:has(.code-tabs) .code-preview__copy:hover {
-  background: #282a2e;
-  border-color: #555;
-}
-
-.section:has(.code-tabs) .code-preview__copy:focus-visible,
-.section:has(.code-tabs) .code-preview__github:focus-visible {
-  outline: 2px solid #81a2be;
-  outline-offset: 2px;
-}
-
-.section:has(.code-tabs) .code-preview__github {
-  color: #c5c8c6;
-  border-color: #373b41;
-  background: transparent;
-}
-
-.section:has(.code-tabs) .code-preview__github:hover {
-  background: #282a2e;
-  border-color: #555;
+.code-preview .line-numbers-rows > span::before {
+  color: #777;
 }
 
 /* ── Content link styling (breadcrumb-style animated underline) ── */
@@ -801,6 +729,51 @@ main td a:hover::before {
 
 .comp-nav__item--next .comp-nav__label {
   text-align: right;
+}
+
+/* Compliance Snapshot (Public) */
+.rl-compliance-snapshot {
+  font-size: var(--font-size-xsmall);
+}
+
+.rl-compliance-snapshot__content {
+  margin-top: 0.75rem;
+}
+
+.rl-compliance-snapshot__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 0.75rem;
+  max-width: 34rem;
+}
+
+.rl-compliance-snapshot__table th,
+.rl-compliance-snapshot__table td {
+  border: 1px solid var(--border-color);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  font-size: var(--font-size-xsmall);
+}
+
+.rl-compliance-snapshot__table th {
+  background: var(--surface-muted);
+  color: var(--text-color-strong);
+}
+
+.rl-compliance-snapshot__table td:last-child,
+.rl-compliance-snapshot__table th:last-child {
+  text-align: right;
+  width: 7.5rem;
+}
+
+.rl-compliance-snapshot__label {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 0.25rem;
+}
+
+.rl-compliance-snapshot__meta {
+  font-size: var(--font-size-small);
+  color: var(--text-color-muted);
 }
 
 /* ── Responsive ── */

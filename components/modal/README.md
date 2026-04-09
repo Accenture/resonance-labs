@@ -18,6 +18,26 @@ A modal dialog with focus trapping, backdrop click dismissal, and focus restorat
 | `Enter` / `Space` | Activate the focused button |
 | `Escape` | Close the modal and return focus to the trigger |
 
+
+## Compliance Snapshot (Public)
+
+| Status | AC Count |
+|-----|--------:|
+| Implemented | 9 |
+| Partial | 1 |
+| Missing | 0 |
+| Not Applicable | 0 |
+
+Validation flags:
+- Keyboard: Pass (automated)
+- Screen reader semantics: Pass (automated)
+- 200% zoom: Needs manual verification
+- Focus contrast: Needs manual verification
+
+Proprietary notice: Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.
+
+See labs.manifest.json for AC identifier-level status.
+
 ## Files
 - `modal.html` — component markup
 - `modal.js` — open/close, focus trap, and backdrop handling
