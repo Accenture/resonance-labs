@@ -1,16 +1,24 @@
-# Accessible Autocomplete Demo
+# Autocomplete
 
-This repository contains a **fully accessible autocomplete component** with:
+Text input that filters a listbox of options as the user types, with full keyboard and screen reader support.
 
-- Keyboard navigation (Arrow Up/Down, Enter, Escape)
-- Filtering as you type
-- “No results found” messaging
-- Screen reader support (ARIA roles & live regions)
-- Visual focus and color contrast for accessibility
+## Features
+- Input uses `role="combobox"` with `aria-autocomplete="list"`, `aria-expanded`, and `aria-controls`
+- Active option tracked via `aria-activedescendant` on the input
+- Live region announces result count and "No results found" state
+- Keyboard: Arrow Up/Down to navigate options, Enter to select, Escape to close
+
+## Keyboard Support
+
+| Key | Action |
+|-----|--------|
+| `Arrow Down` | Open the listbox and move to the next suggestion |
+| `Arrow Up` | Move to the previous suggestion |
+| `Enter` | Select the highlighted suggestion |
+| `Escape` | Close the suggestion listbox |
 
 ## Files
-
-- `index.html` — Full HTML page for demo
-- `style.css` — Styling for input, suggestions, and “No results”
-- `autocomplete.js` — JavaScript for filtering, keyboard, and ARIA interactions
-
+- `autocomplete.html` — component markup
+- `autocomplete.js` — filtering, keyboard navigation, and ARIA management
+- `autocomplete.css` — styles for input, suggestion list, and no-results message
+- `index.html` — demo page
