@@ -11,9 +11,20 @@
     ));
   }
 
+  // Inert all body children outside the modal to trap virtual cursor for
+  // mobile screen readers (VoiceOver/TalkBack swipe navigation)
+  function setSiblingsInert(inert) {
+    Array.from(document.body.children).forEach(child => {
+      if (!child.contains(dialog) && child !== dialog) {
+        inert ? child.setAttribute("inert", "") : child.removeAttribute("inert");
+      }
+    });
+  }
+
   function open() {
     lastFocused = document.activeElement;
     dialog.hidden = false;
+    setSiblingsInert(true);
     const focusables = getFocusable(dialog);
     (focusables[0] || dialog.querySelector(".modal__panel")).focus();
     document.addEventListener("keydown", onKeyDown);
@@ -21,6 +32,7 @@
 
   function close() {
     dialog.hidden = true;
+    setSiblingsInert(false);
     document.removeEventListener("keydown", onKeyDown);
     lastFocused?.focus?.();
   }
