@@ -14,7 +14,7 @@
       var stars = Array.prototype.slice.call(
         group.querySelectorAll('[role="radio"]')
       );
-      var status = container.querySelector('.star-rating__status');
+      var status = container.querySelector('.rl-star-rating__status');
       var currentIndex = -1;
 
       function selectStar(index) {

@@ -18,14 +18,14 @@
     function setFocus(index, preventScroll) {
       // Remove previous focus
       options.forEach(function (opt) {
-        opt.classList.remove("listbox__option--focused");
+        opt.classList.remove("rl-listbox__option--focused");
       });
 
       if (index < 0 || index >= options.length) return;
 
       focusIndex = index;
       var option = options[focusIndex];
-      option.classList.add("listbox__option--focused");
+      option.classList.add("rl-listbox__option--focused");
       listbox.setAttribute("aria-activedescendant", option.id);
 
       // Scroll into view
@@ -113,7 +113,7 @@
 
     listbox.addEventListener("blur", function () {
       options.forEach(function (opt) {
-        opt.classList.remove("listbox__option--focused");
+        opt.classList.remove("rl-listbox__option--focused");
       });
       listbox.removeAttribute("aria-activedescendant");
     });

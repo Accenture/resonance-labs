@@ -1,6 +1,6 @@
 (function() {
   function closeAll(exceptId) {
-    document.querySelectorAll(".mega__btn").forEach(btn => {
+    document.querySelectorAll(".rl-mega__btn").forEach(btn => {
       const controls = btn.getAttribute("aria-controls");
       if (controls && controls !== exceptId) {
         btn.setAttribute("aria-expanded", "false");
@@ -10,7 +10,7 @@
     });
   }
 
-  document.querySelectorAll(".mega__btn").forEach(btn => {
+  document.querySelectorAll(".rl-mega__btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const controls = btn.getAttribute("aria-controls");
       const submenu = controls ? document.getElementById(controls) : null;

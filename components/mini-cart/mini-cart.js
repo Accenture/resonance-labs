@@ -1,16 +1,16 @@
 (function () {
-  var section = document.querySelector('.mini-cart');
+  var section = document.querySelector('.rl-mini-cart');
   if (!section) return;
 
-  var trigger = section.querySelector('.mini-cart__trigger');
+  var trigger = section.querySelector('.rl-mini-cart__trigger');
   var panel = document.getElementById('mini-cart-panel');
-  var countBadge = section.querySelector('.mini-cart__count');
-  var itemsList = section.querySelector('.mini-cart__items');
-  var emptyMsg = section.querySelector('.mini-cart__empty');
-  var subtotalEl = section.querySelector('.mini-cart__subtotal-value');
-  var actionsEl = section.querySelector('.mini-cart__actions');
-  var subtotalRow = section.querySelector('.mini-cart__subtotal');
-  var liveRegion = section.querySelector('.mini-cart__live');
+  var countBadge = section.querySelector('.rl-mini-cart__count');
+  var itemsList = section.querySelector('.rl-mini-cart__items');
+  var emptyMsg = section.querySelector('.rl-mini-cart__empty');
+  var subtotalEl = section.querySelector('.rl-mini-cart__subtotal-value');
+  var actionsEl = section.querySelector('.rl-mini-cart__actions');
+  var subtotalRow = section.querySelector('.rl-mini-cart__subtotal');
+  var liveRegion = section.querySelector('.rl-mini-cart__live');
 
   function announce(message) {
     liveRegion.textContent = '';
@@ -24,7 +24,7 @@
   }
 
   function getItemCount() {
-    var items = itemsList.querySelectorAll('.mini-cart__item');
+    var items = itemsList.querySelectorAll('.rl-mini-cart__item');
     var total = 0;
     items.forEach(function (item) {
       total += parseInt(item.getAttribute('data-qty'), 10) || 1;
@@ -40,7 +40,7 @@
   }
 
   function recalcSubtotal() {
-    var items = itemsList.querySelectorAll('.mini-cart__item');
+    var items = itemsList.querySelectorAll('.rl-mini-cart__item');
     var subtotal = 0;
     items.forEach(function (item) {
       var price = parseFloat(item.getAttribute('data-price'));
@@ -97,16 +97,16 @@
 
   // Remove item
   panel.addEventListener('click', function (e) {
-    var removeBtn = e.target.closest('.mini-cart__remove');
+    var removeBtn = e.target.closest('.rl-mini-cart__remove');
     if (!removeBtn) return;
 
-    var item = removeBtn.closest('.mini-cart__item');
+    var item = removeBtn.closest('.rl-mini-cart__item');
     var name = item.getAttribute('data-name');
     var nextItem = item.nextElementSibling || item.previousElementSibling;
 
     item.remove();
 
-    var remaining = itemsList.querySelectorAll('.mini-cart__item');
+    var remaining = itemsList.querySelectorAll('.rl-mini-cart__item');
 
     if (remaining.length === 0) {
       showEmptyState();
@@ -119,7 +119,7 @@
 
       // Move focus to next remove button
       if (nextItem) {
-        var nextRemove = nextItem.querySelector('.mini-cart__remove');
+        var nextRemove = nextItem.querySelector('.rl-mini-cart__remove');
         if (nextRemove) nextRemove.focus();
       }
     }

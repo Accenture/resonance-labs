@@ -1,93 +1,93 @@
 <!-- Cart Summary Component -->
-<section class="cart-summary" aria-labelledby="cart-heading">
+<section class="rl-cart-summary" aria-labelledby="cart-heading">
   <h2 id="cart-heading">Shopping Cart</h2>
 
-  <div class="cart-summary__empty" hidden>
+  <div class="rl-cart-summary__empty" hidden>
     <p>Your cart is empty.</p>
   </div>
 
-  <table class="cart-summary__table" aria-label="Shopping cart items">
+  <table class="rl-cart-summary__table" aria-label="Shopping cart items">
     <thead>
       <tr>
         <th scope="col">Product</th>
         <th scope="col">Quantity</th>
         <th scope="col">Unit Price</th>
         <th scope="col">Line Total</th>
-        <th scope="col"><span class="visually-hidden">Actions</span></th>
+        <th scope="col"><span class="rl-visually-hidden">Actions</span></th>
       </tr>
     </thead>
     <tbody>
-      <tr class="cart-summary__item" data-name="Blue T-Shirt" data-price="29.99">
-        <td class="cart-summary__product">Blue T-Shirt</td>
-        <td class="cart-summary__qty">
-          <label for="qty-blue-tshirt" class="visually-hidden">Quantity for Blue T-Shirt</label>
-          <div class="cart-summary__qty-controls">
-            <button type="button" class="cart-summary__qty-btn cart-summary__qty-btn--minus" aria-label="Decrease quantity for Blue T-Shirt" data-action="decrease">&#8722;</button>
-            <input type="number" id="qty-blue-tshirt" class="cart-summary__qty-input" value="1" min="1" max="99" data-action="input" />
-            <button type="button" class="cart-summary__qty-btn cart-summary__qty-btn--plus" aria-label="Increase quantity for Blue T-Shirt" data-action="increase">&#43;</button>
+      <tr class="rl-cart-summary__item" data-name="Blue T-Shirt" data-price="29.99">
+        <td class="rl-cart-summary__product">Blue T-Shirt</td>
+        <td class="rl-cart-summary__qty">
+          <label for="qty-blue-tshirt" class="rl-visually-hidden">Quantity for Blue T-Shirt</label>
+          <div class="rl-cart-summary__qty-controls">
+            <button type="button" class="rl-cart-summary__qty-btn rl-cart-summary__qty-btn--minus" aria-label="Decrease quantity for Blue T-Shirt" data-action="decrease">&#8722;</button>
+            <input type="number" id="qty-blue-tshirt" class="rl-cart-summary__qty-input" value="1" min="1" max="99" data-action="input" />
+            <button type="button" class="rl-cart-summary__qty-btn rl-cart-summary__qty-btn--plus" aria-label="Increase quantity for Blue T-Shirt" data-action="increase">&#43;</button>
           </div>
         </td>
-        <td class="cart-summary__price">$29.99</td>
-        <td class="cart-summary__line-total">$29.99</td>
-        <td class="cart-summary__actions">
-          <button type="button" class="cart-summary__remove" aria-label="Remove Blue T-Shirt">Remove</button>
+        <td class="rl-cart-summary__price">$29.99</td>
+        <td class="rl-cart-summary__line-total">$29.99</td>
+        <td class="rl-cart-summary__actions">
+          <button type="button" class="rl-cart-summary__remove" aria-label="Remove Blue T-Shirt">Remove</button>
         </td>
       </tr>
-      <tr class="cart-summary__item" data-name="Black Running Shoes" data-price="89.95">
-        <td class="cart-summary__product">Black Running Shoes</td>
-        <td class="cart-summary__qty">
-          <label for="qty-black-shoes" class="visually-hidden">Quantity for Black Running Shoes</label>
-          <div class="cart-summary__qty-controls">
-            <button type="button" class="cart-summary__qty-btn cart-summary__qty-btn--minus" aria-label="Decrease quantity for Black Running Shoes" data-action="decrease">&#8722;</button>
-            <input type="number" id="qty-black-shoes" class="cart-summary__qty-input" value="2" min="1" max="99" data-action="input" />
-            <button type="button" class="cart-summary__qty-btn cart-summary__qty-btn--plus" aria-label="Increase quantity for Black Running Shoes" data-action="increase">&#43;</button>
+      <tr class="rl-cart-summary__item" data-name="Black Running Shoes" data-price="89.95">
+        <td class="rl-cart-summary__product">Black Running Shoes</td>
+        <td class="rl-cart-summary__qty">
+          <label for="qty-black-shoes" class="rl-visually-hidden">Quantity for Black Running Shoes</label>
+          <div class="rl-cart-summary__qty-controls">
+            <button type="button" class="rl-cart-summary__qty-btn rl-cart-summary__qty-btn--minus" aria-label="Decrease quantity for Black Running Shoes" data-action="decrease">&#8722;</button>
+            <input type="number" id="qty-black-shoes" class="rl-cart-summary__qty-input" value="2" min="1" max="99" data-action="input" />
+            <button type="button" class="rl-cart-summary__qty-btn rl-cart-summary__qty-btn--plus" aria-label="Increase quantity for Black Running Shoes" data-action="increase">&#43;</button>
           </div>
         </td>
-        <td class="cart-summary__price">$89.95</td>
-        <td class="cart-summary__line-total">$179.90</td>
-        <td class="cart-summary__actions">
-          <button type="button" class="cart-summary__remove" aria-label="Remove Black Running Shoes">Remove</button>
+        <td class="rl-cart-summary__price">$89.95</td>
+        <td class="rl-cart-summary__line-total">$179.90</td>
+        <td class="rl-cart-summary__actions">
+          <button type="button" class="rl-cart-summary__remove" aria-label="Remove Black Running Shoes">Remove</button>
         </td>
       </tr>
-      <tr class="cart-summary__item" data-name="Wool Beanie" data-price="18.50">
-        <td class="cart-summary__product">Wool Beanie</td>
-        <td class="cart-summary__qty">
-          <label for="qty-wool-beanie" class="visually-hidden">Quantity for Wool Beanie</label>
-          <div class="cart-summary__qty-controls">
-            <button type="button" class="cart-summary__qty-btn cart-summary__qty-btn--minus" aria-label="Decrease quantity for Wool Beanie" data-action="decrease">&#8722;</button>
-            <input type="number" id="qty-wool-beanie" class="cart-summary__qty-input" value="1" min="1" max="99" data-action="input" />
-            <button type="button" class="cart-summary__qty-btn cart-summary__qty-btn--plus" aria-label="Increase quantity for Wool Beanie" data-action="increase">&#43;</button>
+      <tr class="rl-cart-summary__item" data-name="Wool Beanie" data-price="18.50">
+        <td class="rl-cart-summary__product">Wool Beanie</td>
+        <td class="rl-cart-summary__qty">
+          <label for="qty-wool-beanie" class="rl-visually-hidden">Quantity for Wool Beanie</label>
+          <div class="rl-cart-summary__qty-controls">
+            <button type="button" class="rl-cart-summary__qty-btn rl-cart-summary__qty-btn--minus" aria-label="Decrease quantity for Wool Beanie" data-action="decrease">&#8722;</button>
+            <input type="number" id="qty-wool-beanie" class="rl-cart-summary__qty-input" value="1" min="1" max="99" data-action="input" />
+            <button type="button" class="rl-cart-summary__qty-btn rl-cart-summary__qty-btn--plus" aria-label="Increase quantity for Wool Beanie" data-action="increase">&#43;</button>
           </div>
         </td>
-        <td class="cart-summary__price">$18.50</td>
-        <td class="cart-summary__line-total">$18.50</td>
-        <td class="cart-summary__actions">
-          <button type="button" class="cart-summary__remove" aria-label="Remove Wool Beanie">Remove</button>
+        <td class="rl-cart-summary__price">$18.50</td>
+        <td class="rl-cart-summary__line-total">$18.50</td>
+        <td class="rl-cart-summary__actions">
+          <button type="button" class="rl-cart-summary__remove" aria-label="Remove Wool Beanie">Remove</button>
         </td>
       </tr>
     </tbody>
   </table>
 
-  <div class="cart-summary__order" aria-label="Order summary">
-    <dl class="cart-summary__totals">
-      <div class="cart-summary__totals-row">
+  <div class="rl-cart-summary__order" aria-label="Order summary">
+    <dl class="rl-cart-summary__totals">
+      <div class="rl-cart-summary__totals-row">
         <dt>Subtotal</dt>
-        <dd class="cart-summary__subtotal">$228.39</dd>
+        <dd class="rl-cart-summary__subtotal">$228.39</dd>
       </div>
-      <div class="cart-summary__totals-row">
+      <div class="rl-cart-summary__totals-row">
         <dt>Shipping</dt>
-        <dd class="cart-summary__shipping">$5.99</dd>
+        <dd class="rl-cart-summary__shipping">$5.99</dd>
       </div>
-      <div class="cart-summary__totals-row">
+      <div class="rl-cart-summary__totals-row">
         <dt>Tax</dt>
-        <dd class="cart-summary__tax">$18.27</dd>
+        <dd class="rl-cart-summary__tax">$18.27</dd>
       </div>
-      <div class="cart-summary__totals-row cart-summary__totals-row--total">
+      <div class="rl-cart-summary__totals-row rl-cart-summary__totals-row--total">
         <dt>Order Total</dt>
-        <dd class="cart-summary__order-total">$252.65</dd>
+        <dd class="rl-cart-summary__order-total">$252.65</dd>
       </div>
     </dl>
   </div>
 
-  <div class="cart-summary__live" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+  <div class="rl-cart-summary__live" aria-live="polite" aria-atomic="true" class="rl-visually-hidden"></div>
 </section>

@@ -6,7 +6,7 @@
     tabs.forEach(function (t) {
       t.setAttribute('aria-selected', 'false');
       t.setAttribute('tabindex', '-1');
-      t.classList.remove('tabs__tab--selected');
+      t.classList.remove('rl-tabs__tab--selected');
     });
 
     // Hide all panels
@@ -17,7 +17,7 @@
     // Activate the selected tab
     tab.setAttribute('aria-selected', 'true');
     tab.setAttribute('tabindex', '0');
-    tab.classList.add('tabs__tab--selected');
+    tab.classList.add('rl-tabs__tab--selected');
 
     // Show the corresponding panel
     var panelId = tab.getAttribute('aria-controls');
@@ -77,7 +77,7 @@
 
   function init() {
     // Scope to a specific tabs instance if needed
-    var root = document.querySelector('[data-component="tabs"]') || document;
+    var root = document.querySelector('[data-component="rl-tabs"]') || document;
     var tablist = root.querySelector('[role="tablist"]');
     var tabs = tablist.querySelectorAll('[role="tab"]');
     var panels = root.querySelectorAll('[role="tabpanel"]');

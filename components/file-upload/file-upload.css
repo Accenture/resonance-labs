@@ -4,7 +4,7 @@
 
 /* Drop Zone
    ------------------------------------------------------------ */
-.file-upload-dropzone {
+.rl-file-upload-dropzone {
   border: 2px dashed var(--border-color-strong);
   border-radius: var(--border-radius);
   padding: 2rem;
@@ -14,34 +14,34 @@
   cursor: pointer;
 }
 
-.file-upload-dropzone:hover {
+.rl-file-upload-dropzone:hover {
   border-color: var(--primary-color);
   background-color: var(--surface-muted);
 }
 
-.file-upload-dropzone.file-upload-dropzone--drag-over {
+.rl-file-upload-dropzone.file-upload-dropzone--drag-over {
   border-color: var(--primary-color);
   background-color: var(--surface-subtle);
   border-style: solid;
   box-shadow: 0 0 0 3px rgba(34, 34, 34, 0.25);
 }
 
-.file-upload-dropzone__content {
+.rl-file-upload-dropzone__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
 }
 
-.file-upload-dropzone__icon {
+.rl-file-upload-dropzone__icon {
   color: var(--text-color-subtle);
 }
 
-.file-upload-dropzone--drag-over .file-upload-dropzone__icon {
+.rl-file-upload-dropzone--drag-over .rl-file-upload-dropzone__icon {
   color: var(--primary-color);
 }
 
-.file-upload-dropzone__text {
+.rl-file-upload-dropzone__text {
   margin: 0;
   font-size: 1rem;
   color: var(--text-color);
@@ -49,7 +49,7 @@
 
 /* File Input
    ------------------------------------------------------------ */
-.file-upload-input {
+.rl-file-upload-input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -61,19 +61,19 @@
   border: 0;
 }
 
-.file-upload-input:focus + .file-upload-constraints,
-.file-upload-input:focus-visible + .file-upload-constraints {
+.rl-file-upload-input:focus + .rl-file-upload-constraints,
+.rl-file-upload-input:focus-visible + .rl-file-upload-constraints {
   outline: none;
 }
 
 /* Label / Button
    ------------------------------------------------------------ */
-.file-upload-label {
+.rl-file-upload-label {
   display: inline-block;
   cursor: pointer;
 }
 
-.file-upload-label__button {
+.rl-file-upload-label__button {
   display: inline-block;
   padding: 0.625rem 1.5rem;
   font-size: 0.9375rem;
@@ -85,30 +85,30 @@
   user-select: none;
 }
 
-.file-upload-label:hover .file-upload-label__button {
+.rl-file-upload-label:hover .rl-file-upload-label__button {
   background-color: var(--primary-color-hover);
 }
 
-.file-upload-input:focus-visible ~ .file-upload-label .file-upload-label__button,
-.file-upload-input:focus ~ .file-upload-label .file-upload-label__button {
+.rl-file-upload-input:focus-visible ~ .rl-file-upload-label .rl-file-upload-label__button,
+.rl-file-upload-input:focus ~ .rl-file-upload-label .rl-file-upload-label__button {
   outline: none;
 }
 
 /* The input is visually hidden but still focusable.
    Show a visible focus ring on the label button when input is focused. */
-.file-upload-label__button:focus,
-.file-upload-input:focus-visible + .file-upload-constraints + .file-upload-label .file-upload-label__button {
+.rl-file-upload-label__button:focus,
+.rl-file-upload-input:focus-visible + .rl-file-upload-constraints + .rl-file-upload-label .rl-file-upload-label__button {
   outline: none;
 }
 
 /* Use a wrapper approach: focus indicator on the dropzone when input is focused */
-.file-upload-dropzone:focus-within {
+.rl-file-upload-dropzone:focus-within {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(34, 34, 34, 0.4);
 }
 
 /* Constraints text */
-.file-upload-constraints {
+.rl-file-upload-constraints {
   margin: 0;
   font-size: 0.8125rem;
   color: var(--text-color-subtle);
@@ -116,21 +116,21 @@
 
 /* Status / Live Region
    ------------------------------------------------------------ */
-.file-upload-status {
+.rl-file-upload-status {
   min-height: 1.5rem;
   padding: 0.5rem 0;
   font-size: 0.875rem;
   color: var(--text-color);
 }
 
-.file-upload-status:empty {
+.rl-file-upload-status:empty {
   padding: 0;
   min-height: 0;
 }
 
 /* Error
    ------------------------------------------------------------ */
-.file-upload-error {
+.rl-file-upload-error {
   margin: 0;
   padding: 0;
   font-size: 0.875rem;
@@ -139,24 +139,24 @@
   min-height: 0;
 }
 
-.file-upload-error:empty {
+.rl-file-upload-error:empty {
   display: none;
 }
 
 /* File List
    ------------------------------------------------------------ */
-.file-upload-list-wrapper {
+.rl-file-upload-list-wrapper {
   margin-top: 1.5rem;
 }
 
-.file-upload-list__heading {
+.rl-file-upload-list__heading {
   font-size: 1rem;
   font-weight: 600;
   margin: 0 0 0.75rem;
   color: var(--text-color-strong);
 }
 
-.file-upload-list {
+.rl-file-upload-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -165,7 +165,7 @@
   gap: 0.5rem;
 }
 
-.file-upload-list__item {
+.rl-file-upload-list__item {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -176,12 +176,12 @@
   transition: background-color 0.15s ease;
 }
 
-.file-upload-list__item:hover {
+.rl-file-upload-list__item:hover {
   background-color: var(--surface-muted);
 }
 
 /* File icon */
-.file-upload-list__icon {
+.rl-file-upload-list__icon {
   flex-shrink: 0;
   width: 24px;
   height: 24px;
@@ -189,12 +189,12 @@
 }
 
 /* File info */
-.file-upload-list__info {
+.rl-file-upload-list__info {
   flex: 1;
   min-width: 0;
 }
 
-.file-upload-list__name {
+.rl-file-upload-list__name {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
@@ -204,7 +204,7 @@
   text-overflow: ellipsis;
 }
 
-.file-upload-list__meta {
+.rl-file-upload-list__meta {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -213,28 +213,28 @@
   margin-top: 0.125rem;
 }
 
-.file-upload-list__size {
+.rl-file-upload-list__size {
   white-space: nowrap;
 }
 
-.file-upload-list__status {
+.rl-file-upload-list__status {
   white-space: nowrap;
 }
 
-.file-upload-list__status--uploading {
+.rl-file-upload-list__status--uploading {
   color: var(--primary-color);
 }
 
-.file-upload-list__status--complete {
+.rl-file-upload-list__status--complete {
   color: var(--primary-color);
 }
 
-.file-upload-list__status--error {
+.rl-file-upload-list__status--error {
   color: var(--primary-color);
 }
 
 /* Progress bar */
-.file-upload-list__progress {
+.rl-file-upload-list__progress {
   flex-shrink: 0;
   width: 80px;
   height: 6px;
@@ -243,19 +243,19 @@
   overflow: hidden;
 }
 
-.file-upload-list__progress-bar {
+.rl-file-upload-list__progress-bar {
   height: 100%;
   background-color: var(--primary-color);
   border-radius: var(--border-radius);
   transition: width 0.3s ease;
 }
 
-.file-upload-list__progress-bar--complete {
+.rl-file-upload-list__progress-bar--complete {
   background-color: var(--primary-color);
 }
 
 /* Remove button */
-.file-upload-list__remove {
+.rl-file-upload-list__remove {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -273,42 +273,42 @@
   transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
 
-.file-upload-list__remove:hover {
+.rl-file-upload-list__remove:hover {
   color: var(--primary-color);
   background-color: var(--surface-muted);
 }
 
-.file-upload-list__remove:focus-visible {
+.rl-file-upload-list__remove:focus-visible {
   outline: 2px solid var(--focus-color);
   outline-offset: 2px;
   color: var(--primary-color);
 }
 
 /* Ensure all interactive elements have >= 3:1 focus indicators */
-.file-upload-input:focus-visible,
-.file-upload-label__button:focus-visible,
-.file-upload-list__remove:focus-visible {
+.rl-file-upload-input:focus-visible,
+.rl-file-upload-label__button:focus-visible,
+.rl-file-upload-list__remove:focus-visible {
   outline: 2px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Empty state */
-.file-upload-list:empty + .file-upload-list__empty,
-.file-upload-list-wrapper[data-empty="true"] .file-upload-list__empty-msg {
+.rl-file-upload-list:empty + .rl-file-upload-list__empty,
+.rl-file-upload-list-wrapper[data-empty="true"] .rl-file-upload-list__empty-msg {
   display: block;
 }
 
 /* Responsive */
 @media (max-width: 480px) {
-  .file-upload-dropzone {
+  .rl-file-upload-dropzone {
     padding: 1.25rem;
   }
 
-  .file-upload-list__item {
+  .rl-file-upload-list__item {
     padding: 0.5rem 0.75rem;
   }
 
-  .file-upload-list__progress {
+  .rl-file-upload-list__progress {
     width: 60px;
   }
 }

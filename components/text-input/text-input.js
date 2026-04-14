@@ -19,11 +19,11 @@
 
   function validate(form) {
     var firstInvalid = null;
-    var fields = form.querySelectorAll('.text-input');
+    var fields = form.querySelectorAll('.rl-text-input');
 
     fields.forEach(function (field) {
-      var input = field.querySelector('.text-input__input');
-      var errorEl = field.querySelector('.text-input__error');
+      var input = field.querySelector('.rl-text-input__input');
+      var errorEl = field.querySelector('.rl-text-input__error');
 
       if (!input.checkValidity()) {
         showError(input, errorEl);
@@ -37,7 +37,7 @@
   }
 
   function init() {
-    var form = document.querySelector('[data-component="text-input"]');
+    var form = document.querySelector('[data-component="rl-text-input"]');
     if (!form) return;
 
     form.addEventListener('submit', function (event) {

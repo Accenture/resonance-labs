@@ -1,4 +1,4 @@
-.alert-demo {
+.rl-alert-demo {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -6,7 +6,7 @@
 }
 
 /* Base alert styles */
-.alert {
+.rl-alert {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
@@ -19,57 +19,57 @@
   line-height: 1.5;
 }
 
-.alert__icon {
+.rl-alert__icon {
   flex-shrink: 0;
   font-size: 1.25rem;
   line-height: 1.4;
   user-select: none;
 }
 
-.alert__content {
+.rl-alert__content {
   flex: 1;
   min-width: 0;
 }
 
-.alert__label {
+.rl-alert__label {
   font-weight: 700;
   margin-right: 0.25rem;
 }
 
 /* Info variant */
-.alert--info {
+.rl-alert--info {
   border-left-color: var(--alert-blue);
   background: var(--alert-blue-surface);
 }
 
 /* Success variant */
-.alert--success {
+.rl-alert--success {
   border-left-color: var(--alert-green);
   background: var(--alert-green-surface);
 }
 
 /* Warning variant */
-.alert--warning {
+.rl-alert--warning {
   border-left-color: var(--alert-yellow-dark);
   background: var(--alert-yellow-surface);
 }
 
-.alert--warning .alert__label {
+.rl-alert--warning .rl-alert__label {
   color: var(--alert-yellow-dark);
 }
 
 /* Error variant */
-.alert--error {
+.rl-alert--error {
   border-left-color: var(--alert-red);
   background: var(--alert-red-surface);
 }
 
 /* Dismissible variant */
-.alert--dismissible {
+.rl-alert--dismissible {
   padding-right: 0.5rem;
 }
 
-.alert__dismiss {
+.rl-alert__dismiss {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -86,17 +86,17 @@
   transition: background-color var(--transition-duration);
 }
 
-.alert__dismiss:hover {
+.rl-alert__dismiss:hover {
   background: rgba(0, 0, 0, 0.08);
 }
 
-.alert__dismiss:focus-visible {
+.rl-alert__dismiss:focus-visible {
   outline: 2px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Trigger button */
-.alert-demo__trigger {
+.rl-alert-demo__trigger {
   font-size: var(--font-size-base);
   padding: 0.6rem 1.2rem;
   background-color: var(--primary-color);
@@ -107,17 +107,17 @@
   transition: background-color var(--transition-duration);
 }
 
-.alert-demo__trigger:hover {
+.rl-alert-demo__trigger:hover {
   background-color: var(--primary-color-hover);
 }
 
-.alert-demo__trigger:focus {
+.rl-alert-demo__trigger:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Live region container */
-.alert-demo__live-region {
+.rl-alert-demo__live-region {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;

@@ -3,14 +3,14 @@
 */
 
 /* Group layout */
-.toggle-switch-group {
+.rl-toggle-switch-group {
   max-width: 480px;
   margin: 2rem auto;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* Individual switch row */
-.toggle-switch {
+.rl-toggle-switch {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,12 +19,12 @@
   border-bottom: 1px solid var(--gray-200);
 }
 
-.toggle-switch:last-child {
+.rl-toggle-switch:last-child {
   border-bottom: none;
 }
 
 /* Label styling */
-.toggle-switch label {
+.rl-toggle-switch label {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.4;
@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 
-.hint {
+.rl-hint {
   display: block;
   margin-top: 4px;
   font-size: 0.875rem;
@@ -41,7 +41,7 @@
 }
 
 /* Switch button — reset + track */
-.toggle-switch button[role="switch"] {
+.rl-toggle-switch button[role="switch"] {
   all: unset;
   box-sizing: border-box;
   position: relative;
@@ -56,7 +56,7 @@
 }
 
 /* Track */
-.toggle-switch__track {
+.rl-toggle-switch__track {
   display: block;
   width: var(--tgs-track-width, 50px);
   height: var(--tgs-track-height, 26px);
@@ -67,7 +67,7 @@
 }
 
 /* Handle */
-.toggle-switch__handle {
+.rl-toggle-switch__handle {
   display: block;
   width: var(--tgs-handle-size, 22px);
   height: var(--tgs-handle-size, 22px);
@@ -80,23 +80,23 @@
 }
 
 /* On state — track color change + handle position */
-.toggle-switch button[aria-checked="true"] .toggle-switch__track {
+.rl-toggle-switch button[aria-checked="true"] .rl-toggle-switch__track {
   background-color: var(--primary-color);
 }
 
-.toggle-switch button[aria-checked="true"] .toggle-switch__handle {
+.rl-toggle-switch button[aria-checked="true"] .rl-toggle-switch__handle {
   transform: translateX(calc(var(--tgs-track-width, 50px) - var(--tgs-handle-size, 22px) - var(--tgs-handle-offset, 2px) * 2));
 }
 
 /* Focus visibility (WCAG 2.4.7 / 2.4.11) */
-.toggle-switch button[role="switch"]:focus-visible {
+.rl-toggle-switch button[role="switch"]:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
   border-radius: calc(var(--tgs-track-height, 26px) / 2);
 }
 
 /* Disabled state */
-.toggle-switch button[aria-disabled="true"] {
+.rl-toggle-switch button[aria-disabled="true"] {
   opacity: 0.4;
   cursor: not-allowed;
   pointer-events: none;
@@ -104,7 +104,7 @@
 
 /* Touch ergonomics — larger hit area on coarse pointer devices */
 @media (pointer: coarse) {
-  .toggle-switch button[role="switch"] {
+  .rl-toggle-switch button[role="switch"] {
     min-height: 44px;
     padding: 8px 0;
   }

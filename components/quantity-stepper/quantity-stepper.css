@@ -1,5 +1,5 @@
 /* Quantity Steppers Container */
-.quantity-steppers {
+.rl-quantity-steppers {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -7,7 +7,7 @@
 }
 
 /* Live Region (visually hidden) */
-.quantity-stepper__live-region {
+.rl-quantity-stepper__live-region {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -20,21 +20,21 @@
 }
 
 /* Individual Stepper */
-.quantity-stepper {
+.rl-quantity-stepper {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
 /* Label */
-.quantity-stepper__label {
+.rl-quantity-stepper__label {
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--text-color-strong);
 }
 
 /* Controls Row */
-.quantity-stepper__controls {
+.rl-quantity-stepper__controls {
   display: inline-flex;
   align-items: center;
   border: 2px solid var(--border-color);
@@ -43,13 +43,13 @@
   width: fit-content;
 }
 
-.quantity-stepper__controls:focus-within {
+.rl-quantity-stepper__controls:focus-within {
   border-color: var(--focus-color);
   box-shadow: 0 0 0 1px var(--focus-color);
 }
 
 /* Buttons */
-.quantity-stepper__btn {
+.rl-quantity-stepper__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -68,29 +68,29 @@
   transition: background-color 0.15s ease;
 }
 
-.quantity-stepper__btn:hover:not([aria-disabled="true"]) {
+.rl-quantity-stepper__btn:hover:not([aria-disabled="true"]) {
   background: var(--gray-200);
 }
 
-.quantity-stepper__btn:active:not([aria-disabled="true"]) {
+.rl-quantity-stepper__btn:active:not([aria-disabled="true"]) {
   background: var(--border-color);
 }
 
-.quantity-stepper__btn:focus-visible {
+.rl-quantity-stepper__btn:focus-visible {
   outline: 2px solid var(--focus-color);
   outline-offset: -2px;
   z-index: 1;
 }
 
 /* Disabled State */
-.quantity-stepper__btn[aria-disabled="true"] {
+.rl-quantity-stepper__btn[aria-disabled="true"] {
   color: var(--text-color-faint);
   cursor: not-allowed;
   background: var(--background-color);
 }
 
 /* Number Input */
-.quantity-stepper__input {
+.rl-quantity-stepper__input {
   width: 56px;
   height: 44px;
   border: none;
@@ -105,13 +105,13 @@
   -moz-appearance: textfield;
 }
 
-.quantity-stepper__input::-webkit-outer-spin-button,
-.quantity-stepper__input::-webkit-inner-spin-button {
+.rl-quantity-stepper__input::-webkit-outer-spin-button,
+.rl-quantity-stepper__input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.quantity-stepper__input:focus-visible {
+.rl-quantity-stepper__input:focus-visible {
   outline: 2px solid var(--focus-color);
   outline-offset: -2px;
   z-index: 1;

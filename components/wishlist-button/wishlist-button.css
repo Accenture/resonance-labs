@@ -2,14 +2,14 @@
    Wishlist Button Component
    =========================== */
 
-.wishlist-demo h3 {
+.rl-wishlist-demo h3 {
   margin-top: 24px;
   margin-bottom: 12px;
   font-size: 1rem;
   color: var(--primary-color-hover);
 }
 
-.wishlist-demo__row {
+.rl-wishlist-demo__row {
   display: flex;
   gap: 16px;
   align-items: center;
@@ -17,7 +17,7 @@
 }
 
 /* --- Base button reset --- */
-.wishlist-btn {
+.rl-wishlist-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +34,7 @@
 }
 
 /* --- Icon-only variant --- */
-.wishlist-btn--icon {
+.rl-wishlist-btn--icon {
   width: 44px;
   height: 44px;
   min-width: 24px;
@@ -43,57 +43,57 @@
 }
 
 /* --- Text variant --- */
-.wishlist-btn--text {
+.rl-wishlist-btn--text {
   padding: 10px 16px;
   min-height: 44px;
 }
 
 /* --- Heart icon: unsaved (outline only) --- */
-.wishlist-btn__heart {
+.rl-wishlist-btn__heart {
   flex-shrink: 0;
   transition: fill 0.2s, stroke 0.2s;
 }
 
-.wishlist-btn[aria-pressed="false"] .wishlist-btn__heart {
+.rl-wishlist-btn[aria-pressed="false"] .rl-wishlist-btn__heart {
   fill: none;
   stroke: var(--border-color-input);
 }
 
 /* --- Heart icon: saved (filled shape change) --- */
-.wishlist-btn[aria-pressed="true"] .wishlist-btn__heart {
+.rl-wishlist-btn[aria-pressed="true"] .rl-wishlist-btn__heart {
   fill: var(--primary-color);
   stroke: var(--primary-color);
 }
 
 /* --- Saved state: additional visual cues beyond color --- */
-.wishlist-btn[aria-pressed="true"] {
+.rl-wishlist-btn[aria-pressed="true"] {
   border-color: var(--primary-color);
   background-color: var(--surface-muted);
 }
 
-.wishlist-btn[aria-pressed="false"] {
+.rl-wishlist-btn[aria-pressed="false"] {
   border-color: var(--border-color-input);
   background-color: var(--surface-color);
 }
 
 /* --- Hover --- */
-.wishlist-btn:hover {
+.rl-wishlist-btn:hover {
   border-color: var(--primary-color-hover);
   background-color: var(--surface-muted);
 }
 
-.wishlist-btn[aria-pressed="true"]:hover {
+.rl-wishlist-btn[aria-pressed="true"]:hover {
   border-color: var(--primary-color-hover);
   background-color: var(--surface-subtle);
 }
 
 /* --- Focus indicator (3:1+ contrast) --- */
-.wishlist-btn:focus-visible {
+.rl-wishlist-btn:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* --- Label text --- */
-.wishlist-btn__label {
+.rl-wishlist-btn__label {
   white-space: nowrap;
 }

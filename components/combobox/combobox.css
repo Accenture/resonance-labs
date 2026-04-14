@@ -1,10 +1,10 @@
 /* Combobox component styles */
 
-.combobox-demo .hint { margin-top: 6px; color: var(--text-color); }
-.combobox-demo .error { margin-top: 6px; font-weight: 700; color: var(--text-color-strong); }
+.rl-combobox-demo .rl-hint { margin-top: 6px; color: var(--text-color); }
+.rl-combobox-demo .rl-error { margin-top: 6px; font-weight: 700; color: var(--text-color-strong); }
 
 /* Focus: visible + high contrast */
-.combobox {
+.rl-combobox {
   width: min(420px, 100%);
   min-height: 24px;            /* supports 24x24 target size baseline */
   padding: 10px 12px;
@@ -12,13 +12,13 @@
   border-radius: var(--border-radius);
 }
 
-.combobox:focus-visible {
+.rl-combobox:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 3px;
 }
 
 /* Listbox */
-.listbox {
+.rl-listbox {
   width: min(420px, 100%);
   margin-top: 8px;
   padding: 6px;
@@ -30,27 +30,27 @@
   background: var(--surface-color);
 }
 
-.listbox[hidden] { display: none; }
-.listbox.open { display: block; }
+.rl-listbox[hidden] { display: none; }
+.rl-listbox.open { display: block; }
 
-.option {
+.rl-option {
   padding: 10px 10px;
   border-radius: var(--border-radius);
   cursor: default;
 }
 
-.option[aria-selected="true"] {
+.rl-option[aria-selected="true"] {
   font-weight: 700;
 }
 
 /* Active option (visual focus) */
-.option.is-active {
+.rl-option.is-active {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Demo sticky header to test "not obscured" */
-.demo-sticky {
+.rl-demo-sticky {
   position: sticky;
   top: 0;
   padding: 8px 12px;

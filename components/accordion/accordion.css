@@ -1,34 +1,34 @@
 /* Show/hide — rely on `hidden` attribute to hide, :has() to reveal */
-.accordion__item:has(button[aria-expanded="true"]) [role="region"] {
+.rl-accordion__item:has(button[aria-expanded="true"]) [role="region"] {
   display: block;
 }
 
 /* STYLES FOR ACCORDION COMPONENT */
 
-.accordion {
+.rl-accordion {
   border: none;
 }
 
-.accordion__item {
+.rl-accordion__item {
   margin: 0;
   padding: 0;
   border-top: 1px solid var(--border-color);
 }
 
-.accordion__item:last-child {
+.rl-accordion__item:last-child {
   border-bottom: 1px solid var(--border-color);
 }
 
-.accordion__item h3 {
+.rl-accordion__item h3 {
   margin: 0;
 }
 
-.accordion-trigger:focus-visible {
+.rl-accordion-trigger:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
-.accordion-trigger {
+.rl-accordion-trigger {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,17 +41,17 @@
   border: none;
 }
 
-.accordion-trigger__icon {
+.rl-accordion-trigger__icon {
   flex-shrink: 0;
   transition: transform 0.2s ease;
   pointer-events: none;
 }
 
-.accordion-trigger[aria-expanded="true"] .accordion-trigger__icon {
+.rl-accordion-trigger[aria-expanded="true"] .rl-accordion-trigger__icon {
   transform: rotate(180deg);
 }
 
-.accordion__item [role="region"] {
+.rl-accordion__item [role="region"] {
   padding: 0.75rem 1rem;
   background: var(--surface-color);
 }

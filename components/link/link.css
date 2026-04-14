@@ -1,31 +1,31 @@
-.link-demo h2 {
+.rl-link-demo h2 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
   color: var(--text-color-strong);
 }
 
-.link-demo h3 {
+.rl-link-demo h3 {
   font-size: 1.1rem;
   margin: 1.5rem 0 0.75rem;
   color: var(--text-color-strong);
 }
 
-.link-demo p {
+.rl-link-demo p {
   margin-bottom: 1rem;
   line-height: 1.7;
   color: var(--text-color);
 }
 
-.link-demo a {
+.rl-link-demo a {
   color: var(--text-color-strong);
 }
 
-.link-demo a:focus {
+.rl-link-demo a:focus {
   outline: 3px solid var(--text-color-strong);
   outline-offset: 2px;
 }
 
-.link-demo section {
+.rl-link-demo section {
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--gray-200);

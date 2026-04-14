@@ -34,7 +34,7 @@
   }
 
   function init() {
-    var root = document.querySelector('[data-component="toggle-switch"]') || document;
+    var root = document.querySelector('[data-component="rl-toggle-switch"]') || document;
     var switches = root.querySelectorAll('button[role="switch"][data-tgs-role="switch"]');
 
     switches.forEach(function (switchEl) {

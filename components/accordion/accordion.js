@@ -12,7 +12,7 @@
   }
 
   document.addEventListener('click', function (event) {
-    var button = event.target.closest('.accordion-trigger');
+    var button = event.target.closest('.rl-accordion-trigger');
     if (button) toggleAccordion(button);
   });
 })();

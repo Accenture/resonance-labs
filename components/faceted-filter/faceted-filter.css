@@ -1,5 +1,5 @@
 /* Faceted Filter Panel */
-.faceted-filter {
+.rl-faceted-filter {
   max-width: 320px;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
@@ -9,7 +9,7 @@
 }
 
 /* Header */
-.faceted-filter__header {
+.rl-faceted-filter__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +18,7 @@
   border-bottom: 1px solid var(--gray-200);
 }
 
-.faceted-filter__title {
+.rl-faceted-filter__title {
   font-size: 1.125rem;
   font-weight: 700;
   margin: 0;
@@ -26,7 +26,7 @@
 }
 
 /* Clear All Button */
-.faceted-filter__clear {
+.rl-faceted-filter__clear {
   background: none;
   border: none;
   color: var(--primary-color);
@@ -39,18 +39,18 @@
   text-underline-offset: 2px;
 }
 
-.faceted-filter__clear:hover {
+.rl-faceted-filter__clear:hover {
   color: var(--text-color-strong);
   background: var(--surface-muted);
 }
 
-.faceted-filter__clear:focus-visible {
+.rl-faceted-filter__clear:focus-visible {
   outline: 2px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Live Region */
-.faceted-filter__live-region {
+.rl-faceted-filter__live-region {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-color);
@@ -61,19 +61,19 @@
 }
 
 /* Filter Groups */
-.faceted-filter__group {
+.rl-faceted-filter__group {
   border: none;
   padding: 0;
   margin: 0 0 8px 0;
   border-bottom: 1px solid var(--gray-200);
 }
 
-.faceted-filter__group:last-of-type {
+.rl-faceted-filter__group:last-of-type {
   border-bottom: none;
   margin-bottom: 0;
 }
 
-.faceted-filter__group-legend {
+.rl-faceted-filter__group-legend {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -86,7 +86,7 @@
 }
 
 /* Toggle Button */
-.faceted-filter__toggle {
+.rl-faceted-filter__toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,18 +100,18 @@
   color: var(--primary-color);
 }
 
-.faceted-filter__toggle:hover {
+.rl-faceted-filter__toggle:hover {
   color: var(--text-color-strong);
 }
 
-.faceted-filter__toggle:focus-visible {
+.rl-faceted-filter__toggle:focus-visible {
   outline: 2px solid var(--focus-color);
   outline-offset: 2px;
   border-radius: var(--border-radius);
 }
 
 /* Toggle Icon (chevron) */
-.faceted-filter__toggle-icon {
+.rl-faceted-filter__toggle-icon {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -122,21 +122,21 @@
   flex-shrink: 0;
 }
 
-.faceted-filter__toggle[aria-expanded="false"] .faceted-filter__toggle-icon {
+.rl-faceted-filter__toggle[aria-expanded="false"] .rl-faceted-filter__toggle-icon {
   transform: rotate(-45deg);
 }
 
 /* Options Container */
-.faceted-filter__options {
+.rl-faceted-filter__options {
   padding: 0 0 12px 0;
 }
 
-.faceted-filter__options[hidden] {
+.rl-faceted-filter__options[hidden] {
   display: none;
 }
 
 /* Individual Option */
-.faceted-filter__option {
+.rl-faceted-filter__option {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -147,12 +147,12 @@
   color: var(--text-color);
 }
 
-.faceted-filter__option:hover {
+.rl-faceted-filter__option:hover {
   background: var(--background-color);
 }
 
 /* Checkbox Styling */
-.faceted-filter__option input[type="checkbox"] {
+.rl-faceted-filter__option input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
   width: 18px;
@@ -165,12 +165,12 @@
   position: relative;
 }
 
-.faceted-filter__option input[type="checkbox"]:checked {
+.rl-faceted-filter__option input[type="checkbox"]:checked {
   background: var(--primary-color);
   border-color: var(--primary-color);
 }
 
-.faceted-filter__option input[type="checkbox"]:checked::after {
+.rl-faceted-filter__option input[type="checkbox"]:checked::after {
   content: "";
   position: absolute;
   top: 2px;
@@ -182,18 +182,18 @@
   transform: rotate(45deg);
 }
 
-.faceted-filter__option input[type="checkbox"]:focus-visible {
+.rl-faceted-filter__option input[type="checkbox"]:focus-visible {
   outline: 2px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Option Name */
-.faceted-filter__option-name {
+.rl-faceted-filter__option-name {
   flex: 1;
 }
 
 /* Count Badge */
-.faceted-filter__option-count {
+.rl-faceted-filter__option-count {
   font-size: 0.8125rem;
   color: var(--text-color-subtle);
   font-weight: 500;

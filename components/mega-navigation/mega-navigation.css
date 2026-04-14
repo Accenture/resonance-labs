@@ -1,10 +1,10 @@
-.mega__main, .mega__submenu { list-style: none; padding: 0; margin: 0; }
-.mega__main { display: flex; gap: 12px; align-items: center; }
-.mega__item { position: relative; }
-.mega__btn, .mega__link { padding: 8px 12px; min-height: 44px; }
-.mega__btn { cursor: pointer; }
-.mega__submenu { position: absolute; top: 100%; left: 0; border: 1px solid var(--primary-color-hover); background: var(--surface-color); padding: 8px; min-width: 220px; }
-.mega__submenu[hidden] { display: none; }
-.mega__submenu a { display: block; padding: 8px; text-decoration: none; color: var(--text-color-strong); }
-.mega__submenu a:hover { background: var(--surface-muted); }
+.rl-mega__main, .rl-mega__submenu { list-style: none; padding: 0; margin: 0; }
+.rl-mega__main { display: flex; gap: 12px; align-items: center; }
+.rl-mega__item { position: relative; }
+.rl-mega__btn, .rl-mega__link { padding: 8px 12px; min-height: 44px; }
+.rl-mega__btn { cursor: pointer; }
+.rl-mega__submenu { position: absolute; top: 100%; left: 0; border: 1px solid var(--primary-color-hover); background: var(--surface-color); padding: 8px; min-width: 220px; }
+.rl-mega__submenu[hidden] { display: none; }
+.rl-mega__submenu a { display: block; padding: 8px; text-decoration: none; color: var(--text-color-strong); }
+.rl-mega__submenu a:hover { background: var(--surface-muted); }
 :focus { outline: 3px solid var(--focus-color); outline-offset: 2px; }

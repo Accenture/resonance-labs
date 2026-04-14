@@ -1,14 +1,14 @@
 (function () {
   "use strict";
 
-  var gallery = document.querySelector(".image-gallery");
+  var gallery = document.querySelector(".rl-image-gallery");
   if (!gallery) return;
 
-  var mainImage = gallery.querySelector(".image-gallery__main-image");
-  var thumbButtons = gallery.querySelectorAll(".image-gallery__thumb");
-  var prevBtn = gallery.querySelector(".image-gallery__nav--prev");
-  var nextBtn = gallery.querySelector(".image-gallery__nav--next");
-  var counter = gallery.querySelector(".image-gallery__counter");
+  var mainImage = gallery.querySelector(".rl-image-gallery__main-image");
+  var thumbButtons = gallery.querySelectorAll(".rl-image-gallery__thumb");
+  var prevBtn = gallery.querySelector(".rl-image-gallery__nav--prev");
+  var nextBtn = gallery.querySelector(".rl-image-gallery__nav--next");
+  var counter = gallery.querySelector(".rl-image-gallery__counter");
   var totalImages = thumbButtons.length;
   var currentIndex = 0;
 
@@ -56,7 +56,7 @@
 
   // --- Keyboard: Enter/Space on prev/next (native button handles this) ---
   // --- Arrow keys within thumbnail strip ---
-  var thumbList = gallery.querySelector(".image-gallery__thumbnails");
+  var thumbList = gallery.querySelector(".rl-image-gallery__thumbnails");
 
   thumbList.addEventListener("keydown", function (e) {
     var index = Array.prototype.indexOf.call(thumbButtons, document.activeElement);

@@ -1,7 +1,7 @@
 (function() {
-  const form = document.querySelector("form.search");
+  const form = document.querySelector("form.rl-search");
   const input = document.getElementById("search-input-q");
-  const clearBtn = document.querySelector(".search__clear");
+  const clearBtn = document.querySelector(".rl-search__clear");
   const live = document.getElementById("search-input-live");
 
   window.__initComponent = function() {

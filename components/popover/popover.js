@@ -4,14 +4,14 @@
   var demo = document.querySelector("[data-popover-demo]");
   if (!demo) return;
 
-  var triggers = demo.querySelectorAll(".popover-trigger");
+  var triggers = demo.querySelectorAll(".rl-popover-trigger");
 
   triggers.forEach(function (trigger) {
     var panelId = trigger.getAttribute("aria-controls");
     var panel = document.getElementById(panelId);
     if (!panel) return;
 
-    var isInteractive = panel.classList.contains("popover-panel--interactive");
+    var isInteractive = panel.classList.contains("rl-popover-panel--interactive");
 
     function open() {
       trigger.setAttribute("aria-expanded", "true");

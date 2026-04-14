@@ -1,5 +1,5 @@
 /* Dialog trigger */
-.dialog-trigger {
+.rl-dialog-trigger {
   display: inline-block;
   padding: 10px 20px;
   font-size: var(--font-size-base);
@@ -12,13 +12,13 @@
   transition: background var(--transition-duration), color var(--transition-duration);
 }
 
-.dialog-trigger:hover {
+.rl-dialog-trigger:hover {
   background: var(--hover-color);
   border-color: var(--hover-color);
 }
 
 /* Dialog panel – floating, non-modal */
-.dialog-panel {
+.rl-dialog-panel {
   position: absolute;
   top: 100%;
   left: 0;
@@ -33,25 +33,25 @@
   z-index: 100;
 }
 
-.dialog-panel[hidden] {
+.rl-dialog-panel[hidden] {
   display: none;
 }
 
 /* Position the section as the anchor for absolute positioning */
-.dialog-demo {
+.rl-dialog-demo {
   position: relative;
   display: inline-block;
 }
 
 /* Heading inside the dialog */
-.dialog-panel h2 {
+.rl-dialog-panel h2 {
   margin: 0 0 8px;
   font-size: var(--font-size-large);
   color: var(--primary-color);
 }
 
 /* Description */
-.dialog-panel p {
+.rl-dialog-panel p {
   margin: 0 0 12px;
   font-size: var(--font-size-base);
   color: var(--text-color);
@@ -59,7 +59,7 @@
 }
 
 /* Link */
-.dialog-panel__link {
+.rl-dialog-panel__link {
   display: inline-block;
   margin-bottom: 16px;
   color: var(--focus-color);
@@ -67,12 +67,12 @@
   font-size: var(--font-size-small);
 }
 
-.dialog-panel__link:hover {
+.rl-dialog-panel__link:hover {
   color: var(--hover-color);
 }
 
 /* Close button */
-.dialog-panel__close {
+.rl-dialog-panel__close {
   display: inline-block;
   padding: 8px 16px;
   font-size: var(--font-size-small);
@@ -85,15 +85,15 @@
   transition: background var(--transition-duration);
 }
 
-.dialog-panel__close:hover {
+.rl-dialog-panel__close:hover {
   background: var(--hover-color);
   border-color: var(--hover-color);
 }
 
 /* Focus indicators */
-.dialog-trigger:focus,
-.dialog-panel__close:focus,
-.dialog-panel__link:focus {
+.rl-dialog-trigger:focus,
+.rl-dialog-panel__close:focus,
+.rl-dialog-panel__link:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }

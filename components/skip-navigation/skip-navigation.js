@@ -1,5 +1,5 @@
 (function () {
-  var skipLink = document.querySelector('[data-skip-nav-demo] .skip-link');
+  var skipLink = document.querySelector('[data-skip-nav-demo] .rl-skip-link');
   if (!skipLink) return;
 
   skipLink.addEventListener('click', function (event) {

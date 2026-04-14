@@ -2,18 +2,18 @@
   var live = document.getElementById("badge-live");
 
   window.__initComponent = function () {
-    var group = document.querySelector(".badge-group");
+    var group = document.querySelector(".rl-badge-group");
     if (!group) return;
 
     group.addEventListener("click", function (e) {
-      var button = e.target.closest(".badge__remove");
+      var button = e.target.closest(".rl-badge__remove");
       if (!button) return;
 
-      var badge = button.closest(".badge");
+      var badge = button.closest(".rl-badge");
       if (!badge) return;
 
-      var label = badge.querySelector(".badge__label").textContent.trim();
-      var badges = Array.from(group.querySelectorAll(".badge"));
+      var label = badge.querySelector(".rl-badge__label").textContent.trim();
+      var badges = Array.from(group.querySelectorAll(".rl-badge"));
       var index = badges.indexOf(badge);
 
       badge.remove();
@@ -25,7 +25,7 @@
         }, 50);
       }
 
-      var remaining = group.querySelectorAll(".badge__remove");
+      var remaining = group.querySelectorAll(".rl-badge__remove");
       if (remaining.length > 0) {
         var nextIndex = index < remaining.length ? index : remaining.length - 1;
         remaining[nextIndex].focus();

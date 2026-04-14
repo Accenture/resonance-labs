@@ -1,24 +1,24 @@
-.vid-demo {
+.rl-vid-demo {
   max-width: 640px;
   margin: 2rem auto;
   font-family: system-ui, sans-serif;
 }
 
-.vid-demo__title {
+.rl-vid-demo__title {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
 /* ── Video player ── */
 
-.vid-player {
+.rl-vid-player {
   position: relative;
   background: var(--black);
   border-radius: var(--border-radius);
   overflow: hidden;
 }
 
-.vid-player__video {
+.rl-vid-player__video {
   display: block;
   width: 100%;
   height: auto;
@@ -29,20 +29,20 @@
   The rules below reinforce focus visibility for custom overlays
   or when the video element itself receives focus.
 */
-.vid-player__video:focus-visible {
+.rl-vid-player__video:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* ── Custom controls ── */
 
-.vid-controls {
+.rl-vid-controls {
   display: flex;
   gap: 0.5rem;
   margin-top: 0.75rem;
 }
 
-.vid-controls__btn {
+.rl-vid-controls__btn {
   appearance: none;
   border: 1px solid var(--border-color-strong);
   background: var(--surface-muted);
@@ -54,12 +54,12 @@
   min-height: 24px;
 }
 
-.vid-controls__btn:focus-visible {
+.rl-vid-controls__btn:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
-.vid-controls__btn[aria-pressed="true"] {
+.rl-vid-controls__btn[aria-pressed="true"] {
   background: var(--primary-color);
   color: var(--text-color-inverse);
   border-color: var(--primary-color);
@@ -67,14 +67,14 @@
 
 /* ── Transcript ── */
 
-.vid-transcript {
+.rl-vid-transcript {
   margin-top: 1rem;
   border: 1px solid var(--border-color-strong);
   border-radius: var(--border-radius);
   overflow: hidden;
 }
 
-.vid-transcript__toggle {
+.rl-vid-transcript__toggle {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 600;
@@ -85,12 +85,12 @@
 }
 
 /* Visible focus indicator — 3:1 contrast (#222 on #f5f5f5) */
-.vid-transcript__toggle:focus-visible {
+.rl-vid-transcript__toggle:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: -3px;
 }
 
-.vid-transcript__content {
+.rl-vid-transcript__content {
   padding: 0.75rem 1rem;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -98,17 +98,17 @@
   background: var(--surface-color);
 }
 
-.vid-transcript__content p {
+.rl-vid-transcript__content p {
   margin: 0 0 0.75rem;
 }
 
-.vid-transcript__content p:last-child {
+.rl-vid-transcript__content p:last-child {
   margin-bottom: 0;
 }
 
 /* ── Status area (live region) ── */
 
-.vid-demo__status {
+.rl-vid-demo__status {
   margin-top: 1rem;
   min-height: 1.25rem;
   font-size: 0.9rem;
@@ -131,7 +131,7 @@ video::cue {
 /* ── Responsive ── */
 
 @media (max-width: 480px) {
-  .vid-demo {
+  .rl-vid-demo {
     margin: 1rem;
   }
 }

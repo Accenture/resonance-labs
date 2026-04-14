@@ -1,16 +1,16 @@
 /* Tag Component */
 
-.tag-demo h2 {
+.rl-tag-demo h2 {
   font-size: var(--font-size-base);
   color: var(--text-color);
   margin-bottom: 0.5rem;
 }
 
-.tag-demo h2 + .tag-group {
+.rl-tag-demo h2 + .rl-tag-group {
   margin-bottom: 1.5rem;
 }
 
-.tag-group {
+.rl-tag-group {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -18,7 +18,7 @@
 }
 
 /* Base tag */
-.tag-demo .tag {
+.rl-tag-demo .rl-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
@@ -34,28 +34,28 @@
   user-select: none;
 }
 
-.tag-demo .tag__icon {
+.rl-tag-demo .rl-tag__icon {
   flex-shrink: 0;
   width: 14px;
   height: 14px;
 }
 
 /* Status: New */
-.tag-demo .tag--new {
+.rl-tag-demo .rl-tag--new {
   background-color: var(--surface-muted);
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
 
 /* Status: Sale */
-.tag-demo .tag--sale {
+.rl-tag-demo .rl-tag--sale {
   background-color: var(--surface-muted);
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
 
 /* Status: Popular */
-.tag-demo .tag--popular {
+.rl-tag-demo .rl-tag--popular {
   background-color: var(--surface-muted);
   border-color: var(--primary-color);
   color: var(--primary-color);

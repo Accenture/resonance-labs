@@ -1,6 +1,6 @@
 /* Alert Dialog Component */
 
-.alert-dialog-demo {
+.rl-alert-dialog-demo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -8,7 +8,7 @@
 }
 
 /* Trigger button */
-.alert-dialog-trigger {
+.rl-alert-dialog-trigger {
   font-size: var(--font-size-base);
   padding: 0.6rem 1.2rem;
   background-color: var(--primary-color);
@@ -19,17 +19,17 @@
   transition: background-color var(--transition-duration);
 }
 
-.alert-dialog-trigger:hover {
+.rl-alert-dialog-trigger:hover {
   background-color: var(--primary-color-hover);
 }
 
-.alert-dialog-trigger:focus {
+.rl-alert-dialog-trigger:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Overlay / backdrop */
-.alert-dialog-overlay {
+.rl-alert-dialog-overlay {
   position: fixed;
   inset: 0;
   z-index: 1000;
@@ -39,12 +39,12 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
-.alert-dialog-overlay[hidden] {
+.rl-alert-dialog-overlay[hidden] {
   display: none;
 }
 
 /* Dialog panel */
-.alert-dialog-panel {
+.rl-alert-dialog-panel {
   position: relative;
   background: var(--surface-color);
   border-radius: var(--border-radius);
@@ -54,13 +54,13 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
 }
 
-.alert-dialog-panel h2 {
+.rl-alert-dialog-panel h2 {
   margin: 0 0 0.75rem;
   font-size: 1.25rem;
   color: var(--primary-color);
 }
 
-.alert-dialog-panel p {
+.rl-alert-dialog-panel p {
   margin: 0 0 1.5rem;
   font-size: var(--font-size-base);
   color: var(--text-color);
@@ -68,13 +68,13 @@
 }
 
 /* Action buttons row */
-.alert-dialog-actions {
+.rl-alert-dialog-actions {
   display: flex;
   justify-content: flex-end;
   gap: 0.75rem;
 }
 
-.alert-dialog-btn {
+.rl-alert-dialog-btn {
   font-size: var(--font-size-base);
   padding: 0.5rem 1.2rem;
   border: none;
@@ -83,32 +83,32 @@
   transition: background-color var(--transition-duration);
 }
 
-.alert-dialog-btn:focus {
+.rl-alert-dialog-btn:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
-.alert-dialog-btn--cancel {
+.rl-alert-dialog-btn--cancel {
   background-color: var(--secondary-color);
   color: var(--text-color);
   border: 1px solid var(--border-color);
 }
 
-.alert-dialog-btn--cancel:hover {
+.rl-alert-dialog-btn--cancel:hover {
   background-color: var(--surface-hover);
 }
 
-.alert-dialog-btn--confirm {
+.rl-alert-dialog-btn--confirm {
   background-color: var(--primary-color);
   color: var(--text-color-inverse);
 }
 
-.alert-dialog-btn--confirm:hover {
+.rl-alert-dialog-btn--confirm:hover {
   background-color: var(--primary-color-hover);
 }
 
 /* Live region status */
-.alert-dialog-status {
+.rl-alert-dialog-status {
   font-size: var(--font-size-small);
   color: var(--text-color);
   min-height: 1.5em;

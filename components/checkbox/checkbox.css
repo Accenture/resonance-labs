@@ -1,15 +1,15 @@
 /* Checkbox field */
-.checkbox-field__control {
+.rl-checkbox-field__control {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.checkbox-field__control label {
+.rl-checkbox-field__control label {
   font-weight: 600;
 }
 
-.checkbox-field__desc {
+.rl-checkbox-field__desc {
   display: block;
   margin-top: 4px;
   padding-left: 32px;

@@ -1,10 +1,10 @@
 /* ── Slider component styles ── */
 
-.slider-demo {
+.rl-slider-demo {
   margin-bottom: 2rem;
 }
 
-.slider-container {
+.rl-slider-container {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -14,7 +14,7 @@
 }
 
 /* Track */
-.slider-track {
+.rl-slider-track {
   position: relative;
   flex: 1;
   height: 8px;
@@ -24,7 +24,7 @@
 }
 
 /* Filled portion of track */
-.slider-track__fill {
+.rl-slider-track__fill {
   position: absolute;
   top: 0;
   left: 0;
@@ -35,7 +35,7 @@
 }
 
 /* Thumb (>= 24x24 target) */
-.slider-thumb {
+.rl-slider-thumb {
   position: absolute;
   top: 50%;
   width: 24px;
@@ -48,18 +48,18 @@
   touch-action: none;
 }
 
-.slider-thumb:focus {
+.rl-slider-thumb:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 3px;
   box-shadow: 0 0 0 2px var(--surface-color);
 }
 
-.slider-thumb:active {
+.rl-slider-thumb:active {
   cursor: grabbing;
 }
 
 /* Value display */
-.slider-value {
+.rl-slider-value {
   min-width: 3rem;
   text-align: center;
   font-size: var(--font-size-base);

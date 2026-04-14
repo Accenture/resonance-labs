@@ -1,15 +1,15 @@
-/* .btn-demo {
+/* .rl-btn-demo {
   max-width: 560px;
   margin: 2rem auto;
   font-family: system-ui, sans-serif;
 } */
 
-.btn-demo__title {
+.rl-btn-demo__title {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.btn-demo {
+.rl-btn-demo {
   appearance: none;
   border: 1px solid var(--border-color);
   background: var(--surface-color);
@@ -30,25 +30,25 @@
 }
 
 /* Visible focus indicator */
-.btn:focus-visible {
+.rl-btn:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Example panel */
-.btn-panel {
+.rl-btn-panel {
   border: 1px solid var(--gray-300);
   border-radius: var(--border-radius);
   padding: 0.75rem 1rem;
   margin-top: 0.5rem;
 }
 
-.btn__icon {
+.rl-btn__icon {
   user-select: none;
   opacity: 0.9;
 }
 
-.btn-demo__status {
+.rl-btn-demo__status {
   margin-top: 1rem;
   min-height: 1.25rem;
 }

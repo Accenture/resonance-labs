@@ -5,7 +5,7 @@
   if (!demo) return;
 
   var totalPages = 5;
-  var pageLinks = demo.querySelectorAll(".pagination-link[data-page]");
+  var pageLinks = demo.querySelectorAll(".rl-pagination-link[data-page]");
   var prevLink = demo.querySelector('[data-page="prev"]');
   var nextLink = demo.querySelector('[data-page="next"]');
 

@@ -1,5 +1,5 @@
 /* Skip Link - visually hidden by default */
-.skip-link {
+.rl-skip-link {
   position: absolute;
   top: -100%;
   left: 0;
@@ -17,7 +17,7 @@
 }
 
 /* Visible on keyboard focus */
-.skip-link:focus {
+.rl-skip-link:focus {
   position: absolute;
   top: 0;
   left: 0;
@@ -31,7 +31,7 @@
 /* STYLES FOR SKIP NAVIGATION DEMO */
 /* Demo only */
 
-.skip-nav-demo {
+.rl-skip-nav-demo {
   position: relative;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
@@ -39,13 +39,13 @@
   min-height: 200px;
 }
 
-.skip-nav-demo__nav {
+.rl-skip-nav-demo__nav {
   background: var(--gray-200);
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--border-color);
 }
 
-.skip-nav-demo__nav ul {
+.rl-skip-nav-demo__nav ul {
   display: flex;
   gap: 1rem;
   list-style: none;
@@ -53,33 +53,33 @@
   padding: 0;
 }
 
-.skip-nav-demo__nav a {
+.rl-skip-nav-demo__nav a {
   text-decoration: none;
   color: var(--primary-color-hover);
   padding: 0.25rem 0.5rem;
   border-radius: var(--border-radius);
 }
 
-.skip-nav-demo__nav a:focus {
+.rl-skip-nav-demo__nav a:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
-.skip-nav-demo__main {
+.rl-skip-nav-demo__main {
   padding: 1.5rem;
   background: var(--background-color);
 }
 
-.skip-nav-demo__main:focus {
+.rl-skip-nav-demo__main:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: -3px;
 }
 
-.skip-nav-demo__main h3 {
+.rl-skip-nav-demo__main h3 {
   margin-top: 0;
 }
 
-.skip-nav-demo__main kbd {
+.rl-skip-nav-demo__main kbd {
   display: inline-block;
   padding: 0.15rem 0.4rem;
   font-size: 0.85rem;
