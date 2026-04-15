@@ -1,10 +1,10 @@
 (function () {
-  var trigger = document.getElementById("rl-alert-dialog-trigger");
-  var overlay = document.getElementById("rl-alert-dialog-overlay");
+  var trigger = document.getElementById("alert-dialog-trigger");
+  var overlay = document.getElementById("alert-dialog-overlay");
   var dialog = document.getElementById("alert-dialog");
   var cancelBtn = overlay ? overlay.querySelector("[data-alert-cancel]") : null;
   var confirmBtn = overlay ? overlay.querySelector("[data-alert-confirm]") : null;
-  var status = document.getElementById("rl-alert-dialog-status");
+  var status = document.getElementById("alert-dialog-status");
 
   if (!trigger || !overlay || !dialog) return;
 

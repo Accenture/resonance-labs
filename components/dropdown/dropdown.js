@@ -26,7 +26,7 @@
   }
 
   function clearActive() {
-    options().forEach(o => o.classList.remove('rl-is-active'));
+    options().forEach(o => o.classList.remove('is-active'));
     // Keep aria-activedescendant pointing to selected option when closed
     const selected = options().find(o => o.getAttribute('aria-selected') === 'true');
     trigger.setAttribute('aria-activedescendant', selected ? selected.id : '');
@@ -37,9 +37,9 @@
     const opts = options();
     if (!opts.length) return;
     const nextIndex = Math.max(0, Math.min(idx, opts.length - 1));
-    opts.forEach(o => o.classList.remove('rl-is-active'));
+    opts.forEach(o => o.classList.remove('is-active'));
     const opt = opts[nextIndex];
-    opt.classList.add('rl-is-active');
+    opt.classList.add('is-active');
     trigger.setAttribute('aria-activedescendant', opt.id);
     activeIndex = nextIndex;
 

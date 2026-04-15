@@ -58,19 +58,19 @@
   }
 
   function formatDate(date) {
+    var y = date.getFullYear();
     var m = String(date.getMonth() + 1).padStart(2, '0');
     var d = String(date.getDate()).padStart(2, '0');
-    var y = date.getFullYear();
-    return m + '/' + d + '/' + y;
+    return y + '/' + m + '/' + d;
   }
 
   function parseInputDate(str) {
     var parts = str.trim().split('/');
     if (parts.length !== 3) return null;
-    var m = parseInt(parts[0], 10);
-    var d = parseInt(parts[1], 10);
-    var y = parseInt(parts[2], 10);
-    if (isNaN(m) || isNaN(d) || isNaN(y)) return null;
+    var y = parseInt(parts[0], 10);
+    var m = parseInt(parts[1], 10);
+    var d = parseInt(parts[2], 10);
+    if (isNaN(y) || isNaN(m) || isNaN(d)) return null;
     if (m < 1 || m > 12 || d < 1 || y < 1) return null;
     var maxD = daysInMonth(y, m - 1);
     if (d > maxD) return null;

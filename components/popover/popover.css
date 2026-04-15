@@ -99,9 +99,14 @@
   display: block;
   padding: 0.375rem 0.5rem;
   color: var(--text-color-strong);
-  text-decoration: underline;
+  text-decoration: none;
   border-radius: var(--border-radius);
   transition: background-color 0.15s;
+}
+
+.rl-popover-links a:hover,
+.rl-popover-links a:focus-visible {
+  text-decoration: underline;
 }
 
 .rl-popover-links a:hover {

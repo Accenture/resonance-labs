@@ -3,8 +3,8 @@
 
 (function () {
   const input = document.querySelector('[data-cbx="input"]');
-  const listbox = document.querySelector('[data-cbx="rl-listbox"]');
-  const hint = document.querySelector('[data-cbx="rl-hint"]');
+  const listbox = document.querySelector('[data-cbx="listbox"]');
+  const hint = document.querySelector('[data-cbx="hint"]');
 
   if (!input || !listbox) return;
 
@@ -43,7 +43,7 @@
       const li = document.createElement('div');
       li.className = 'rl-option';
       li.id = o.id;
-      li.setAttribute('role', 'rl-option');
+      li.setAttribute('role', 'option');
       li.setAttribute('aria-selected', String(o.label === input.dataset.selectedLabel));
       li.textContent = o.label;
 
@@ -63,10 +63,10 @@
   function setActive(index) {
     activeIndex = index;
     const optionEls = Array.from(listbox.querySelectorAll('.rl-option'));
-    optionEls.forEach((el) => el.classList.remove('rl-is-active'));
+    optionEls.forEach((el) => el.classList.remove('is-active'));
 
     if (index >= 0 && optionEls[index]) {
-      optionEls[index].classList.add('rl-is-active');
+      optionEls[index].classList.add('is-active');
       input.setAttribute('aria-activedescendant', optionEls[index].id);
     } else {
       input.removeAttribute('aria-activedescendant');

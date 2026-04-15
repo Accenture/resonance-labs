@@ -1,5 +1,12 @@
 /* Date Picker styles */
 
+/* Give the demo mount enough height to show the open calendar without page scroll */
+.mount:has(.rl-date-picker-demo) {
+  min-height: 520px;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+}
+
 .rl-date-picker {
   position: relative;
   max-width: 320px;

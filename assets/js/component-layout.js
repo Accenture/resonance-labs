@@ -217,10 +217,6 @@
     return { section: section, content: content };
   }
 
-  function flagText(value) {
-    return value ? 'Pass (automated)' : 'Needs manual verification';
-  }
-
   function countFor(value) {
     return Array.isArray(value) ? value.length : 0;
   }
@@ -265,8 +261,6 @@
         var missing = countFor(manifest.missing);
         var notApplicable = countFor(manifest.notApplicable);
 
-        var verified = manifest.verified || {};
-
         content.innerHTML = '' +
           '<table class="rl-compliance-snapshot__table">' +
             '<thead><tr><th scope="col">Status</th><th scope="col">AC Count</th></tr></thead>' +
@@ -277,15 +271,7 @@
               '<tr><td>Not Applicable</td><td>' + notApplicable + '</td></tr>' +
             '</tbody>' +
           '</table>' +
-          '<p class="rl-compliance-snapshot__label">Validation flags:</p>' +
-          '<ul>' +
-            '<li>Keyboard: ' + flagText(verified.keyboard) + '</li>' +
-            '<li>Screen reader semantics: ' + flagText(verified.screenReader) + '</li>' +
-            '<li>200% zoom: ' + flagText(verified.zoom200) + '</li>' +
-            '<li>Focus contrast: ' + flagText(verified.focusContrast) + '</li>' +
-          '</ul>' +
-          '<p><strong>Proprietary notice:</strong> Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.</p>' +
-          '<p class="rl-compliance-snapshot__meta">See labs.manifest.json for AC identifier-level status.</p>';
+          '<p><strong>Proprietary notice:</strong> Full acceptance criteria definitions are proprietary IP in the private @resonance/specs package and are intentionally not reproduced in this repository.</p>';
       })
       .catch(function () {
         content.innerHTML = '' +

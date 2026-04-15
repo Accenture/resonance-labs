@@ -7,6 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Override the global .mount > * width constraint so the overlay fills the viewport */
+  width: 100%;
+  min-width: 0;
 }
 
 .rl-modal__backdrop {

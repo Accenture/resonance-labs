@@ -1,45 +1,69 @@
-.rl-page { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 24px; max-width: 720px; }
-.rl-dropdown { max-width: 320px; width: 100%; position: relative; }
+.rl-dropdown { max-width: 320px; width: 100%; }
 .rl-dropdown__label { display: block; margin-bottom: 8px; font-weight: 600; }
+
+/* Control wraps trigger + listbox so the listbox positions relative to the trigger */
+.rl-dropdown__control { position: relative; }
+
 .rl-dropdown__trigger {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 44px;
   padding: 10px 12px;
-  border: 1px solid;
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  background: var(--background-color);
+  background: var(--surface-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: inherit;
   user-select: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
 }
 .rl-dropdown__trigger:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
+
 .rl-dropdown__listbox {
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(100% + 6px);
-  border: 1px solid;
+  top: calc(100% + 4px);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  padding: 6px 0;
+  padding: 4px 0;
   margin: 0;
   list-style: none;
-  background: Canvas;
+  background: var(--surface-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   max-height: 220px;
   overflow: auto;
   z-index: 10;
 }
+
 .rl-dropdown__option {
   padding: 10px 12px;
   cursor: pointer;
+}
+.rl-dropdown__option:hover {
+  background: var(--surface-hover);
 }
 .rl-dropdown__option[aria-selected="true"] {
   font-weight: 700;
 }
 .rl-dropdown__option.is-active {
-  outline: 2px solid;
+  background: var(--surface-muted);
+  outline: 2px solid var(--focus-color);
   outline-offset: -2px;
 }
+
 .rl-dropdown__help { margin-top: 10px; font-size: 0.9rem; opacity: 0.85; }
+
+/* Give the demo mount enough room to show the open listbox without clipping */
+.mount:has([data-dropdown]) {
+  min-height: 380px;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+}

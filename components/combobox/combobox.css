@@ -3,13 +3,24 @@
 .rl-combobox-demo .rl-hint { margin-top: 6px; color: var(--text-color); }
 .rl-combobox-demo .rl-error { margin-top: 6px; font-weight: 700; color: var(--text-color-strong); }
 
+/* Wrapper provides the positioning context for the absolute listbox */
+.rl-combobox-wrapper {
+  position: relative;
+  width: min(420px, 100%);
+}
+
 /* Focus: visible + high contrast */
 .rl-combobox {
-  width: min(420px, 100%);
-  min-height: 24px;            /* supports 24x24 target size baseline */
+  width: 100%;
+  min-height: 44px;
   padding: 10px 12px;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
+  background: var(--surface-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
 .rl-combobox:focus-visible {
@@ -19,34 +30,50 @@
 
 /* Listbox */
 .rl-listbox {
-  width: min(420px, 100%);
-  margin-top: 8px;
-  padding: 6px;
-  border: 1px solid var(--text-color);
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  padding: 4px 0;
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   max-height: 220px;
   overflow: auto;
   display: none;
   background: var(--surface-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 10;
 }
 
 .rl-listbox[hidden] { display: none; }
 .rl-listbox.open { display: block; }
 
 .rl-option {
-  padding: 10px 10px;
-  border-radius: var(--border-radius);
+  padding: 10px 12px;
   cursor: default;
+}
+
+.rl-option:hover {
+  background: var(--surface-hover);
 }
 
 .rl-option[aria-selected="true"] {
   font-weight: 700;
 }
 
-/* Active option (visual focus) */
+/* Active option (visual focus — keyboard navigation) */
 .rl-option.is-active {
-  outline: 3px solid var(--focus-color);
-  outline-offset: 2px;
+  background: var(--surface-muted);
+  outline: 2px solid var(--focus-color);
+  outline-offset: -2px;
+}
+
+/* Give the mount enough room so the open listbox isn't clipped */
+.mount:has(.rl-combobox-wrapper) {
+  min-height: 320px;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  overflow: visible;
 }
 
 /* Demo sticky header to test "not obscured" */

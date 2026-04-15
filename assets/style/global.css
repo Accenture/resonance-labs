@@ -55,8 +55,8 @@
   /* ---- Alert colors ---- */
   --alert-yellow:         rgb(255, 235, 179);
   --alert-yellow-dark:    rgb(113, 70, 1);
-  --alert-yellow-surface: rgb(245, 251, 248);
-  --alert-red:            rgb(255, 90, 95);
+  --alert-yellow-surface: rgb(251 250 245);
+  --alert-red:            rgb(205, 0, 0);
   --alert-red-surface:    rgb(253, 244, 244);
   --alert-blue:           rgb(0, 159, 217);
   --alert-blue-surface:   rgb(243, 246, 255);
@@ -355,8 +355,8 @@ a.link-underlined:hover:before {
   background-position: 0 50%;
 }
 
-main > .section:first-child:not(.rl-hero)
-main > section:nth-child(1):not(.rl-hero) {
+main > .section:first-child:not(.rlw-hero),
+main > section:first-child:not(.rlw-hero) {
   margin-top: 0;
   padding-top: 0;
 }
@@ -511,6 +511,10 @@ code, pre, kbd, samp {
   font-family: var(--font-mono);
 }
 
+kbd {
+  font-weight: var(--font-weight-bold);
+}
+
 /* Code preview panels */
 .code-preview {
   overflow-x: auto;
@@ -653,8 +657,10 @@ main td a:hover::before {
 /* ── Mount width overrides for specific components ── */
 .mount > .pagination-demo,
 .mount > .slider-demo,
+.mount > .rl-slider-section,
 .mount > .tooltip-wrapper,
 .mount > .select-demo,
+.mount > .rl-mega,
 .mount > [data-slider-demo],
 .mount > [data-pagination-demo] {
   width: 100%;

@@ -1,5 +1,5 @@
 (function () {
-  var trigger = document.getElementById("rl-dialog-trigger");
+  var trigger = document.getElementById("dialog-trigger");
   var dialog = document.getElementById("info-dialog");
   var closeBtn = document.getElementById("dialog-close");
   var status = document.getElementById("dialog-status");

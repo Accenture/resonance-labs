@@ -44,7 +44,7 @@
 }
 
 .rl-text-input__input[aria-invalid="true"] {
-  border-color: var(--text-color-strong);
+  border-color: var(--alert-red);
 }
 
 .rl-text-input__hint {
@@ -58,8 +58,12 @@
   display: block;
   margin-top: 0.25rem;
   font-size: 0.875rem;
-  color: var(--text-color-strong);
+  color: var(--alert-red);
   font-weight: 600;
+}
+
+.rl-text-input__error[hidden] {
+  display: none;
 }
 
 .rl-text-input__submit {

@@ -1,11 +1,11 @@
 <svg width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="0.5" y="0.5" width="249" height="249" fill="#F3F3F3"/>
 <rect x="0.5" y="0.5" width="249" height="249" stroke="#BFBEC4"/>
-<path d="M75 115C75 112.791 76.7909 111 79 111H171C173.209 111 175 112.791 175 115C175 117.209 173.209 119 171 119H79C76.7909 119 75 117.209 75 115Z" fill="#8D8D8D"/>
-<path d="M75 130C75 127.791 76.7909 126 79 126H171C173.209 126 175 127.791 175 130C175 132.209 173.209 134 171 134H79C76.7909 134 75 132.209 75 130Z" fill="#BABABA"/>
-<path d="M75 145C75 142.791 76.7909 141 79 141H171C173.209 141 175 142.791 175 145C175 147.209 173.209 149 171 149H79C76.7909 149 75 147.209 75 145Z" fill="#BABABA"/>
-<rect x="58.5" y="125.5" width="9" height="9" rx="4.5" fill="#FEFEFE" stroke="#BABABA"/>
-<rect x="58.5" y="110.5" width="9" height="9" rx="4.5" fill="#FEFEFE" stroke="#8D8D8D"/>
-<rect x="61" y="113" width="4" height="4" rx="2" fill="#8D8D8D"/>
-<rect x="58.5" y="140.5" width="9" height="9" rx="4.5" fill="#FEFEFE" stroke="#BABABA"/>
+<path d="M83 105C83 102.239 85.2386 100 88 100H178C180.761 100 183 102.239 183 105V105C183 107.761 180.761 110 178 110H88C85.2386 110 83 107.761 83 105V105Z" fill="#222222"/>
+<path d="M88 121H178C180.209 121 182 122.791 182 125C182 127.209 180.209 129 178 129H88C85.7909 129 84 127.209 84 125C84 122.791 85.7909 121 88 121Z" fill="#8D8D8D" stroke="#8D8D8D" stroke-width="2"/>
+<path d="M88 141H178C180.209 141 182 142.791 182 145C182 147.209 180.209 149 178 149H88C85.7909 149 84 147.209 84 145C84 142.791 85.7909 141 88 141Z" fill="#8D8D8D" stroke="#8D8D8D" stroke-width="2"/>
+<rect x="67" y="119" width="12" height="12" rx="6" fill="#FEFEFE" stroke="#8D8D8D" stroke-width="2"/>
+<rect x="66.5" y="98.5" width="13" height="13" rx="6.5" fill="#FEFEFE" stroke="#222222"/>
+<rect x="70" y="102" width="6" height="6" rx="3" fill="#222222"/>
+<rect x="67" y="139" width="12" height="12" rx="6" fill="#FEFEFE" stroke="#8D8D8D" stroke-width="2"/>
 </svg>

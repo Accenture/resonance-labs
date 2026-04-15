@@ -37,7 +37,7 @@
   }
 
   function init() {
-    var form = document.querySelector('[data-component="rl-text-input"]');
+    var form = document.querySelector('[data-component="text-input"]');
     if (!form) return;
 
     form.addEventListener('submit', function (event) {
