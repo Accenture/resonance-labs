@@ -2,17 +2,17 @@
   var SHIPPING = 5.99;
   var TAX_RATE = 0.08;
 
-  var section = document.querySelector('.rl-cart-summary');
+  var section = document.querySelector('.rlb-cart-summary');
   if (!section) return;
 
-  var table = section.querySelector('.rl-cart-summary__table');
+  var table = section.querySelector('.rlb-cart-summary__table');
   var tbody = table.querySelector('tbody');
-  var emptyMsg = section.querySelector('.rl-cart-summary__empty');
-  var liveRegion = section.querySelector('.rl-cart-summary__live');
-  var subtotalEl = section.querySelector('.rl-cart-summary__subtotal');
-  var shippingEl = section.querySelector('.rl-cart-summary__shipping');
-  var taxEl = section.querySelector('.rl-cart-summary__tax');
-  var orderTotalEl = section.querySelector('.rl-cart-summary__order-total');
+  var emptyMsg = section.querySelector('.rlb-cart-summary__empty');
+  var liveRegion = section.querySelector('.rlb-cart-summary__live');
+  var subtotalEl = section.querySelector('.rlb-cart-summary__subtotal');
+  var shippingEl = section.querySelector('.rlb-cart-summary__shipping');
+  var taxEl = section.querySelector('.rlb-cart-summary__tax');
+  var orderTotalEl = section.querySelector('.rlb-cart-summary__order-total');
 
   function formatCurrency(value) {
     return '$' + value.toFixed(2);
@@ -26,16 +26,16 @@
   }
 
   function recalcTotals() {
-    var rows = tbody.querySelectorAll('.rl-cart-summary__item');
+    var rows = tbody.querySelectorAll('.rlb-cart-summary__item');
     var subtotal = 0;
 
     rows.forEach(function (row) {
       var price = parseFloat(row.getAttribute('data-price'));
-      var qtyInput = row.querySelector('.rl-cart-summary__qty-input');
+      var qtyInput = row.querySelector('.rlb-cart-summary__qty-input');
       var qty = parseInt(qtyInput.value, 10) || 1;
       var lineTotal = price * qty;
 
-      row.querySelector('.rl-cart-summary__line-total').textContent = formatCurrency(lineTotal);
+      row.querySelector('.rlb-cart-summary__line-total').textContent = formatCurrency(lineTotal);
       subtotal += lineTotal;
     });
 
@@ -54,7 +54,7 @@
   function showEmptyState() {
     table.hidden = true;
     emptyMsg.hidden = false;
-    section.querySelector('.rl-cart-summary__order').hidden = true;
+    section.querySelector('.rlb-cart-summary__order').hidden = true;
     announce('Your shopping cart is now empty.');
     emptyMsg.focus();
   }
@@ -65,7 +65,7 @@
 
     row.remove();
 
-    var remaining = tbody.querySelectorAll('.rl-cart-summary__item');
+    var remaining = tbody.querySelectorAll('.rlb-cart-summary__item');
     if (remaining.length === 0) {
       showEmptyState();
     } else {
@@ -73,14 +73,14 @@
       announce(name + ' removed from cart.');
 
       if (nextRow) {
-        var focusTarget = nextRow.querySelector('.rl-cart-summary__remove');
+        var focusTarget = nextRow.querySelector('.rlb-cart-summary__remove');
         if (focusTarget) focusTarget.focus();
       }
     }
   }
 
   function handleQuantityChange(row, delta) {
-    var input = row.querySelector('.rl-cart-summary__qty-input');
+    var input = row.querySelector('.rlb-cart-summary__qty-input');
     var current = parseInt(input.value, 10) || 1;
     var newVal = current + delta;
 
@@ -93,16 +93,16 @@
 
   // Event delegation on the table
   table.addEventListener('click', function (e) {
-    var removeBtn = e.target.closest('.rl-cart-summary__remove');
+    var removeBtn = e.target.closest('.rlb-cart-summary__remove');
     if (removeBtn) {
-      var row = removeBtn.closest('.rl-cart-summary__item');
+      var row = removeBtn.closest('.rlb-cart-summary__item');
       handleRemove(row);
       return;
     }
 
-    var qtyBtn = e.target.closest('.rl-cart-summary__qty-btn');
+    var qtyBtn = e.target.closest('.rlb-cart-summary__qty-btn');
     if (qtyBtn) {
-      var row = qtyBtn.closest('.rl-cart-summary__item');
+      var row = qtyBtn.closest('.rlb-cart-summary__item');
       var action = qtyBtn.getAttribute('data-action');
       handleQuantityChange(row, action === 'increase' ? 1 : -1);
       return;
@@ -111,7 +111,7 @@
 
   // Handle direct input changes
   table.addEventListener('input', function (e) {
-    if (e.target.classList.contains('rl-cart-summary__qty-input')) {
+    if (e.target.classList.contains('rlb-cart-summary__qty-input')) {
       var val = parseInt(e.target.value, 10);
       if (isNaN(val) || val < 1) e.target.value = 1;
       if (val > 99) e.target.value = 99;

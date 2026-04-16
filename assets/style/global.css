@@ -355,8 +355,8 @@ a.link-underlined:hover:before {
   background-position: 0 50%;
 }
 
-main > .section:first-child:not(.rlw-hero),
-main > section:first-child:not(.rlw-hero) {
+main > .section:first-child:not(.rwb-hero),
+main > section:first-child:not(.rwb-hero) {
   margin-top: 0;
   padding-top: 0;
 }
@@ -657,10 +657,10 @@ main td a:hover::before {
 /* ── Mount width overrides for specific components ── */
 .mount > .pagination-demo,
 .mount > .slider-demo,
-.mount > .rl-slider-section,
+.mount > .rlb-slider-section,
 .mount > .tooltip-wrapper,
 .mount > .select-demo,
-.mount > .rl-mega,
+.mount > .rlb-mega,
 .mount > [data-slider-demo],
 .mount > [data-pagination-demo] {
   width: 100%;
@@ -738,46 +738,46 @@ main td a:hover::before {
 }
 
 /* Compliance Snapshot (Public) */
-.rl-compliance-snapshot {
+.rlb-compliance-snapshot {
   font-size: var(--font-size-xsmall);
 }
 
-.rl-compliance-snapshot__content {
+.rlb-compliance-snapshot__content {
   margin-top: 0.75rem;
 }
 
-.rl-compliance-snapshot__table {
+.rlb-compliance-snapshot__table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 0 0.75rem;
   max-width: 34rem;
 }
 
-.rl-compliance-snapshot__table th,
-.rl-compliance-snapshot__table td {
+.rlb-compliance-snapshot__table th,
+.rlb-compliance-snapshot__table td {
   border: 1px solid var(--border-color);
   padding: 0.45rem 0.6rem;
   text-align: left;
   font-size: var(--font-size-xsmall);
 }
 
-.rl-compliance-snapshot__table th {
+.rlb-compliance-snapshot__table th {
   background: var(--surface-muted);
   color: var(--text-color-strong);
 }
 
-.rl-compliance-snapshot__table td:last-child,
-.rl-compliance-snapshot__table th:last-child {
+.rlb-compliance-snapshot__table td:last-child,
+.rlb-compliance-snapshot__table th:last-child {
   text-align: right;
   width: 7.5rem;
 }
 
-.rl-compliance-snapshot__label {
+.rlb-compliance-snapshot__label {
   font-weight: var(--font-weight-semibold);
   margin-bottom: 0.25rem;
 }
 
-.rl-compliance-snapshot__meta {
+.rlb-compliance-snapshot__meta {
   font-size: var(--font-size-small);
   color: var(--text-color-muted);
 }

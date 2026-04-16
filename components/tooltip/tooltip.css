@@ -6,7 +6,7 @@
 /* -------------------------------------------------------
    Wrapper: positions the panel relative to the trigger
    ------------------------------------------------------- */
-.rl-tooltip-wrapper {
+.rlb-tooltip-wrapper {
   position: relative;
   display: inline-block;
   margin: 0.5rem 0;
@@ -15,7 +15,7 @@
 /* -------------------------------------------------------
    Trigger: shared styles for both patterns
    ------------------------------------------------------- */
-.rl-tooltip-trigger {
+.rlb-tooltip-trigger {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@
 }
 
 /* Pattern 2 trigger is a <button>; reset native button chrome */
-.rl-tooltip-trigger--click {
+.rlb-tooltip-trigger--click {
   all: unset;
   display: inline-flex;
   align-items: center;
@@ -53,8 +53,8 @@
 /* -------------------------------------------------------
    Focus indicator: visible and high contrast
    ------------------------------------------------------- */
-.rl-tooltip-trigger:focus-visible,
-.rl-tooltip-trigger--click:focus-visible {
+.rlb-tooltip-trigger:focus-visible,
+.rlb-tooltip-trigger--click:focus-visible {
   outline: var(--focus-ring-width, 3px) solid var(--focus-ring-color, var(--focus-color));
   outline-offset: var(--focus-ring-offset, 2px);
 }
@@ -62,7 +62,7 @@
 /* -------------------------------------------------------
    Trigger icon
    ------------------------------------------------------- */
-.rl-tooltip-trigger__icon {
+.rlb-tooltip-trigger__icon {
   pointer-events: none;
   display: block;
   width: 20px;
@@ -72,7 +72,7 @@
 /* -------------------------------------------------------
    Tooltip panel: hidden by default, positioned below trigger
    ------------------------------------------------------- */
-.rl-tooltip-panel {
+.rlb-tooltip-panel {
   display: none;
 
   position: absolute;
@@ -97,7 +97,7 @@
 }
 
 /* Visible state: applied via JS */
-.rl-tooltip-panel[data-visible="true"] {
+.rlb-tooltip-panel[data-visible="true"] {
   display: block;
 }
 
@@ -105,8 +105,8 @@
    Optional ergonomics for touch screens
    ------------------------------------------------------- */
 @media (pointer: coarse) {
-  .rl-tooltip-trigger,
-  .rl-tooltip-trigger--click {
+  .rlb-tooltip-trigger,
+  .rlb-tooltip-trigger--click {
     min-height: 44px;
     min-width: 44px;
   }

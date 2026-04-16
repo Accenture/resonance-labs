@@ -36,10 +36,10 @@
   function createAlert(config) {
     var el = document.createElement('div');
     el.className = 'alert alert--' + config.type + ' alert--dismissible';
-    el.setAttribute('role', 'rl-alert');
+    el.setAttribute('role', 'rlb-alert');
 
     var icon = document.createElement('img');
-    icon.className = 'rl-alert__icon';
+    icon.className = 'rlb-alert__icon';
     icon.src = config.iconSrc;
     icon.alt = '';
     icon.width = 20;
@@ -47,19 +47,19 @@
     icon.setAttribute('aria-hidden', 'true');
 
     var content = document.createElement('div');
-    content.className = 'rl-alert__content';
+    content.className = 'rlb-alert__content';
 
     var label = document.createElement('strong');
-    label.className = 'rl-alert__label';
+    label.className = 'rlb-alert__label';
     label.textContent = config.label;
 
     var message = document.createElement('span');
-    message.className = 'rl-alert__message';
+    message.className = 'rlb-alert__message';
     message.textContent = ' ' + config.message;
 
     var dismiss = document.createElement('button');
     dismiss.type = 'button';
-    dismiss.className = 'rl-alert__dismiss';
+    dismiss.className = 'rlb-alert__dismiss';
     dismiss.setAttribute('aria-label', 'Dismiss ' + config.type + ' alert');
     var closeImg = document.createElement('img');
     closeImg.src = '../../assets/images/close.svg';
@@ -84,9 +84,9 @@
 
   // Dismiss handlers for static alerts
   root.addEventListener('click', function (e) {
-    var btn = e.target.closest('.rl-alert__dismiss');
+    var btn = e.target.closest('.rlb-alert__dismiss');
     if (!btn) return;
-    var alert = btn.closest('.rl-alert');
+    var alert = btn.closest('.rlb-alert');
     if (alert) alert.parentNode.removeChild(alert);
   });
 

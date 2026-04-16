@@ -1,79 +1,79 @@
 <!-- Cookie Consent Component Demo -->
 <div class="section">
-  <section class="rl-cookie-consent-demo" data-cookie-consent-demo>
-    <p class="rl-cookie-consent-demo__trigger-text">
-      <button class="rl-cookie-consent-demo__reset-btn" type="button" id="cookie-reset-btn">Reset Cookie Preferences</button>
+  <section class="rlb-cookie-consent-demo" data-cookie-consent-demo>
+    <p class="rlb-cookie-consent-demo__trigger-text">
+      <button class="rlb-cookie-consent-demo__reset-btn" type="button" id="cookie-reset-btn">Reset Cookie Preferences</button>
     </p>
 
     <div
-      class="rl-cookie-banner"
+      class="rlb-cookie-banner"
       role="dialog"
       aria-labelledby="cookie-banner-title"
       aria-describedby="cookie-banner-desc"
       id="cookie-banner"
     >
-      <div class="rl-cookie-banner__content">
-        <h3 class="rl-cookie-banner__title" id="cookie-banner-title">We value your privacy</h3>
-        <p class="rl-cookie-banner__description" id="cookie-banner-desc">
+      <div class="rlb-cookie-banner__content">
+        <h3 class="rlb-cookie-banner__title" id="cookie-banner-title">We value your privacy</h3>
+        <p class="rlb-cookie-banner__description" id="cookie-banner-desc">
           We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic.
           Please choose your cookie preferences below.
-          <a href="https://example.com/cookie-policy" class="rl-cookie-banner__link" aria-label="Read our full cookie policy">Cookie Policy</a>
+          <a href="https://example.com/cookie-policy" class="rlb-cookie-banner__link" aria-label="Read our full cookie policy">Cookie Policy</a>
         </p>
-        <div class="rl-cookie-banner__actions">
-          <button class="rl-cookie-banner__btn rl-cookie-banner__btn--accept" type="button" id="cookie-accept-btn">Accept All</button>
-          <button class="rl-cookie-banner__btn rl-cookie-banner__btn--reject" type="button" id="cookie-reject-btn">Reject All</button>
-          <button class="rl-cookie-banner__btn rl-cookie-banner__btn--preferences" type="button" id="cookie-preferences-btn">Manage Preferences</button>
+        <div class="rlb-cookie-banner__actions">
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--accept" type="button" id="cookie-accept-btn">Accept All</button>
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--reject" type="button" id="cookie-reject-btn">Reject All</button>
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--preferences" type="button" id="cookie-preferences-btn">Manage Preferences</button>
         </div>
       </div>
 
-      <div class="rl-cookie-preferences" id="cookie-preferences-panel" hidden>
-        <h4 class="rl-cookie-preferences__title">Cookie Preferences</h4>
-        <fieldset class="rl-cookie-preferences__group">
-          <legend class="rl-cookie-preferences__legend">Select which cookies you allow</legend>
+      <div class="rlb-cookie-preferences" id="cookie-preferences-panel" hidden>
+        <h4 class="rlb-cookie-preferences__title">Cookie Preferences</h4>
+        <fieldset class="rlb-cookie-preferences__group">
+          <legend class="rlb-cookie-preferences__legend">Select which cookies you allow</legend>
 
-          <div class="rl-cookie-preferences__category">
-            <label class="rl-cookie-preferences__label">
+          <div class="rlb-cookie-preferences__category">
+            <label class="rlb-cookie-preferences__label">
               <input
                 type="checkbox"
-                class="rl-cookie-preferences__checkbox"
+                class="rlb-cookie-preferences__checkbox"
                 name="essential"
                 checked
                 disabled
               />
-              <span class="rl-cookie-preferences__label-text">Essential Cookies</span>
+              <span class="rlb-cookie-preferences__label-text">Essential Cookies</span>
             </label>
-            <p class="rl-cookie-preferences__explanation">Required for the website to function. These cannot be disabled.</p>
+            <p class="rlb-cookie-preferences__explanation">Required for the website to function. These cannot be disabled.</p>
           </div>
 
-          <div class="rl-cookie-preferences__category">
-            <label class="rl-cookie-preferences__label">
+          <div class="rlb-cookie-preferences__category">
+            <label class="rlb-cookie-preferences__label">
               <input
                 type="checkbox"
-                class="rl-cookie-preferences__checkbox"
+                class="rlb-cookie-preferences__checkbox"
                 name="analytics"
                 id="cookie-analytics"
               />
-              <span class="rl-cookie-preferences__label-text">Analytics Cookies</span>
+              <span class="rlb-cookie-preferences__label-text">Analytics Cookies</span>
             </label>
-            <p class="rl-cookie-preferences__explanation">Help us understand how visitors interact with our website.</p>
+            <p class="rlb-cookie-preferences__explanation">Help us understand how visitors interact with our website.</p>
           </div>
 
-          <div class="rl-cookie-preferences__category">
-            <label class="rl-cookie-preferences__label">
+          <div class="rlb-cookie-preferences__category">
+            <label class="rlb-cookie-preferences__label">
               <input
                 type="checkbox"
-                class="rl-cookie-preferences__checkbox"
+                class="rlb-cookie-preferences__checkbox"
                 name="marketing"
                 id="cookie-marketing"
               />
-              <span class="rl-cookie-preferences__label-text">Marketing Cookies</span>
+              <span class="rlb-cookie-preferences__label-text">Marketing Cookies</span>
             </label>
-            <p class="rl-cookie-preferences__explanation">Used to deliver relevant advertisements and track campaign performance.</p>
+            <p class="rlb-cookie-preferences__explanation">Used to deliver relevant advertisements and track campaign performance.</p>
           </div>
         </fieldset>
 
-        <div class="rl-cookie-preferences__actions">
-          <button class="rl-cookie-banner__btn rl-cookie-banner__btn--save" type="button" id="cookie-save-btn">Save Preferences</button>
+        <div class="rlb-cookie-preferences__actions">
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--save" type="button" id="cookie-save-btn">Save Preferences</button>
         </div>
       </div>
     </div>

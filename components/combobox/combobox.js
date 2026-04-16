@@ -41,7 +41,7 @@
     listbox.innerHTML = '';
     filtered.forEach((o, i) => {
       const li = document.createElement('div');
-      li.className = 'rl-option';
+      li.className = 'rlb-option';
       li.id = o.id;
       li.setAttribute('role', 'option');
       li.setAttribute('aria-selected', String(o.label === input.dataset.selectedLabel));
@@ -62,7 +62,7 @@
 
   function setActive(index) {
     activeIndex = index;
-    const optionEls = Array.from(listbox.querySelectorAll('.rl-option'));
+    const optionEls = Array.from(listbox.querySelectorAll('.rlb-option'));
     optionEls.forEach((el) => el.classList.remove('is-active'));
 
     if (index >= 0 && optionEls[index]) {
@@ -81,7 +81,7 @@
     input.dataset.selectedLabel = o.label;
 
     // Update aria-selected in DOM
-    Array.from(listbox.querySelectorAll('.rl-option')).forEach((el) => {
+    Array.from(listbox.querySelectorAll('.rlb-option')).forEach((el) => {
       el.setAttribute('aria-selected', String(el.textContent === o.label));
     });
 

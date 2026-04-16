@@ -1,6 +1,6 @@
-.rl-modal[hidden] { display: none; }
+.rlb-modal[hidden] { display: none; }
 
-.rl-modal {
+.rlb-modal {
   position: fixed;
   inset: 0;
   z-index: 1000;
@@ -12,14 +12,14 @@
   min-width: 0;
 }
 
-.rl-modal__backdrop {
+.rlb-modal__backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 0;
 }
 
-.rl-modal__panel {
+.rlb-modal__panel {
   position: relative;
   z-index: 1;
   width: 90%;
@@ -30,7 +30,7 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
 }
 
-.rl-modal__trigger {
+.rlb-modal__trigger {
   font-size: var(--font-size-base);
   padding: 0.6rem 1.2rem;
   background-color: var(--primary-color);
@@ -41,16 +41,16 @@
   transition: background-color var(--transition-duration);
 }
 
-.rl-modal__trigger:hover {
+.rlb-modal__trigger:hover {
   background-color: var(--primary-color-hover);
 }
 
-.rl-modal__trigger:focus {
+.rlb-modal__trigger:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
-.rl-modal__close {
+.rlb-modal__close {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -62,7 +62,7 @@
   line-height: 0;
 }
 
-.rl-modal__close:focus {
+.rlb-modal__close:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }

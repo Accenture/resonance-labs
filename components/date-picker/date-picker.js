@@ -145,13 +145,13 @@
       var cell = cells[i];
       var td = document.createElement('td');
       var btn = document.createElement('button');
-      btn.className = 'rl-date-picker__day';
+      btn.className = 'rlb-date-picker__day';
       btn.type = 'button';
       btn.setAttribute('role', 'gridcell');
       btn.setAttribute('aria-label', dateLabel(cell.date));
 
       if (cell.outside) {
-        btn.classList.add('rl-date-picker__day--outside');
+        btn.classList.add('rlb-date-picker__day--outside');
         btn.setAttribute('aria-disabled', 'true');
         btn.tabIndex = -1;
       } else if (isDateDisabled(cell.date)) {
@@ -442,7 +442,7 @@
 
   // Click on day cell
   gridBody.addEventListener('click', function (e) {
-    var btn = e.target.closest('.rl-date-picker__day');
+    var btn = e.target.closest('.rlb-date-picker__day');
     if (!btn) return;
     if (btn.getAttribute('aria-disabled') === 'true') return;
     var date = new Date(btn.dataset.date);

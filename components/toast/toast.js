@@ -1,5 +1,5 @@
 (function () {
-  var region = document.getElementById("rl-toast-region");
+  var region = document.getElementById("rlb-toast-region");
   var triggers = document.querySelectorAll("[data-toast-type]");
 
   if (!region || !triggers.length) return;
@@ -27,12 +27,12 @@
     toast.setAttribute("role", "status");
 
     var text = document.createElement("span");
-    text.className = "rl-toast__text";
+    text.className = "rlb-toast__text";
     text.textContent = messages[type] || "Notification";
 
     var dismiss = document.createElement("button");
     dismiss.type = "button";
-    dismiss.className = "rl-toast__dismiss";
+    dismiss.className = "rlb-toast__dismiss";
     dismiss.setAttribute("aria-label", "Dismiss notification");
     var closeImg = document.createElement("img");
     closeImg.src = "../../assets/images/close.svg";
@@ -92,7 +92,7 @@
   function removeToast(toast) {
     if (!toast.parentNode) return;
 
-    toast.classList.add("rl-toast--removing");
+    toast.classList.add("rlb-toast--removing");
 
     toast.addEventListener("animationend", function () {
       if (toast.parentNode) {

@@ -1,5 +1,5 @@
 /* ── Variant Selector Container ── */
-.rl-variant-selector {
+.rlb-variant-selector {
   max-width: 480px;
   margin: 0 auto;
   display: flex;
@@ -8,13 +8,13 @@
 }
 
 /* ── Group ── */
-.rl-variant-selector__group {
+.rlb-variant-selector__group {
   border: none;
   padding: 0;
   margin: 0;
 }
 
-.rl-variant-selector__label {
+.rlb-variant-selector__label {
   display: block;
   font-size: 1rem;
   font-weight: 700;
@@ -24,14 +24,14 @@
 }
 
 /* ── Options Row ── */
-.rl-variant-selector__options {
+.rlb-variant-selector__options {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 /* ── Individual Option ── */
-.rl-variant-selector__option {
+.rlb-variant-selector__option {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -52,13 +52,13 @@
   gap: 0.15rem;
 }
 
-.rl-variant-selector__option:hover:not(.rl-variant-selector__option--disabled) {
+.rlb-variant-selector__option:hover:not(.rlb-variant-selector__option--disabled) {
   border-color: var(--text-color-strong);
   background: var(--surface-muted);
 }
 
 /* ── Selected State ── */
-.rl-variant-selector__option[aria-checked="true"] {
+.rlb-variant-selector__option[aria-checked="true"] {
   border-color: var(--text-color-strong);
   background: var(--surface-muted);
   color: var(--text-color-strong);
@@ -66,18 +66,18 @@
 }
 
 /* ── Disabled / Out of Stock ── */
-.rl-variant-selector__option--disabled {
+.rlb-variant-selector__option--disabled {
   opacity: 0.5;
   cursor: not-allowed;
   border-style: dashed;
 }
 
-.rl-variant-selector__option--disabled:hover {
+.rlb-variant-selector__option--disabled:hover {
   border-color: var(--border-color);
   background: var(--surface-color);
 }
 
-.rl-variant-selector__option-stock {
+.rlb-variant-selector__option-stock {
   display: block;
   font-size: 0.65rem;
   font-weight: 400;
@@ -86,12 +86,12 @@
 }
 
 /* ── Color Swatch ── */
-.rl-variant-selector__option--swatch {
+.rlb-variant-selector__option--swatch {
   padding: 0.5rem 0.75rem;
   gap: 0.35rem;
 }
 
-.rl-variant-selector__swatch {
+.rlb-variant-selector__swatch {
   display: block;
   width: 24px;
   height: 24px;
@@ -99,20 +99,20 @@
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.rl-variant-selector__color-name {
+.rlb-variant-selector__color-name {
   font-size: 0.8rem;
   font-weight: 500;
   line-height: 1;
 }
 
 /* ── Focus Indicators ── */
-.rl-variant-selector__option:focus-visible {
+.rlb-variant-selector__option:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* ── Live Region (visually hidden) ── */
-.rl-variant-selector__live-region {
+.rlb-variant-selector__live-region {
   position: absolute;
   width: 1px;
   height: 1px;

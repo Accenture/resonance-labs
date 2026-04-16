@@ -10,7 +10,7 @@
     price: { "under-25": 18, "25-50": 14, "50-100": 10, "over-100": 6 }
   };
 
-  var container = document.querySelector(".rl-faceted-filter");
+  var container = document.querySelector(".rlb-faceted-filter");
   if (!container) return;
 
   var toggleButtons = container.querySelectorAll("[data-toggle]");
@@ -85,7 +85,7 @@
     updateResultCount();
 
     // Move focus to the first toggle button (logical location after clearing)
-    var firstToggle = container.querySelector(".rl-faceted-filter__toggle");
+    var firstToggle = container.querySelector(".rlb-faceted-filter__toggle");
     if (firstToggle) {
       firstToggle.focus();
     }

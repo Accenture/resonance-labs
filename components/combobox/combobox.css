@@ -1,16 +1,16 @@
 /* Combobox component styles */
 
-.rl-combobox-demo .rl-hint { margin-top: 6px; color: var(--text-color); }
-.rl-combobox-demo .rl-error { margin-top: 6px; font-weight: 700; color: var(--text-color-strong); }
+.rlb-combobox-demo .rlb-hint { margin-top: 6px; color: var(--text-color); }
+.rlb-combobox-demo .rlb-error { margin-top: 6px; font-weight: 700; color: var(--text-color-strong); }
 
 /* Wrapper provides the positioning context for the absolute listbox */
-.rl-combobox-wrapper {
+.rlb-combobox-wrapper {
   position: relative;
   width: min(420px, 100%);
 }
 
 /* Focus: visible + high contrast */
-.rl-combobox {
+.rlb-combobox {
   width: 100%;
   min-height: 44px;
   padding: 10px 12px;
@@ -23,13 +23,13 @@
   box-sizing: border-box;
 }
 
-.rl-combobox:focus-visible {
+.rlb-combobox:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 3px;
 }
 
 /* Listbox */
-.rl-listbox {
+.rlb-listbox {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
@@ -45,31 +45,31 @@
   z-index: 10;
 }
 
-.rl-listbox[hidden] { display: none; }
-.rl-listbox.open { display: block; }
+.rlb-listbox[hidden] { display: none; }
+.rlb-listbox.open { display: block; }
 
-.rl-option {
+.rlb-option {
   padding: 10px 12px;
   cursor: default;
 }
 
-.rl-option:hover {
+.rlb-option:hover {
   background: var(--surface-hover);
 }
 
-.rl-option[aria-selected="true"] {
+.rlb-option[aria-selected="true"] {
   font-weight: 700;
 }
 
 /* Active option (visual focus — keyboard navigation) */
-.rl-option.is-active {
+.rlb-option.is-active {
   background: var(--surface-muted);
   outline: 2px solid var(--focus-color);
   outline-offset: -2px;
 }
 
 /* Give the mount enough room so the open listbox isn't clipped */
-.mount:has(.rl-combobox-wrapper) {
+.mount:has(.rlb-combobox-wrapper) {
   min-height: 320px;
   align-items: flex-start;
   padding-top: 1.5rem;
@@ -77,7 +77,7 @@
 }
 
 /* Demo sticky header to test "not obscured" */
-.rl-demo-sticky {
+.rlb-demo-sticky {
   position: sticky;
   top: 0;
   padding: 8px 12px;

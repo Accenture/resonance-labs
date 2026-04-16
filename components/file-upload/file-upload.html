@@ -1,23 +1,23 @@
 <!-- File Upload Component -->
 <div class="section">
-  <section class="rl-file-upload-demo" data-file-upload-demo>
+  <section class="rlb-file-upload-demo" data-file-upload-demo>
     <div
-      class="rl-file-upload-dropzone"
+      class="rlb-file-upload-dropzone"
       id="file-upload-dropzone"
       role="region"
       aria-label="File upload drop zone"
     >
-      <div class="rl-file-upload-dropzone__content">
-        <svg class="rl-file-upload-dropzone__icon" width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <div class="rlb-file-upload-dropzone__content">
+        <svg class="rlb-file-upload-dropzone__icon" width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
           <path d="M12 16V4m0 0L8 8m4-4l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M4 14v4a2 2 0 002 2h12a2 2 0 002-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <p class="rl-file-upload-dropzone__text">Drag and drop files here, or use the button below</p>
-        <label class="rl-file-upload-label" for="file-upload-input">
-          <span class="rl-file-upload-label__button">Choose Files</span>
+        <p class="rlb-file-upload-dropzone__text">Drag and drop files here, or use the button below</p>
+        <label class="rlb-file-upload-label" for="file-upload-input">
+          <span class="rlb-file-upload-label__button">Choose Files</span>
         </label>
         <input
-          class="rl-file-upload-input"
+          class="rlb-file-upload-input"
           id="file-upload-input"
           type="file"
           multiple
@@ -25,28 +25,28 @@
           aria-label="Upload PDF, DOC, TXT, PNG, or JPG files, max 5 MB each"
           aria-describedby="file-upload-constraints file-upload-error"
         />
-        <p class="rl-file-upload-constraints" id="file-upload-constraints">
+        <p class="rlb-file-upload-constraints" id="file-upload-constraints">
           Accepted formats: PDF, DOC, DOCX, TXT, PNG, JPG. Max 5 MB per file.
         </p>
       </div>
     </div>
 
     <div
-      class="rl-file-upload-status"
+      class="rlb-file-upload-status"
       id="file-upload-status"
       aria-live="polite"
       aria-atomic="true"
       role="status"
     ></div>
 
-    <p class="rl-file-upload-error" id="file-upload-error" role="alert" aria-live="assertive"></p>
+    <p class="rlb-file-upload-error" id="file-upload-error" role="alert" aria-live="assertive"></p>
 
-    <div class="rl-file-upload-list-wrapper">
-      <h3 class="rl-file-upload-list__heading" id="file-upload-list-heading">
+    <div class="rlb-file-upload-list-wrapper">
+      <h3 class="rlb-file-upload-list__heading" id="file-upload-list-heading">
         Uploaded Files (<span id="file-upload-count">0</span>)
       </h3>
       <ul
-        class="rl-file-upload-list"
+        class="rlb-file-upload-list"
         id="file-upload-list"
         aria-labelledby="file-upload-list-heading"
         role="list"

@@ -1,20 +1,20 @@
 /* Allow submenu to overflow the mount area */
-.mount:has(.rl-mega) {
+.mount:has(.rlb-mega) {
   align-items: flex-start;
   padding-top: 1.5rem;
   overflow: visible;
   min-height: 280px;
 }
 
-.rl-mega__main,
-.rl-mega__submenu { list-style: none; padding: 0; margin: 0; }
+.rlb-mega__main,
+.rlb-mega__submenu { list-style: none; padding: 0; margin: 0; }
 
-.rl-mega__main { display: flex; gap: 4px; align-items: center; }
+.rlb-mega__main { display: flex; gap: 4px; align-items: center; }
 
-.rl-mega__item { position: relative; }
+.rlb-mega__item { position: relative; }
 
 /* ── Top-level buttons (Products, Solutions) ── */
-.rl-mega__btn {
+.rlb-mega__btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -31,27 +31,27 @@
   transition: background-color 0.2s, border-color 0.2s;
 }
 
-.rl-mega__btn:hover {
+.rlb-mega__btn:hover {
   background: var(--surface-muted);
   border-color: var(--border-color-strong);
 }
 
-.rl-mega__btn[aria-expanded="true"] {
+.rlb-mega__btn[aria-expanded="true"] {
   background: var(--surface-subtle);
   border-color: var(--border-color-strong);
 }
 
-.rl-mega__icon {
+.rlb-mega__icon {
   flex-shrink: 0;
   transition: transform 0.2s;
 }
 
-.rl-mega__btn[aria-expanded="true"] .rl-mega__icon {
+.rlb-mega__btn[aria-expanded="true"] .rlb-mega__icon {
   transform: rotate(180deg);
 }
 
 /* ── Support link — animated underline (matches link component) ── */
-.rl-mega__link {
+.rlb-mega__link {
   display: inline-flex;
   align-items: center;
   padding: 8px 12px;
@@ -63,7 +63,7 @@
   position: relative;
 }
 
-.rl-mega__link::after {
+.rlb-mega__link::after {
   content: '';
   position: absolute;
   bottom: 6px;
@@ -76,13 +76,13 @@
   transition: background-position 0.3s ease-out;
 }
 
-.rl-mega__link:hover::after,
-.rl-mega__link:focus-visible::after {
+.rlb-mega__link:hover::after,
+.rlb-mega__link:focus-visible::after {
   background-position: 0 50%;
 }
 
 /* ── Submenu panel ── */
-.rl-mega__submenu {
+.rlb-mega__submenu {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
@@ -94,10 +94,10 @@
   z-index: 100;
 }
 
-.rl-mega__submenu[hidden] { display: none; }
+.rlb-mega__submenu[hidden] { display: none; }
 
 /* Submenu links — no decoration by default, highlight on interaction */
-.rl-mega__submenu a {
+.rlb-mega__submenu a {
   display: block;
   padding: 10px 16px;
   text-decoration: none;
@@ -105,14 +105,14 @@
   font-size: 0.9375rem;
 }
 
-.rl-mega__submenu a:hover {
+.rlb-mega__submenu a:hover {
   background: var(--surface-muted);
 }
 
 /* Focus rings */
-.rl-mega__btn:focus-visible,
-.rl-mega__link:focus-visible,
-.rl-mega__submenu a:focus-visible {
+.rlb-mega__btn:focus-visible,
+.rlb-mega__link:focus-visible,
+.rlb-mega__submenu a:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }

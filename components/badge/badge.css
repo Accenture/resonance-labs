@@ -1,10 +1,10 @@
-.rl-badge-group {
+.rlb-badge-group {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.rl-badge {
+.rlb-badge {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -16,11 +16,11 @@
   line-height: 1.4;
 }
 
-.rl-badge__label {
+.rlb-badge__label {
   color: var(--text-color-strong);
 }
 
-.rl-badge__remove {
+.rlb-badge__remove {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -36,16 +36,16 @@
   line-height: 1;
 }
 
-.rl-badge__remove:hover {
+.rlb-badge__remove:hover {
   background: var(--gray-200);
 }
 
-.rl-badge__remove:focus {
+.rlb-badge__remove:focus {
   outline: 3px solid var(--black);
   outline-offset: 2px;
 }
 
-.rl-sr-only {
+.rlb-sr-only {
   position: absolute;
   width: 1px;
   height: 1px;

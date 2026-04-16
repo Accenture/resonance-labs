@@ -1,8 +1,8 @@
-.rl-search { max-width: 520px; }
-.rl-search__row { display: flex; gap: 8px; align-items: center; }
+.rlb-search { max-width: 520px; }
+.rlb-search__row { display: flex; gap: 8px; align-items: center; }
 input { flex: 1; padding: 8px; min-height: 44px; }
 button { min-height: 44px; padding: 8px 12px; }
-.rl-search__btn {
+.rlb-search__btn {
   background: var(--primary-color);
   color: var(--primary-color-inverse);
   border: none;
@@ -10,6 +10,6 @@ button { min-height: 44px; padding: 8px 12px; }
   font-family: inherit;
   font-size: inherit;
 }
-.rl-search__btn:hover { background: var(--primary-color-hover); }
+.rlb-search__btn:hover { background: var(--primary-color-hover); }
 :focus { outline: 3px solid var(--focus-color); outline-offset: 2px; }
-.rl-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.rlb-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }

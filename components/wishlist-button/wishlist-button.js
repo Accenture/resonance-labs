@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var buttons = document.querySelectorAll(".rl-wishlist-btn");
+  var buttons = document.querySelectorAll(".rlb-wishlist-btn");
   if (!buttons.length) return;
 
   buttons.forEach(function (btn) {
@@ -17,7 +17,7 @@
       btn.setAttribute("aria-pressed", String(newState));
 
       // Update aria-label for icon-only buttons
-      if (btn.classList.contains("rl-wishlist-btn--icon")) {
+      if (btn.classList.contains("rlb-wishlist-btn--icon")) {
         if (newState) {
           btn.setAttribute("aria-label", "Remove " + product + " from wishlist");
         } else {
@@ -26,7 +26,7 @@
       }
 
       // Update visible label text for text variant
-      var label = btn.querySelector(".rl-wishlist-btn__label");
+      var label = btn.querySelector(".rlb-wishlist-btn__label");
       if (label) {
         label.textContent = newState ? "Saved to wishlist" : "Save to wishlist";
       }

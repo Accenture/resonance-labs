@@ -1,4 +1,4 @@
-.rl-alert-demo {
+.rlb-alert-demo {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -6,7 +6,7 @@
 }
 
 /* Base alert styles */
-.rl-alert {
+.rlb-alert {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
@@ -19,57 +19,57 @@
   line-height: 1.5;
 }
 
-.rl-alert__icon {
+.rlb-alert__icon {
   flex-shrink: 0;
   font-size: 1.25rem;
   line-height: 1.4;
   user-select: none;
 }
 
-.rl-alert__content {
+.rlb-alert__content {
   flex: 1;
   min-width: 0;
 }
 
-.rl-alert__label {
+.rlb-alert__label {
   font-weight: 700;
   margin-right: 0.25rem;
 }
 
 /* Info variant */
-.rl-alert--info {
+.rlb-alert--info {
   border-left-color: var(--alert-blue);
   background: var(--alert-blue-surface);
 }
 
 /* Success variant */
-.rl-alert--success {
+.rlb-alert--success {
   border-left-color: var(--alert-green);
   background: var(--alert-green-surface);
 }
 
 /* Warning variant */
-.rl-alert--warning {
+.rlb-alert--warning {
   border-left-color: var(--alert-yellow-dark);
   background: var(--alert-yellow-surface);
 }
 
-.rl-alert--warning .rl-alert__label {
+.rlb-alert--warning .rlb-alert__label {
   color: var(--alert-yellow-dark);
 }
 
 /* Error variant */
-.rl-alert--error {
+.rlb-alert--error {
   border-left-color: var(--alert-red);
   background: var(--alert-red-surface);
 }
 
 /* Dismissible variant */
-.rl-alert--dismissible {
+.rlb-alert--dismissible {
   padding-right: 0.5rem;
 }
 
-.rl-alert__dismiss {
+.rlb-alert__dismiss {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -86,17 +86,17 @@
   transition: background-color var(--transition-duration);
 }
 
-.rl-alert__dismiss:hover {
+.rlb-alert__dismiss:hover {
   background: rgba(0, 0, 0, 0.08);
 }
 
-.rl-alert__dismiss:focus-visible {
+.rlb-alert__dismiss:focus-visible {
   outline: 2px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Trigger button */
-.rl-alert-demo__trigger {
+.rlb-alert-demo__trigger {
   font-size: var(--font-size-base);
   padding: 0.6rem 1.2rem;
   background-color: var(--primary-color);
@@ -107,17 +107,17 @@
   transition: background-color var(--transition-duration);
 }
 
-.rl-alert-demo__trigger:hover {
+.rlb-alert-demo__trigger:hover {
   background-color: var(--primary-color-hover);
 }
 
-.rl-alert-demo__trigger:focus {
+.rlb-alert-demo__trigger:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Live region container */
-.rl-alert-demo__live-region {
+.rlb-alert-demo__live-region {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;

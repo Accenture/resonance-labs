@@ -1,17 +1,17 @@
-.rl-carousel {
+.rlb-carousel {
   width: 100%;
   font-family: system-ui, sans-serif;
 }
 
-.rl-carousel__controls {
+.rlb-carousel__controls {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
 }
 
-.rl-carousel__btn,
-.rl-carousel__dot {
+.rlb-carousel__btn,
+.rlb-carousel__dot {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -24,14 +24,14 @@
   background: var(--surface-color);
 }
 
-.rl-carousel__btn:focus-visible,
-.rl-carousel__dot:focus-visible,
-.rl-carousel__link:focus-visible {
+.rlb-carousel__btn:focus-visible,
+.rlb-carousel__dot:focus-visible,
+.rlb-carousel__link:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
-.rl-carousel__slides {
+.rlb-carousel__slides {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -40,7 +40,7 @@
   padding: 1rem;
 }
 
-.rl-carousel__dots {
+.rlb-carousel__dots {
   list-style: none;
   padding: 0;
   margin: 0.75rem 0 0 0;
@@ -48,7 +48,7 @@
   gap: 0.5rem;
 }
 
-.rl-sr-only {
+.rlb-sr-only {
   position: absolute !important;
   width: 1px !important;
   height: 1px !important;
@@ -61,16 +61,16 @@
 }
 
 @media (max-width: 480px) {
-  .rl-carousel {
+  .rlb-carousel {
     margin: 1rem;
   }
 
-  .rl-carousel__controls {
+  .rlb-carousel__controls {
     flex-wrap: wrap;
   }
 
-  .rl-carousel__btn,
-  .rl-carousel__dot {
+  .rlb-carousel__btn,
+  .rlb-carousel__dot {
     padding: 0.4rem 0.6rem;
     font-size: 0.85rem;
   }

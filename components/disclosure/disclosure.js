@@ -1,5 +1,5 @@
 (function () {
-  var triggers = document.querySelectorAll('[data-disclosure-demo] .rl-disclosure__trigger');
+  var triggers = document.querySelectorAll('[data-disclosure-demo] .rlb-disclosure__trigger');
 
   triggers.forEach(function (trigger) {
     trigger.addEventListener('click', function () {

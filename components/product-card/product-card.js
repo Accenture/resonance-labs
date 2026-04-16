@@ -1,6 +1,6 @@
 (function () {
-  var buttons = document.querySelectorAll('.rl-product-card__add-btn');
-  var liveRegion = document.querySelector('.rl-product-card__live-region');
+  var buttons = document.querySelectorAll('.rlb-product-card__add-btn');
+  var liveRegion = document.querySelector('.rlb-product-card__live-region');
 
   if (!buttons.length || !liveRegion) return;
 

@@ -7,27 +7,27 @@
 
   function createBadge(text, isFallback) {
     var badge = document.createElement('span');
-    badge.className = 'rlw-component-card__compliance-badge' + (isFallback ? ' rlw-component-card__compliance-badge--fallback' : '');
+    badge.className = 'rwb-component-card__compliance-badge' + (isFallback ? ' rwb-component-card__compliance-badge--fallback' : '');
     badge.textContent = text;
     return badge;
   }
 
   function createBadgeRow() {
     var row = document.createElement('div');
-    row.className = 'rlw-component-card__compliance-row';
+    row.className = 'rwb-component-card__compliance-row';
     return row;
   }
 
   function init() {
-    var cards = Array.from(document.querySelectorAll('.rlw-component-card[href*="components/"]'));
+    var cards = Array.from(document.querySelectorAll('.rwb-component-card[href*="components/"]'));
     if (cards.length === 0) return;
 
     cards.forEach(function (card) {
       var key = componentKeyFromHref(card.getAttribute('href'));
       if (!key) return;
 
-      var content = card.querySelector('.rlw-component-card__content');
-      if (!content || content.querySelector('.rlw-component-card__compliance-badge')) return;
+      var content = card.querySelector('.rwb-component-card__content');
+      if (!content || content.querySelector('.rwb-component-card__compliance-badge')) return;
 
       fetch('components/' + key + '/labs.manifest.json')
         .then(function (r) {

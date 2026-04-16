@@ -1,6 +1,6 @@
 (function () {
-  var groups = document.querySelectorAll('.rl-variant-selector__options[role="radiogroup"]');
-  var liveRegion = document.querySelector('.rl-variant-selector__live-region');
+  var groups = document.querySelectorAll('.rlb-variant-selector__options[role="radiogroup"]');
+  var liveRegion = document.querySelector('.rlb-variant-selector__live-region');
 
   if (!groups.length || !liveRegion) return;
 

@@ -2,19 +2,19 @@
    Focus: visibility, contrast, layout, and hit area sizing
 */
 
-.rl-tabs {
+.rlb-tabs {
   max-width: 600px;
   margin: 2rem auto;
   font-family: system-ui, sans-serif;
 }
 
-.rl-tabs__list {
+.rlb-tabs__list {
   display: flex;
   border-bottom: 2px solid var(--border-color);
   gap: 0;
 }
 
-.rl-tabs__tab {
+.rlb-tabs__tab {
   all: unset;
   box-sizing: border-box;
   display: inline-flex;
@@ -37,45 +37,45 @@
 }
 
 /* Selected tab visual distinction */
-.rl-tabs__tab--selected {
+.rlb-tabs__tab--selected {
   color: var(--text-color-strong);
   border-bottom-color: var(--primary-color);
   font-weight: 600;
 }
 
 /* Hover state for sighted users */
-.rl-tabs__tab:hover:not(.rl-tabs__tab--selected) {
+.rlb-tabs__tab:hover:not(.rlb-tabs__tab--selected) {
   color: var(--text-color-strong);
   background: var(--surface-muted);
 }
 
 /* Focus visibility and theming hook */
-.rl-tabs__tab:focus-visible {
+.rlb-tabs__tab:focus-visible {
   outline: var(--focus-ring-width, 3px) solid var(--focus-ring-color, var(--focus-color));
   outline-offset: var(--focus-ring-offset, 2px);
 }
 
-.rl-tabs__panel {
+.rlb-tabs__panel {
   padding: 1.5rem 1rem;
 }
 
-.rl-tabs__panel p {
+.rlb-tabs__panel p {
   margin: 0 0 0.75rem;
   line-height: 1.5;
   color: var(--text-color);
 }
 
-.rl-tabs__panel a {
+.rlb-tabs__panel a {
   color: var(--text-color-strong);
   text-decoration: underline;
 }
 
-.rl-tabs__panel a:focus-visible {
+.rlb-tabs__panel a:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
-.rl-tabs__panel button {
+.rlb-tabs__panel button {
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 1rem;
@@ -89,16 +89,16 @@
   min-width: 24px;
 }
 
-.rl-tabs__panel button:hover {
+.rlb-tabs__panel button:hover {
   background: var(--primary-color-hover);
 }
 
-.rl-tabs__panel button:focus-visible {
+.rlb-tabs__panel button:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
-.rl-tabs__panel input[type="text"] {
+.rlb-tabs__panel input[type="text"] {
   display: block;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
@@ -107,20 +107,20 @@
   max-width: 300px;
 }
 
-.rl-tabs__panel input[type="text"]:focus-visible {
+.rlb-tabs__panel input[type="text"]:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Focus indicator on tab panels */
-.rl-tabs__panel:focus-visible {
+.rlb-tabs__panel:focus-visible {
   outline: var(--focus-ring-width, 3px) solid var(--focus-ring-color, var(--focus-color));
   outline-offset: var(--focus-ring-offset, 2px);
 }
 
 /* Optional ergonomics for touch screens without tightening AC constraints */
 @media (pointer: coarse) {
-  .rl-tabs__tab {
+  .rlb-tabs__tab {
     min-height: 44px;
     padding: 1rem 1.5rem;
   }

@@ -1,11 +1,11 @@
 /* Toast trigger buttons */
-.rl-toast-demo__controls {
+.rlb-toast-demo__controls {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.rl-toast-trigger {
+.rlb-toast-trigger {
   display: inline-block;
   padding: 10px 20px;
   font-size: var(--font-size-base);
@@ -18,18 +18,18 @@
   transition: background var(--transition-duration), color var(--transition-duration);
 }
 
-.rl-toast-trigger:hover {
+.rlb-toast-trigger:hover {
   background: var(--hover-color);
   border-color: var(--hover-color);
 }
 
-.rl-toast-trigger:focus {
+.rlb-toast-trigger:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Toast region — fixed at bottom-right */
-.rl-toast-region {
+.rlb-toast-region {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -43,7 +43,7 @@
 }
 
 /* Individual toast */
-.rl-toast {
+.rlb-toast {
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -56,36 +56,36 @@
   animation: toast-slide-in 0.3s ease-out;
 }
 
-.rl-toast--removing {
+.rlb-toast--removing {
   animation: toast-slide-out 0.25s ease-in forwards;
 }
 
 /* Toast types — all meet 4.5:1 contrast */
-.rl-toast--success {
+.rlb-toast--success {
   background: var(--primary-color);
   color: var(--text-color-inverse);
   border-left: 4px solid var(--gray-400);
 }
 
-.rl-toast--info {
+.rlb-toast--info {
   background: var(--primary-color-hover);
   color: var(--text-color-inverse);
   border-left: 4px solid var(--text-color-faint);
 }
 
-.rl-toast--warning {
+.rlb-toast--warning {
   background: var(--text-color);
   color: var(--text-color-inverse);
   border-left: 4px solid var(--gray-400);
 }
 
 /* Toast text */
-.rl-toast__text {
+.rlb-toast__text {
   flex: 1;
 }
 
 /* Dismiss button */
-.rl-toast__dismiss {
+.rlb-toast__dismiss {
   flex-shrink: 0;
   background: transparent;
   border: none;
@@ -98,11 +98,11 @@
   font-family: inherit;
 }
 
-.rl-toast__dismiss:hover {
+.rlb-toast__dismiss:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.rl-toast__dismiss:focus {
+.rlb-toast__dismiss:focus {
   outline: 2px solid var(--text-color-inverse);
   outline-offset: 2px;
 }

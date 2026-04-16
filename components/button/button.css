@@ -1,15 +1,15 @@
-/* .rl-btn-demo {
+/* .rlb-btn-demo {
   max-width: 560px;
   margin: 2rem auto;
   font-family: system-ui, sans-serif;
 } */
 
-.rl-btn-demo__title {
+.rlb-btn-demo__title {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.rl-btn-demo {
+.rlb-btn-demo {
   appearance: none;
   border: 1px solid var(--border-color);
   background: var(--surface-color);
@@ -30,25 +30,25 @@
 }
 
 /* Visible focus indicator */
-.rl-btn:focus-visible {
+.rlb-btn:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Example panel */
-.rl-btn-panel {
+.rlb-btn-panel {
   border: 1px solid var(--gray-300);
   border-radius: var(--border-radius);
   padding: 0.75rem 1rem;
   margin-top: 0.5rem;
 }
 
-.rl-btn__icon {
+.rlb-btn__icon {
   user-select: none;
   opacity: 0.9;
 }
 
-.rl-btn-demo__status {
+.rlb-btn-demo__status {
   margin-top: 1rem;
   min-height: 1.25rem;
 }

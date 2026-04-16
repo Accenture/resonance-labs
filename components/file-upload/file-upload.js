@@ -81,12 +81,12 @@
 
   function createFileItem(entry) {
     var li = document.createElement("li");
-    li.className = "rl-file-upload-list__item";
+    li.className = "rlb-file-upload-list__item";
     li.setAttribute("data-file-id", entry.id);
 
     // File icon
     var icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    icon.setAttribute("class", "rl-file-upload-list__icon");
+    icon.setAttribute("class", "rlb-file-upload-list__icon");
     icon.setAttribute("width", "24");
     icon.setAttribute("height", "24");
     icon.setAttribute("viewBox", "0 0 24 24");
@@ -110,17 +110,17 @@
 
     // Info block
     var info = document.createElement("div");
-    info.className = "rl-file-upload-list__info";
+    info.className = "rlb-file-upload-list__info";
 
     var nameSpan = document.createElement("span");
-    nameSpan.className = "rl-file-upload-list__name";
+    nameSpan.className = "rlb-file-upload-list__name";
     nameSpan.textContent = entry.name;
 
     var meta = document.createElement("span");
-    meta.className = "rl-file-upload-list__meta";
+    meta.className = "rlb-file-upload-list__meta";
 
     var sizeSpan = document.createElement("span");
-    sizeSpan.className = "rl-file-upload-list__size";
+    sizeSpan.className = "rlb-file-upload-list__size";
     sizeSpan.textContent = formatFileSize(entry.size);
 
     var statusSpan = document.createElement("span");
@@ -137,7 +137,7 @@
 
     // Progress bar
     var progressWrap = document.createElement("div");
-    progressWrap.className = "rl-file-upload-list__progress";
+    progressWrap.className = "rlb-file-upload-list__progress";
     progressWrap.setAttribute("role", "progressbar");
     progressWrap.setAttribute("aria-label", "Upload progress for " + entry.name);
     progressWrap.setAttribute("aria-valuenow", "0");
@@ -145,14 +145,14 @@
     progressWrap.setAttribute("aria-valuemax", "100");
 
     var progressBar = document.createElement("div");
-    progressBar.className = "rl-file-upload-list__progress-bar";
+    progressBar.className = "rlb-file-upload-list__progress-bar";
     progressBar.style.width = "0%";
     progressWrap.appendChild(progressBar);
 
     // Remove button
     var removeBtn = document.createElement("button");
     removeBtn.type = "button";
-    removeBtn.className = "rl-file-upload-list__remove";
+    removeBtn.className = "rlb-file-upload-list__remove";
     removeBtn.setAttribute("aria-label", "Remove " + entry.name);
     removeBtn.innerHTML =
       '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">' +
@@ -179,8 +179,8 @@
     var li = fileList.querySelector('[data-file-id="' + entry.id + '"]');
     if (!li) return;
 
-    var progressWrap = li.querySelector(".rl-file-upload-list__progress");
-    var progressBar = li.querySelector(".rl-file-upload-list__progress-bar");
+    var progressWrap = li.querySelector(".rlb-file-upload-list__progress");
+    var progressBar = li.querySelector(".rlb-file-upload-list__progress-bar");
     var statusSpan = li.querySelector("[data-status]");
     var progress = 0;
 
@@ -191,7 +191,7 @@
         clearInterval(interval);
 
         progressBar.style.width = "100%";
-        progressBar.classList.add("rl-file-upload-list__progress-bar--complete");
+        progressBar.classList.add("rlb-file-upload-list__progress-bar--complete");
         progressWrap.setAttribute("aria-valuenow", "100");
 
         statusSpan.textContent = "Complete";
@@ -263,9 +263,9 @@
     var focusTarget = null;
 
     if (nextSibling) {
-      focusTarget = nextSibling.querySelector(".rl-file-upload-list__remove");
+      focusTarget = nextSibling.querySelector(".rlb-file-upload-list__remove");
     } else if (prevSibling) {
-      focusTarget = prevSibling.querySelector(".rl-file-upload-list__remove");
+      focusTarget = prevSibling.querySelector(".rlb-file-upload-list__remove");
     } else {
       focusTarget = fileInput;
     }
@@ -310,13 +310,13 @@
   dropzone.addEventListener("dragenter", function (e) {
     e.preventDefault();
     e.stopPropagation();
-    dropzone.classList.add("rl-file-upload-dropzone--drag-over");
+    dropzone.classList.add("rlb-file-upload-dropzone--drag-over");
   });
 
   dropzone.addEventListener("dragover", function (e) {
     e.preventDefault();
     e.stopPropagation();
-    dropzone.classList.add("rl-file-upload-dropzone--drag-over");
+    dropzone.classList.add("rlb-file-upload-dropzone--drag-over");
   });
 
   dropzone.addEventListener("dragleave", function (e) {
@@ -324,14 +324,14 @@
     e.stopPropagation();
     // Only remove class if we actually left the dropzone
     if (!dropzone.contains(e.relatedTarget)) {
-      dropzone.classList.remove("rl-file-upload-dropzone--drag-over");
+      dropzone.classList.remove("rlb-file-upload-dropzone--drag-over");
     }
   });
 
   dropzone.addEventListener("drop", function (e) {
     e.preventDefault();
     e.stopPropagation();
-    dropzone.classList.remove("rl-file-upload-dropzone--drag-over");
+    dropzone.classList.remove("rlb-file-upload-dropzone--drag-over");
 
     if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
       addFiles(e.dataTransfer.files);
@@ -341,7 +341,7 @@
   // Clicking anywhere on the dropzone opens the file picker
   dropzone.addEventListener("click", function (e) {
     // Don't re-trigger if clicking the input or a remove button
-    if (e.target === fileInput || e.target.closest(".rl-file-upload-list__remove")) {
+    if (e.target === fileInput || e.target.closest(".rlb-file-upload-list__remove")) {
       return;
     }
     fileInput.click();

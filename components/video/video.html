@@ -20,17 +20,17 @@
 -->
 
 <section
-  class="rl-vid-demo"
+  class="rlb-vid-demo"
   data-vid-demo
   aria-label="Video player"
   data-component="video"
 >
-  <h2 class="rl-vid-demo__title">Video — Reference Implementation</h2>
+  <h2 class="rlb-vid-demo__title">Video — Reference Implementation</h2>
 
   <!-- Video player -->
-  <div class="rl-vid-player" data-vid-player>
+  <div class="rlb-vid-player" data-vid-player>
     <video
-      class="rl-vid-player__video"
+      class="rlb-vid-player__video"
       data-vid-element
       controls
       preload="metadata"
@@ -68,16 +68,16 @@
   </div>
 
   <!-- Custom accessible controls -->
-  <div class="rl-vid-controls" data-vid-controls>
+  <div class="rlb-vid-controls" data-vid-controls>
     <button
-      class="rl-vid-controls__btn"
+      class="rlb-vid-controls__btn"
       type="button"
       aria-pressed="false"
       aria-label="Mute"
       data-vid-mute
     >Mute</button>
     <button
-      class="rl-vid-controls__btn"
+      class="rlb-vid-controls__btn"
       type="button"
       aria-pressed="false"
       aria-label="Audio descriptions"
@@ -87,14 +87,14 @@
 
   <!-- Transcript section -->
   <details
-    class="rl-vid-transcript"
+    class="rlb-vid-transcript"
     data-vid-transcript
     data-hook-trs="transcript-section"
   >
-    <summary class="rl-vid-transcript__toggle">
+    <summary class="rlb-vid-transcript__toggle">
       Transcript
     </summary>
-    <div class="rl-vid-transcript__content">
+    <div class="rlb-vid-transcript__content">
       <p>
         [Speaker 1]: Welcome to this demonstration of an accessible video component.
         This video shows how captions, transcripts, and audio descriptions work together
@@ -110,7 +110,7 @@
 
   <!-- Status area for live announcements -->
   <p
-    class="rl-vid-demo__status"
+    class="rlb-vid-demo__status"
     aria-live="polite"
     aria-atomic="true"
     data-vid-status

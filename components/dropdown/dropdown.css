@@ -1,10 +1,10 @@
-.rl-dropdown { max-width: 320px; width: 100%; }
-.rl-dropdown__label { display: block; margin-bottom: 8px; font-weight: 600; }
+.rlb-dropdown { max-width: 320px; width: 100%; }
+.rlb-dropdown__label { display: block; margin-bottom: 8px; font-weight: 600; }
 
 /* Control wraps trigger + listbox so the listbox positions relative to the trigger */
-.rl-dropdown__control { position: relative; }
+.rlb-dropdown__control { position: relative; }
 
-.rl-dropdown__trigger {
+.rlb-dropdown__trigger {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,12 +21,12 @@
   width: 100%;
   text-align: left;
 }
-.rl-dropdown__trigger:focus-visible {
+.rlb-dropdown__trigger:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
-.rl-dropdown__listbox {
+.rlb-dropdown__listbox {
   position: absolute;
   left: 0;
   right: 0;
@@ -43,23 +43,23 @@
   z-index: 10;
 }
 
-.rl-dropdown__option {
+.rlb-dropdown__option {
   padding: 10px 12px;
   cursor: pointer;
 }
-.rl-dropdown__option:hover {
+.rlb-dropdown__option:hover {
   background: var(--surface-hover);
 }
-.rl-dropdown__option[aria-selected="true"] {
+.rlb-dropdown__option[aria-selected="true"] {
   font-weight: 700;
 }
-.rl-dropdown__option.is-active {
+.rlb-dropdown__option.is-active {
   background: var(--surface-muted);
   outline: 2px solid var(--focus-color);
   outline-offset: -2px;
 }
 
-.rl-dropdown__help { margin-top: 10px; font-size: 0.9rem; opacity: 0.85; }
+.rlb-dropdown__help { margin-top: 10px; font-size: 0.9rem; opacity: 0.85; }
 
 /* Give the demo mount enough room to show the open listbox without clipping */
 .mount:has([data-dropdown]) {

@@ -46,7 +46,7 @@
     }
 
     // Announce the change via live region
-    var label = stepper.querySelector(".rl-quantity-stepper__label");
+    var label = stepper.querySelector(".rlb-quantity-stepper__label");
     var productName = label ? label.textContent.replace("Quantity for ", "") : "item";
     announce("Quantity for " + productName + ": " + clamped);
   }

@@ -1,6 +1,6 @@
 /* Avatar component */
 
-.rl-avatar {
+.rlb-avatar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -13,26 +13,26 @@
 }
 
 /* Sizes */
-.rl-avatar--sm {
+.rlb-avatar--sm {
   width: 32px;
   height: 32px;
   font-size: var(--font-size-xsmall);
 }
 
-.rl-avatar--md {
+.rlb-avatar--md {
   width: 48px;
   height: 48px;
   font-size: var(--font-size-base);
 }
 
-.rl-avatar--lg {
+.rlb-avatar--lg {
   width: 64px;
   height: 64px;
   font-size: var(--font-size-large);
 }
 
 /* Image */
-.rl-avatar__image {
+.rlb-avatar__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -40,26 +40,26 @@
 }
 
 /* Initials fallback — #fefefe on #222 = ~17.4:1 contrast */
-.rl-avatar__initials {
+.rlb-avatar__initials {
   line-height: 1;
   user-select: none;
   letter-spacing: 0.05em;
 }
 
 /* Layout helpers */
-.rl-avatar-row {
+.rlb-avatar-row {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 1.5rem;
 }
 
-.rl-avatar-name {
+.rlb-avatar-name {
   font-size: var(--font-size-base);
   color: var(--text-color);
 }
 
-.rl-avatar-link {
+.rlb-avatar-link {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -70,11 +70,11 @@
   transition: background-color var(--transition-duration);
 }
 
-.rl-avatar-link:hover {
+.rlb-avatar-link:hover {
   background-color: var(--secondary-color);
 }
 
-.rl-avatar-demo h3 {
+.rlb-avatar-demo h3 {
   font-size: var(--font-size-small);
   color: var(--text-color-subtle);
   margin-bottom: 0.5rem;

@@ -26,7 +26,7 @@
     dialog.hidden = false;
     setSiblingsInert(true);
     const focusables = getFocusable(dialog);
-    (focusables[0] || dialog.querySelector(".rl-modal__panel")).focus();
+    (focusables[0] || dialog.querySelector(".rlb-modal__panel")).focus();
     document.addEventListener("keydown", onKeyDown);
   }
 

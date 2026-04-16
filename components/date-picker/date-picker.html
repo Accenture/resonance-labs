@@ -1,11 +1,11 @@
 <div class="section">
-  <section class="rl-date-picker-demo" data-date-picker-demo>
-    <div class="rl-date-picker" data-dp="root">
+  <section class="rlb-date-picker-demo" data-date-picker-demo>
+    <div class="rlb-date-picker" data-dp="root">
       <label id="dp-label" for="dp-input">Select a date</label>
-      <div class="rl-date-picker__input-wrap">
+      <div class="rlb-date-picker__input-wrap">
         <input
           id="dp-input"
-          class="rl-date-picker__input"
+          class="rlb-date-picker__input"
           type="text"
           role="combobox"
           aria-labelledby="dp-label"
@@ -18,7 +18,7 @@
           data-dp="input"
         />
         <button
-          class="rl-date-picker__toggle"
+          class="rlb-date-picker__toggle"
           type="button"
           aria-label="Open calendar"
           data-dp="toggle"
@@ -30,19 +30,19 @@
           </svg>
         </button>
       </div>
-      <span class="rl-date-picker__hint" id="dp-hint">Format: YYYY/MM/DD</span>
+      <span class="rlb-date-picker__hint" id="dp-hint">Format: YYYY/MM/DD</span>
 
       <div
         id="dp-calendar"
-        class="rl-date-picker__calendar"
+        class="rlb-date-picker__calendar"
         role="dialog"
         aria-label="Choose a date"
         hidden
         data-dp="calendar"
       >
-        <div class="rl-date-picker__nav">
+        <div class="rlb-date-picker__nav">
           <button
-            class="rl-date-picker__nav-btn"
+            class="rlb-date-picker__nav-btn"
             type="button"
             aria-label="Previous Month"
             data-dp="prev"
@@ -50,14 +50,14 @@
             <img src="../../assets/images/chevron-left.svg" alt="" width="20" height="20" aria-hidden="true" />
           </button>
           <div
-            class="rl-date-picker__month-year"
+            class="rlb-date-picker__month-year"
             id="dp-month-year"
             aria-live="polite"
             aria-atomic="true"
             data-dp="month-year"
           ></div>
           <button
-            class="rl-date-picker__nav-btn"
+            class="rlb-date-picker__nav-btn"
             type="button"
             aria-label="Next Month"
             data-dp="next"
@@ -66,7 +66,7 @@
           </button>
         </div>
 
-        <table class="rl-date-picker__grid" role="grid" aria-labelledby="dp-month-year" data-dp="grid">
+        <table class="rlb-date-picker__grid" role="grid" aria-labelledby="dp-month-year" data-dp="grid">
           <thead>
             <tr>
               <th scope="col" abbr="Sunday">Su</th>

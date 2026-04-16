@@ -4,24 +4,24 @@ fieldset {
   padding: 0;
 }
 
-.rl-radio__option {
+.rlb-radio__option {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
   margin: 0.5rem 0;
 }
 
-.rl-radio__option input[type="radio"] {
+.rlb-radio__option input[type="radio"] {
   accent-color: var(--primary-color);
   margin-top: 0.25rem;
 }
 
-.rl-radio__option label {
+.rlb-radio__option label {
   display: block;
   font-weight: 600;
 }
 
-.rl-radio__hint {
+.rlb-radio__hint {
   display: block;
   font-size: 0.85rem;
   color: var(--text-color-subtle);

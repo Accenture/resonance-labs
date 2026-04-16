@@ -2,13 +2,13 @@
    Image Gallery Component
    =========================== */
 
-.rl-image-gallery {
+.rlb-image-gallery {
   max-width: 640px;
   margin: 0 auto;
 }
 
 /* --- Main image --- */
-.rl-image-gallery__main {
+.rlb-image-gallery__main {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -18,7 +18,7 @@
   margin-bottom: 16px;
 }
 
-.rl-image-gallery__main-image {
+.rlb-image-gallery__main-image {
   display: block;
   width: 100%;
   height: 100%;
@@ -26,7 +26,7 @@
 }
 
 /* --- Controls row (prev + thumbnails + next) --- */
-.rl-image-gallery__controls {
+.rlb-image-gallery__controls {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -34,7 +34,7 @@
 }
 
 /* --- Navigation buttons --- */
-.rl-image-gallery__nav {
+.rlb-image-gallery__nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -49,18 +49,18 @@
   transition: background-color 0.2s, border-color 0.2s;
 }
 
-.rl-image-gallery__nav:hover {
+.rlb-image-gallery__nav:hover {
   background-color: var(--gray-200);
   border-color: var(--primary-color-hover);
 }
 
-.rl-image-gallery__nav:focus-visible {
+.rlb-image-gallery__nav:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* --- Thumbnail strip --- */
-.rl-image-gallery__thumbnails {
+.rlb-image-gallery__thumbnails {
   display: flex;
   gap: 8px;
   list-style: none;
@@ -68,7 +68,7 @@
   padding: 0;
 }
 
-.rl-image-gallery__thumb {
+.rlb-image-gallery__thumb {
   display: block;
   width: 80px;
   height: 54px;
@@ -81,7 +81,7 @@
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.rl-image-gallery__thumb img {
+.rlb-image-gallery__thumb img {
   display: block;
   width: 100%;
   height: 100%;
@@ -89,28 +89,28 @@
 }
 
 /* Selected thumbnail */
-.rl-image-gallery__thumb[aria-current="true"] {
+.rlb-image-gallery__thumb[aria-current="true"] {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 2px var(--primary-color);
 }
 
 /* Focus indicator for thumbnails (3:1+ contrast) */
-.rl-image-gallery__thumb:focus-visible {
+.rlb-image-gallery__thumb:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Hover */
-.rl-image-gallery__thumb:hover {
+.rlb-image-gallery__thumb:hover {
   border-color: var(--border-color-input);
 }
 
-.rl-image-gallery__thumb[aria-current="true"]:hover {
+.rlb-image-gallery__thumb[aria-current="true"]:hover {
   border-color: var(--primary-color);
 }
 
 /* --- Image counter live region --- */
-.rl-image-gallery__counter {
+.rlb-image-gallery__counter {
   text-align: center;
   margin-top: 12px;
   font-size: 0.9rem;

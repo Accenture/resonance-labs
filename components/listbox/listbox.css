@@ -1,17 +1,17 @@
 /* ── Listbox component styles ── */
 
-.rl-listbox-demo {
+.rlb-listbox-demo {
   margin-bottom: 2rem;
 }
 
-.rl-listbox-description {
+.rlb-listbox-description {
   color: var(--text-color);
   font-size: var(--font-size-small);
   margin-bottom: 0.5rem;
 }
 
 /* Container */
-.rl-listbox {
+.rlb-listbox {
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
   max-height: 240px;
@@ -21,13 +21,13 @@
   max-width: 320px;
 }
 
-.rl-listbox:focus {
+.rlb-listbox:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Options */
-.rl-listbox__option {
+.rlb-listbox__option {
   position: relative;
   padding: 0.5rem 0.75rem 0.5rem 2.25rem;
   cursor: pointer;
@@ -38,7 +38,7 @@
   transition: background-color var(--transition-duration);
 }
 
-.rl-listbox__option::before {
+.rlb-listbox__option::before {
   content: "";
   position: absolute;
   left: 0.75rem;
@@ -49,19 +49,19 @@
 }
 
 /* Focused option */
-.rl-listbox__option.listbox__option--focused {
+.rlb-listbox__option.listbox__option--focused {
   outline: 2px solid var(--focus-color);
   outline-offset: -2px;
   background-color: var(--surface-muted);
 }
 
 /* Selected state: checkmark indicator (not color alone) */
-.rl-listbox__option[aria-selected="true"] {
+.rlb-listbox__option[aria-selected="true"] {
   background-color: var(--surface-muted);
   font-weight: 600;
 }
 
-.rl-listbox__option[aria-selected="true"]::before {
+.rlb-listbox__option[aria-selected="true"]::before {
   content: "\2713";
   font-size: 14px;
   font-weight: 700;
@@ -72,24 +72,24 @@
 }
 
 /* Combined focused + selected */
-.rl-listbox__option.listbox__option--focused[aria-selected="true"] {
+.rlb-listbox__option.listbox__option--focused[aria-selected="true"] {
   background-color: var(--surface-subtle);
   outline: 2px solid var(--focus-color);
   outline-offset: -2px;
 }
 
 /* Disabled option */
-.rl-listbox__option[aria-disabled="true"] {
+.rlb-listbox__option[aria-disabled="true"] {
   color: var(--text-color-faint);
   cursor: not-allowed;
   opacity: 0.6;
 }
 
 /* Hover (non-disabled only) */
-.rl-listbox__option:not([aria-disabled="true"]):hover {
+.rlb-listbox__option:not([aria-disabled="true"]):hover {
   background-color: var(--surface-muted);
 }
 
-.rl-listbox__option.listbox__option--focused:not([aria-disabled="true"]):hover {
+.rlb-listbox__option.listbox__option--focused:not([aria-disabled="true"]):hover {
   background-color: var(--surface-muted);
 }

@@ -1,13 +1,13 @@
 /* Star Rating Component Styles */
 
 /* Interactive Star Rating */
-.rl-star-rating {
+.rlb-star-rating {
   display: inline-flex;
   gap: 0.25rem;
   padding: 0.5rem 0;
 }
 
-.rl-star-rating__star {
+.rlb-star-rating__star {
   font-size: 2rem;
   cursor: pointer;
   line-height: 1;
@@ -19,63 +19,63 @@
   padding: 0.125rem;
 }
 
-.rl-star-rating__star:hover {
+.rlb-star-rating__star:hover {
   transform: scale(1.15);
 }
 
 /* Focus indicator - visible outline >= 3:1 */
-.rl-star-rating__star:focus {
+.rlb-star-rating__star:focus {
   outline: 3px solid var(--focus-color);
   outline-offset: 2px;
 }
 
 /* Filled star (selected) - uses filled shape distinct from empty */
-.rl-star-rating__star[aria-checked="true"] {
+.rlb-star-rating__star[aria-checked="true"] {
   color: var(--text-color-strong);
 }
 
 /* Change star character via content replacement for filled state */
-.rl-star-rating__star[aria-checked="true"]::after {
+.rlb-star-rating__star[aria-checked="true"]::after {
   content: "";
 }
 
-.rl-star-rating__status {
+.rlb-star-rating__status {
   font-size: 0.95rem;
   color: var(--text-color);
   margin-top: 0.25rem;
 }
 
 /* Read-Only Display */
-.rl-star-rating-display {
+.rlb-star-rating-display {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 0;
 }
 
-.rl-star-rating-display__text {
+.rlb-star-rating-display__text {
   font-size: 1rem;
   color: var(--primary-color-hover);
   font-weight: 600;
 }
 
-.rl-star-rating-display__stars {
+.rlb-star-rating-display__stars {
   display: inline-flex;
   gap: 0.125rem;
 }
 
-.rl-star-rating-display__star {
+.rlb-star-rating-display__star {
   font-size: 1.75rem;
   line-height: 1;
   color: var(--text-color-faint);
 }
 
-.rl-star-rating-display__star--filled {
+.rlb-star-rating-display__star--filled {
   color: var(--text-color-strong);
 }
 
 /* Half star uses a gradient clip to show partial fill */
-.rl-star-rating-display__star--half {
+.rlb-star-rating-display__star--half {
   background: linear-gradient(90deg, var(--text-color-strong) 50%, var(--text-color-faint) 50%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -84,12 +84,12 @@
 
 /* High contrast / forced-colors support */
 @media (forced-colors: active) {
-  .rl-star-rating__star[aria-checked="true"] {
+  .rlb-star-rating__star[aria-checked="true"] {
     forced-color-adjust: none;
     color: LinkText;
   }
 
-  .rl-star-rating__star:focus {
+  .rlb-star-rating__star:focus {
     outline: 3px solid Highlight;
   }
 }

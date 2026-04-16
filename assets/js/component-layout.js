@@ -203,14 +203,14 @@
 
   function buildComplianceSectionSkeleton() {
     var section = document.createElement('div');
-    section.className = 'section rl-compliance-snapshot';
+    section.className = 'section rlb-compliance-snapshot';
 
     var heading = document.createElement('h2');
     heading.textContent = 'Compliance';
     section.appendChild(heading);
 
     var content = document.createElement('div');
-    content.className = 'rl-compliance-snapshot__content';
+    content.className = 'rlb-compliance-snapshot__content';
     content.innerHTML = '<p>Loading compliance summary...</p>';
     section.appendChild(content);
 
@@ -227,7 +227,7 @@
     var main = document.querySelector('main');
     if (!main) return;
 
-    var existing = main.querySelector('.rl-compliance-snapshot');
+    var existing = main.querySelector('.rlb-compliance-snapshot');
     if (existing) return;
 
     var skeleton = buildComplianceSectionSkeleton();
@@ -262,7 +262,7 @@
         var notApplicable = countFor(manifest.notApplicable);
 
         content.innerHTML = '' +
-          '<table class="rl-compliance-snapshot__table">' +
+          '<table class="rlb-compliance-snapshot__table">' +
             '<thead><tr><th scope="col">Status</th><th scope="col">AC Count</th></tr></thead>' +
             '<tbody>' +
               '<tr><td>Passed</td><td>' + implemented + '</td></tr>' +
@@ -276,7 +276,7 @@
       .catch(function () {
         content.innerHTML = '' +
           '<p>Compliance summary is unavailable for this component.</p>' +
-          '<p class="rl-compliance-snapshot__meta">labs.manifest.json could not be loaded from this folder.</p>';
+          '<p class="rlb-compliance-snapshot__meta">labs.manifest.json could not be loaded from this folder.</p>';
       });
   }
 
