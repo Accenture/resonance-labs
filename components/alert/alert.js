@@ -9,25 +9,25 @@
   var alertTypes = [
     {
       type: 'info',
-      iconSrc: '../../assets/images/alert-information.svg',
+      iconSrc: '../../../assets/images/alert-information.svg',
       label: 'Info:',
       message: 'A new notification has arrived.'
     },
     {
       type: 'success',
-      iconSrc: '../../assets/images/alert-success.svg',
+      iconSrc: '../../../assets/images/alert-success.svg',
       label: 'Success:',
       message: 'Operation completed successfully.'
     },
     {
       type: 'warning',
-      iconSrc: '../../assets/images/alert-warning.svg',
+      iconSrc: '../../../assets/images/alert-warning.svg',
       label: 'Warning:',
       message: 'Please review before continuing.'
     },
     {
       type: 'error',
-      iconSrc: '../../assets/images/alert-error.svg',
+      iconSrc: '../../../assets/images/alert-error.svg',
       label: 'Error:',
       message: 'Something went wrong. Please retry.'
     }
@@ -62,7 +62,7 @@
     dismiss.className = 'rlb-alert__dismiss';
     dismiss.setAttribute('aria-label', 'Dismiss ' + config.type + ' alert');
     var closeImg = document.createElement('img');
-    closeImg.src = '../../assets/images/close.svg';
+    closeImg.src = '../../../assets/images/close.svg';
     closeImg.alt = '';
     closeImg.width = 16;
     closeImg.height = 16;

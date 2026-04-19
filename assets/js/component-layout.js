@@ -349,7 +349,7 @@
       prevLink.innerHTML =
         '<span class="comp-nav__label">Previous</span>' +
         '<span class="comp-nav__name">' +
-          '<img src="../../assets/images/chevron-left.svg" alt="" width="14" height="14" aria-hidden="true" />' +
+          '<img src="../../../assets/images/chevron-left.svg" alt="" width="14" height="14" aria-hidden="true" />' +
           prev.name +
         '</span>';
       prevEl.appendChild(prevLink);
@@ -366,7 +366,7 @@
         '<span class="comp-nav__label">Next</span>' +
         '<span class="comp-nav__name">' +
           next.name +
-          '<img src="../../assets/images/chevron-right.svg" alt="" width="14" height="14" aria-hidden="true" />' +
+          '<img src="../../../assets/images/chevron-right.svg" alt="" width="14" height="14" aria-hidden="true" />' +
         '</span>';
       nextEl.appendChild(nextLink);
     }
@@ -384,7 +384,7 @@
     var copyrightLine = footer.querySelector('p:last-of-type');
     if (!copyrightLine) return;
 
-    fetch('../../package.json')
+    fetch('../../../package.json')
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (pkg) {
         if (!pkg || !pkg.version) return;

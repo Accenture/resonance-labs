@@ -35,7 +35,7 @@
     dismiss.className = "rlb-toast__dismiss";
     dismiss.setAttribute("aria-label", "Dismiss notification");
     var closeImg = document.createElement("img");
-    closeImg.src = "../../assets/images/close.svg";
+    closeImg.src = "../../../assets/images/close.svg";
     closeImg.alt = "";
     closeImg.width = 16;
     closeImg.height = 16;
