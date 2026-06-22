@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,7 +29,43 @@
       <section>
         <h2>Demo</h2>
         <p>Activate the dropdown trigger button using a mouse click or by pressing <kbd>Enter</kbd> or <kbd>Space</kbd>. Once the menu is open, navigate between items with the <kbd>Down Arrow</kbd> and <kbd>Up Arrow</kbd> keys. Press <kbd>Home</kbd> to jump to the first item or <kbd>End</kbd> to jump to the last. Select an item with <kbd>Enter</kbd>, or dismiss the menu without selecting by pressing <kbd>Escape</kbd>.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="rlb-dropdown" data-dropdown>
+  <span id="drp-label" class="rlb-dropdown__label">Select a city</span>
+
+  <div class="rlb-dropdown__control">
+    <div
+      id="drp-trigger"
+      class="rlb-dropdown__trigger"
+      role="combobox"
+      aria-haspopup="listbox"
+      aria-labelledby="drp-label"
+      aria-controls="drp-listbox"
+      aria-expanded="false"
+      aria-activedescendant=""
+      tabindex="0"
+    >
+      <span class="rlb-dropdown__value" data-value>Select…</span>
+      <img class="rlb-dropdown__icon" src="/resonance-labs/assets/images/chevron-down.svg" alt="" width="20" height="20" aria-hidden="true" />
+    </div>
+
+    <ul
+      id="drp-listbox"
+      class="rlb-dropdown__listbox"
+      role="listbox"
+      aria-labelledby="drp-label"
+      hidden
+    >
+      <li id="opt-ott" role="option" class="rlb-dropdown__option" aria-selected="false">Ottawa</li>
+      <li id="opt-mon" role="option" class="rlb-dropdown__option" aria-selected="false">Montreal</li>
+      <li id="opt-tor" role="option" class="rlb-dropdown__option" aria-selected="false">Toronto</li>
+    </ul>
+  </div>
+
+  <p class="rlb-dropdown__help" id="drp-help">Use Arrow keys to move, Enter/Space to select, Escape to close.</p>
+</div>
+
+</div>
       </section>
 
       <section>
@@ -132,6 +167,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -140,18 +176,11 @@
       fetch("./dropdown.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./dropdown.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

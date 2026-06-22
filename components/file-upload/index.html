@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,65 @@
       <section>
         <h2>Demo</h2>
         <p>Use the upload control below to select one or more files. You can click the labeled button to open the native file browser, or drag files onto the drop zone. After selecting files, observe how the file list is updated and how status messages are communicated. Try removing a file from the list and notice how the change is announced. If validation errors occur — such as an unsupported file type — observe how the error is surfaced.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<!-- File Upload Component -->
+<div class="section">
+  <section class="rlb-file-upload-demo" data-file-upload-demo>
+    <div
+      class="rlb-file-upload-dropzone"
+      id="file-upload-dropzone"
+      role="region"
+      aria-label="File upload drop zone"
+    >
+      <div class="rlb-file-upload-dropzone__content">
+        <svg class="rlb-file-upload-dropzone__icon" width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <path d="M12 16V4m0 0L8 8m4-4l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 14v4a2 2 0 002 2h12a2 2 0 002-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="rlb-file-upload-dropzone__text">Drag and drop files here, or use the button below</p>
+        <label class="rlb-file-upload-label" for="file-upload-input">
+          <span class="rlb-file-upload-label__button">Choose Files</span>
+        </label>
+        <input
+          class="rlb-file-upload-input"
+          id="file-upload-input"
+          type="file"
+          multiple
+          accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg"
+          aria-label="Upload PDF, DOC, TXT, PNG, or JPG files, max 5 MB each"
+          aria-describedby="file-upload-constraints file-upload-error"
+        />
+        <p class="rlb-file-upload-constraints" id="file-upload-constraints">
+          Accepted formats: PDF, DOC, DOCX, TXT, PNG, JPG. Max 5 MB per file.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="rlb-file-upload-status"
+      id="file-upload-status"
+      aria-live="polite"
+      aria-atomic="true"
+      role="status"
+    ></div>
+
+    <p class="rlb-file-upload-error" id="file-upload-error" role="alert" aria-live="assertive"></p>
+
+    <div class="rlb-file-upload-list-wrapper">
+      <h3 class="rlb-file-upload-list__heading" id="file-upload-list-heading">
+        Uploaded Files (<span id="file-upload-count">0</span>)
+      </h3>
+      <ul
+        class="rlb-file-upload-list"
+        id="file-upload-list"
+        aria-labelledby="file-upload-list-heading"
+        role="list"
+      ></ul>
+    </div>
+  </section>
+</div>
+
+</div>
       </section>
 
       <section>
@@ -125,10 +182,11 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./file-upload.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./file-upload.js";document.body.appendChild(s)});
+      fetch("./file-upload.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./file-upload.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./file-upload.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

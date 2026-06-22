@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -27,7 +26,56 @@
       <section class="section">
         <h2>Demo</h2>
         <p>Tab into the size and color option groups below. Use the arrow keys to move between options within each group and press Space to select an option. Notice how the selected state and unavailable states are communicated as you navigate. Try toggling between groups with Tab to verify each group has a single tab stop.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<section aria-label="Product Variants">
+  <div class="rlb-variant-selector">
+
+    <!-- Size Group -->
+    <fieldset class="rlb-variant-selector__group">
+      <legend class="rlb-variant-selector__label">Size</legend>
+      <div class="rlb-variant-selector__options" role="radiogroup" aria-label="Size">
+        <span class="rlb-variant-selector__option" role="radio" aria-checked="false" tabindex="0" data-value="S">
+          S
+        </span>
+        <span class="rlb-variant-selector__option" role="radio" aria-checked="false" tabindex="-1" data-value="M">
+          M
+        </span>
+        <span class="rlb-variant-selector__option" role="radio" aria-checked="false" tabindex="-1" data-value="L">
+          L
+        </span>
+        <span class="rlb-variant-selector__option rlb-variant-selector__option--disabled" role="radio" aria-checked="false" aria-disabled="true" tabindex="-1" data-value="XL">
+          <span class="rlb-variant-selector__option-label">XL</span>
+          <span class="rlb-variant-selector__option-stock">Out of stock</span>
+        </span>
+      </div>
+    </fieldset>
+
+    <!-- Color Group -->
+    <fieldset class="rlb-variant-selector__group">
+      <legend class="rlb-variant-selector__label">Color</legend>
+      <div class="rlb-variant-selector__options" role="radiogroup" aria-label="Color">
+        <span class="rlb-variant-selector__option rlb-variant-selector__option--swatch" role="radio" aria-checked="false" tabindex="0" data-value="Black">
+          <span class="rlb-variant-selector__swatch" style="background-color: #1a1a1a;" aria-hidden="true"></span>
+          <span class="rlb-variant-selector__color-name">Black</span>
+        </span>
+        <span class="rlb-variant-selector__option rlb-variant-selector__option--swatch" role="radio" aria-checked="false" tabindex="-1" data-value="Blue">
+          <span class="rlb-variant-selector__swatch" style="background-color: #0b57d0;" aria-hidden="true"></span>
+          <span class="rlb-variant-selector__color-name">Blue</span>
+        </span>
+        <span class="rlb-variant-selector__option rlb-variant-selector__option--swatch rlb-variant-selector__option--disabled" role="radio" aria-checked="false" aria-disabled="true" tabindex="-1" data-value="Red">
+          <span class="rlb-variant-selector__swatch" style="background-color: #c5221f;" aria-hidden="true"></span>
+          <span class="rlb-variant-selector__color-name">Red</span>
+          <span class="rlb-variant-selector__option-stock">Out of stock</span>
+        </span>
+      </div>
+    </fieldset>
+
+  </div>
+
+  <div class="rlb-variant-selector__live-region" aria-live="polite" aria-atomic="true"></div>
+</section>
+
+</div>
       </section>
 
       <section class="section">
@@ -126,10 +174,11 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./variant-selector.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./variant-selector.js";document.body.appendChild(s)});
+      fetch("./variant-selector.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./variant-selector.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./variant-selector.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

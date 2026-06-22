@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,34 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Review both breadcrumb scenarios below. Tab through the links and observe how each is identified and announced. Notice how the current page item is distinguished from the preceding navigation links, and how the separator characters are handled by assistive technology.</p>
-        <div class="mount"></div>
+        <div class="demo-tabs" role="tablist" aria-label="Demo variants">
+  <button class="demo-tabs__tab demo-tabs__tab--active" role="tab" aria-selected="true" aria-controls="demo-variant-0">Link</button>
+  <button class="demo-tabs__tab" role="tab" aria-selected="false" aria-controls="demo-variant-1">No Link</button>
+</div>
+<div class="mount">
+<div id="demo-variant-0" role="tabpanel">
+<nav class="rlb-breadcrumb" aria-label="breadcrumb">
+  <ol class="rlb-breadcrumb__list">
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/home">Home</a></li>
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/products">Products</a></li>
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/products/electronics">Electronics</a></li>
+    <li class="rlb-breadcrumb__item"><span class="rlb-breadcrumb__current" aria-current="page">Cameras</span></li>
+  </ol>
+</nav>
+
+</div>
+<div id="demo-variant-1" role="tabpanel" hidden>
+<nav class="rlb-breadcrumb" aria-label="breadcrumb">
+  <ol class="rlb-breadcrumb__list">
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/home">Home</a></li>
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/products">Products</a></li>
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/products/electronics">Electronics</a></li>
+    <li class="rlb-breadcrumb__item rlb-breadcrumb__current" aria-current="page">Cameras</li>
+  </ol>
+</nav>
+
+</div>
+</div>
       </div>
 
       <div class="section">
@@ -144,35 +170,25 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
     <script>
-      var mounts = document.querySelectorAll(".mount");
-
       // Scenario 1: Current page as a link
-      fetch("./breadcrumbs-link.html")
+      fetch("./breadcrumbs--link.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          mounts[0].innerHTML = html;
-
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/g, "").trim();
           var codeHtml = document.getElementById("code-html-1");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS once
-          var s = document.createElement("script");
-          s.src = "./breadcrumbs.js";
-          document.body.appendChild(s);
         });
 
       // Scenario 2: Current page is NOT a link
-      fetch("./breadcrumbs-nolink.html")
+      fetch("./breadcrumbs--no-link.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          mounts[1].innerHTML = html;
-
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/g, "").trim();
           var codeHtml = document.getElementById("code-html-2");
           codeHtml.textContent = rawHtml;

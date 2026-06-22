@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -27,7 +26,89 @@
       <section class="section">
         <h2>Demo</h2>
         <p>Click or press Space/Enter on the wishlist button below to toggle it between saved and unsaved states. Observe how the visual appearance changes and, with a screen reader active, listen for the state announcement. Try both the icon-only and text variants and note how each communicates the button's current state without requiring mouse interaction.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<!-- Wishlist Button component -->
+<section class="rlb-wishlist-demo" aria-label="Wishlist button examples">
+  <h3>Icon-only variants</h3>
+  <div class="rlb-wishlist-demo__row">
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--icon"
+      type="button"
+      aria-pressed="false"
+      aria-label="Save Blue T-Shirt to wishlist"
+      data-product="Blue T-Shirt"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </button>
+
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--icon"
+      type="button"
+      aria-pressed="true"
+      aria-label="Remove Red Sneakers from wishlist"
+      data-product="Red Sneakers"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </button>
+
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--icon"
+      type="button"
+      aria-pressed="false"
+      aria-label="Save Green Jacket to wishlist"
+      data-product="Green Jacket"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <h3>Text variants</h3>
+  <div class="rlb-wishlist-demo__row">
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--text"
+      type="button"
+      aria-pressed="false"
+      data-product="Blue T-Shirt"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <span class="rlb-wishlist-btn__label">Save to wishlist</span>
+    </button>
+
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--text"
+      type="button"
+      aria-pressed="true"
+      data-product="Red Sneakers"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <span class="rlb-wishlist-btn__label">Saved to wishlist</span>
+    </button>
+
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--text"
+      type="button"
+      aria-pressed="false"
+      data-product="Green Jacket"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <span class="rlb-wishlist-btn__label">Save to wishlist</span>
+    </button>
+  </div>
+</section>
+
+</div>
       </section>
 
       <section class="section">
@@ -126,6 +207,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -134,18 +216,11 @@
       fetch("./wishlist-button.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./wishlist-button.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

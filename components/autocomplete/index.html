@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,48 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Type into the input field to see matching suggestions appear. Use the Down Arrow key to move into the list and navigate options. Press Enter to select an option or Escape to dismiss the suggestion list and return focus to the input.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="rlb-autocomplete-container">
+  <label for="autocomplete">Search for a country:</label>
+  <input
+    type="text"
+    id="autocomplete"
+    name="autocomplete"
+    role="combobox"
+    aria-autocomplete="list"
+    aria-expanded="false"
+    aria-controls="autocompleteList"
+    aria-activedescendant=""
+    placeholder="Start typing a country"
+  />
+
+  <ul
+    id="autocompleteList"
+    role="listbox"
+    class="rlb-autocomplete-suggestions"
+    hidden
+  >
+    <li id="option-af" role="option">Afghanistan</li>
+    <li id="option-al" role="option">Albania</li>
+    <li id="option-dz" role="option">Algeria</li>
+    <li id="option-as" role="option">American Samoa</li>
+    <li id="option-ad" role="option">Andorra</li>
+    <li id="option-ao" role="option">Angola</li>
+  </ul>
+  <div id="no-results" role="status" hidden>
+    No results found
+  </div>
+</div>
+
+<!-- Live region for SR announcements -->
+<div
+  id="autocompleteStatus"
+  class="rlb-visually-hidden"
+  role="status"
+  aria-live="polite"
+></div>
+
+</div>
       </div>
 
       <div class="section">
@@ -120,6 +160,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -128,18 +169,11 @@
       fetch("./autocomplete.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./autocomplete.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

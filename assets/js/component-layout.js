@@ -193,7 +193,18 @@
     return nav;
   }
 
-  // ── Component folder from URL ─────────────────────────────────────────────
+  // ── Base path and component folder from URL ───────────────────────────────
+
+  // Derives the site root prefix from the current URL so asset paths work
+  // whether the site is served from / (local) or /resonance-labs/ (GitHub Pages).
+  function getBasePath() {
+    var parts = window.location.pathname.split('/').filter(Boolean);
+    var compIdx = parts.indexOf('components');
+    var prefix = compIdx > 0 ? '/' + parts.slice(0, compIdx).join('/') : '';
+    return prefix;
+  }
+
+  var BASE = getBasePath();
 
   function getComponentFolder() {
     var parts = window.location.pathname.split('/').filter(Boolean);
@@ -349,7 +360,7 @@
       prevLink.innerHTML =
         '<span class="comp-nav__label">Previous</span>' +
         '<span class="comp-nav__name">' +
-          '<img src="../../../assets/images/chevron-left.svg" alt="" width="14" height="14" aria-hidden="true" />' +
+          '<img src="' + BASE + '/assets/images/chevron-left.svg" alt="" width="14" height="14" aria-hidden="true" />' +
           prev.name +
         '</span>';
       prevEl.appendChild(prevLink);
@@ -366,7 +377,7 @@
         '<span class="comp-nav__label">Next</span>' +
         '<span class="comp-nav__name">' +
           next.name +
-          '<img src="../../../assets/images/chevron-right.svg" alt="" width="14" height="14" aria-hidden="true" />' +
+          '<img src="' + BASE + '/assets/images/chevron-right.svg" alt="" width="14" height="14" aria-hidden="true" />' +
         '</span>';
       nextEl.appendChild(nextLink);
     }
@@ -384,7 +395,7 @@
     var copyrightLine = footer.querySelector('p:last-of-type');
     if (!copyrightLine) return;
 
-    fetch('../../../package.json')
+    fetch(BASE + '/package.json')
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (pkg) {
         if (!pkg || !pkg.version) return;
@@ -405,6 +416,41 @@
       });
   }
 
+  // ── Component script loader ──────────────────────────────────────────────────
+
+  // Component HTML is inlined at build time; only the JS needs to load at runtime.
+  function loadComponentScript(folder) {
+    if (!folder) return;
+    var s = document.createElement('script');
+    s.src = './' + folder + '.js';
+    document.body.appendChild(s);
+  }
+
+  // ── Demo variant tab switcher ────────────────────────────────────────────────
+
+  // Wires up keyboard-accessible tab switching for multi-variant demo areas.
+  // The tab structure is injected into .mount by build-site.mjs at build time.
+  function initDemoVariantTabs() {
+    var tabBars = document.querySelectorAll('.demo-tabs');
+    tabBars.forEach(function (bar) {
+      var tabs = bar.querySelectorAll('[role="tab"]');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) {
+            t.classList.remove('demo-tabs__tab--active');
+            t.setAttribute('aria-selected', 'false');
+            var panel = document.getElementById(t.getAttribute('aria-controls'));
+            if (panel) panel.hidden = true;
+          });
+          tab.classList.add('demo-tabs__tab--active');
+          tab.setAttribute('aria-selected', 'true');
+          var activePanel = document.getElementById(tab.getAttribute('aria-controls'));
+          if (activePanel) activePanel.hidden = false;
+        });
+      });
+    });
+  }
+
   // ── Init ─────────────────────────────────────────────────────────────────────
 
   function init() {
@@ -418,6 +464,8 @@
     removeReferenceSection();
     injectGithubButtons(folder);
     insertComplianceSnapshot(folder);
+    loadComponentScript(folder);
+    initDemoVariantTabs();
 
     var layout = document.createElement('div');
     layout.className = 'page-layout';

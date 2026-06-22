@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,7 +29,36 @@
       <section>
         <h2>Demo</h2>
         <p>Click or tab into the input field and start typing to filter the list of options. Use the <kbd>Down Arrow</kbd> key to move into the suggestion list, <kbd>Up</kbd> and <kbd>Down</kbd> to navigate between options, <kbd>Enter</kbd> to select one, and <kbd>Escape</kbd> to dismiss the list and return focus to the input.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<section>
+  <label id="cbx-label" for="cbx-input">City</label>
+  <div class="rlb-combobox-wrapper">
+    <input
+      id="cbx-input"
+      class="rlb-combobox"
+      type="text"
+      role="combobox"
+      aria-haspopup="listbox"
+      aria-labelledby="cbx-label"
+      aria-controls="cbx-listbox"
+      aria-expanded="false"
+      aria-describedby="cbx-hint"
+      autocomplete="off"
+      data-cbx="input"
+    />
+    <div
+      id="cbx-listbox"
+      class="rlb-listbox"
+      role="listbox"
+      aria-labelledby="cbx-label"
+      hidden
+      data-cbx="listbox"
+    ></div>
+  </div>
+  <div class="rlb-hint" id="cbx-hint" data-cbx="hint">Type to filter, or press Arrow Down to open.</div>
+</section>
+
+</div>
       </section>
 
       <section>
@@ -132,6 +160,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -140,18 +169,11 @@
       fetch("./combobox.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./combobox.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

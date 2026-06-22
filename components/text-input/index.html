@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header><a href="/resonance-labs/index.html" class="back-link"><img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" /></a></header>
@@ -23,7 +22,87 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Tab to each input field and type to enter text. Observe how the label remains visible above the field at all times. Trigger a validation error by submitting or leaving a required field empty, and listen for how a screen reader announces the error message in relation to the input.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<script type="application/json" id="component-manifest">
+{
+  "component": "Text Input",
+  "version": "1.0.0",
+  "artifact": "example-web",
+  "provenance": {
+    "ac": "components/text-input/text-input.md",
+    "tc": "components/text-input/text-input.tc.md",
+    "how": "components/text-input/text-input.how.md",
+    "qa": "components/text-input/text-input.qa.md"
+  },
+  "signals_vocabulary": ["DOM", "AX_TREE", "VISUAL", "SR", "INPUT"],
+  "mappings": {
+    "ac": [
+      "AC-TXT-SEM-INP-01","AC-TXT-SEM-INP-02","AC-TXT-SEM-INP-03","AC-TXT-SEM-INP-04",
+      "AC-TXT-KB-INP-05","AC-TXT-VIS-INP-06","AC-TXT-VIS-INP-07","AC-TXT-VIS-INP-08",
+      "AC-TXT-SEM-HLP-01","AC-TXT-STA-REQ-01","AC-TXT-VIS-REQ-02",
+      "AC-TXT-STA-ERR-01","AC-TXT-SEM-ERR-02","AC-TXT-VIS-ERR-03","AC-TXT-KB-ERR-04",
+      "AC-TXT-SEM-PH-01"
+    ]
+  }
+}
+</script>
+
+<form
+  class="rlb-text-input-form"
+  id="example-text-input-form"
+  data-component="text-input"
+  data-acc-role="form"
+  data-acc-id="text-input-form-1"
+  novalidate
+>
+  <div class="rlb-text-input" data-acc-role="field" data-acc-id="field-1">
+    <label for="username" class="rlb-text-input__label" data-acc-role="label" data-acc-id="label-1">
+      Username <span class="rlb-text-input__required" aria-hidden="true">*</span>
+    </label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      class="rlb-text-input__input"
+      required
+      aria-describedby="username-hint"
+      data-acc-role="input"
+      data-acc-id="input-1"
+    />
+    <span id="username-hint" class="rlb-text-input__hint" data-acc-role="hint" data-acc-id="hint-1">
+      Must be 6–20 characters long.
+    </span>
+    <span id="username-error" class="rlb-text-input__error" hidden data-acc-role="error" data-acc-id="error-1">
+      Please enter a valid username.
+    </span>
+  </div>
+
+  <div class="rlb-text-input" data-acc-role="field" data-acc-id="field-2">
+    <label for="email" class="rlb-text-input__label" data-acc-role="label" data-acc-id="label-2">
+      Email
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="rlb-text-input__input"
+      aria-describedby="email-hint"
+      placeholder="you@example.com"
+      data-acc-role="input"
+      data-acc-id="input-2"
+    />
+    <span id="email-hint" class="rlb-text-input__hint" data-acc-role="hint" data-acc-id="hint-2">
+      We'll never share your email.
+    </span>
+    <span id="email-error" class="rlb-text-input__error" hidden data-acc-role="error" data-acc-id="error-2">
+      Please enter a valid email address.
+    </span>
+  </div>
+
+  <button type="submit" class="rlb-text-input__submit">Submit</button>
+</form>
+
+</div>
       </div>
 
       <div class="section">
@@ -117,6 +196,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
@@ -124,18 +204,11 @@
       fetch("./text-input.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/g, "").replace(/<script type="application\/json"[\s\S]*?<\/script>\n*/g, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./text-input.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

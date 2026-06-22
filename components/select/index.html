@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -31,7 +30,19 @@
       <section class="section">
         <h2>Demo</h2>
         <p>Tab to the select control and press Space or Enter to open the option list. Use the arrow keys to move through options and press Enter or Space to confirm a selection. Verify that both the field label and the chosen option are announced by a screen reader.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<section class="rlb-select-demo">
+  <label for="select-select">Select an option</label>
+  <div class="rlb-select-wrapper">
+    <select id="select-select" name="select-departments">
+      <option value="appliances">Appliances</option>
+      <option value="cooking">Cooking</option>
+      <option value="dishwashers">Dishwashers</option>
+    </select>
+  </div>
+</section>
+
+</div>
       </section>
 
       <section class="section">
@@ -135,6 +146,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -143,18 +155,11 @@
       fetch("./select.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./select.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

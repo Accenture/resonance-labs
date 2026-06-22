@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,50 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Review the avatar variants shown below. Observe how each is labelled, how the fallback displays when an image is unavailable, and whether an avatar used purely for decoration communicates anything to assistive technology.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="section">
+  <section class="rlb-avatar-demo" data-avatar-demo>
+    <h3>Avatar with adjacent name (decorative image)</h3>
+    <div class="rlb-avatar-row">
+      <div class="rlb-avatar rlb-avatar--md">
+        <img src="https://i.pravatar.cc/96?img=12" alt="" class="rlb-avatar__image" />
+      </div>
+      <span class="rlb-avatar-name">Maria Johnson</span>
+    </div>
+
+    <h3>Standalone avatar (informative image)</h3>
+    <div class="rlb-avatar-row">
+      <div class="rlb-avatar rlb-avatar--md">
+        <img src="https://i.pravatar.cc/96?img=32" alt="Alex Chen" class="rlb-avatar__image" />
+      </div>
+    </div>
+
+    <h3>Initials fallback</h3>
+    <div class="rlb-avatar-row">
+      <div class="rlb-avatar rlb-avatar--sm" aria-label="Tanya Rivera">
+        <span class="rlb-avatar__initials" aria-hidden="true">TR</span>
+      </div>
+      <div class="rlb-avatar rlb-avatar--md" aria-label="David Kim">
+        <span class="rlb-avatar__initials" aria-hidden="true">DK</span>
+      </div>
+      <div class="rlb-avatar rlb-avatar--lg" aria-label="Priya Gupta">
+        <span class="rlb-avatar__initials" aria-hidden="true">PG</span>
+      </div>
+    </div>
+
+    <h3>Avatar inside a link</h3>
+    <div class="rlb-avatar-row">
+      <a href="#profile" class="rlb-avatar-link">
+        <div class="rlb-avatar rlb-avatar--md">
+          <img src="https://i.pravatar.cc/96?img=47" alt="" role="presentation" class="rlb-avatar__image" />
+        </div>
+        <span>Sam Brooks</span>
+      </a>
+    </div>
+  </section>
+</div>
+
+</div>
       </div>
 
       <div class="section">
@@ -105,10 +147,11 @@
       </div>
     </main>
     <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./avatar.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./avatar.js";document.body.appendChild(s)});
+      fetch("./avatar.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./avatar.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./avatar.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

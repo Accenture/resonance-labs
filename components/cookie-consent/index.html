@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,90 @@
       <section>
         <h2>Demo</h2>
         <p>Review the cookie consent banner below. Use <kbd>Tab</kbd> to move between the preference toggles and action buttons. Toggle individual cookie categories on or off, then use the primary action buttons to accept, reject, or save your preferences. Notice how the banner communicates its purpose and all controls are reachable without a mouse.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<!-- Cookie Consent Component Demo -->
+<div class="section">
+  <section class="rlb-cookie-consent-demo" data-cookie-consent-demo>
+    <p class="rlb-cookie-consent-demo__trigger-text">
+      <button class="rlb-cookie-consent-demo__reset-btn" type="button" id="cookie-reset-btn">Reset Cookie Preferences</button>
+    </p>
+
+    <div
+      class="rlb-cookie-banner"
+      role="dialog"
+      aria-labelledby="cookie-banner-title"
+      aria-describedby="cookie-banner-desc"
+      id="cookie-banner"
+    >
+      <div class="rlb-cookie-banner__content">
+        <h3 class="rlb-cookie-banner__title" id="cookie-banner-title">We value your privacy</h3>
+        <p class="rlb-cookie-banner__description" id="cookie-banner-desc">
+          We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic.
+          Please choose your cookie preferences below.
+          <a href="https://example.com/cookie-policy" class="rlb-cookie-banner__link" aria-label="Read our full cookie policy">Cookie Policy</a>
+        </p>
+        <div class="rlb-cookie-banner__actions">
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--accept" type="button" id="cookie-accept-btn">Accept All</button>
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--reject" type="button" id="cookie-reject-btn">Reject All</button>
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--preferences" type="button" id="cookie-preferences-btn">Manage Preferences</button>
+        </div>
+      </div>
+
+      <div class="rlb-cookie-preferences" id="cookie-preferences-panel" hidden>
+        <h4 class="rlb-cookie-preferences__title">Cookie Preferences</h4>
+        <fieldset class="rlb-cookie-preferences__group">
+          <legend class="rlb-cookie-preferences__legend">Select which cookies you allow</legend>
+
+          <div class="rlb-cookie-preferences__category">
+            <label class="rlb-cookie-preferences__label">
+              <input
+                type="checkbox"
+                class="rlb-cookie-preferences__checkbox"
+                name="essential"
+                checked
+                disabled
+              />
+              <span class="rlb-cookie-preferences__label-text">Essential Cookies</span>
+            </label>
+            <p class="rlb-cookie-preferences__explanation">Required for the website to function. These cannot be disabled.</p>
+          </div>
+
+          <div class="rlb-cookie-preferences__category">
+            <label class="rlb-cookie-preferences__label">
+              <input
+                type="checkbox"
+                class="rlb-cookie-preferences__checkbox"
+                name="analytics"
+                id="cookie-analytics"
+              />
+              <span class="rlb-cookie-preferences__label-text">Analytics Cookies</span>
+            </label>
+            <p class="rlb-cookie-preferences__explanation">Help us understand how visitors interact with our website.</p>
+          </div>
+
+          <div class="rlb-cookie-preferences__category">
+            <label class="rlb-cookie-preferences__label">
+              <input
+                type="checkbox"
+                class="rlb-cookie-preferences__checkbox"
+                name="marketing"
+                id="cookie-marketing"
+              />
+              <span class="rlb-cookie-preferences__label-text">Marketing Cookies</span>
+            </label>
+            <p class="rlb-cookie-preferences__explanation">Used to deliver relevant advertisements and track campaign performance.</p>
+          </div>
+        </fieldset>
+
+        <div class="rlb-cookie-preferences__actions">
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--save" type="button" id="cookie-save-btn">Save Preferences</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</div>
       </section>
 
       <section>
@@ -124,10 +206,11 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./cookie-consent.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./cookie-consent.js";document.body.appendChild(s)});
+      fetch("./cookie-consent.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./cookie-consent.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./cookie-consent.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

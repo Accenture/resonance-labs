@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,24 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Tab to the card and activate it with Enter. Observe that a single link is reachable per card, that the link's accessible name reflects the card's content, and that no other interactive elements inside the card interrupt the tab order unexpectedly.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="rlb-card" data-card data-href="#destination">
+  <a class="rlb-card__link" href="#destination" aria-labelledby="card-cta-1 card_heading_1"></a>
+  <img class="rlb-card__image" src="/resonance-labs/assets/images/cards/card.svg" alt="" />
+  <div class="rlb-card__body">
+    <span class="rlb-card__badge">Featured</span>
+    <h3 class="rlb-card__title" id="card_heading_1">Building an export plan</h3>
+    <p class="rlb-card__desc">New to international trade? Explore the basics with Exporting 101 and start building your plan today.</p>
+    <ul class="rlb-card__features">
+      <li>Step-by-step guidance</li>
+      <li>Market research tools</li>
+      <li>Free consultation included</li>
+    </ul>
+    <span class="rlb-card__cta" id="card-cta-1" aria-hidden="true">Learn more &rarr;</span>
+  </div>
+</div>
+
+</div>
       </div>
 
       <div class="section">
@@ -119,6 +135,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -127,18 +144,11 @@
       fetch("./card.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./card.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

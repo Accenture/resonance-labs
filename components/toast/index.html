@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header><a href="/resonance-labs/index.html" class="back-link"><img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" /></a></header>
@@ -17,7 +16,48 @@
       <div class="section">
         <h1>Toast</h1>
         <p class="component-tagline">Toast notifications provide brief, non-intrusive feedback about an operation or event. They appear temporarily and auto-dismiss after a set duration. Toasts never steal focus, pause their timer on hover or keyboard focus, and queue sequentially when multiple notifications fire at once.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="section">
+  <section class="rlb-toast-demo" data-toast-demo>
+    <div class="rlb-toast-demo__controls">
+      <button
+        id="toast-success-btn"
+        type="button"
+        class="rlb-toast-trigger rlb-toast-trigger--success"
+        data-toast-type="success"
+      >
+        Show Success Toast
+      </button>
+      <button
+        id="toast-info-btn"
+        type="button"
+        class="rlb-toast-trigger rlb-toast-trigger--info"
+        data-toast-type="info"
+      >
+        Show Info Toast
+      </button>
+      <button
+        id="toast-warning-btn"
+        type="button"
+        class="rlb-toast-trigger rlb-toast-trigger--warning"
+        data-toast-type="warning"
+      >
+        Show Warning Toast
+      </button>
+    </div>
+
+    <!-- Live region container — must exist in DOM before toasts fire -->
+    <div
+      id="toast-region"
+      role="status"
+      aria-live="polite"
+      aria-relevant="additions"
+      class="rlb-toast-region"
+    ></div>
+  </section>
+</div>
+
+</div>
       </div>
       <div class="section">
         <h2>Code</h2>
@@ -36,10 +76,11 @@
       </div>
     </main>
     <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./toast.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./toast.js";document.body.appendChild(s)});
+      fetch("./toast.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./toast.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./toast.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

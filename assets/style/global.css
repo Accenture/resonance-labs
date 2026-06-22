@@ -414,6 +414,54 @@ main > section:has(.mount) {
   min-width: min(375px, 100%);
 }
 
+/* Demo variant tabs — sit above the .mount canvas, outside the bordered area */
+.demo-tabs {
+  display: flex;
+  gap: 0;
+  margin-top: 1rem;
+}
+
+.demo-tabs + .mount {
+  margin-top: 0;
+  border-top-left-radius: 0;
+}
+
+.demo-tabs__tab {
+  font-size: var(--font-size-small);
+  padding: 0.5rem 1.25rem 0.5rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  color: var(--text-color-subtle);
+  transition: color var(--transition-duration), border-color var(--transition-duration);
+}
+
+.demo-tabs__tab + .demo-tabs__tab {
+  padding-left: 1.25rem;
+}
+
+.demo-tabs__tab:hover {
+  color: var(--text-color-strong);
+}
+
+.demo-tabs__tab--active {
+  color: var(--text-color-strong);
+  border-bottom-color: var(--text-color-strong);
+  font-weight: var(--font-weight-semibold);
+}
+
+.mount > [role="tabpanel"] {
+  width: 100%;
+  min-width: unset;
+  display: flex;
+  justify-content: center;
+}
+
+.mount > [role="tabpanel"][hidden] {
+  display: none;
+}
+
 footer {
   margin: 1rem 0;
   padding: 1rem 0;

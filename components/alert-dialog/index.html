@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,52 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Activate the trigger button to open the alert dialog. Use Tab to move between the dialog's action buttons. Press Escape or activate a button to close it. Notice that focus is trapped inside the dialog while it is open.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="section">
+  <section class="rlb-alert-dialog-demo" data-alert-dialog-demo>
+    <button
+      type="button"
+      class="rlb-alert-dialog-trigger"
+      id="alert-dialog-trigger"
+      aria-haspopup="dialog"
+      aria-controls="alert-dialog"
+    >
+      Delete Item
+    </button>
+
+    <div
+      id="alert-dialog-overlay"
+      class="rlb-alert-dialog-overlay"
+      hidden
+    >
+      <div
+        id="alert-dialog"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-desc"
+        class="rlb-alert-dialog-panel"
+      >
+        <h2 id="alert-dialog-title">Delete this item?</h2>
+        <p id="alert-dialog-desc">
+          This action is permanent and cannot be undone. All associated data will be removed immediately.
+        </p>
+        <div class="rlb-alert-dialog-actions">
+          <button type="button" class="rlb-alert-dialog-btn rlb-alert-dialog-btn--cancel" data-alert-cancel>
+            Cancel
+          </button>
+          <button type="button" class="rlb-alert-dialog-btn rlb-alert-dialog-btn--confirm" data-alert-confirm>
+            Confirm Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <p class="rlb-alert-dialog-status" id="alert-dialog-status" aria-live="polite"></p>
+  </section>
+</div>
+
+</div>
       </div>
 
       <div class="section">
@@ -107,10 +151,11 @@
       </div>
     </main>
     <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./alert-dialog.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./alert-dialog.js";document.body.appendChild(s)});
+      fetch("./alert-dialog.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./alert-dialog.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./alert-dialog.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

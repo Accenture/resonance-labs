@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,36 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Tab to reach each badge's remove button and press Enter or Space to dismiss it. Observe how the button's accessible name identifies which badge will be removed, and how screen readers announce the change when a badge is dismissed.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="rlb-badge-group" role="group" aria-label="Active filters">
+  <div class="rlb-badge" data-badge="javascript">
+    <span class="rlb-badge__label">JavaScript</span>
+    <button type="button" class="rlb-badge__remove" aria-label="Remove JavaScript">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="rlb-badge" data-badge="react">
+    <span class="rlb-badge__label">React</span>
+    <button type="button" class="rlb-badge__remove" aria-label="Remove React">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="rlb-badge" data-badge="nodejs">
+    <span class="rlb-badge__label">Node.js</span>
+    <button type="button" class="rlb-badge__remove" aria-label="Remove Node.js">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="rlb-badge" data-badge="typescript">
+    <span class="rlb-badge__label">TypeScript</span>
+    <button type="button" class="rlb-badge__remove" aria-label="Remove TypeScript">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+<div id="badge-live" class="rlb-sr-only" aria-live="polite"></div>
+
+</div>
       </div>
 
       <div class="section">
@@ -118,6 +146,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -125,14 +154,10 @@
       fetch("./badge.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-          var s = document.createElement("script");
-          s.src = "./badge.js";
-          document.body.appendChild(s);
         });
 
       fetch("./badge.css")

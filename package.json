@@ -1,0 +1,25 @@
+{
+  "name": "@orchestra/resonance-labs-core",
+  "version": "1.0.0",
+  "description": "resonance labs internal source — compliance validation, site build, and public export pipeline",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node scripts/sync-compliance.mjs",
+    "build:site": "node scripts/build-site.mjs",
+    "build:public": "node scripts/export-public.mjs",
+    "build": "npm run validate && npm run build:site && npm run build:public",
+    "dev": "node scripts/dev.mjs",
+    "preview": "npm run build:site && DIST=dist-site PREVIEW=1 node scripts/dev.mjs",
+    "preview:ghpages": "npm run build && mkdir -p /tmp/ghpages/resonance-labs && cp -r dist-public/. /tmp/ghpages/resonance-labs/ && DIST=/tmp/ghpages BASE=/resonance-labs PREVIEW=1 node scripts/dev.mjs",
+    "clean": "rm -rf dist-site dist-public"
+  },
+  "dependencies": {
+    "@orchestra/resonance-specs": "file:./orchestra-resonance-specs-1.0.0.tgz"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

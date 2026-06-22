@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,7 +29,18 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Tab to the password field and type a value. Tab to the show/hide button and press Enter or Space to toggle visibility. Observe how the input type and button label change with each activation.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="rlb-field">
+  <label for="password-input-toggle-password">Password <span aria-hidden="true">*</span></label>
+  <div class="rlb-pw">
+    <input id="password-input-toggle-password" name="password" type="password" required aria-describedby="password-input-toggle-help" />
+    <button type="button" id="password-input-toggle-toggle" class="rlb-pw__toggle" aria-pressed="false" aria-label="Show password">Show</button>
+  </div>
+  <p id="password-input-toggle-help" class="rlb-help">Required</p>
+  <div id="password-input-toggle-live" class="rlb-sr-only" aria-live="polite"></div>
+</div>
+
+</div>
       </div>
 
       <div class="section">
@@ -130,6 +140,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -138,18 +149,11 @@
       fetch("./password-input-toggle.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./password-input-toggle.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

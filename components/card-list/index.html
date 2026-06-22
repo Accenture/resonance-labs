@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,61 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Tab through the card list and observe that each card contributes exactly one stop to the tab order. Notice how the list structure communicates the number of items to screen reader users, and how each card's link is labeled distinctly from the others.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<section class="rlb-card-list" aria-labelledby="cl-heading" data-card-list>
+  <h2 id="cl-heading" class="rlb-card-list__heading">Recommended for you</h2>
+
+  <ul class="rlb-card-list__items" data-items>
+    <li class="rlb-card" data-card>
+      <a class="rlb-card__link" href="#" aria-labelledby="cl-cta-1 cl-title-1"></a>
+      <img class="rlb-card__image" src="/resonance-labs/assets/images/cards/card.svg" alt="" />
+      <div class="rlb-card__body">
+        <span class="rlb-card__badge">Popular</span>
+        <h3 class="rlb-card__title" id="cl-title-1">Getting started with exports</h3>
+        <p class="rlb-card__desc">A beginner-friendly guide to international trade, covering regulations, logistics, and market entry strategies.</p>
+        <ul class="rlb-card__features">
+          <li>Step-by-step walkthrough</li>
+          <li>Compliance checklist</li>
+          <li>Free starter toolkit</li>
+        </ul>
+        <span class="rlb-card__cta" id="cl-cta-1" aria-hidden="true">Learn more &rarr;</span>
+      </div>
+    </li>
+
+    <li class="rlb-card" data-card>
+      <a class="rlb-card__link" href="#" aria-labelledby="cl-cta-2 cl-title-2"></a>
+      <img class="rlb-card__image" src="/resonance-labs/assets/images/cards/card.svg" alt="" />
+      <div class="rlb-card__body">
+        <h3 class="rlb-card__title" id="cl-title-2">Market research essentials</h3>
+        <p class="rlb-card__desc">Learn how to identify target markets, analyze competitors, and validate demand before expanding abroad.</p>
+        <ul class="rlb-card__features">
+          <li>Industry benchmarks</li>
+          <li>Competitor analysis tools</li>
+          <li>Demand validation framework</li>
+        </ul>
+        <span class="rlb-card__cta" id="cl-cta-2" aria-hidden="true">Learn more &rarr;</span>
+      </div>
+    </li>
+
+    <li class="rlb-card" data-card>
+      <a class="rlb-card__link" href="#" aria-labelledby="cl-cta-3 cl-title-3"></a>
+      <img class="rlb-card__image" src="/resonance-labs/assets/images/cards/card.svg" alt="" />
+      <div class="rlb-card__body">
+        <span class="rlb-card__badge">New</span>
+        <h3 class="rlb-card__title" id="cl-title-3">Financing your growth</h3>
+        <p class="rlb-card__desc">Explore funding options, government grants, and financial planning strategies to scale your business internationally.</p>
+        <ul class="rlb-card__features">
+          <li>Grant eligibility checker</li>
+          <li>Loan comparison tool</li>
+          <li>Financial planning templates</li>
+        </ul>
+        <span class="rlb-card__cta" id="cl-cta-3" aria-hidden="true">Learn more &rarr;</span>
+      </div>
+    </li>
+  </ul>
+</section>
+
+</div>
       </div>
 
       <div class="section">
@@ -120,6 +173,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -128,18 +182,11 @@
       fetch("./card-list.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./card-list.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -31,7 +30,18 @@
       <section class="section">
         <h2>Demo</h2>
         <p>Type a query into the search field and observe how the clear button appears. Try activating the clear button with a keyboard. Check that the field's purpose is announced by a screen reader when it receives focus, and that submitting with Enter triggers the search action.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<form class="rlb-search" role="search" aria-label="Site">
+  <label for="search-input-q">Search</label>
+  <div class="rlb-search__row">
+    <input id="search-input-q" name="q" type="search" />
+    <button type="submit" class="rlb-search__btn">Search</button>
+    <button type="button" class="rlb-search__clear" aria-label="Clear search">Clear</button>
+  </div>
+  <p id="search-input-live" class="rlb-sr-only" aria-live="polite"></p>
+</form>
+
+</div>
       </section>
 
       <section class="section">
@@ -135,6 +145,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -143,18 +154,11 @@
       fetch("./search-input.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./search-input.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

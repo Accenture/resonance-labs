@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -27,7 +26,74 @@
       <section class="section">
         <h2>Demo</h2>
         <p>The demo below includes both a read-only rating display and an interactive rating input. For the read-only variant, use a screen reader and navigate to it to hear how the score and total are announced without any visual dependency. For the interactive variant, Tab to it and use arrow keys to move through star options, then press Space or Enter to select a rating.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<!-- Star Rating Component Demo -->
+<div class="section">
+  <section class="rlb-star-rating-demo" data-star-rating-demo>
+    <h2>Interactive Star Rating</h2>
+    <div
+      class="rlb-star-rating"
+      role="radiogroup"
+      aria-label="Rate this product"
+    >
+      <span
+        class="rlb-star-rating__star"
+        role="radio"
+        aria-checked="false"
+        aria-label="1 star"
+        tabindex="0"
+        data-value="1"
+      >&#9734;</span>
+      <span
+        class="rlb-star-rating__star"
+        role="radio"
+        aria-checked="false"
+        aria-label="2 stars"
+        tabindex="-1"
+        data-value="2"
+      >&#9734;</span>
+      <span
+        class="rlb-star-rating__star"
+        role="radio"
+        aria-checked="false"
+        aria-label="3 stars"
+        tabindex="-1"
+        data-value="3"
+      >&#9734;</span>
+      <span
+        class="rlb-star-rating__star"
+        role="radio"
+        aria-checked="false"
+        aria-label="4 stars"
+        tabindex="-1"
+        data-value="4"
+      >&#9734;</span>
+      <span
+        class="rlb-star-rating__star"
+        role="radio"
+        aria-checked="false"
+        aria-label="5 stars"
+        tabindex="-1"
+        data-value="5"
+      >&#9734;</span>
+    </div>
+    <p class="rlb-star-rating__status" aria-live="polite">No rating selected</p>
+
+    <h2>Read-Only Display</h2>
+    <div class="rlb-star-rating-display" aria-label="Rating: 4.5 out of 5 stars">
+      <span class="rlb-star-rating-display__text">4.5 out of 5 stars</span>
+      <span class="rlb-star-rating-display__stars" aria-hidden="true">
+        <span class="rlb-star-rating-display__star rlb-star-rating-display__star--filled">&#9733;</span>
+        <span class="rlb-star-rating-display__star rlb-star-rating-display__star--filled">&#9733;</span>
+        <span class="rlb-star-rating-display__star rlb-star-rating-display__star--filled">&#9733;</span>
+        <span class="rlb-star-rating-display__star rlb-star-rating-display__star--filled">&#9733;</span>
+        <span class="rlb-star-rating-display__star rlb-star-rating-display__star--half">&#9733;</span>
+      </span>
+    </div>
+  </section>
+</div>
+
+</div>
       </section>
 
       <section class="section">
@@ -126,10 +192,11 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./star-rating.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./star-rating.js";document.body.appendChild(s)});
+      fetch("./star-rating.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./star-rating.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./star-rating.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

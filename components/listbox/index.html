@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,63 @@
       <section>
         <h2>Demo</h2>
         <p>Tab into the listbox below and use the <kbd>Up Arrow</kbd> and <kbd>Down Arrow</kbd> keys to move through the options. Press <kbd>Space</kbd> or <kbd>Enter</kbd> to select the focused option. In a multi-select listbox, hold <kbd>Shift</kbd> while using arrow keys to extend the selection, or use <kbd>Ctrl + Space</kbd> to toggle individual items. Observe how focus, selection, and state changes are communicated.</p>
-        <div class="mount"></div>
+        <div class="demo-tabs" role="tablist" aria-label="Demo variants">
+  <button class="demo-tabs__tab demo-tabs__tab--active" role="tab" aria-selected="true" aria-controls="demo-variant-0">Multi</button>
+  <button class="demo-tabs__tab" role="tab" aria-selected="false" aria-controls="demo-variant-1">Single</button>
+</div>
+<div class="mount">
+<div id="demo-variant-0" role="tabpanel">
+<section class="rlb-listbox-demo" data-listbox-demo>
+  <h2 id="toppings-label">Choose Toppings</h2>
+  <p id="toppings-desc" class="rlb-listbox-description">Select one or more toppings. Use Space to toggle, Shift+Arrow to select a range, Ctrl+A to select all.</p>
+  <div
+    role="listbox"
+    aria-labelledby="toppings-label"
+    aria-describedby="toppings-desc"
+    aria-multiselectable="true"
+    class="rlb-listbox"
+    tabindex="0"
+    data-listbox="multi"
+  >
+    <div role="option" id="topping-pepperoni" class="rlb-listbox__option" aria-selected="false">Pepperoni</div>
+    <div role="option" id="topping-mushrooms" class="rlb-listbox__option" aria-selected="false">Mushrooms</div>
+    <div role="option" id="topping-onions" class="rlb-listbox__option" aria-selected="false">Onions</div>
+    <div role="option" id="topping-sausage" class="rlb-listbox__option" aria-selected="false">Sausage</div>
+    <div role="option" id="topping-peppers" class="rlb-listbox__option" aria-selected="false">Bell Peppers</div>
+    <div role="option" id="topping-olives" class="rlb-listbox__option" aria-selected="false" aria-disabled="true">Olives (unavailable)</div>
+    <div role="option" id="topping-bacon" class="rlb-listbox__option" aria-selected="false">Bacon</div>
+    <div role="option" id="topping-pineapple" class="rlb-listbox__option" aria-selected="false">Pineapple</div>
+    <div role="option" id="topping-spinach" class="rlb-listbox__option" aria-selected="false">Spinach</div>
+    <div role="option" id="topping-jalapeños" class="rlb-listbox__option" aria-selected="false">Jalape&ntilde;os</div>
+  </div>
+</section>
+
+</div>
+<div id="demo-variant-1" role="tabpanel" hidden>
+<section class="rlb-listbox-demo" data-listbox-demo>
+  <h2 id="fruit-label">Choose a Fruit</h2>
+  <p id="fruit-desc" class="rlb-listbox-description">Select one fruit from the list below.</p>
+  <div
+    role="listbox"
+    aria-labelledby="fruit-label"
+    aria-describedby="fruit-desc"
+    class="rlb-listbox"
+    tabindex="0"
+    data-listbox="single"
+  >
+    <div role="option" id="fruit-apple" class="rlb-listbox__option" aria-selected="false">Apple</div>
+    <div role="option" id="fruit-banana" class="rlb-listbox__option" aria-selected="false">Banana</div>
+    <div role="option" id="fruit-cherry" class="rlb-listbox__option" aria-selected="false">Cherry</div>
+    <div role="option" id="fruit-dragonfruit" class="rlb-listbox__option" aria-selected="false">Dragonfruit</div>
+    <div role="option" id="fruit-elderberry" class="rlb-listbox__option" aria-selected="false">Elderberry</div>
+    <div role="option" id="fruit-fig" class="rlb-listbox__option" aria-selected="false">Fig</div>
+    <div role="option" id="fruit-grape" class="rlb-listbox__option" aria-selected="false" aria-disabled="true">Grape (unavailable)</div>
+    <div role="option" id="fruit-honeydew" class="rlb-listbox__option" aria-selected="false">Honeydew</div>
+  </div>
+</section>
+
+</div>
+</div>
       </section>
 
       <section>
@@ -124,10 +179,11 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./listbox.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./listbox.js";document.body.appendChild(s)});
+      fetch("./listbox--single.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./listbox.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./listbox.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

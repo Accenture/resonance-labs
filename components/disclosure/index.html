@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,54 @@
       <section>
         <h2>Demo</h2>
         <p>Activate the disclosure trigger button below using a mouse click or by pressing <kbd>Enter</kbd> or <kbd>Space</kbd> while it has keyboard focus. Watch how the hidden content region appears and disappears. Pay attention to how the button label or icon changes to reflect the current state, and verify that a screen reader would announce the change.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="section">
+  <section class="rlb-disclosure-demo" data-disclosure-demo>
+    <div class="rlb-disclosure">
+      <button
+        class="rlb-disclosure__trigger"
+        aria-expanded="false"
+        aria-controls="disclosure-panel-1"
+      >
+        What is a disclosure widget?
+        <img class="rlb-disclosure__icon" src="/resonance-labs/assets/images/chevron-down.svg" alt="" width="20" height="20" aria-hidden="true" />
+      </button>
+      <div id="disclosure-panel-1" class="rlb-disclosure__panel" hidden>
+        <p>A disclosure widget is a user interface component that allows users to show or hide a section of content. The trigger button communicates its current state (expanded or collapsed) to assistive technologies using the <code>aria-expanded</code> attribute.</p>
+      </div>
+    </div>
+
+    <div class="rlb-disclosure">
+      <button
+        class="rlb-disclosure__trigger"
+        aria-expanded="false"
+        aria-controls="disclosure-panel-2"
+      >
+        When should I use a disclosure?
+        <img class="rlb-disclosure__icon" src="/resonance-labs/assets/images/chevron-down.svg" alt="" width="20" height="20" aria-hidden="true" />
+      </button>
+      <div id="disclosure-panel-2" class="rlb-disclosure__panel" hidden>
+        <p>Use a disclosure when you have supplementary content that does not need to be visible at all times. Common use cases include FAQ sections, additional details, and progressive disclosure of form fields. Disclosures help reduce cognitive load by letting users reveal content on demand.</p>
+      </div>
+    </div>
+
+    <div class="rlb-disclosure">
+      <button
+        class="rlb-disclosure__trigger"
+        aria-expanded="false"
+        aria-controls="disclosure-panel-3"
+      >
+        How is this different from an accordion?
+        <img class="rlb-disclosure__icon" src="/resonance-labs/assets/images/chevron-down.svg" alt="" width="20" height="20" aria-hidden="true" />
+      </button>
+      <div id="disclosure-panel-3" class="rlb-disclosure__panel" hidden>
+        <p>While both patterns toggle content visibility, an accordion typically enforces that only one section is open at a time. Disclosure widgets are independent of each other, meaning multiple sections can be open simultaneously without any mutual constraint.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+</div>
       </section>
 
       <section>
@@ -122,10 +168,11 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./disclosure.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./disclosure.js";document.body.appendChild(s)});
+      fetch("./disclosure.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./disclosure.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./disclosure.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

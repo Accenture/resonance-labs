@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header><a href="/resonance-labs/index.html" class="back-link"><img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" /></a></header>
@@ -23,7 +22,42 @@
       <section class="section">
         <h2>Demo</h2>
         <p>Use the Previous and Next buttons, or individual page number buttons, to move between pages. Notice how the current page is indicated visually and communicated to screen readers. Try navigating with the keyboard to confirm all controls are reachable.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<section class="rlb-pagination-demo" data-pagination-demo>
+  <nav aria-label="Pagination">
+    <ul class="rlb-pagination-list">
+      <li>
+        <a class="rlb-pagination-link rlb-pagination-link--prev" href="#" aria-label="Previous page" data-page="prev">
+          <img src="/resonance-labs/assets/images/chevron-left.svg" alt="" width="20" height="20" aria-hidden="true" />
+          Previous
+        </a>
+      </li>
+      <li>
+        <a class="rlb-pagination-link" href="#" aria-label="Page 1" data-page="1">1</a>
+      </li>
+      <li>
+        <a class="rlb-pagination-link" href="#" aria-label="Page 2" data-page="2">2</a>
+      </li>
+      <li>
+        <a class="rlb-pagination-link" href="#" aria-label="Page 3" data-page="3" aria-current="page">3</a>
+      </li>
+      <li>
+        <a class="rlb-pagination-link" href="#" aria-label="Page 4" data-page="4">4</a>
+      </li>
+      <li>
+        <a class="rlb-pagination-link" href="#" aria-label="Page 5" data-page="5">5</a>
+      </li>
+      <li>
+        <a class="rlb-pagination-link rlb-pagination-link--next" href="#" aria-label="Next page" data-page="next">
+          Next
+          <img src="/resonance-labs/assets/images/chevron-right.svg" alt="" width="20" height="20" aria-hidden="true" />
+        </a>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+</div>
       </section>
 
       <section class="section">
@@ -102,10 +136,11 @@
 
     </main>
     <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./pagination.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./pagination.js";document.body.appendChild(s)});
+      fetch("./pagination.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./pagination.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./pagination.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

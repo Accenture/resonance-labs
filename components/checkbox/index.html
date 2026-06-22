@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -33,11 +32,29 @@
 
         <!-- Scenario 1: Checkbox with label -->
         <h3>Scenario: Checkbox with label</h3>
-        <div class="mount" id="mount-1"></div>
+        <div class="mount">
+<div class="checkbox-field">
+  <div class="checkbox-field__control">
+    <input type="checkbox" id="subscribe" name="subscribe" aria-describedby="subscribeDesc">
+    <label for="subscribe">Subscribe to newsletter</label>
+  </div>
+  <span class="checkbox-field__desc" id="subscribeDesc">Check this box to receive our newsletter via email.</span>
+</div>
+
+</div>
 
         <!-- Scenario 2: Checkbox with additional state information -->
         <h3>Scenario: Checkbox with additional state information</h3>
-        <div class="mount" id="mount-2"></div>
+        <div class="mount">
+<div class="checkbox-field">
+  <div class="checkbox-field__control">
+    <input type="checkbox" id="terms" name="terms" aria-describedby="termsDesc">
+    <label for="terms">Agree to terms and conditions</label>
+  </div>
+  <span class="checkbox-field__desc" id="termsDesc">You must agree to the terms and conditions before proceeding.</span>
+</div>
+
+</div>
       </section>
 
       <section>
@@ -160,35 +177,25 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
     <script>
-      var mounts = document.querySelectorAll(".mount");
-
       // Scenario 1: Checkbox with label
-      fetch("./checkbox-label.html")
+      fetch("./checkbox--label.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          mounts[0].innerHTML = html;
-
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/g, "").trim();
           var codeHtml = document.getElementById("code-html-1");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS once
-          var s = document.createElement("script");
-          s.src = "./checkbox.js";
-          document.body.appendChild(s);
         });
 
       // Scenario 2: Checkbox with additional state information
-      fetch("./checkbox-state.html")
+      fetch("./checkbox--state.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          mounts[1].innerHTML = html;
-
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/g, "").trim();
           var codeHtml = document.getElementById("code-html-2");
           codeHtml.textContent = rawHtml;

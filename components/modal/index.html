@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -31,7 +30,22 @@
       <section class="section">
         <h2>Demo</h2>
         <p>Click the "Open Modal" button to launch the dialog. While the modal is open, try pressing Tab to cycle through focusable elements and Escape to close it. Confirm that focus returns to the trigger button after the modal closes.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<button id="modal-open" class="rlb-modal__trigger" aria-haspopup="dialog" aria-controls="modal-dialog">Open modal</button>
+
+<div id="modal-dialog" class="rlb-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
+  <div class="rlb-modal__backdrop" data-backdrop></div>
+  <div class="rlb-modal__panel" tabindex="-1">
+    <h2 id="modal-title">Modal title</h2>
+    <p id="modal-desc">This is a demo modal. Focus should be trapped while open.</p>
+    <a href="#" class="rlb-modal__link">Focusable link</a>
+    <button id="modal-close" class="rlb-modal__close" aria-label="Close modal">
+      <img src="/resonance-labs/assets/images/close.svg" alt="" width="20" height="20" aria-hidden="true" />
+    </button>
+  </div>
+</div>
+
+</div>
       </section>
 
       <section class="section">
@@ -135,6 +149,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -143,18 +158,11 @@
       fetch("./modal.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./modal.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

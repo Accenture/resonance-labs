@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -27,7 +26,54 @@
       <section class="section">
         <h2>Demo</h2>
         <p>Review the price variants shown below — a standard price, a price range, a free item, and an explicit currency code example. With a screen reader active, navigate through each price and listen to how the value and currency are announced. Notice how each variant is expressed as real, selectable text rather than an image or decorative element.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="rlb-price-examples">
+  <!-- Standard price -->
+  <div class="rlb-price-card">
+    <h3 class="rlb-price-card__title">Pro Plan</h3>
+    <p class="rlb-price">
+      <span class="rlb-sr-only">Price:</span>
+      <span class="rlb-price__amount">$49.99</span>
+      <span class="rlb-sr-only">USD</span>
+    </p>
+  </div>
+
+  <!-- Price range -->
+  <div class="rlb-price-card">
+    <h3 class="rlb-price-card__title">Custom Widget</h3>
+    <p class="rlb-price">
+      <span class="rlb-sr-only">Price range:</span>
+      <span class="rlb-price__amount">$10.00</span>
+      <span class="rlb-price__separator" aria-hidden="true">&ndash;</span>
+      <span class="rlb-sr-only">to</span>
+      <span class="rlb-price__amount">$25.00</span>
+      <span class="rlb-sr-only">USD</span>
+    </p>
+  </div>
+
+  <!-- Free item -->
+  <div class="rlb-price-card">
+    <h3 class="rlb-price-card__title">Starter Plan</h3>
+    <p class="rlb-price">
+      <span class="rlb-sr-only">Price:</span>
+      <span class="rlb-price__amount rlb-price__amount--free">Free</span>
+    </p>
+  </div>
+
+  <!-- Price with explicit currency code -->
+  <div class="rlb-price-card">
+    <h3 class="rlb-price-card__title">Enterprise Plan</h3>
+    <p class="rlb-price">
+      <span class="rlb-sr-only">Price:</span>
+      <span class="rlb-price__amount">
+        <span class="rlb-price__currency">EUR</span>
+        89.00
+      </span>
+    </p>
+  </div>
+</div>
+
+</div>
       </section>
 
       <section class="section">
@@ -126,6 +172,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -133,14 +180,10 @@
       fetch("./price.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-          var s = document.createElement("script");
-          s.src = "./price.js";
-          document.body.appendChild(s);
         });
 
       fetch("./price.css")

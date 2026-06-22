@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,83 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Trigger an alert using the available controls. Observe how the message appears visually and listen for how a screen reader announces it without any focus change or user action required.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="section">
+  <section class="rlb-alert-demo" data-alert-demo>
+    <!-- Info alert -->
+    <div class="rlb-alert rlb-alert--info" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-information.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Info:</strong>
+        <span class="rlb-alert__message">Your session will expire in 10 minutes.</span>
+      </div>
+    </div>
+
+    <!-- Success alert -->
+    <div class="rlb-alert rlb-alert--success" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-success.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Success:</strong>
+        <span class="rlb-alert__message">Your changes have been saved.</span>
+      </div>
+    </div>
+
+    <!-- Warning alert -->
+    <div class="rlb-alert rlb-alert--warning" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-warning.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Warning:</strong>
+        <span class="rlb-alert__message">Some fields require your attention before continuing.</span>
+      </div>
+    </div>
+
+    <!-- Error alert -->
+    <div class="rlb-alert rlb-alert--error" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-error.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Error:</strong>
+        <span class="rlb-alert__message">Unable to process your request. Please try again.</span>
+      </div>
+    </div>
+
+    <!-- Dismissible alert variants -->
+    <div class="rlb-alert rlb-alert--info rlb-alert--dismissible" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-information.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Info:</strong>
+        <span class="rlb-alert__message">This is a dismissible information alert.</span>
+      </div>
+      <button type="button" class="rlb-alert__dismiss" aria-label="Dismiss info alert">
+        <img src="/resonance-labs/assets/images/close.svg" alt="" width="16" height="16" aria-hidden="true" />
+      </button>
+    </div>
+
+    <div class="rlb-alert rlb-alert--error rlb-alert--dismissible" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-error.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Error:</strong>
+        <span class="rlb-alert__message">This is a dismissible error alert.</span>
+      </div>
+      <button type="button" class="rlb-alert__dismiss" aria-label="Dismiss error alert">
+        <img src="/resonance-labs/assets/images/close.svg" alt="" width="16" height="16" aria-hidden="true" />
+      </button>
+    </div>
+
+    <!-- Trigger button to demonstrate dynamic live region behavior -->
+    <button
+      class="btn rlb-alert-demo__trigger"
+      type="button"
+      data-action="trigger-alert"
+    >
+      Trigger Dynamic Alert
+    </button>
+
+    <!-- Live region container for dynamically injected alerts -->
+    <div class="rlb-alert-demo__live-region" data-live-region></div>
+  </section>
+</div>
+
+</div>
       </div>
 
       <div class="section">
@@ -118,10 +193,11 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./alert.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./alert.js";document.body.appendChild(s)});
+      fetch("./alert.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./alert.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./alert.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

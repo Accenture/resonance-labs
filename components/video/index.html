@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header><a href="/resonance-labs/index.html" class="back-link"><img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" /></a></header>
@@ -23,7 +22,127 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Use the playback controls below the video to play, pause, and adjust volume using only the keyboard. Tab through the controls and press <strong>Space</strong> or <strong>Enter</strong> to activate each one. Enable captions if available and observe how the caption track is announced and displayed. Check whether a transcript is also provided alongside the player.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<!--
+  Component manifest:
+  {
+    "component": "Video",
+    "code": "VID",
+    "version": "1.0.0",
+    "conforms_to": {
+      "ac": "components/video/video.md",
+      "tc": "components/video/video.tc.md",
+      "qa": "components/video/video.qa.md"
+    },
+    "elements": {
+      "PLR": "player",
+      "CTL": "controls",
+      "CAP": "captions",
+      "TRS": "transcript",
+      "ADC": "audio-description"
+    }
+  }
+-->
+
+<section
+  class="rlb-vid-demo"
+  data-vid-demo
+  aria-label="Video player"
+  data-component="video"
+>
+  <h2 class="rlb-vid-demo__title">Video — Reference Implementation</h2>
+
+  <!-- Video player -->
+  <div class="rlb-vid-player" data-vid-player>
+    <video
+      class="rlb-vid-player__video"
+      data-vid-element
+      controls
+      preload="metadata"
+      poster=""
+      aria-label="Sample accessible video"
+      data-hook-plr="video-element"
+    >
+      <!--
+        Replace src with a real video file path.
+        The source below is a placeholder for reference.
+      -->
+      <source src="sample-video.mp4" type="video/mp4" />
+
+      <!-- Captions track -->
+      <track
+        kind="captions"
+        src="captions-en.vtt"
+        srclang="en"
+        label="English captions"
+        default
+        data-hook-cap="captions-track"
+      />
+
+      <!-- Audio descriptions track (described audio) -->
+      <track
+        kind="descriptions"
+        src="descriptions-en.vtt"
+        srclang="en"
+        label="English audio descriptions"
+        data-hook-adc="descriptions-track"
+      />
+
+      Your browser does not support the video element.
+    </video>
+  </div>
+
+  <!-- Custom accessible controls -->
+  <div class="rlb-vid-controls" data-vid-controls>
+    <button
+      class="rlb-vid-controls__btn"
+      type="button"
+      aria-pressed="false"
+      aria-label="Mute"
+      data-vid-mute
+    >Mute</button>
+    <button
+      class="rlb-vid-controls__btn"
+      type="button"
+      aria-pressed="false"
+      aria-label="Audio descriptions"
+      data-vid-ad-toggle
+    >Audio Descriptions</button>
+  </div>
+
+  <!-- Transcript section -->
+  <details
+    class="rlb-vid-transcript"
+    data-vid-transcript
+    data-hook-trs="transcript-section"
+  >
+    <summary class="rlb-vid-transcript__toggle">
+      Transcript
+    </summary>
+    <div class="rlb-vid-transcript__content">
+      <p>
+        [Speaker 1]: Welcome to this demonstration of an accessible video component.
+        This video shows how captions, transcripts, and audio descriptions work together
+        to provide an inclusive media experience.
+      </p>
+      <p>
+        [Speaker 1]: Captions appear on screen for hearing-impaired users.
+        Audio descriptions narrate meaningful visual content for visually-impaired users.
+        And this transcript provides a full text alternative for the audio content.
+      </p>
+    </div>
+  </details>
+
+  <!-- Status area for live announcements -->
+  <p
+    class="rlb-vid-demo__status"
+    aria-live="polite"
+    aria-atomic="true"
+    data-vid-status
+  ></p>
+</section>
+
+</div>
       </div>
 
       <div class="section">
@@ -118,6 +237,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
@@ -125,18 +245,11 @@
       fetch("./video.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/g, "").replace(/<script type="application\/json"[\s\S]*?<\/script>\n*/g, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./video.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

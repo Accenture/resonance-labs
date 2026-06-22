@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +25,95 @@
       <section>
         <h2>Demo</h2>
         <p>Type a date directly into the text field, or activate the calendar button to open the popup. Inside the calendar, use <kbd>Left</kbd> and <kbd>Right</kbd> arrows to move between days, <kbd>Up</kbd> and <kbd>Down</kbd> arrows to move between weeks, <kbd>Page Up</kbd> and <kbd>Page Down</kbd> to navigate months, and <kbd>Enter</kbd> or <kbd>Space</kbd> to select the focused date. Press <kbd>Escape</kbd> to close the calendar without selecting.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<div class="section">
+  <section class="rlb-date-picker-demo" data-date-picker-demo>
+    <div class="rlb-date-picker" data-dp="root">
+      <label id="dp-label" for="dp-input">Select a date</label>
+      <div class="rlb-date-picker__input-wrap">
+        <input
+          id="dp-input"
+          class="rlb-date-picker__input"
+          type="text"
+          role="combobox"
+          aria-labelledby="dp-label"
+          aria-describedby="dp-hint"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="dp-calendar"
+          autocomplete="off"
+          placeholder="YYYY/MM/DD"
+          data-dp="input"
+        />
+        <button
+          class="rlb-date-picker__toggle"
+          type="button"
+          aria-label="Open calendar"
+          data-dp="toggle"
+        >
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="4" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 8h16" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 2v4M14 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <span class="rlb-date-picker__hint" id="dp-hint">Format: YYYY/MM/DD</span>
+
+      <div
+        id="dp-calendar"
+        class="rlb-date-picker__calendar"
+        role="dialog"
+        aria-label="Choose a date"
+        hidden
+        data-dp="calendar"
+      >
+        <div class="rlb-date-picker__nav">
+          <button
+            class="rlb-date-picker__nav-btn"
+            type="button"
+            aria-label="Previous Month"
+            data-dp="prev"
+          >
+            <img src="/resonance-labs/assets/images/chevron-left.svg" alt="" width="20" height="20" aria-hidden="true" />
+          </button>
+          <div
+            class="rlb-date-picker__month-year"
+            id="dp-month-year"
+            aria-live="polite"
+            aria-atomic="true"
+            data-dp="month-year"
+          ></div>
+          <button
+            class="rlb-date-picker__nav-btn"
+            type="button"
+            aria-label="Next Month"
+            data-dp="next"
+          >
+            <img src="/resonance-labs/assets/images/chevron-right.svg" alt="" width="20" height="20" aria-hidden="true" />
+          </button>
+        </div>
+
+        <table class="rlb-date-picker__grid" role="grid" aria-labelledby="dp-month-year" data-dp="grid">
+          <thead>
+            <tr>
+              <th scope="col" abbr="Sunday">Su</th>
+              <th scope="col" abbr="Monday">Mo</th>
+              <th scope="col" abbr="Tuesday">Tu</th>
+              <th scope="col" abbr="Wednesday">We</th>
+              <th scope="col" abbr="Thursday">Th</th>
+              <th scope="col" abbr="Friday">Fr</th>
+              <th scope="col" abbr="Saturday">Sa</th>
+            </tr>
+          </thead>
+          <tbody data-dp="grid-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+</div>
       </section>
 
       <section>
@@ -125,10 +212,11 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
-      fetch("./date-picker.html").then(function(r){return r.text()}).then(function(html){document.querySelector(".mount").innerHTML=html;var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);var s=document.createElement("script");s.src="./date-picker.js";document.body.appendChild(s)});
+      fetch("./date-picker.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
       fetch("./date-picker.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
       fetch("./date-picker.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
       var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});

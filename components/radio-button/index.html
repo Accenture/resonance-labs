@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -31,7 +30,40 @@
       <section class="section">
         <h2>Demo</h2>
         <p>Tab into the radio group and use the arrow keys to move between options. Notice how selecting one option automatically deselects the others. Confirm that the group label and each option label are both announced by a screen reader when navigating.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<fieldset class="rlb-radio">
+  <legend>Select your pizza size</legend>
+  <div class="rlb-radio__option">
+    <input type="radio" id="radio-xl" name="pizza-size" value="extra-large" checked aria-describedby="hint-xl" />
+    <div>
+      <label for="radio-xl">Extra Large</label>
+      <span class="rlb-radio__hint" id="hint-xl">Serves 8 people</span>
+    </div>
+  </div>
+  <div class="rlb-radio__option">
+    <input type="radio" id="radio-lg" name="pizza-size" value="large" aria-describedby="hint-lg" />
+    <div>
+      <label for="radio-lg">Large</label>
+      <span class="rlb-radio__hint" id="hint-lg">Serves 6 people</span>
+    </div>
+  </div>
+  <div class="rlb-radio__option">
+    <input type="radio" id="radio-md" name="pizza-size" value="medium" aria-describedby="hint-md" />
+    <div>
+      <label for="radio-md">Medium</label>
+      <span class="rlb-radio__hint" id="hint-md">Serves 4 people</span>
+    </div>
+  </div>
+  <div class="rlb-radio__option">
+    <input type="radio" id="radio-sm" name="pizza-size" value="small" aria-describedby="hint-sm" />
+    <div>
+      <label for="radio-sm">Small</label>
+      <span class="rlb-radio__hint" id="hint-sm">Serves 1 person</span>
+    </div>
+  </div>
+</fieldset>
+
+</div>
       </section>
 
       <section class="section">
@@ -134,6 +166,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -142,18 +175,11 @@
       fetch("./radio-button.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./radio-button.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

@@ -9,7 +9,6 @@
     <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header><a href="/resonance-labs/index.html" class="back-link"><img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" /></a></header>
@@ -23,7 +22,37 @@
       <div class="section">
         <h2>Demo</h2>
         <p>Review the table below and use a screen reader to navigate it. Move cell by cell with arrow keys to hear how each data cell is announced together with its column and row header. Try sorting a column if the interaction is available, and note how the sort state is communicated.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<table class="table">
+  <caption>Monthly Sales Report</caption>
+  <thead>
+    <tr>
+      <th scope="col">Month</th>
+      <th scope="col">Revenue</th>
+      <th scope="col">Expenses</th>
+      <th scope="col">Profit</th>
+      <th scope="col">Download</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><span id="table-jan">January</span></th>
+      <td>$10,000</td>
+      <td>$5,000</td>
+      <td>$5,000</td>
+      <td><a href="#" aria-label="Download report" aria-describedby="table-jan">Download</a></td>
+    </tr>
+    <tr>
+      <th scope="row"><span id="table-feb">February</span></th>
+      <td>$12,000</td>
+      <td>$6,000</td>
+      <td>$6,000</td>
+      <td><a href="#" aria-label="Download report" aria-describedby="table-feb">Download</a></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
       </div>
 
       <div class="section">
@@ -118,6 +147,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script>
@@ -125,18 +155,11 @@
       fetch("./table.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./table.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS

@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
-    <script src="/resonance-labs/assets/js/component-layout.js" defer></script>
   </head>
   <body>
     <header>
@@ -31,7 +30,12 @@
       <section class="section">
         <h2>Demo</h2>
         <p>Observe the progress bar as it advances. Pay attention to whether a screen reader would hear meaningful updates as the value changes. Check that the label clearly identifies what process is being tracked and that the current percentage or step is communicated without relying on the visual fill alone.</p>
-        <div class="mount"></div>
+        <div class="mount">
+<label for="progress-bar-progress">Upload in progress</label>
+<progress id="progress-bar-progress" max="100" value="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-busy="true"></progress>
+<p id="progress-bar-status" aria-live="polite" class="rlb-status">0%</p>
+
+</div>
       </section>
 
       <section class="section">
@@ -134,6 +138,7 @@
       <p><strong>Created and maintained by Accenture Song</strong></p>
       <p>&copy; 2026 Accenture - Resonance</p>
     </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
@@ -142,18 +147,11 @@
       fetch("./progress-bar.html")
         .then(function (r) { return r.text(); })
         .then(function (html) {
-          document.querySelector(".mount").innerHTML = html;
-
           // Populate HTML code preview (strip leading comment block)
           var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
           var codeHtml = document.getElementById("code-html");
           codeHtml.textContent = rawHtml;
           Prism.highlightElement(codeHtml);
-
-          // Load component JS
-          var s = document.createElement("script");
-          s.src = "./progress-bar.js";
-          document.body.appendChild(s);
         });
 
       // Fetch CSS
