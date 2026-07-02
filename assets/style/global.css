@@ -752,10 +752,12 @@ main td a:hover::before {
 
 .comp-nav__item--prev .comp-nav__link {
   border-radius: 0.5rem 0 0 0.5rem;
+  background: #fff;
 }
 
 .comp-nav__item--next .comp-nav__link {
   border-radius: 0 0.5rem 0.5rem 0;
+  background: #fff;
 }
 
 .comp-nav__link:hover {
@@ -812,6 +814,10 @@ main td a:hover::before {
 .rlb-compliance-snapshot__table th {
   background: var(--surface-muted);
   color: var(--text-color-strong);
+}
+
+.rlb-compliance-snapshot__table td {
+  background: #fff;
 }
 
 .rlb-compliance-snapshot__table td:last-child,

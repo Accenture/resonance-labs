@@ -16,11 +16,14 @@ fs.mkdirSync(OUT, { recursive: true });
 
 const INCLUDE = ['index.html', 'styles.css', 'assets', 'components'];
 
+const EXCLUDE_FILES = new Set(['labs.manifest.json']);
+
 function copyRecursive(src, dest) {
   const stat = fs.statSync(src);
   if (stat.isDirectory()) {
     fs.mkdirSync(dest, { recursive: true });
     for (const entry of fs.readdirSync(src)) {
+      if (EXCLUDE_FILES.has(entry)) continue;
       copyRecursive(path.join(src, entry), path.join(dest, entry));
     }
   } else {
