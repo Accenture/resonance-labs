@@ -1,0 +1,17 @@
+{
+  "component": "wishlist-button",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-WLB-SEM-BTN-01",
+    "AC-WLB-SEM-BTN-02",
+    "AC-WLB-SEM-BTN-03",
+    "AC-WLB-STA-BTN-01",
+    "AC-WLB-STA-BTN-02",
+    "AC-WLB-KB-BTN-01",
+    "AC-WLB-VIS-BTN-01",
+    "AC-WLB-VIS-BTN-02",
+    "AC-WLB-VIS-BTN-03"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "component": "slider",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-SLD-SEM-THB-01",
+    "AC-SLD-SEM-THB-02",
+    "AC-SLD-SEM-THB-03",
+    "AC-SLD-SEM-THB-04",
+    "AC-SLD-SEM-THB-05",
+    "AC-SLD-SEM-THB-06",
+    "AC-SLD-STA-THB-07",
+    "AC-SLD-KB-THB-08",
+    "AC-SLD-KB-THB-09",
+    "AC-SLD-KB-THB-10",
+    "AC-SLD-KB-THB-11",
+    "AC-SLD-KB-THB-12",
+    "AC-SLD-KB-THB-13",
+    "AC-SLD-KB-THB-14",
+    "AC-SLD-VIS-THB-15",
+    "AC-SLD-VIS-THB-16",
+    "AC-SLD-VIS-THB-17",
+    "AC-SLD-VIS-THB-18",
+    "AC-SLD-SEM-RNG-01",
+    "AC-SLD-SEM-RNG-02"
+  ]
+}

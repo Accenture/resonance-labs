@@ -1,0 +1,20 @@
+{
+  "component": "review-comment",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-RVC-SEM-CTR-01",
+    "AC-RVC-SEM-CTR-02",
+    "AC-RVC-SEM-CTR-03",
+    "AC-RVC-SEM-RAT-04",
+    "AC-RVC-SEM-ACT-05",
+    "AC-RVC-KB-ACT-06",
+    "AC-RVC-SEM-SUP-07",
+    "AC-RVC-SEM-SUP-08",
+    "AC-RVC-SEM-SUP-09",
+    "AC-RVC-KB-NAV-10",
+    "AC-RVC-KB-NAV-11",
+    "AC-RVC-VIS-FOC-12"
+  ]
+}

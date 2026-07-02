@@ -1,0 +1,18 @@
+{
+  "component": "modal",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-MOD-SEM-01",
+    "AC-MOD-SEM-02",
+    "AC-MOD-SEM-03",
+    "AC-MOD-SEM-04",
+    "AC-MOD-SEM-05",
+    "AC-MOD-KB-01",
+    "AC-MOD-KB-02",
+    "AC-MOD-KB-03",
+    "AC-MOD-KB-04",
+    "AC-MOD-VIS-01"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "component": "avatar",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-AVT-SEM-IMG-01",
+    "AC-AVT-SEM-IMG-02",
+    "AC-AVT-SEM-IMG-03",
+    "AC-AVT-SEM-FBK-01",
+    "AC-AVT-VIS-FBK-02"
+  ]
+}

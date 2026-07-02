@@ -3,3 +3,5 @@ node_modules/
 *.tgz
 .vscode
 .claude
+dist-site/
+dist-public/

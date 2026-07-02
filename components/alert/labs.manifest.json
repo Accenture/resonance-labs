@@ -1,0 +1,13 @@
+{
+  "component": "alert",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-ALT-SEM-CTR-01",
+    "AC-ALT-SEM-CTR-02",
+    "AC-ALT-SEM-CTR-03",
+    "AC-ALT-FOC-CTR-04",
+    "AC-ALT-VIS-CTR-05"
+  ]
+}

@@ -1,0 +1,14 @@
+<svg width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="249" height="249" fill="#F3F3F3"/>
+<rect x="0.5" y="0.5" width="249" height="249" stroke="#BFBEC4"/>
+<rect x="50" y="68" width="150" height="114" rx="4" fill="#FEFEFE" stroke="#BFBEC4"/>
+<rect x="50" y="96" width="150" height="28" fill="#E8E8F0" stroke="#BFBEC4"/>
+<path d="M62 82C62 80.343 63.343 79 65 79H120C121.657 79 123 80.343 123 82C123 83.657 121.657 85 120 85H65C63.343 85 62 83.657 62 82Z" fill="#BABABA"/>
+<path d="M62 110C62 108.343 63.343 107 65 107H120C121.657 107 123 108.343 123 110C123 111.657 121.657 113 120 113H65C63.343 113 62 111.657 62 110Z" fill="#222222"/>
+<path d="M62 138C62 136.343 63.343 135 65 135H105C106.657 135 108 136.343 108 138C108 139.657 106.657 141 105 141H65C63.343 141 62 139.657 62 138Z" fill="#BABABA"/>
+<path d="M62 155C62 153.343 63.343 152 65 152H135C136.657 152 138 153.343 138 155C138 156.657 136.657 158 135 158H65C63.343 158 62 156.657 62 155Z" fill="#BABABA"/>
+<circle cx="185" cy="110" r="5" fill="none" stroke="#222222" stroke-width="2"/>
+<circle cx="185" cy="110" r="2.5" fill="#222222"/>
+<circle cx="185" cy="138" r="5" fill="none" stroke="#BABABA" stroke-width="2"/>
+<circle cx="185" cy="155" r="5" fill="none" stroke="#BABABA" stroke-width="2"/>
+</svg>

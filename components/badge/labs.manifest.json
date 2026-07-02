@@ -1,0 +1,16 @@
+{
+  "component": "badge",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-BDG-SEM-01",
+    "AC-BDG-SEM-02",
+    "AC-BDG-KB-01",
+    "AC-BDG-KB-02",
+    "AC-BDG-SR-01",
+    "AC-BDG-SR-02",
+    "AC-BDG-VIS-01",
+    "AC-BDG-VIS-02"
+  ]
+}

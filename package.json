@@ -11,7 +11,7 @@
     "build:site": "node scripts/build-site.mjs",
     "build:public": "node scripts/export-public.mjs",
     "build": "npm run validate && npm run build:site && npm run build:public",
-    "dev": "node scripts/dev.mjs",
+    "dev": "BASE=/resonance-labs node scripts/dev.mjs",
     "preview": "npm run build:site && DIST=dist-site PREVIEW=1 node scripts/dev.mjs",
     "preview:ghpages": "npm run build && mkdir -p /tmp/ghpages/resonance-labs && cp -r dist-public/. /tmp/ghpages/resonance-labs/ && DIST=/tmp/ghpages BASE=/resonance-labs PREVIEW=1 node scripts/dev.mjs",
     "clean": "rm -rf dist-site dist-public"

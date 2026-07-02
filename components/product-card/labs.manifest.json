@@ -1,0 +1,20 @@
+{
+  "component": "product-card",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-PDC-SEM-CTR-01",
+    "AC-PDC-SEM-CTR-02",
+    "AC-PDC-SEM-CTR-03",
+    "AC-PDC-SEM-IMG-01",
+    "AC-PDC-SEM-IMG-02",
+    "AC-PDC-SEM-NAM-01",
+    "AC-PDC-SEM-NAM-02",
+    "AC-PDC-SEM-PRC-01",
+    "AC-PDC-SEM-RAT-01",
+    "AC-PDC-SEM-CTA-01",
+    "AC-PDC-VIS-CTA-01",
+    "AC-PDC-VIS-CTA-02"
+  ]
+}

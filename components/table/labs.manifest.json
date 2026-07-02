@@ -1,0 +1,12 @@
+{
+  "component": "table",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-TBL-SEM-01",
+    "AC-TBL-SEM-02",
+    "AC-TBL-SEM-03",
+    "AC-TBL-KB-01"
+  ]
+}

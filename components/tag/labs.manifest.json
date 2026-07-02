@@ -1,0 +1,12 @@
+{
+  "component": "tag",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-TAG-SEM-01",
+    "AC-TAG-SEM-02",
+    "AC-TAG-VIS-01",
+    "AC-TAG-VIS-02"
+  ]
+}

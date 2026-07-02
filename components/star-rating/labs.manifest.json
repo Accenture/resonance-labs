@@ -1,0 +1,18 @@
+{
+  "component": "star-rating",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-STR-SEM-GRP-01",
+    "AC-STR-SEM-GRP-02",
+    "AC-STR-STA-OPT-03",
+    "AC-STR-STA-OPT-04",
+    "AC-STR-STA-OPT-05",
+    "AC-STR-KB-GRP-06",
+    "AC-STR-KB-OPT-07",
+    "AC-STR-VIS-OPT-08",
+    "AC-STR-VIS-OPT-09",
+    "AC-STR-SEM-RO-10"
+  ]
+}

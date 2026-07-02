@@ -1,0 +1,17 @@
+{
+  "component": "sale-price",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-SLP-SEM-OPR-01",
+    "AC-SLP-SEM-SPR-02",
+    "AC-SLP-SEM-LBL-03",
+    "AC-SLP-SEM-LBL-04",
+    "AC-SLP-SEM-REL-05",
+    "AC-SLP-SEM-DSC-06",
+    "AC-SLP-SEM-PRD-07",
+    "AC-SLP-VIS-CLR-08",
+    "AC-SLP-VIS-CTR-09"
+  ]
+}

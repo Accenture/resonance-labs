@@ -1,0 +1,22 @@
+{
+  "component": "alert-dialog",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-ALD-SEM-DLG-01",
+    "AC-ALD-SEM-DLG-02",
+    "AC-ALD-SEM-DLG-03",
+    "AC-ALD-SEM-DLG-04",
+    "AC-ALD-SEM-DLG-05",
+    "AC-ALD-STA-DLG-06",
+    "AC-ALD-SEM-TRG-01",
+    "AC-ALD-KB-TRG-02",
+    "AC-ALD-KB-FOC-01",
+    "AC-ALD-KB-FOC-02",
+    "AC-ALD-KB-FOC-03",
+    "AC-ALD-KB-FOC-04",
+    "AC-ALD-VIS-FOC-01",
+    "AC-ALD-VIS-FOC-02"
+  ]
+}

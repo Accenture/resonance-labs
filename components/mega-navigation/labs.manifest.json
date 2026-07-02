@@ -1,0 +1,18 @@
+{
+  "component": "mega-navigation",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-MGN-SEM-01",
+    "AC-MGN-SEM-02",
+    "AC-MGN-SEM-03",
+    "AC-MGN-SEM-04",
+    "AC-MGN-STA-01",
+    "AC-MGN-STA-02",
+    "AC-MGN-STA-03",
+    "AC-MGN-KB-01",
+    "AC-MGN-KB-02",
+    "AC-MGN-VIS-01"
+  ]
+}

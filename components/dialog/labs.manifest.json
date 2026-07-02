@@ -1,0 +1,22 @@
+{
+  "component": "dialog",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-DLG-SEM-CTR-01",
+    "AC-DLG-SEM-CTR-02",
+    "AC-DLG-SEM-CTR-03",
+    "AC-DLG-SEM-CTR-04",
+    "AC-DLG-STA-CTR-05",
+    "AC-DLG-FOC-CTR-06",
+    "AC-DLG-FOC-CTR-07",
+    "AC-DLG-FOC-CTR-08",
+    "AC-DLG-SEM-TRG-01",
+    "AC-DLG-SEM-TRG-02",
+    "AC-DLG-VIS-TRG-03",
+    "AC-DLG-VIS-TRG-04",
+    "AC-DLG-KB-DIS-01",
+    "AC-DLG-INT-BG-01"
+  ]
+}

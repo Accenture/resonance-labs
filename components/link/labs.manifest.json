@@ -1,0 +1,17 @@
+{
+  "component": "link",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-LNK-SEM-01",
+    "AC-LNK-SEM-02",
+    "AC-LNK-SEM-03",
+    "AC-LNK-KB-01",
+    "AC-LNK-KB-02",
+    "AC-LNK-FOC-01",
+    "AC-LNK-VIS-01",
+    "AC-LNK-STA-01",
+    "AC-LNK-STA-02"
+  ]
+}

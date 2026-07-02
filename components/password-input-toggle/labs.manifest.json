@@ -1,0 +1,15 @@
+{
+  "component": "password-input-toggle",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-PIT-SEM-01",
+    "AC-PIT-SEM-02",
+    "AC-PIT-SEM-03",
+    "AC-PIT-STA-01",
+    "AC-PIT-KB-01",
+    "AC-PIT-SR-01",
+    "AC-PIT-VIS-01"
+  ]
+}

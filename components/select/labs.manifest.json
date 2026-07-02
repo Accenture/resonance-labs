@@ -1,0 +1,12 @@
+{
+  "component": "select",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-SEL-SEM-01",
+    "AC-SEL-SEM-02",
+    "AC-SEL-KB-01",
+    "AC-SEL-VIS-01"
+  ]
+}

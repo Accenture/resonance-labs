@@ -1,0 +1,20 @@
+{
+  "component": "popover",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-POP-SEM-TRG-01",
+    "AC-POP-SEM-TRG-02",
+    "AC-POP-STA-TRG-03",
+    "AC-POP-STA-TRG-04",
+    "AC-POP-SEM-PNL-05",
+    "AC-POP-SEM-PNL-06",
+    "AC-POP-KB-PNL-07",
+    "AC-POP-KB-PNL-08",
+    "AC-POP-KB-PNL-09",
+    "AC-POP-KB-PNL-10",
+    "AC-POP-VIS-PNL-11",
+    "AC-POP-VIS-PNL-12"
+  ]
+}

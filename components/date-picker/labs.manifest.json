@@ -1,0 +1,30 @@
+{
+  "component": "date-picker",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-DTP-SEM-INP-01",
+    "AC-DTP-SEM-INP-02",
+    "AC-DTP-SEM-INP-03",
+    "AC-DTP-SEM-INP-04",
+    "AC-DTP-STA-INP-05",
+    "AC-DTP-STA-INP-06",
+    "AC-DTP-SEM-GRD-01",
+    "AC-DTP-SEM-GRD-02",
+    "AC-DTP-SEM-GRD-03",
+    "AC-DTP-STA-GRD-04",
+    "AC-DTP-STA-GRD-05",
+    "AC-DTP-SEM-GRD-06",
+    "AC-DTP-SEM-NAV-01",
+    "AC-DTP-SEM-NAV-02",
+    "AC-DTP-KB-01",
+    "AC-DTP-KB-02",
+    "AC-DTP-KB-03",
+    "AC-DTP-KB-04",
+    "AC-DTP-VIS-01",
+    "AC-DTP-VIS-02",
+    "AC-DTP-VIS-03",
+    "AC-DTP-VIS-04"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "component": "listbox",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-LSB-SEM-CTR-01",
+    "AC-LSB-SEM-CTR-02",
+    "AC-LSB-SEM-CTR-03",
+    "AC-LSB-SEM-OPT-01",
+    "AC-LSB-SEM-OPT-02",
+    "AC-LSB-STA-OPT-01",
+    "AC-LSB-STA-OPT-02",
+    "AC-LSB-KB-SNG-01",
+    "AC-LSB-KB-SNG-02",
+    "AC-LSB-KB-SNG-03",
+    "AC-LSB-KB-MUL-01",
+    "AC-LSB-KB-MUL-02",
+    "AC-LSB-KB-MUL-03",
+    "AC-LSB-KB-MUL-04",
+    "AC-LSB-VIS-FOC-01",
+    "AC-LSB-VIS-FOC-02",
+    "AC-LSB-VIS-FOC-03",
+    "AC-LSB-VIS-SEL-01"
+  ]
+}

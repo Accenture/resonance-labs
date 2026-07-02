@@ -1,0 +1,19 @@
+{
+  "component": "variant-selector",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-VAR-SEM-GRP-01",
+    "AC-VAR-SEM-GRP-02",
+    "AC-VAR-SEM-OPT-03",
+    "AC-VAR-SEM-OPT-04",
+    "AC-VAR-SEM-OPT-05",
+    "AC-VAR-STA-SEL-06",
+    "AC-VAR-STA-DIS-07",
+    "AC-VAR-STA-DIS-08",
+    "AC-VAR-KB-NAV-09",
+    "AC-VAR-VIS-FOC-10",
+    "AC-VAR-LIV-UPD-11"
+  ]
+}

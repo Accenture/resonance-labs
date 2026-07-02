@@ -1,0 +1,21 @@
+{
+  "component": "image-gallery",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-IMG-SEM-CTR-01",
+    "AC-IMG-SEM-IMG-01",
+    "AC-IMG-SEM-IMG-02",
+    "AC-IMG-SEM-THB-01",
+    "AC-IMG-SEM-THB-02",
+    "AC-IMG-KB-THB-01",
+    "AC-IMG-KB-THB-02",
+    "AC-IMG-SEM-NAV-01",
+    "AC-IMG-KB-NAV-01",
+    "AC-IMG-SEM-CNT-01",
+    "AC-IMG-KB-ZM-01",
+    "AC-IMG-KB-ZM-02",
+    "AC-IMG-VIS-FOC-01"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "component": "progress-bar",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-PRG-SEM-01",
+    "AC-PRG-SEM-02",
+    "AC-PRG-STA-01",
+    "AC-PRG-VIS-01"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "component": "breadcrumbs",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-BC-SEM-01",
+    "AC-BC-SEM-02",
+    "AC-BC-SEM-03",
+    "AC-BC-SEM-04",
+    "AC-BC-KB-01",
+    "AC-BC-KB-02",
+    "AC-BC-VIS-01",
+    "AC-BC-VIS-02",
+    "AC-BC-RSP-01",
+    "AC-BC-RSP-02"
+  ]
+}

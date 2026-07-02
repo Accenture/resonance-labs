@@ -1,0 +1,17 @@
+{
+  "component": "toast",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-TST-SEM-CTR-01",
+    "AC-TST-SEM-CTR-02",
+    "AC-TST-VIS-CTR-03",
+    "AC-TST-TMG-DUR-01",
+    "AC-TST-TMG-DUR-02",
+    "AC-TST-SEM-QUE-01",
+    "AC-TST-KB-FCS-01",
+    "AC-TST-KB-DIS-01",
+    "AC-TST-KB-DIS-02"
+  ]
+}

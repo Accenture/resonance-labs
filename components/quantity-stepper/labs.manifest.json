@@ -1,0 +1,21 @@
+{
+  "component": "quantity-stepper",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-QTY-SEM-INP-01",
+    "AC-QTY-SEM-INP-02",
+    "AC-QTY-SEM-INP-03",
+    "AC-QTY-STA-INP-04",
+    "AC-QTY-KB-INP-05",
+    "AC-QTY-KB-INP-06",
+    "AC-QTY-SEM-BTN-01",
+    "AC-QTY-SEM-BTN-02",
+    "AC-QTY-STA-BTN-03",
+    "AC-QTY-KB-BTN-04",
+    "AC-QTY-VIS-BTN-05",
+    "AC-QTY-VIS-BTN-06",
+    "AC-QTY-VIS-BTN-07"
+  ]
+}

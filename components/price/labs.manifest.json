@@ -1,0 +1,14 @@
+{
+  "component": "price",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-PRC-SEM-TXT-01",
+    "AC-PRC-SEM-TXT-02",
+    "AC-PRC-SEM-TXT-03",
+    "AC-PRC-SEM-RNG-04",
+    "AC-PRC-SEM-RNG-05",
+    "AC-PRC-VIS-TXT-06"
+  ]
+}

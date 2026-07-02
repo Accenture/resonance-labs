@@ -1,0 +1,14 @@
+{
+  "component": "skip-navigation",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-SKP-SEM-LNK-01",
+    "AC-SKP-SEM-LNK-02",
+    "AC-SKP-POS-LNK-03",
+    "AC-SKP-VIS-LNK-04",
+    "AC-SKP-VIS-LNK-05",
+    "AC-SKP-FOC-TGT-01"
+  ]
+}

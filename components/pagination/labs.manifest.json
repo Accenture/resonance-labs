@@ -1,0 +1,17 @@
+{
+  "component": "pagination",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-PGN-SEM-NAV-01",
+    "AC-PGN-SEM-NAV-02",
+    "AC-PGN-SEM-LNK-01",
+    "AC-PGN-STA-LNK-01",
+    "AC-PGN-KB-LNK-01",
+    "AC-PGN-VIS-LNK-01",
+    "AC-PGN-VIS-LNK-02",
+    "AC-PGN-SEM-CTL-01",
+    "AC-PGN-STA-CTL-01"
+  ]
+}

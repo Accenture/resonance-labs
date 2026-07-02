@@ -1,0 +1,21 @@
+{
+  "component": "mini-cart",
+  "specVersion": "1.0.0",
+  "implements": [],
+  "partial": [],
+  "missing": [
+    "AC-MNC-SEM-TRG-01",
+    "AC-MNC-SEM-TRG-02",
+    "AC-MNC-STA-TRG-03",
+    "AC-MNC-STA-TRG-04",
+    "AC-MNC-ANN-CNT-01",
+    "AC-MNC-SEM-PNL-01",
+    "AC-MNC-SEM-PNL-02",
+    "AC-MNC-KB-PNL-01",
+    "AC-MNC-SEM-ITM-01",
+    "AC-MNC-SEM-ITM-02",
+    "AC-MNC-SEM-ITM-03",
+    "AC-MNC-SEM-ACT-01",
+    "AC-MNC-VIS-FOC-01"
+  ]
+}
