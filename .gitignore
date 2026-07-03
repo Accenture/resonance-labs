@@ -5,4 +5,7 @@ node_modules/
 .claude
 dist-site/
 dist-public/
-packages/resonance-metadata/dist/*.json
+packages/
+scripts/
+package.json
+package-lock.json
