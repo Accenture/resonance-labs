@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mega Navigation - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="mega-navigation.css" />
+    <link
+      rel="icon"
+      href="/resonance-labs/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+
+      <section class="section">
+        <h1>Mega Navigation</h1>
+        <p class="component-tagline">A mega navigation presents a large, multi-column dropdown from the site header, giving users a structured overview of available sections and pages.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Hover over or focus a top-level navigation item to open the mega panel. Use Tab to move between links inside the panel, and press Escape to close it and return focus to the trigger.</p>
+        <div class="mount">
+<nav class="rlb-mega" aria-label="Primary">
+  <ul class="rlb-mega__main">
+    <li class="rlb-mega__item">
+      <button type="button" class="rlb-mega__btn" aria-expanded="false" aria-controls="mega-navigation-submenu-1">
+        Products
+        <img class="rlb-mega__icon" src="/resonance-labs/assets/images/chevron-down.svg" alt="" width="18" height="18" aria-hidden="true" />
+      </button>
+      <ul id="mega-navigation-submenu-1" class="rlb-mega__submenu" hidden>
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Enterprise</a></li>
+      </ul>
+    </li>
+    <li class="rlb-mega__item">
+      <button type="button" class="rlb-mega__btn" aria-expanded="false" aria-controls="mega-navigation-submenu-2">
+        Solutions
+        <img class="rlb-mega__icon" src="/resonance-labs/assets/images/chevron-down.svg" alt="" width="18" height="18" aria-hidden="true" />
+      </button>
+      <ul id="mega-navigation-submenu-2" class="rlb-mega__submenu" hidden>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Design systems</a></li>
+        <li><a href="#">Analytics</a></li>
+      </ul>
+    </li>
+    <li class="rlb-mega__item"><a class="rlb-mega__link" href="#">Support</a></li>
+  </ul>
+</nav>
+
+</div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Top-level items open the mega panel when focused or activated by keyboard.</li>
+          <li>Focus moves into the panel automatically and cycles through all links in a logical order.</li>
+          <li>Pressing Escape closes the panel and returns focus to the item that opened it.</li>
+          <li>The expanded state of each trigger is communicated to screen readers via an attribute that toggles as the panel opens and closes.</li>
+          <li>Clicking or tabbing away from the open panel causes it to close without losing the user's place on the page.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Nav wrapper:</strong> The landmark element that wraps the entire navigation and provides a label for screen readers.</li>
+          <li><strong>Top-level trigger:</strong> The button or link in the header bar that opens its associated mega panel when activated.</li>
+          <li><strong>Mega panel:</strong> The large dropdown container holding grouped links, organized into columns or categories.</li>
+          <li><strong>Column heading:</strong> A visible label that groups a set of related links within the panel.</li>
+          <li><strong>Link list:</strong> The set of individual page or section links within each column of the panel.</li>
+          <li><strong>Overlay / backdrop:</strong> An optional dimmed layer behind the panel that signals the rest of the page is temporarily inactive.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Each top-level trigger must communicate whether its panel is currently open or closed.</li>
+          <li>When a panel opens, keyboard focus must move into the panel so users do not have to Tab through the entire header to reach panel content.</li>
+          <li>Pressing Escape must close the open panel and return focus to the trigger that opened it.</li>
+          <li>All links within the panel must be reachable and activatable by keyboard alone.</li>
+          <li>The navigation landmark must have an accessible label so screen reader users can identify it in the page's landmark list.</li>
+          <li>Focus must not escape to the rest of the page while the mega panel is open.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a non-interactive element such as a div or span as the panel trigger instead of a button, which makes it unreachable by keyboard.</li>
+          <li>Forgetting to update the expanded/collapsed state on the trigger when the panel opens or closes.</li>
+          <li>Not returning focus to the trigger after the panel is closed with Escape, leaving keyboard users lost in the page.</li>
+          <li>Opening the panel on hover only, with no keyboard-accessible way to open it.</li>
+          <li>Omitting an accessible name on the navigation landmark, making it indistinguishable from other nav elements on the same page.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Mega navigations are among the most complex interactive patterns on content-rich sites. When focus management is broken or triggers are mouse-only, keyboard users and screen reader users lose access to large portions of the site's structure. A user relying on a keyboard cannot browse categories, and a screen reader user receives no indication that an entire panel of links exists. Getting this pattern right ensures that everyone — regardless of input method — can navigate the full breadth of the site.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/Accenture/resonance-labs"
+              >GitHub Code</a
+            >
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      // Fetch HTML fragment
+      fetch("./mega-navigation.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          // Populate HTML code preview (strip leading comment block)
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS
+      fetch("./mega-navigation.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      // Fetch JS
+      fetch("./mega-navigation.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      // Tab switching
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

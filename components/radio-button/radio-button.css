@@ -1,0 +1,33 @@
+fieldset {
+  max-width: 420px;
+  border: none;
+  padding: 0;
+}
+
+.rlb-radio__option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.rlb-radio__option input[type="radio"] {
+  accent-color: var(--primary-color);
+  margin-top: 0.25rem;
+}
+
+.rlb-radio__option label {
+  display: block;
+  font-weight: 600;
+}
+
+.rlb-radio__hint {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-color-subtle);
+}
+
+:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="price.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+
+      <section class="section">
+        <h1>Price</h1>
+        <p class="component-tagline">A price display presents monetary values as real text with programmatically associated currency information, supporting standard prices, ranges, free items, and explicit currency codes so all users can perceive pricing accurately.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Review the price variants shown below — a standard price, a price range, a free item, and an explicit currency code example. With a screen reader active, navigate through each price and listen to how the value and currency are announced. Notice how each variant is expressed as real, selectable text rather than an image or decorative element.</p>
+        <div class="mount">
+<div class="rlb-price-examples">
+  <!-- Standard price -->
+  <div class="rlb-price-card">
+    <h3 class="rlb-price-card__title">Pro Plan</h3>
+    <p class="rlb-price">
+      <span class="rlb-sr-only">Price:</span>
+      <span class="rlb-price__amount">$49.99</span>
+      <span class="rlb-sr-only">USD</span>
+    </p>
+  </div>
+
+  <!-- Price range -->
+  <div class="rlb-price-card">
+    <h3 class="rlb-price-card__title">Custom Widget</h3>
+    <p class="rlb-price">
+      <span class="rlb-sr-only">Price range:</span>
+      <span class="rlb-price__amount">$10.00</span>
+      <span class="rlb-price__separator" aria-hidden="true">&ndash;</span>
+      <span class="rlb-sr-only">to</span>
+      <span class="rlb-price__amount">$25.00</span>
+      <span class="rlb-sr-only">USD</span>
+    </p>
+  </div>
+
+  <!-- Free item -->
+  <div class="rlb-price-card">
+    <h3 class="rlb-price-card__title">Starter Plan</h3>
+    <p class="rlb-price">
+      <span class="rlb-sr-only">Price:</span>
+      <span class="rlb-price__amount rlb-price__amount--free">Free</span>
+    </p>
+  </div>
+
+  <!-- Price with explicit currency code -->
+  <div class="rlb-price-card">
+    <h3 class="rlb-price-card__title">Enterprise Plan</h3>
+    <p class="rlb-price">
+      <span class="rlb-sr-only">Price:</span>
+      <span class="rlb-price__amount">
+        <span class="rlb-price__currency">EUR</span>
+        89.00
+      </span>
+    </p>
+  </div>
+</div>
+
+</div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Price values are rendered as real text, not images or SVG, so they can be read by screen readers and resized by browser text settings.</li>
+          <li>The currency symbol or code is included within the accessible text so users are not left to guess whether "$" means US dollars, Canadian dollars, or another currency.</li>
+          <li>Price ranges use a text structure that reads naturally in sequence (e.g., "From $20 to $40") rather than relying on visual spacing alone to imply the range.</li>
+          <li>Free items are expressed as the word "Free" or a zero-value price with a currency, not as an empty element, ensuring the concept is communicated to all users.</li>
+          <li>Decorative currency symbols or ornamental styling are separated from the semantic price value so they do not interrupt the spoken output.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Price container:</strong> The wrapper element that holds the currency and value together as a unit, providing a consistent structure for all price variants.</li>
+          <li><strong>Currency indicator:</strong> The symbol (e.g., $) or code (e.g., USD) that identifies the monetary unit; included within accessible text for all variants.</li>
+          <li><strong>Price value:</strong> The numeric amount, rendered as plain text so it is accessible to screen readers, search engines, and browser zoom tools.</li>
+          <li><strong>Range separator:</strong> The element or text that connects the lower and upper bounds of a price range (e.g., "to" or "–"), made explicit for screen reader users.</li>
+          <li><strong>Free label:</strong> A textual expression of zero cost used in place of a $0.00 display, providing a clearer and more natural communication of the price.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The price is always rendered as selectable, real text — never as an image, canvas element, or purely visual decoration — so it can be read by any assistive technology.</li>
+          <li>The currency context is programmatically associated with the price value so screen reader users hear "fifty dollars" rather than "dollar sign fifty".</li>
+          <li>Price ranges expose both endpoints in a readable sequence, ensuring the relationship between low and high values is unambiguous when read linearly.</li>
+          <li>A price of zero is communicated as "Free" or as an explicit zero value rather than leaving the field empty, which would be meaningless to a screen reader.</li>
+          <li>The component respects user text-size preferences and browser zoom without truncating or obscuring the price value.</li>
+          <li>Color is not the only means of distinguishing price states — the text content itself carries the meaning regardless of styling.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Rendering the price as an image or SVG text, making it impossible for screen readers or browser text-zoom tools to access the value.</li>
+          <li>Using only the currency symbol without surrounding context, so a screen reader announces "dollar sign" instead of "US dollars" or reads nothing at all.</li>
+          <li>Expressing a price range with a visual dash between two numbers without any text connector, so users hear two unrelated numbers with no explanation of their relationship.</li>
+          <li>Leaving the price element empty or showing a placeholder character for free items, resulting in an empty or meaningless announcement.</li>
+          <li>Styling the currency symbol and value in separate elements without a shared accessible label, causing the two pieces to be announced separately or out of order.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Price is one of the most decision-critical pieces of information on any product page. A screen reader user who hears an ambiguous currency symbol, two disconnected numbers, or silence where a price should be cannot make an informed purchasing decision. Users who rely on browser text zoom must be able to read prices that scale with their settings. When price information is inaccessible, users with disabilities are effectively denied the ability to comparison shop — a fundamental part of the online retail experience.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      fetch("./price.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      fetch("./price.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      fetch("./price.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

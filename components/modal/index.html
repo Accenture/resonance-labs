@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="modal.css" />
+    <link
+      rel="icon"
+      href="/resonance-labs/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+
+      <section class="section">
+        <h1>Modal</h1>
+        <p class="component-tagline">A modal dialog overlays the page to present content or request a decision, blocking interaction with the rest of the interface until it is dismissed.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Click the "Open Modal" button to launch the dialog. While the modal is open, try pressing Tab to cycle through focusable elements and Escape to close it. Confirm that focus returns to the trigger button after the modal closes.</p>
+        <div class="mount">
+<button id="modal-open" class="rlb-modal__trigger" aria-haspopup="dialog" aria-controls="modal-dialog">Open modal</button>
+
+<div id="modal-dialog" class="rlb-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
+  <div class="rlb-modal__backdrop" data-backdrop></div>
+  <div class="rlb-modal__panel" tabindex="-1">
+    <h2 id="modal-title">Modal title</h2>
+    <p id="modal-desc">This is a demo modal. Focus should be trapped while open.</p>
+    <a href="#" class="rlb-modal__link">Focusable link</a>
+    <button id="modal-close" class="rlb-modal__close" aria-label="Close modal">
+      <img src="/resonance-labs/assets/images/close.svg" alt="" width="20" height="20" aria-hidden="true" />
+    </button>
+  </div>
+</div>
+
+</div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Focus moves into the modal immediately when it opens, landing on the first focusable element.</li>
+          <li>Tab and Shift+Tab cycle only through elements inside the modal — focus cannot escape to the page behind it.</li>
+          <li>Pressing Escape closes the modal and returns focus to the element that triggered it.</li>
+          <li>Screen readers announce the dialog role and its accessible name when it opens.</li>
+          <li>The content behind the modal is inert — it cannot be clicked, scrolled, or reached by keyboard while the dialog is open.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Backdrop / overlay:</strong> The dimmed layer covering the page that signals the modal is active and prevents interaction with background content.</li>
+          <li><strong>Dialog container:</strong> The panel that holds all modal content, marked up with the dialog role and an accessible name.</li>
+          <li><strong>Dialog title:</strong> The heading inside the dialog that names the purpose of the modal, used as its accessible label.</li>
+          <li><strong>Body content:</strong> The main message, form, or information displayed within the dialog.</li>
+          <li><strong>Action buttons:</strong> Buttons that confirm, cancel, or otherwise resolve the modal's purpose.</li>
+          <li><strong>Close button:</strong> An explicit control, typically in the header area, that dismisses the modal.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The dialog element must have an accessible name, typically derived from its visible title.</li>
+          <li>When the modal opens, focus must move inside it automatically — do not leave focus on the trigger or on the document body.</li>
+          <li>Focus must be trapped within the modal while it is open; Tab and Shift+Tab must not allow focus to reach elements behind the overlay.</li>
+          <li>Pressing Escape must close the modal and return focus to the element that originally opened it.</li>
+          <li>Background content must be hidden from assistive technologies while the modal is open.</li>
+          <li>All interactive controls inside the modal must be reachable and operable by keyboard.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Not trapping focus inside the modal, allowing keyboard users to Tab into hidden background content.</li>
+          <li>Failing to return focus to the trigger when the modal closes, leaving keyboard users at the top of the page.</li>
+          <li>Using a div instead of a proper dialog element or not applying the correct role, so screen readers do not identify it as a dialog.</li>
+          <li>Omitting an accessible name on the dialog, so screen readers announce it without context.</li>
+          <li>Relying solely on clicking the backdrop to close the modal, with no keyboard-accessible dismissal path.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Modals interrupt the normal page flow and demand a user's attention. When focus management is broken, keyboard and screen reader users can become disoriented — either stuck inside a dialog they cannot exit or dropped back at the top of the page after closing one. Proper focus trapping and restoration ensure that modals feel predictable and safe for everyone, preventing the frustration of losing one's place in a complex workflow.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/Accenture/resonance-labs"
+              >GitHub Code</a
+            >
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      // Fetch HTML fragment
+      fetch("./modal.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          // Populate HTML code preview (strip leading comment block)
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS
+      fetch("./modal.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      // Fetch JS
+      fetch("./modal.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      // Tab switching
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

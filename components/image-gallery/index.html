@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="image-gallery.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+
+      <section class="section">
+        <h1>Image Gallery</h1>
+        <p class="component-tagline">An accessible product image gallery with keyboard-navigable thumbnails, previous/next controls, and a live region that announces the current image position to assistive technology.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Click the Previous and Next buttons to cycle through the main product image. Click any thumbnail to jump directly to that image. Use the keyboard — Tab to reach the controls, then Enter or Space to activate them — and listen for the position announcement that updates as images change.</p>
+        <div class="mount">
+<!-- Image Gallery component -->
+<section class="rlb-image-gallery" aria-label="Product images">
+  <div class="rlb-image-gallery__main">
+    <img
+      class="rlb-image-gallery__main-image"
+      src="https://picsum.photos/id/10/600/400"
+      alt="Landscape with a calm lake and surrounding forest"
+    />
+  </div>
+
+  <div class="rlb-image-gallery__controls">
+    <button
+      class="rlb-image-gallery__nav rlb-image-gallery__nav--prev"
+      type="button"
+      aria-label="Previous image"
+    >
+      <img src="/resonance-labs/assets/images/chevron-left.svg" alt="" width="24" height="24" aria-hidden="true" />
+    </button>
+
+    <ul class="rlb-image-gallery__thumbnails" role="list">
+      <li>
+        <button
+          class="rlb-image-gallery__thumb"
+          type="button"
+          aria-current="true"
+          aria-label="View image 1: Landscape with a calm lake and surrounding forest"
+          data-full="https://picsum.photos/id/10/600/400"
+          data-alt="Landscape with a calm lake and surrounding forest"
+        >
+          <img src="https://picsum.photos/id/10/120/80" alt="" />
+        </button>
+      </li>
+      <li>
+        <button
+          class="rlb-image-gallery__thumb"
+          type="button"
+          aria-current="false"
+          aria-label="View image 2: Close-up of green leaves with morning dew"
+          data-full="https://picsum.photos/id/28/600/400"
+          data-alt="Close-up of green leaves with morning dew"
+        >
+          <img src="https://picsum.photos/id/28/120/80" alt="" />
+        </button>
+      </li>
+      <li>
+        <button
+          class="rlb-image-gallery__thumb"
+          type="button"
+          aria-current="false"
+          aria-label="View image 3: Winding road through an autumn mountain pass"
+          data-full="https://picsum.photos/id/29/600/400"
+          data-alt="Winding road through an autumn mountain pass"
+        >
+          <img src="https://picsum.photos/id/29/120/80" alt="" />
+        </button>
+      </li>
+      <li>
+        <button
+          class="rlb-image-gallery__thumb"
+          type="button"
+          aria-current="false"
+          aria-label="View image 4: Rocky coastline with crashing ocean waves"
+          data-full="https://picsum.photos/id/42/600/400"
+          data-alt="Rocky coastline with crashing ocean waves"
+        >
+          <img src="https://picsum.photos/id/42/120/80" alt="" />
+        </button>
+      </li>
+      <li>
+        <button
+          class="rlb-image-gallery__thumb"
+          type="button"
+          aria-current="false"
+          aria-label="View image 5: Snow-capped mountain peaks at sunset"
+          data-full="https://picsum.photos/id/76/600/400"
+          data-alt="Snow-capped mountain peaks at sunset"
+        >
+          <img src="https://picsum.photos/id/76/120/80" alt="" />
+        </button>
+      </li>
+    </ul>
+
+    <button
+      class="rlb-image-gallery__nav rlb-image-gallery__nav--next"
+      type="button"
+      aria-label="Next image"
+    >
+      <img src="/resonance-labs/assets/images/chevron-right.svg" alt="" width="24" height="24" aria-hidden="true" />
+    </button>
+  </div>
+
+  <div class="rlb-image-gallery__counter" aria-live="polite" aria-atomic="true">
+    Image 1 of 5
+  </div>
+</section>
+
+</div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The main image has a descriptive alt text that changes as each new image is displayed, conveying the visual content to screen reader users.</li>
+          <li>A live region announces the current image position (e.g., "Image 2 of 5") each time the displayed image changes.</li>
+          <li>Thumbnail buttons each have an accessible name indicating what they show, so users can choose a specific view without activating it first.</li>
+          <li>The currently active thumbnail is indicated both visually and programmatically, allowing screen reader users to identify which image is selected.</li>
+          <li>Previous and Next buttons are disabled at the boundaries and communicate their disabled state to assistive technology, not just visually.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Main image:</strong> The large featured product image displayed in the gallery viewport; its alt text reflects the specific view shown.</li>
+          <li><strong>Previous button:</strong> Navigates to the preceding image in the set; disabled when the first image is active.</li>
+          <li><strong>Next button:</strong> Navigates to the following image in the set; disabled when the last image is active.</li>
+          <li><strong>Thumbnail strip:</strong> A row of smaller images representing each item in the gallery; each thumbnail is a focusable button.</li>
+          <li><strong>Position live region:</strong> A visually displayed or visually hidden element that announces the current image index and total count to screen readers.</li>
+          <li><strong>Selected thumbnail indicator:</strong> A visual and programmatic marker on the thumbnail that corresponds to the currently shown main image.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The main image's alt text updates programmatically each time the active image changes, ensuring screen reader users always receive a description of what is displayed.</li>
+          <li>A polite live region announces the image position (e.g., "Image 3 of 5") after each navigation action so users can track their place in the gallery.</li>
+          <li>Each thumbnail button carries an accessible name that describes the view it represents (e.g., "Side view") rather than generic labels like "thumbnail 2".</li>
+          <li>The currently selected thumbnail is marked with a programmatic selected or pressed state so it is distinguishable by screen reader users, not just visually.</li>
+          <li>Previous and Next buttons communicate their disabled state both visually and to assistive technology when the gallery is at its first or last image.</li>
+          <li>All controls are reachable and operable by keyboard with a natural tab order: previous, thumbnails, next.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a static or empty alt attribute on the main image so that it never describes the currently displayed photo, leaving screen reader users with no information.</li>
+          <li>Implementing thumbnails as styled divs or images without wrapping them in buttons, making them unreachable by keyboard.</li>
+          <li>Omitting a live region so that image transitions produce no feedback and users must navigate to the main image to discover what changed.</li>
+          <li>Visually disabling Previous and Next at the boundaries without setting the disabled attribute, so keyboard users can still Tab to and activate a broken control.</li>
+          <li>Relying solely on a highlighted border to mark the active thumbnail, which becomes invisible for users who cannot distinguish the highlight color.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Product images are often the most persuasive content on a product detail page. A blind shopper who receives no description of the currently displayed image — or who cannot navigate the gallery at all — is denied the same product information that sighted users take for granted. Inadequate live-region feedback means users must hunt through the page to confirm that navigation worked. Accessible image galleries give every user the ability to inspect a product from multiple angles, read each view's description, and make an informed purchase decision.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      // Fetch HTML fragment
+      fetch("./image-gallery.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          // Populate HTML code preview (strip leading comment block)
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS
+      fetch("./image-gallery.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      // Fetch JS
+      fetch("./image-gallery.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      // Tab switching
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

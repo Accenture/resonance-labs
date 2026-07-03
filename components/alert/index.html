@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alert - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="alert.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+      <div class="section">
+        <h1>Alert</h1>
+        <p class="component-tagline">An inline notification that announces important information automatically via a live region, without requiring user interaction.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Trigger an alert using the available controls. Observe how the message appears visually and listen for how a screen reader announces it without any focus change or user action required.</p>
+        <div class="mount">
+<div class="section">
+  <section class="rlb-alert-demo" data-alert-demo>
+    <!-- Info alert -->
+    <div class="rlb-alert rlb-alert--info" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-information.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Info:</strong>
+        <span class="rlb-alert__message">Your session will expire in 10 minutes.</span>
+      </div>
+    </div>
+
+    <!-- Success alert -->
+    <div class="rlb-alert rlb-alert--success" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-success.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Success:</strong>
+        <span class="rlb-alert__message">Your changes have been saved.</span>
+      </div>
+    </div>
+
+    <!-- Warning alert -->
+    <div class="rlb-alert rlb-alert--warning" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-warning.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Warning:</strong>
+        <span class="rlb-alert__message">Some fields require your attention before continuing.</span>
+      </div>
+    </div>
+
+    <!-- Error alert -->
+    <div class="rlb-alert rlb-alert--error" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-error.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Error:</strong>
+        <span class="rlb-alert__message">Unable to process your request. Please try again.</span>
+      </div>
+    </div>
+
+    <!-- Dismissible alert variants -->
+    <div class="rlb-alert rlb-alert--info rlb-alert--dismissible" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-information.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Info:</strong>
+        <span class="rlb-alert__message">This is a dismissible information alert.</span>
+      </div>
+      <button type="button" class="rlb-alert__dismiss" aria-label="Dismiss info alert">
+        <img src="/resonance-labs/assets/images/close.svg" alt="" width="16" height="16" aria-hidden="true" />
+      </button>
+    </div>
+
+    <div class="rlb-alert rlb-alert--error rlb-alert--dismissible" role="alert">
+      <img class="rlb-alert__icon" src="/resonance-labs/assets/images/alert-error.svg" alt="" width="20" height="20" aria-hidden="true" />
+      <div class="rlb-alert__content">
+        <strong class="rlb-alert__label">Error:</strong>
+        <span class="rlb-alert__message">This is a dismissible error alert.</span>
+      </div>
+      <button type="button" class="rlb-alert__dismiss" aria-label="Dismiss error alert">
+        <img src="/resonance-labs/assets/images/close.svg" alt="" width="16" height="16" aria-hidden="true" />
+      </button>
+    </div>
+
+    <!-- Trigger button to demonstrate dynamic live region behavior -->
+    <button
+      class="btn rlb-alert-demo__trigger"
+      type="button"
+      data-action="trigger-alert"
+    >
+      Trigger Dynamic Alert
+    </button>
+
+    <!-- Live region container for dynamically injected alerts -->
+    <div class="rlb-alert-demo__live-region" data-live-region></div>
+  </section>
+</div>
+
+</div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The alert message is announced automatically by screen readers when it appears</li>
+          <li>No focus shift occurs — the user's current position remains unchanged</li>
+          <li>The alert container is present in the DOM even before content is injected</li>
+          <li>Different alert types (such as error or success) are visually and semantically distinct</li>
+          <li>Dismissible alerts remove themselves cleanly without disrupting focus</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Live Region Container</strong> — the element with a live region role that is present in the DOM before any content is injected, allowing the browser to detect subsequent changes</li>
+          <li><strong>Message Text</strong> — the content injected into the live region that will be announced by assistive technology</li>
+          <li><strong>Status Icon</strong> — an optional visual icon indicating alert type (informational, success, warning, error); decorative icons should be hidden from assistive technology</li>
+          <li><strong>Dismiss Button</strong> — an optional interactive control to close the alert, which must have an accessible name</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Use a live region role so that assistive technology announces the message as soon as it appears, without requiring a focus change</li>
+          <li>Ensure the live region container is already in the DOM when the page loads; injecting the container and content simultaneously can prevent the announcement from firing</li>
+          <li>Use an assertive live region only for urgent, time-sensitive errors; use a polite live region for general status messages that should not interrupt the user</li>
+          <li>Do not move focus to the alert automatically — alerts are intended for passive announcements, not modal interruptions</li>
+          <li>If the alert includes a dismiss button, ensure it has a clear and descriptive accessible name so users understand what will be dismissed</li>
+          <li>Decorative icons or status indicators within the alert should be hidden from assistive technology to prevent redundant announcements</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Injecting the live region element and its content at the same time, which prevents many screen readers from detecting the change</li>
+          <li>Using an assertive live region for non-urgent messages, causing disruptive interruptions during normal user activity</li>
+          <li>Moving focus to the alert when it appears, which conflates alert behavior with dialog behavior</li>
+          <li>Omitting an accessible name on a dismiss button, leaving screen reader users without context for what the button does</li>
+          <li>Displaying alert content only through color or icon without accompanying text, which fails users who cannot perceive color</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Alerts are one of the most commonly misimplemented patterns in web interfaces. When the live region is injected at the same time as its content, screen readers often fail to announce anything — leaving blind and low-vision users completely unaware of critical status messages. Using an assertive live region inappropriately can interrupt users mid-task. Relying on color alone to convey alert type excludes users with color vision deficiencies. A correctly implemented alert reaches all users, regardless of how they access the page.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </div>
+
+      <div class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li><a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script>
+      fetch("./alert.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
+      fetch("./alert.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
+      fetch("./alert.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
+      var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});
+      document.querySelectorAll(".code-preview__copy").forEach(function(btn){btn.addEventListener("click",function(){var codeEl=document.getElementById(btn.dataset.target);navigator.clipboard.writeText(codeEl.textContent).then(function(){btn.textContent="Copied!";setTimeout(function(){btn.textContent="Copy Code"},2000)})})});
+    </script>
+  </body>
+</html>

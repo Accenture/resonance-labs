@@ -1,0 +1,116 @@
+/* Alert Dialog Component */
+
+.rlb-alert-dialog-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Trigger button */
+.rlb-alert-dialog-trigger {
+  font-size: var(--font-size-base);
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-color);
+  color: var(--text-color-inverse);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.rlb-alert-dialog-trigger:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.rlb-alert-dialog-trigger:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Overlay / backdrop */
+.rlb-alert-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.rlb-alert-dialog-overlay[hidden] {
+  display: none;
+}
+
+/* Dialog panel */
+.rlb-alert-dialog-panel {
+  position: relative;
+  background: var(--surface-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+}
+
+.rlb-alert-dialog-panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.rlb-alert-dialog-panel p {
+  margin: 0 0 1.5rem;
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* Action buttons row */
+.rlb-alert-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.rlb-alert-dialog-btn {
+  font-size: var(--font-size-base);
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.rlb-alert-dialog-btn:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.rlb-alert-dialog-btn--cancel {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.rlb-alert-dialog-btn--cancel:hover {
+  background-color: var(--surface-hover);
+}
+
+.rlb-alert-dialog-btn--confirm {
+  background-color: var(--primary-color);
+  color: var(--text-color-inverse);
+}
+
+.rlb-alert-dialog-btn--confirm:hover {
+  background-color: var(--primary-color-hover);
+}
+
+/* Live region status */
+.rlb-alert-dialog-status {
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+  min-height: 1.5em;
+  margin-top: 0.5rem;
+}

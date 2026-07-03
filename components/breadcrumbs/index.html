@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breadcrumbs - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="breadcrumbs.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+      <div class="section">
+        <h1>Breadcrumbs</h1>
+        <p class="component-tagline">A navigation landmark that displays a trail of links reflecting the user's current position within a site hierarchy, helping them understand context and navigate to higher-level pages.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Review both breadcrumb scenarios below. Tab through the links and observe how each is identified and announced. Notice how the current page item is distinguished from the preceding navigation links, and how the separator characters are handled by assistive technology.</p>
+        <div class="demo-tabs" role="tablist" aria-label="Demo variants">
+  <button class="demo-tabs__tab demo-tabs__tab--active" role="tab" aria-selected="true" aria-controls="demo-variant-0">Link</button>
+  <button class="demo-tabs__tab" role="tab" aria-selected="false" aria-controls="demo-variant-1">No Link</button>
+</div>
+<div class="mount">
+<div id="demo-variant-0" role="tabpanel">
+<nav class="rlb-breadcrumb" aria-label="breadcrumb">
+  <ol class="rlb-breadcrumb__list">
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/home">Home</a></li>
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/products">Products</a></li>
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/products/electronics">Electronics</a></li>
+    <li class="rlb-breadcrumb__item"><span class="rlb-breadcrumb__current" aria-current="page">Cameras</span></li>
+  </ol>
+</nav>
+
+</div>
+<div id="demo-variant-1" role="tabpanel" hidden>
+<nav class="rlb-breadcrumb" aria-label="breadcrumb">
+  <ol class="rlb-breadcrumb__list">
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/home">Home</a></li>
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/products">Products</a></li>
+    <li class="rlb-breadcrumb__item"><a class="rlb-breadcrumb__link link-underlined" href="/products/electronics">Electronics</a></li>
+    <li class="rlb-breadcrumb__item rlb-breadcrumb__current" aria-current="page">Cameras</li>
+  </ol>
+</nav>
+
+</div>
+</div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The breadcrumb trail is contained within a navigation landmark with a distinct accessible name</li>
+          <li>Separator characters between items are hidden from assistive technology and not announced</li>
+          <li>The current page item is marked programmatically so screen readers identify it as the active location</li>
+          <li>When the current page is a link, it is distinguishable from ancestor links both visually and semantically</li>
+          <li>When the current page is plain text, it is not focusable and does not behave like a link</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Navigation Landmark</strong> — the wrapping nav element with a label that distinguishes this breadcrumb from other navigation regions on the page</li>
+          <li><strong>Ordered List</strong> — the semantic list container that groups breadcrumb items and communicates their count and sequential relationship to screen readers</li>
+          <li><strong>Ancestor Link</strong> — a standard anchor element linking to a higher-level page in the site hierarchy</li>
+          <li><strong>Current Page Item</strong> — the final item representing the user's current location, marked to indicate it is the active page; may be a link or plain text depending on the implementation</li>
+          <li><strong>Separator</strong> — a visual-only character or icon between items that is hidden from assistive technology</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Wrap the breadcrumb in a navigation landmark and give it an accessible name that distinguishes it from other navigation regions on the page</li>
+          <li>Use an ordered list to convey the hierarchical and sequential nature of the breadcrumb trail</li>
+          <li>Mark the current page item programmatically so assistive technology can identify the user's active location within the trail</li>
+          <li>Hide separator characters from assistive technology so they are not read aloud as part of the breadcrumb content</li>
+          <li>Ensure ancestor links have meaningful and descriptive link text that reflects the destination page</li>
+          <li>If the current page item is rendered as a link, it should still be identifiable as the current location rather than just another navigation link</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Placing the breadcrumb outside a navigation landmark, making it invisible to users who navigate by landmarks</li>
+          <li>Using an unordered list or a flat sequence of links without a list element, losing the semantic structure that communicates hierarchy</li>
+          <li>Failing to mark the current page item, leaving screen reader users without a clear indication of their location</li>
+          <li>Not hiding separator characters, causing them to be read aloud and cluttering the screen reader's output</li>
+          <li>Using generic link text such as "click here" or truncated labels that do not describe the destination page</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Breadcrumbs are a wayfinding tool. For sighted users, the visual trail makes location obvious at a glance. For screen reader users navigating by landmarks or links, the breadcrumb's structure — its landmark label, list semantics, and current-page marker — is what makes location comprehensible. When these elements are absent, screen reader users may have no way to understand where they are in a site's structure or how to return to a parent page without using the browser's back button. A correctly implemented breadcrumb gives all users an equivalent sense of orientation.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </div>
+
+      <!-- Scenario 1: Current page as a link -->
+      <div class="section">
+        <h2>Code</h2>
+        <h3>Scenario: Current page as a link</h3>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html-1">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css-1">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js-1">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html-1" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html-1" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html-1">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css-1" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css-1" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css-1">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js-1" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js-1" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js-1">Copy Code</button>
+        </div>
+      </div>
+
+      <!-- Scenario 2: Current page is NOT a link -->
+      <div class="section">
+        <h3>Scenario: Current page is NOT a link</h3>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html-2">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css-2">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js-2">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html-2" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html-2" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html-2">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css-2" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css-2" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css-2">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js-2" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js-2" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js-2">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li><a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      // Scenario 1: Current page as a link
+      fetch("./breadcrumbs--link.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/g, "").trim();
+          var codeHtml = document.getElementById("code-html-1");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Scenario 2: Current page is NOT a link
+      fetch("./breadcrumbs--no-link.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/g, "").trim();
+          var codeHtml = document.getElementById("code-html-2");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS — populate both panels
+      fetch("./breadcrumbs.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          ["code-css-1", "code-css-2"].forEach(function (id) {
+            var el = document.getElementById(id);
+            el.textContent = css;
+            Prism.highlightElement(el);
+          });
+        });
+
+      // Fetch JS — populate both panels
+      fetch("./breadcrumbs.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          ["code-js-1", "code-js-2"].forEach(function (id) {
+            var el = document.getElementById(id);
+            el.textContent = js;
+            Prism.highlightElement(el);
+          });
+        });
+
+      // Tab switching — scoped per tab group
+      document.querySelectorAll(".code-tabs").forEach(function (tabBar) {
+        var tabs = tabBar.querySelectorAll(".code-tabs__tab");
+        tabs.forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            tabs.forEach(function (t) {
+              t.classList.remove("code-tabs__tab--active");
+              t.setAttribute("aria-selected", "false");
+            });
+            tabs.forEach(function (t) {
+              var panel = document.getElementById("panel-" + t.dataset.tab);
+              if (panel) panel.hidden = true;
+            });
+            tab.classList.add("code-tabs__tab--active");
+            tab.setAttribute("aria-selected", "true");
+            document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+          });
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

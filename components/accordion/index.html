@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="accordion.css" />
+    <link
+      rel="icon"
+      href="/resonance-labs/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+      <div class="section">
+        <h1>Accordion</h1>
+        <p class="component-tagline">An accessible accordion pattern that demonstrates expandable content sections, keyboard interaction, and state communication for screen readers.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Use Tab to reach each accordion trigger. Press Enter or Space to expand or collapse a panel. Observe how focus and state change as you interact.</p>
+        <div class="mount">
+<div class="rlb-accordion">
+  <div class="rlb-accordion__item">
+    <h3>
+      <button class="rlb-accordion-trigger" aria-expanded="false" aria-controls="panel1" id="accordion1">
+        Section 1
+        <img class="rlb-accordion-trigger__icon" src="/resonance-labs/assets/images/chevron-down.svg" alt="" width="20" height="20" aria-hidden="true" />
+      </button>
+    </h3>
+    <div id="panel1" role="region" aria-labelledby="accordion1" hidden>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+  <div class="rlb-accordion__item">
+    <h3>
+      <button class="rlb-accordion-trigger" aria-expanded="false" aria-controls="panel2" id="accordion2">
+        Section 2
+        <img class="rlb-accordion-trigger__icon" src="/resonance-labs/assets/images/chevron-down.svg" alt="" width="20" height="20" aria-hidden="true" />
+      </button>
+    </h3>
+    <div id="panel2" role="region" aria-labelledby="accordion2" hidden>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+  <div class="rlb-accordion__item">
+    <h3>
+      <button class="rlb-accordion-trigger" aria-expanded="false" aria-controls="panel3" id="accordion3">
+        Section 3
+        <img class="rlb-accordion-trigger__icon" src="/resonance-labs/assets/images/chevron-down.svg" alt="" width="20" height="20" aria-hidden="true" />
+      </button>
+    </h3>
+    <div id="panel3" role="region" aria-labelledby="accordion3" hidden>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each trigger is reachable and activatable by keyboard</li>
+          <li>Expanded and collapsed state updates visually and programmatically</li>
+          <li>The trigger and its associated panel remain connected</li>
+          <li>Focus behavior stays predictable throughout interaction</li>
+          <li>Collapsed content is not reachable via keyboard or assistive technology</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Trigger (Heading Button)</strong> — the interactive control inside a heading that expands or collapses the associated panel</li>
+          <li><strong>Icon</strong> — a visual indicator showing the current expanded or collapsed state of the panel</li>
+          <li><strong>Content Panel</strong> — the region that is revealed when the trigger is activated</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Each trigger is operable using standard keyboard controls</li>
+          <li>The component communicates its expanded and collapsed state to assistive technologies</li>
+          <li>Each trigger is clearly associated with the content it controls</li>
+          <li>Collapsed content is completely hidden from all users, including those using assistive technologies</li>
+          <li>Focus behavior remains predictable and logical throughout interaction</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using non-interactive elements for interactive controls, making them unreachable by keyboard</li>
+          <li>Failing to communicate state changes when panels expand or collapse</li>
+          <li>Leaving collapsed content reachable or perceivable when it should be hidden</li>
+          <li>Breaking the association between a trigger and the content it controls</li>
+          <li>Placing triggers outside the page heading structure, disrupting navigation for screen reader users</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Accordion components are frequently implemented in ways that break keyboard and screen reader access. When triggers are not interactive controls, keyboard users cannot reach them. When state changes are not communicated, assistive technologies announce incorrect information. When collapsed content remains perceivable, users encounter content they cannot see. Getting this pattern right ensures all users can navigate and understand the interface equally.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </div>
+
+      <div class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/Accenture/resonance-labs"
+              >GitHub Code</a
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      // Fetch HTML fragment
+      fetch("./accordion.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          // Populate HTML code preview (strip leading comment block)
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS
+      fetch("./accordion.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      // Fetch JS
+      fetch("./accordion.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      // Tab switching
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

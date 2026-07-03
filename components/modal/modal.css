@@ -1,0 +1,70 @@
+.rlb-modal[hidden] { display: none; }
+
+.rlb-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Override the global .mount > * width constraint so the overlay fills the viewport */
+  width: 100%;
+  min-width: 0;
+}
+
+.rlb-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.rlb-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 520px;
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+}
+
+.rlb-modal__trigger {
+  font-size: var(--font-size-base);
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-color);
+  color: var(--text-color-inverse);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.rlb-modal__trigger:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.rlb-modal__trigger:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.rlb-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: var(--border-radius);
+  line-height: 0;
+}
+
+.rlb-modal__close:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+:focus { outline: 3px solid var(--text-color-strong); outline-offset: 2px; }

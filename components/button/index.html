@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="button.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+      <div class="section">
+        <h1>Button</h1>
+        <p class="component-tagline">A native button element that triggers an action and communicates its purpose through a visible label, supporting keyboard operability and correct semantics out of the box.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Tab to each button and press Enter or Space to activate it. Observe how the button responds to keyboard input, how its label is announced by a screen reader, and how disabled buttons are communicated without removing them from the tab order.</p>
+        <div class="mount">
+<div class="section">
+  <section class="rlb-btn-wrapper" data-btn-demo>
+    <!-- Standard button -->
+    <button class="rlb-btn rlb-btn-demo" type="button" data-action="toast">Save changes</button>
+
+    <!-- Button with decorative icon -->
+    <button class="rlb-btn rlb-btn-demo" type="button" data-action="toast">
+      <span class="rlb-btn__icon" aria-hidden="true">★</span>
+      Favorite
+    </button>
+
+    <!-- Stateful toggle button (expanded/collapsed) -->
+    <button
+      class="rlb-btn rlb-btn-demo"
+      type="button"
+      id="btn-toggle"
+      aria-expanded="false"
+      aria-controls="btn-panel"
+      data-action="toggle"
+    >
+      Details
+      <span class="rlb-btn__icon" aria-hidden="true">▾</span>
+    </button>
+
+    <div id="btn-panel" class="rlb-btn-panel" hidden>
+      <p>This region is controlled by the toggle button.</p>
+      <a href="#" class="rlb-btn-panel__link">Focusable link in region</a>
+    </div>
+
+    <!-- Result area for demo action -->
+    <p
+      class="rlb-btn-demo__status"
+      aria-live="polite"
+      aria-atomic="true"
+      data-status
+    ></p>
+  </section>
+</div>
+
+</div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each button is reachable by Tab and activatable with Enter or Space</li>
+          <li>The button's label is announced by screen readers as soon as it receives focus</li>
+          <li>Primary and secondary visual variants do not change the button's semantic role or keyboard behavior</li>
+          <li>Icon-only buttons carry an accessible name that conveys the action without relying on the icon itself</li>
+          <li>Disabled buttons are communicated to assistive technology without hiding them from the focus order</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Button Element</strong> — the native HTML element that provides keyboard operability, focus management, and the implicit button role without any additional attributes</li>
+          <li><strong>Label Text</strong> — the visible text inside the button that describes the action it performs; this becomes the button's accessible name</li>
+          <li><strong>Icon</strong> — an optional visual symbol that supplements or replaces the text label; decorative icons are hidden from assistive technology, while meaningful icons require a text alternative</li>
+          <li><strong>Focus Indicator</strong> — the visible outline or ring that appears when the button receives keyboard focus, communicating the user's current position</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Use a native button element for all actions to inherit correct keyboard behavior and semantics without extra ARIA</li>
+          <li>Ensure every button has a clear, descriptive accessible name — either from visible label text or an accessible name technique for icon-only buttons</li>
+          <li>Support both Enter and Space key activation, which is the expected behavior for button elements</li>
+          <li>Maintain a visible focus indicator on all buttons so keyboard users can see which button currently has focus</li>
+          <li>When disabling a button, communicate the disabled state to assistive technology; consider whether a disabled button should remain focusable with an explanation of why it is unavailable</li>
+          <li>Do not use links styled as buttons for actions that do not navigate — use an actual button element so the semantics match the behavior</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a div or span as a button, losing keyboard operability, focus management, and the implicit role that screen readers rely on</li>
+          <li>Using an anchor element for actions that do not navigate to a new page or location, creating a mismatch between the element's semantics and its behavior</li>
+          <li>Providing no accessible name on an icon-only button, causing screen readers to announce only "button" with no indication of the action</li>
+          <li>Removing the focus indicator with CSS, making it impossible for keyboard users to see which button is currently focused</li>
+          <li>Disabling a button by removing it from the tab order without any explanation of why the action is unavailable</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Buttons are the most fundamental interactive element on the web, yet they are frequently replaced with styled divs or anchors that lack the native behavior keyboard and assistive technology users depend on. A div styled as a button does not respond to Enter or Space, is not reached by Tab, and is announced incorrectly by screen readers. Even when using a native button, missing labels, removed focus indicators, and ambiguous icon buttons create barriers that prevent users from understanding or completing actions. Using the correct element with a clear label is the simplest and most impactful accessibility decision in UI development.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </div>
+
+      <div class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li><a class="rlb-btn btn-primary" href="/resonance-labs/index.html">Back to Home</a></li>
+          <li><a class="rlb-btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      // Fetch HTML fragment
+      fetch("./button.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          // Populate HTML code preview (strip leading comment block)
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS
+      fetch("./button.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      // Fetch JS
+      fetch("./button.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      // Tab switching
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

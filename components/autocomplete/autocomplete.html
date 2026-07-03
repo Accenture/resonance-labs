@@ -1,0 +1,39 @@
+<div class="rlb-autocomplete-container">
+  <label for="autocomplete">Search for a country:</label>
+  <input
+    type="text"
+    id="autocomplete"
+    name="autocomplete"
+    role="combobox"
+    aria-autocomplete="list"
+    aria-expanded="false"
+    aria-controls="autocompleteList"
+    aria-activedescendant=""
+    placeholder="Start typing a country"
+  />
+
+  <ul
+    id="autocompleteList"
+    role="listbox"
+    class="rlb-autocomplete-suggestions"
+    hidden
+  >
+    <li id="option-af" role="option">Afghanistan</li>
+    <li id="option-al" role="option">Albania</li>
+    <li id="option-dz" role="option">Algeria</li>
+    <li id="option-as" role="option">American Samoa</li>
+    <li id="option-ad" role="option">Andorra</li>
+    <li id="option-ao" role="option">Angola</li>
+  </ul>
+  <div id="no-results" role="status" hidden>
+    No results found
+  </div>
+</div>
+
+<!-- Live region for SR announcements -->
+<div
+  id="autocompleteStatus"
+  class="rlb-visually-hidden"
+  role="status"
+  aria-live="polite"
+></div>

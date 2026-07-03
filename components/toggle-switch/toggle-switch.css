@@ -1,0 +1,111 @@
+/* Toggle Switch reference styles for accessibility testing
+   Focus: visibility, contrast, layout, hit area sizing, and state distinction
+*/
+
+/* Group layout */
+.rlb-toggle-switch-group {
+  max-width: 480px;
+  margin: 2rem auto;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Individual switch row */
+.rlb-toggle-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.rlb-toggle-switch:last-child {
+  border-bottom: none;
+}
+
+/* Label styling */
+.rlb-toggle-switch label {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-color-strong);
+  cursor: pointer;
+}
+
+.rlb-hint {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--primary-color-hover);
+}
+
+/* Switch button — reset + track */
+.rlb-toggle-switch button[role="switch"] {
+  all: unset;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  /* Satisfy minimum 24x24 target size (WCAG 2.2 2.5.8 AA) */
+  min-width: var(--tgs-track-width, 50px);
+  min-height: var(--tgs-track-height, 26px);
+}
+
+/* Track */
+.rlb-toggle-switch__track {
+  display: block;
+  width: var(--tgs-track-width, 50px);
+  height: var(--tgs-track-height, 26px);
+  background-color: var(--border-color-input);
+  border-radius: calc(var(--tgs-track-height, 26px) / 2);
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+/* Handle */
+.rlb-toggle-switch__handle {
+  display: block;
+  width: var(--tgs-handle-size, 22px);
+  height: var(--tgs-handle-size, 22px);
+  background-color: var(--surface-color);
+  border-radius: 50%;
+  position: absolute;
+  top: var(--tgs-handle-offset, 2px);
+  left: var(--tgs-handle-offset, 2px);
+  transition: transform 0.2s ease;
+}
+
+/* On state — track color change + handle position */
+.rlb-toggle-switch button[aria-checked="true"] .rlb-toggle-switch__track {
+  background-color: var(--primary-color);
+}
+
+.rlb-toggle-switch button[aria-checked="true"] .rlb-toggle-switch__handle {
+  transform: translateX(calc(var(--tgs-track-width, 50px) - var(--tgs-handle-size, 22px) - var(--tgs-handle-offset, 2px) * 2));
+}
+
+/* Focus visibility (WCAG 2.4.7 / 2.4.11) */
+.rlb-toggle-switch button[role="switch"]:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+  border-radius: calc(var(--tgs-track-height, 26px) / 2);
+}
+
+/* Disabled state */
+.rlb-toggle-switch button[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Touch ergonomics — larger hit area on coarse pointer devices */
+@media (pointer: coarse) {
+  .rlb-toggle-switch button[role="switch"] {
+    min-height: 44px;
+    padding: 8px 0;
+  }
+}

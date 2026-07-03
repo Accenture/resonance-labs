@@ -1,0 +1,62 @@
+/* Disclosure container */
+.rlb-disclosure {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+}
+
+/* Trigger button */
+.rlb-disclosure__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  background: var(--gray-200);
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+.rlb-disclosure__trigger:focus {
+  outline: 3px solid var(--focus-color);
+  outline-offset: -3px;
+}
+
+/* Chevron indicator */
+.rlb-disclosure__icon {
+  flex-shrink: 0;
+  color: var(--text-color-subtle);
+  transition: transform 0.2s ease;
+}
+
+.rlb-disclosure__trigger[aria-expanded="true"] .rlb-disclosure__icon {
+  transform: rotate(180deg);
+}
+
+/* Expanded trigger styling */
+.rlb-disclosure__trigger[aria-expanded="true"] {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* Panel */
+.rlb-disclosure__panel {
+  padding: 1rem;
+  background: var(--background-color);
+  border-top: 1px solid var(--border-color);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.rlb-disclosure__panel p {
+  margin: 0;
+}
+
+.rlb-disclosure__panel code {
+  background: var(--gray-200);
+  padding: 0.1rem 0.35rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9em;
+}

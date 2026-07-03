@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist Button - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="wishlist-button.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+
+      <section class="section">
+        <h1>Wishlist Button</h1>
+        <p class="component-tagline">A toggle button that lets users save or remove products from their wishlist, communicating its pressed state clearly to assistive technology through both visual and programmatic state changes.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Click or press Space/Enter on the wishlist button below to toggle it between saved and unsaved states. Observe how the visual appearance changes and, with a screen reader active, listen for the state announcement. Try both the icon-only and text variants and note how each communicates the button's current state without requiring mouse interaction.</p>
+        <div class="mount">
+<!-- Wishlist Button component -->
+<section class="rlb-wishlist-demo" aria-label="Wishlist button examples">
+  <h3>Icon-only variants</h3>
+  <div class="rlb-wishlist-demo__row">
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--icon"
+      type="button"
+      aria-pressed="false"
+      aria-label="Save Blue T-Shirt to wishlist"
+      data-product="Blue T-Shirt"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </button>
+
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--icon"
+      type="button"
+      aria-pressed="true"
+      aria-label="Remove Red Sneakers from wishlist"
+      data-product="Red Sneakers"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </button>
+
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--icon"
+      type="button"
+      aria-pressed="false"
+      aria-label="Save Green Jacket to wishlist"
+      data-product="Green Jacket"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <h3>Text variants</h3>
+  <div class="rlb-wishlist-demo__row">
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--text"
+      type="button"
+      aria-pressed="false"
+      data-product="Blue T-Shirt"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <span class="rlb-wishlist-btn__label">Save to wishlist</span>
+    </button>
+
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--text"
+      type="button"
+      aria-pressed="true"
+      data-product="Red Sneakers"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <span class="rlb-wishlist-btn__label">Saved to wishlist</span>
+    </button>
+
+    <button
+      class="rlb-wishlist-btn rlb-wishlist-btn--text"
+      type="button"
+      aria-pressed="false"
+      data-product="Green Jacket"
+    >
+      <svg class="rlb-wishlist-btn__heart" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <span class="rlb-wishlist-btn__label">Save to wishlist</span>
+    </button>
+  </div>
+</section>
+
+</div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The button's accessible name reflects its current action — not just its static label — so users understand what will happen when they activate it in its current state.</li>
+          <li>The pressed state is communicated programmatically so a screen reader announces whether the item is currently saved to the wishlist or not.</li>
+          <li>The icon-only variant has an accessible name that conveys its full purpose, not just "heart" or a decorative character that lacks context.</li>
+          <li>Activating the button does not cause page navigation or a full page reload — it toggles state in place, and the outcome is confirmed to the user.</li>
+          <li>The visual change on toggle — such as a filled versus unfilled heart icon — is not the only means of communicating the state change; the accessible label or announced state also reflects it.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Toggle button element:</strong> A native button element with a pressed state attribute that reflects whether the item is currently saved to the wishlist.</li>
+          <li><strong>Icon:</strong> A heart or bookmark icon that visually represents the saved/unsaved state; decorative when the button has a text label, accessible when icon-only.</li>
+          <li><strong>Accessible name:</strong> The text or label exposed to assistive technology; updates to reflect the button's current context (e.g., "Save to wishlist" or "Remove from wishlist").</li>
+          <li><strong>Pressed state indicator:</strong> The programmatic attribute that communicates the current toggle state to screen readers — true when saved, false when unsaved.</li>
+          <li><strong>Confirmation feedback (optional):</strong> A brief visible or announced message confirming the action, such as "Added to wishlist" or "Removed from wishlist".</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The button uses a pressed state attribute to communicate its current toggle state so screen readers announce whether the item is saved or not when the button receives focus.</li>
+          <li>The button's accessible name describes the action in context — "Save to wishlist" when unsaved and "Remove from wishlist" when saved — so users know what will happen before they act.</li>
+          <li>Icon-only variants include a visually hidden text label or accessible name so the button's purpose is not lost when there is no visible text.</li>
+          <li>Activating the button does not navigate away from the page — users remain in place and can continue browsing after saving or removing a product.</li>
+          <li>The state change is confirmed through the programmatic state update and, optionally, a live-region announcement so screen reader users receive immediate feedback.</li>
+          <li>The button is reachable and operable by keyboard, with a clearly visible focus indicator that meets contrast requirements.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a static label such as "Wishlist" or "Favorite" that never changes regardless of the button's current state, leaving screen reader users unable to determine whether the item is saved.</li>
+          <li>Implementing the wishlist toggle as a link or anchor element, which implies navigation and creates incorrect expectations for keyboard and screen reader users.</li>
+          <li>Conveying the saved state only through a color change — such as filling the heart icon red — without a programmatic state attribute, making the state invisible in high-contrast mode or to users with color-vision differences.</li>
+          <li>Providing an icon-only button with no accessible name, so screen readers announce "button" or the icon's unicode character with no explanation of its purpose.</li>
+          <li>Triggering a full page reload when the wishlist state changes, causing keyboard focus to reset to the top of the page and forcing the user to navigate back to their place.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Wishlist functionality is a lightweight but meaningful part of the shopping experience — it lets users bookmark products for later without committing to a purchase. A screen reader user who cannot determine whether an item is already saved, or who activates a button without knowing it will remove a previously saved item, may inadvertently lose their wishlist contents. An icon-only button with no accessible name is completely opaque to users navigating by screen reader. When the wishlist button is accessible, all users can build, manage, and return to their saved items with the same ease and confidence.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      // Fetch HTML fragment
+      fetch("./wishlist-button.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          // Populate HTML code preview (strip leading comment block)
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS
+      fetch("./wishlist-button.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      // Fetch JS
+      fetch("./wishlist-button.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      // Tab switching
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

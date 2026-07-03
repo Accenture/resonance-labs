@@ -1,0 +1,57 @@
+/* Show/hide — rely on `hidden` attribute to hide, :has() to reveal */
+.rlb-accordion__item:has(button[aria-expanded="true"]) [role="region"] {
+  display: block;
+}
+
+/* STYLES FOR ACCORDION COMPONENT */
+
+.rlb-accordion {
+  border: none;
+}
+
+.rlb-accordion__item {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.rlb-accordion__item:last-child {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.rlb-accordion__item h3 {
+  margin: 0;
+}
+
+.rlb-accordion-trigger:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.rlb-accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background: var(--surface-color);
+  cursor: pointer;
+  border: none;
+}
+
+.rlb-accordion-trigger__icon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  pointer-events: none;
+}
+
+.rlb-accordion-trigger[aria-expanded="true"] .rlb-accordion-trigger__icon {
+  transform: rotate(180deg);
+}
+
+.rlb-accordion__item [role="region"] {
+  padding: 0.75rem 1rem;
+  background: var(--surface-color);
+}

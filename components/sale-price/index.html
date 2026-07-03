@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sale Price - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="sale-price.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+
+      <section class="section">
+        <h1>Sale Price</h1>
+        <p class="component-tagline">A sale price display communicates the was/now price relationship using semantic HTML so screen readers perceive the full context — including which price has been replaced — without relying on visual strikethrough alone.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Review the sale price examples below. With a screen reader, navigate to each price pair and listen to how the original and sale prices are announced. Notice that the original price is not simply read as a number — its semantic role as a removed or outdated value is communicated through the element used to mark it up.</p>
+        <div class="mount">
+<div class="rlb-sale-price-examples">
+  <!-- Basic sale price -->
+  <div class="rlb-sale-price-card">
+    <h3 class="rlb-sale-price-card__title">Wireless Headphones</h3>
+    <p class="rlb-sale-price-group">
+      <del class="rlb-sale-price__original">
+        <span class="rlb-sr-only">Original price:</span>
+        $99.99
+      </del>
+      <ins class="rlb-sale-price__current">
+        <span class="rlb-sr-only">Sale price:</span>
+        $79.99
+      </ins>
+    </p>
+  </div>
+
+  <!-- Sale price with discount badge -->
+  <div class="rlb-sale-price-card">
+    <h3 class="rlb-sale-price-card__title">Bluetooth Speaker</h3>
+    <p class="rlb-sale-price-group">
+      <del class="rlb-sale-price__original">
+        <span class="rlb-sr-only">Original price:</span>
+        $149.99
+      </del>
+      <ins class="rlb-sale-price__current">
+        <span class="rlb-sr-only">Sale price:</span>
+        $119.99
+      </ins>
+      <span class="rlb-sale-price__discount" aria-label="20% discount">-20%</span>
+    </p>
+  </div>
+
+  <!-- Multiple sale items -->
+  <div class="rlb-sale-price-card">
+    <h3 class="rlb-sale-price-card__title">USB-C Cable</h3>
+    <p class="rlb-sale-price-group">
+      <del class="rlb-sale-price__original">
+        <span class="rlb-sr-only">Original price:</span>
+        $19.99
+      </del>
+      <ins class="rlb-sale-price__current">
+        <span class="rlb-sr-only">Sale price:</span>
+        $9.99
+      </ins>
+      <span class="rlb-sale-price__discount" aria-label="50% discount">-50%</span>
+    </p>
+  </div>
+
+  <div class="rlb-sale-price-card">
+    <h3 class="rlb-sale-price-card__title">Phone Case</h3>
+    <p class="rlb-sale-price-group">
+      <del class="rlb-sale-price__original">
+        <span class="rlb-sr-only">Original price:</span>
+        $29.99
+      </del>
+      <ins class="rlb-sale-price__current">
+        <span class="rlb-sr-only">Sale price:</span>
+        $22.49
+      </ins>
+      <span class="rlb-sale-price__discount" aria-label="25% discount">-25%</span>
+    </p>
+  </div>
+</div>
+
+</div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The original price uses a semantic deleted-text element, which some screen readers announce as "deleted" or "strikethrough", conveying that this is the old, no-longer-valid price.</li>
+          <li>The sale price uses a complementary inserted-text element or is otherwise distinguished so its role as the current price is clear programmatically.</li>
+          <li>Neither price relies on color alone (e.g., red for sale price) to communicate its role — the text and markup carry the meaning independently of styling.</li>
+          <li>Both prices are rendered as real text, allowing them to be read by screen readers and resized with browser zoom without loss of information.</li>
+          <li>Visible labels such as "Was:" and "Now:" may supplement the semantic markup to reinforce the relationship in plain language for all users.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Price container:</strong> The wrapper that holds the original and sale price together, establishing them as a related unit.</li>
+          <li><strong>Original price:</strong> The previous, higher price marked up with the deleted text element to indicate it is no longer current; may also carry a "Was:" prefix label.</li>
+          <li><strong>Sale price:</strong> The current discounted price, marked up with the inserted text element or otherwise distinguished as the active price; may carry a "Now:" prefix label.</li>
+          <li><strong>Currency indicator:</strong> The symbol or code identifying the monetary unit, included within the accessible text of each price value.</li>
+          <li><strong>Discount badge (optional):</strong> A label such as "Save 30%" that supplements the price pair with a plain-language savings summary.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The original price uses the deleted text element so that screen readers that support this element can communicate its "removed" or "outdated" semantic meaning.</li>
+          <li>The sale price uses the inserted text element or is clearly labeled as the current price through visible text or an accessible name, not color alone.</li>
+          <li>Both prices are real text, not images, so they scale with browser text settings and are readable by any assistive technology.</li>
+          <li>Color is not the sole differentiator between the original and sale price — structural markup, labels, or accessible names provide the distinction independently.</li>
+          <li>If a discount percentage or savings amount is shown, it is also expressed as text so screen reader users receive the full promotional context.</li>
+          <li>The price pair maintains a logical reading order: original price first, then sale price, matching the natural "was $X, now $Y" narrative.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Applying a CSS text-decoration strikethrough to the original price instead of using the deleted text element, so screen readers have no semantic cue that the price is outdated.</li>
+          <li>Using only red color to signal the sale price and only gray color for the original price, making the distinction invisible to users with color-vision differences.</li>
+          <li>Rendering prices as images — such as a promotional banner — making them impossible to read with a screen reader or resize with browser zoom.</li>
+          <li>Placing the sale price before the original price in the DOM, creating a confusing reading order where the current price is announced before users know there was a higher original price.</li>
+          <li>Omitting currency context from either price value so screen readers announce bare numbers without the unit they represent.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Sale prices are a primary driver of purchase decisions. When a screen reader user hears two numbers without understanding which is current and which is outdated — or cannot tell that a discount exists at all — they are denied the promotional information that motivates many purchases. Relying on red color and strikethrough styling alone excludes users with color-vision differences and those browsing in high-contrast mode. Semantic sale-price markup ensures that every user, regardless of how they access the page, receives the complete "was/now" context and can make an informed, confident purchase decision.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      fetch("./sale-price.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      fetch("./sale-price.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      fetch("./sale-price.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

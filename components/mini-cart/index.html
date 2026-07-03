@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Cart - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="mini-cart.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+
+      <section class="section">
+        <h1>Mini Cart</h1>
+        <p class="component-tagline">A lightweight flyout cart panel that opens from the page header, keeping the rest of the page accessible and operable while item counts and removals are announced to assistive technology.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Click the cart trigger button to open the mini cart panel. Once open, try removing an item and observe how the item count and total update. Press Escape or click outside the panel to close it. Use the keyboard to verify that focus moves into the panel on open and returns to the trigger button on close.</p>
+        <div class="mount">
+<!-- Mini Cart Component -->
+<section class="rlb-mini-cart" aria-label="Mini cart">
+  <div class="rlb-mini-cart__header-bar">
+    <span class="rlb-mini-cart__brand">Demo Store</span>
+    <button
+      type="button"
+      class="rlb-mini-cart__trigger"
+      aria-expanded="false"
+      aria-controls="mini-cart-panel"
+    >
+      <svg class="rlb-mini-cart__icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+      Cart, <span class="rlb-mini-cart__count">3</span> items
+    </button>
+  </div>
+
+  <div
+    id="mini-cart-panel"
+    class="rlb-mini-cart__panel"
+    hidden
+  >
+    <h3 class="rlb-mini-cart__panel-heading">Your Cart</h3>
+
+    <ul class="rlb-mini-cart__items" aria-label="Cart items">
+      <li class="rlb-mini-cart__item" data-name="Blue T-Shirt" data-price="29.99" data-qty="1">
+        <div class="rlb-mini-cart__item-details">
+          <span class="rlb-mini-cart__item-name">Blue T-Shirt</span>
+          <span class="rlb-mini-cart__item-meta">Qty: <span class="rlb-mini-cart__item-qty">1</span> &mdash; <span class="rlb-mini-cart__item-price">$29.99</span></span>
+        </div>
+        <button type="button" class="rlb-mini-cart__remove" aria-label="Remove Blue T-Shirt">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </li>
+      <li class="rlb-mini-cart__item" data-name="Black Running Shoes" data-price="89.95" data-qty="2">
+        <div class="rlb-mini-cart__item-details">
+          <span class="rlb-mini-cart__item-name">Black Running Shoes</span>
+          <span class="rlb-mini-cart__item-meta">Qty: <span class="rlb-mini-cart__item-qty">2</span> &mdash; <span class="rlb-mini-cart__item-price">$179.90</span></span>
+        </div>
+        <button type="button" class="rlb-mini-cart__remove" aria-label="Remove Black Running Shoes">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </li>
+      <li class="rlb-mini-cart__item" data-name="Wool Beanie" data-price="18.50" data-qty="1">
+        <div class="rlb-mini-cart__item-details">
+          <span class="rlb-mini-cart__item-name">Wool Beanie</span>
+          <span class="rlb-mini-cart__item-meta">Qty: <span class="rlb-mini-cart__item-qty">1</span> &mdash; <span class="rlb-mini-cart__item-price">$18.50</span></span>
+        </div>
+        <button type="button" class="rlb-mini-cart__remove" aria-label="Remove Wool Beanie">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </li>
+    </ul>
+
+    <div class="rlb-mini-cart__empty" hidden>
+      <p>Your cart is empty.</p>
+    </div>
+
+    <div class="rlb-mini-cart__subtotal">
+      <span>Subtotal:</span>
+      <span class="rlb-mini-cart__subtotal-value">$228.39</span>
+    </div>
+
+    <div class="rlb-mini-cart__actions">
+      <a href="#" class="rlb-mini-cart__action rlb-mini-cart__action--view" aria-label="View full cart">View Cart</a>
+      <a href="#" class="rlb-mini-cart__action rlb-mini-cart__action--checkout" aria-label="Proceed to checkout">Checkout</a>
+    </div>
+  </div>
+
+  <div class="rlb-mini-cart__live" aria-live="polite" aria-atomic="true"></div>
+</section>
+
+</div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Opening the panel moves keyboard focus inside it, so users do not have to Tab through the entire page to reach the cart contents.</li>
+          <li>Closing the panel — whether by pressing Escape, using the close button, or clicking outside — returns focus to the trigger button that opened it.</li>
+          <li>The cart is non-modal: the rest of the page remains operable and visible, and background content is not made inert.</li>
+          <li>Removing an item from the mini cart triggers a live-region announcement of the updated item count so screen reader users are informed immediately.</li>
+          <li>The trigger button badge that shows the item count is a decorative count only; the button's accessible name conveys the count in text (e.g., "Cart, 3 items").</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Cart trigger button:</strong> A header button that opens and closes the mini cart panel; its accessible name includes the current item count.</li>
+          <li><strong>Item count badge:</strong> A visual indicator overlaid on the cart icon showing the number of items; decorative and backed by text in the button's accessible name.</li>
+          <li><strong>Mini cart panel:</strong> The flyout container that holds the item list, order summary, and action buttons; it is non-modal and does not trap focus.</li>
+          <li><strong>Line item:</strong> A compact row displaying a product's image, name, quantity, and price, along with a remove action.</li>
+          <li><strong>Remove button:</strong> Deletes a line item from the cart; its accessible name includes the product name to distinguish it from other remove buttons.</li>
+          <li><strong>Live region:</strong> An ARIA live region that announces item removals and updated totals to screen readers without requiring manual navigation.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>When the panel opens, focus moves to its heading or first focusable element so keyboard and screen reader users can immediately interact with cart contents.</li>
+          <li>When the panel closes, focus returns to the cart trigger button that opened it, preserving the user's place in the page.</li>
+          <li>The panel does not trap focus — Tab can move out of it into the rest of the page, reinforcing the non-modal nature of the control.</li>
+          <li>Each remove button uses a unique accessible name that includes the product name, preventing all remove buttons from sounding identical to screen reader users.</li>
+          <li>Item removal and total changes are communicated via a polite live region, giving users feedback without interrupting other announcements.</li>
+          <li>The cart trigger button's accessible name reflects the current item count so screen reader users can check their cart status without opening the panel.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Failing to move focus into the panel when it opens, forcing keyboard users to Tab through the entire page before they can interact with cart contents.</li>
+          <li>Not returning focus to the trigger button on close, leaving keyboard users stranded at an unpredictable location in the document.</li>
+          <li>Implementing the panel as a modal (trapping focus and using role="dialog") when the page behind it remains fully visible and operable, creating a confusing modal experience.</li>
+          <li>Using generic "Remove" labels on all remove buttons so screen reader users cannot tell which item they are about to delete.</li>
+          <li>Omitting a live region so that item removal produces no screen reader feedback and users must navigate away to confirm the action took effect.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>The mini cart is often the fastest path to checkout, so its accessibility directly affects whether users with disabilities can complete a purchase. A keyboard user who cannot get focus into the panel, or who loses their place in the page when it closes, faces a significant barrier at the most critical step of the shopping journey. Screen reader users who receive no feedback when removing an item may remove the wrong product or repeat the action unnecessarily. A well-implemented mini cart ensures that every user can review and manage their cart quickly and with confidence.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      fetch("./mini-cart.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      fetch("./mini-cart.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      fetch("./mini-cart.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

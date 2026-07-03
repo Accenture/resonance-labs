@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Summary - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="cart-summary.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+
+      <section class="section">
+        <h1>Cart Summary</h1>
+        <p class="component-tagline">A full shopping cart view that presents line items in an accessible table with quantity controls, removal actions, and a live-updating order summary.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Interact with the cart below. Try adjusting item quantities using the stepper controls, then remove an item using its remove button. Observe how the order summary totals update in real time and how a screen reader would be informed of those changes.</p>
+        <div class="mount">
+<!-- Cart Summary Component -->
+<section class="rlb-cart-summary" aria-labelledby="cart-heading">
+  <h2 id="cart-heading">Shopping Cart</h2>
+
+  <div class="rlb-cart-summary__empty" hidden>
+    <p>Your cart is empty.</p>
+  </div>
+
+  <table class="rlb-cart-summary__table" aria-label="Shopping cart items">
+    <thead>
+      <tr>
+        <th scope="col">Product</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Line Total</th>
+        <th scope="col"><span class="rlb-visually-hidden">Actions</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="rlb-cart-summary__item" data-name="Blue T-Shirt" data-price="29.99">
+        <td class="rlb-cart-summary__product">Blue T-Shirt</td>
+        <td class="rlb-cart-summary__qty">
+          <label for="qty-blue-tshirt" class="rlb-visually-hidden">Quantity for Blue T-Shirt</label>
+          <div class="rlb-cart-summary__qty-controls">
+            <button type="button" class="rlb-cart-summary__qty-btn rlb-cart-summary__qty-btn--minus" aria-label="Decrease quantity for Blue T-Shirt" data-action="decrease">&#8722;</button>
+            <input type="number" id="qty-blue-tshirt" class="rlb-cart-summary__qty-input" value="1" min="1" max="99" data-action="input" />
+            <button type="button" class="rlb-cart-summary__qty-btn rlb-cart-summary__qty-btn--plus" aria-label="Increase quantity for Blue T-Shirt" data-action="increase">&#43;</button>
+          </div>
+        </td>
+        <td class="rlb-cart-summary__price">$29.99</td>
+        <td class="rlb-cart-summary__line-total">$29.99</td>
+        <td class="rlb-cart-summary__actions">
+          <button type="button" class="rlb-cart-summary__remove" aria-label="Remove Blue T-Shirt">Remove</button>
+        </td>
+      </tr>
+      <tr class="rlb-cart-summary__item" data-name="Black Running Shoes" data-price="89.95">
+        <td class="rlb-cart-summary__product">Black Running Shoes</td>
+        <td class="rlb-cart-summary__qty">
+          <label for="qty-black-shoes" class="rlb-visually-hidden">Quantity for Black Running Shoes</label>
+          <div class="rlb-cart-summary__qty-controls">
+            <button type="button" class="rlb-cart-summary__qty-btn rlb-cart-summary__qty-btn--minus" aria-label="Decrease quantity for Black Running Shoes" data-action="decrease">&#8722;</button>
+            <input type="number" id="qty-black-shoes" class="rlb-cart-summary__qty-input" value="2" min="1" max="99" data-action="input" />
+            <button type="button" class="rlb-cart-summary__qty-btn rlb-cart-summary__qty-btn--plus" aria-label="Increase quantity for Black Running Shoes" data-action="increase">&#43;</button>
+          </div>
+        </td>
+        <td class="rlb-cart-summary__price">$89.95</td>
+        <td class="rlb-cart-summary__line-total">$179.90</td>
+        <td class="rlb-cart-summary__actions">
+          <button type="button" class="rlb-cart-summary__remove" aria-label="Remove Black Running Shoes">Remove</button>
+        </td>
+      </tr>
+      <tr class="rlb-cart-summary__item" data-name="Wool Beanie" data-price="18.50">
+        <td class="rlb-cart-summary__product">Wool Beanie</td>
+        <td class="rlb-cart-summary__qty">
+          <label for="qty-wool-beanie" class="rlb-visually-hidden">Quantity for Wool Beanie</label>
+          <div class="rlb-cart-summary__qty-controls">
+            <button type="button" class="rlb-cart-summary__qty-btn rlb-cart-summary__qty-btn--minus" aria-label="Decrease quantity for Wool Beanie" data-action="decrease">&#8722;</button>
+            <input type="number" id="qty-wool-beanie" class="rlb-cart-summary__qty-input" value="1" min="1" max="99" data-action="input" />
+            <button type="button" class="rlb-cart-summary__qty-btn rlb-cart-summary__qty-btn--plus" aria-label="Increase quantity for Wool Beanie" data-action="increase">&#43;</button>
+          </div>
+        </td>
+        <td class="rlb-cart-summary__price">$18.50</td>
+        <td class="rlb-cart-summary__line-total">$18.50</td>
+        <td class="rlb-cart-summary__actions">
+          <button type="button" class="rlb-cart-summary__remove" aria-label="Remove Wool Beanie">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="rlb-cart-summary__order" aria-label="Order summary">
+    <dl class="rlb-cart-summary__totals">
+      <div class="rlb-cart-summary__totals-row">
+        <dt>Subtotal</dt>
+        <dd class="rlb-cart-summary__subtotal">$228.39</dd>
+      </div>
+      <div class="rlb-cart-summary__totals-row">
+        <dt>Shipping</dt>
+        <dd class="rlb-cart-summary__shipping">$5.99</dd>
+      </div>
+      <div class="rlb-cart-summary__totals-row">
+        <dt>Tax</dt>
+        <dd class="rlb-cart-summary__tax">$18.27</dd>
+      </div>
+      <div class="rlb-cart-summary__totals-row rlb-cart-summary__totals-row--total">
+        <dt>Order Total</dt>
+        <dd class="rlb-cart-summary__order-total">$252.65</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="rlb-cart-summary__live" aria-live="polite" aria-atomic="true" class="rlb-visually-hidden"></div>
+</section>
+
+</div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each line item row is clearly labeled, including the product name, quantity, and price, so the table is meaningful when read linearly.</li>
+          <li>Quantity controls are associated with their product context so a screen reader user knows which item is being changed.</li>
+          <li>Removing an item triggers a live-region announcement so users do not need to navigate back to notice the change.</li>
+          <li>The order summary total updates dynamically and the updated value is communicated to assistive technology without a page reload.</li>
+          <li>Keyboard focus is managed predictably — after removing an item, focus does not drop to the top of the page.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Cart table:</strong> Wraps all line items in a semantic table with appropriate column headers for product, quantity, unit price, and subtotal.</li>
+          <li><strong>Line item row:</strong> A table row representing a single product, including its image, name, quantity stepper, and calculated subtotal.</li>
+          <li><strong>Quantity stepper (inline):</strong> Decrement and increment buttons paired with a numeric display, scoped to the row's product context.</li>
+          <li><strong>Remove button:</strong> A clearly labeled action that deletes the line item; its accessible name includes the product name to disambiguate it from other remove buttons.</li>
+          <li><strong>Order summary panel:</strong> Displays subtotal, shipping estimate, taxes, and order total; updates live when quantities or items change.</li>
+          <li><strong>Live region:</strong> A visually hidden element that announces cart changes — such as item removal or total updates — to screen readers.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The cart uses a standard HTML table so column headers are associated with every data cell, allowing screen reader users to understand each value in context.</li>
+          <li>Each quantity stepper has a label that references its product name, preventing confusion when multiple steppers exist on the same page.</li>
+          <li>Each remove button carries a unique accessible name that includes the product name (e.g., "Remove Wool Cardigan from cart") rather than generic "Remove" text.</li>
+          <li>Changes to the order total and item count are announced via a polite live region, so users are informed without an intrusive interruption.</li>
+          <li>After a row is removed, keyboard focus moves to a logical target — either the next item's remove button or the cart heading — so users are not left without a focus position.</li>
+          <li>The entire component is operable by keyboard alone, with no interactions that require a mouse or pointer device.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a generic list or divs instead of a table, causing screen readers to lose the relationship between product names, quantities, and prices.</li>
+          <li>Labeling all remove buttons identically as "Remove" without including the product name, making it impossible for screen reader users to distinguish between them.</li>
+          <li>Updating the order total visually without adding a live region, leaving screen reader users unaware that the total has changed.</li>
+          <li>Dropping focus to the document body after item removal, forcing keyboard users to navigate from the top to continue shopping.</li>
+          <li>Disabling quantity buttons without communicating their disabled state programmatically, so users cannot tell why the control is unresponsive.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>The cart summary is one of the most transactional areas of any eCommerce experience. A screen reader user who cannot understand the relationship between items and their prices, or who misses an announcement that their total has changed, may complete a purchase with incorrect quantities or an unexpected cost. Poor focus management after item removal means keyboard users must navigate through the entire page to resume their task. Getting this component right means all users can review, adjust, and confirm their order with the same confidence as anyone using a mouse.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      fetch("./cart-summary.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      fetch("./cart-summary.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      fetch("./cart-summary.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

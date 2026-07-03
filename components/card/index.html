@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="card.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+      <div class="section">
+        <h1>Card</h1>
+        <p class="component-tagline">A contained surface that groups related content — such as a title, description, and call to action — into a single clickable unit without nesting multiple interactive elements.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Tab to the card and activate it with Enter. Observe that a single link is reachable per card, that the link's accessible name reflects the card's content, and that no other interactive elements inside the card interrupt the tab order unexpectedly.</p>
+        <div class="mount">
+<div class="rlb-card" data-card data-href="#destination">
+  <a class="rlb-card__link" href="#destination" aria-labelledby="card-cta-1 card_heading_1"></a>
+  <img class="rlb-card__image" src="/resonance-labs/assets/images/cards/card.svg" alt="" />
+  <div class="rlb-card__body">
+    <span class="rlb-card__badge">Featured</span>
+    <h3 class="rlb-card__title" id="card_heading_1">Building an export plan</h3>
+    <p class="rlb-card__desc">New to international trade? Explore the basics with Exporting 101 and start building your plan today.</p>
+    <ul class="rlb-card__features">
+      <li>Step-by-step guidance</li>
+      <li>Market research tools</li>
+      <li>Free consultation included</li>
+    </ul>
+    <span class="rlb-card__cta" id="card-cta-1" aria-hidden="true">Learn more &rarr;</span>
+  </div>
+</div>
+
+</div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Exactly one focusable element per card is reachable by keyboard — the primary link</li>
+          <li>The link's accessible name is descriptive enough to identify the card's destination without surrounding context</li>
+          <li>The card image is either described through the link text or hidden from assistive technology if it is purely decorative</li>
+          <li>The clickable surface area is large without requiring multiple redundant links to the same destination</li>
+          <li>Visual hover and focus states are distinct and clearly communicate the card's interactive nature</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Card Container</strong> — the wrapping element that visually groups the card's content and provides position context for the full-surface link overlay</li>
+          <li><strong>Card Image</strong> — an optional visual element at the top of the card; decorative images are hidden from assistive technology, while meaningful images carry descriptive alternative text</li>
+          <li><strong>Card Title</strong> — a heading or prominently styled text that names the card's subject and provides the primary accessible name for the card's link</li>
+          <li><strong>Card Description</strong> — supporting text that gives additional context about the card's content or destination</li>
+          <li><strong>Primary Link</strong> — the anchor element whose stretched or overlaid click target covers the full card surface, providing a large interaction area without nesting multiple links</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Ensure the card has exactly one focusable element reachable by keyboard — typically the primary link — so keyboard users do not encounter multiple redundant paths to the same destination</li>
+          <li>Give the primary link an accessible name that is descriptive on its own, without requiring the surrounding card content to provide context</li>
+          <li>Use a CSS overlay or stretching technique to expand the link's click target to the full card surface, rather than wrapping all card content inside an anchor element</li>
+          <li>Mark decorative card images with empty alternative text so assistive technology does not announce them as part of the card's content</li>
+          <li>Ensure the card's focus indicator is visible and clearly indicates that the card surface is interactive</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Wrapping the entire card in an anchor element, which causes screen readers to announce all card content as part of the link text and produces an overwhelming announcement</li>
+          <li>Including multiple links inside a card pointing to the same destination, creating redundant tab stops that slow down keyboard navigation</li>
+          <li>Using a generic link label such as "Read more" or "Learn more" that provides no indication of the destination without the surrounding visual context</li>
+          <li>Omitting alternative text on meaningful card images, leaving screen reader users without the visual information the image conveys</li>
+          <li>Making the card clickable via JavaScript on the container div without providing a keyboard-operable link inside it</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Cards are ubiquitous in modern interfaces — article listings, product grids, resource libraries — yet they are routinely implemented in ways that create barriers. Wrapping an entire card in an anchor causes screen readers to read every line of content as one long link. Multiple redundant links force keyboard users to tab through unnecessary stops. Vague link text like "Read more" is meaningless when encountered in a links list. The card pattern requires deliberate decisions about link structure, accessible names, and image handling to work equally well for all users.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </div>
+
+      <div class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li><a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      // Fetch HTML fragment
+      fetch("./card.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          // Populate HTML code preview (strip leading comment block)
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS
+      fetch("./card.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      // Fetch JS
+      fetch("./card.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      // Tab switching
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

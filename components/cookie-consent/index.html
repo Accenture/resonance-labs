@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Consent - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="cookie-consent.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+      <section>
+        <h1>Cookie Consent</h1>
+        <p class="component-tagline">An accessible cookie consent banner with granular preference controls that lets users make informed choices about data collection.</p>
+      </section>
+
+      <section>
+        <h2>Demo</h2>
+        <p>Review the cookie consent banner below. Use <kbd>Tab</kbd> to move between the preference toggles and action buttons. Toggle individual cookie categories on or off, then use the primary action buttons to accept, reject, or save your preferences. Notice how the banner communicates its purpose and all controls are reachable without a mouse.</p>
+        <div class="mount">
+<!-- Cookie Consent Component Demo -->
+<div class="section">
+  <section class="rlb-cookie-consent-demo" data-cookie-consent-demo>
+    <p class="rlb-cookie-consent-demo__trigger-text">
+      <button class="rlb-cookie-consent-demo__reset-btn" type="button" id="cookie-reset-btn">Reset Cookie Preferences</button>
+    </p>
+
+    <div
+      class="rlb-cookie-banner"
+      role="dialog"
+      aria-labelledby="cookie-banner-title"
+      aria-describedby="cookie-banner-desc"
+      id="cookie-banner"
+    >
+      <div class="rlb-cookie-banner__content">
+        <h3 class="rlb-cookie-banner__title" id="cookie-banner-title">We value your privacy</h3>
+        <p class="rlb-cookie-banner__description" id="cookie-banner-desc">
+          We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic.
+          Please choose your cookie preferences below.
+          <a href="https://example.com/cookie-policy" class="rlb-cookie-banner__link" aria-label="Read our full cookie policy">Cookie Policy</a>
+        </p>
+        <div class="rlb-cookie-banner__actions">
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--accept" type="button" id="cookie-accept-btn">Accept All</button>
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--reject" type="button" id="cookie-reject-btn">Reject All</button>
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--preferences" type="button" id="cookie-preferences-btn">Manage Preferences</button>
+        </div>
+      </div>
+
+      <div class="rlb-cookie-preferences" id="cookie-preferences-panel" hidden>
+        <h4 class="rlb-cookie-preferences__title">Cookie Preferences</h4>
+        <fieldset class="rlb-cookie-preferences__group">
+          <legend class="rlb-cookie-preferences__legend">Select which cookies you allow</legend>
+
+          <div class="rlb-cookie-preferences__category">
+            <label class="rlb-cookie-preferences__label">
+              <input
+                type="checkbox"
+                class="rlb-cookie-preferences__checkbox"
+                name="essential"
+                checked
+                disabled
+              />
+              <span class="rlb-cookie-preferences__label-text">Essential Cookies</span>
+            </label>
+            <p class="rlb-cookie-preferences__explanation">Required for the website to function. These cannot be disabled.</p>
+          </div>
+
+          <div class="rlb-cookie-preferences__category">
+            <label class="rlb-cookie-preferences__label">
+              <input
+                type="checkbox"
+                class="rlb-cookie-preferences__checkbox"
+                name="analytics"
+                id="cookie-analytics"
+              />
+              <span class="rlb-cookie-preferences__label-text">Analytics Cookies</span>
+            </label>
+            <p class="rlb-cookie-preferences__explanation">Help us understand how visitors interact with our website.</p>
+          </div>
+
+          <div class="rlb-cookie-preferences__category">
+            <label class="rlb-cookie-preferences__label">
+              <input
+                type="checkbox"
+                class="rlb-cookie-preferences__checkbox"
+                name="marketing"
+                id="cookie-marketing"
+              />
+              <span class="rlb-cookie-preferences__label-text">Marketing Cookies</span>
+            </label>
+            <p class="rlb-cookie-preferences__explanation">Used to deliver relevant advertisements and track campaign performance.</p>
+          </div>
+        </fieldset>
+
+        <div class="rlb-cookie-preferences__actions">
+          <button class="rlb-cookie-banner__btn rlb-cookie-banner__btn--save" type="button" id="cookie-save-btn">Save Preferences</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</div>
+      </section>
+
+      <section>
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The banner is announced as a landmark or region so screen reader users can navigate to it directly.</li>
+          <li>Each cookie category toggle has a clear label and communicates its current on/off state to assistive technology.</li>
+          <li>All action buttons — accept, reject, and save preferences — are reachable and operable with the keyboard alone.</li>
+          <li>Required categories are marked as disabled and their locked state is communicated to screen readers.</li>
+          <li>After a preference action is taken, the banner is dismissed and focus returns to a logical location in the page.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Banner container</strong> — The outermost region, typically marked with <code>role="dialog"</code> or an appropriate landmark, that holds all consent content.</li>
+          <li><strong>Heading</strong> — A descriptive title that names the purpose of the banner and serves as the accessible name for the region.</li>
+          <li><strong>Description text</strong> — A plain-language explanation of what cookies are used for and how preferences affect the experience.</li>
+          <li><strong>Category toggles</strong> — Individual switch controls for each cookie category (for example, analytics, marketing), each with a label and state.</li>
+          <li><strong>Action buttons</strong> — Primary and secondary buttons for bulk actions such as "Accept All," "Reject All," and "Save Preferences."</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The banner must be identified as a distinct region so screen reader users are aware of its presence without having to stumble across it.</li>
+          <li>Each toggle must communicate its current state — on or off — to assistive technology, not just visually.</li>
+          <li>Mandatory cookie categories must be marked as non-interactive and that restriction must be conveyed programmatically, not only through visual styling.</li>
+          <li>All interactive controls must be operable using only a keyboard, in a logical tab order.</li>
+          <li>When the banner is dismissed, focus must move to a predictable location so keyboard users are not stranded.</li>
+          <li>The banner must not trap focus — users should be able to bypass it and return to page content if they choose to act later.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Rendering the banner as a purely visual overlay with no ARIA landmark or role, making it invisible to screen reader navigation.</li>
+          <li>Using CSS-only toggle switches without underlying checkboxes or buttons, so the state is never communicated to assistive technology.</li>
+          <li>Disabling required-category toggles only with a visual style change rather than a <code>disabled</code> attribute or <code>aria-disabled</code>, leaving the restriction unexplained.</li>
+          <li>Not managing focus when the banner closes, leaving keyboard users positioned at the top of the page or in an undefined location.</li>
+          <li>Writing button labels like "OK" or "Yes" that have no meaning out of context, making it impossible to distinguish accept from reject by label alone.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why This Matters</h2>
+        <p>Cookie consent is a legal requirement in many jurisdictions, and inaccessible consent mechanisms mean that users with disabilities cannot exercise their data privacy rights on equal terms. A screen reader user who cannot operate the preference toggles has no meaningful choice — they are effectively forced into whatever the default configuration is. Beyond the legal risk, inaccessible consent flows undermine user trust and signal that the product was not designed with all users in mind.</p>
+      </section>
+
+      <section>
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section>
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script>
+      fetch("./cookie-consent.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
+      fetch("./cookie-consent.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
+      fetch("./cookie-consent.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
+      var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});
+      document.querySelectorAll(".code-preview__copy").forEach(function(btn){btn.addEventListener("click",function(){var codeEl=document.getElementById(btn.dataset.target);navigator.clipboard.writeText(codeEl.textContent).then(function(){btn.textContent="Copied!";setTimeout(function(){btn.textContent="Copy Code"},2000)})})});
+    </script>
+  </body>
+</html>

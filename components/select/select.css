@@ -1,0 +1,56 @@
+.rlb-select-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rlb-select-demo label {
+  font-weight: 600;
+}
+
+.rlb-select-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 320px;
+  width: 100%;
+}
+
+.rlb-select-wrapper select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 10px 40px 10px 12px;
+  min-height: 44px;
+  width: 100%;
+  background: var(--surface-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.rlb-select-wrapper select:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-color-strong, var(--text-color));
+}
+
+/* Custom chevron */
+.rlb-select-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 6px;
+  background: var(--text-color);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  pointer-events: none;
+}
+
+.rlb-select-wrapper select:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}

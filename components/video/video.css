@@ -1,0 +1,137 @@
+.rlb-vid-demo {
+  max-width: 640px;
+  margin: 2rem auto;
+  font-family: system-ui, sans-serif;
+}
+
+.rlb-vid-demo__title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Video player ── */
+
+.rlb-vid-player {
+  position: relative;
+  background: var(--black);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.rlb-vid-player__video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*
+  Native browser controls inherit focus styles.
+  The rules below reinforce focus visibility for custom overlays
+  or when the video element itself receives focus.
+*/
+.rlb-vid-player__video:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* ── Custom controls ── */
+
+.rlb-vid-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.rlb-vid-controls__btn {
+  appearance: none;
+  border: 1px solid var(--border-color-strong);
+  background: var(--surface-muted);
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.rlb-vid-controls__btn:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.rlb-vid-controls__btn[aria-pressed="true"] {
+  background: var(--primary-color);
+  color: var(--text-color-inverse);
+  border-color: var(--primary-color);
+}
+
+/* ── Transcript ── */
+
+.rlb-vid-transcript {
+  margin-top: 1rem;
+  border: 1px solid var(--border-color-strong);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.rlb-vid-transcript__toggle {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--black);
+  background: var(--surface-muted);
+  list-style: revert;
+}
+
+/* Visible focus indicator — 3:1 contrast (#222 on #f5f5f5) */
+.rlb-vid-transcript__toggle:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: -3px;
+}
+
+.rlb-vid-transcript__content {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-color-strong);
+  background: var(--surface-color);
+}
+
+.rlb-vid-transcript__content p {
+  margin: 0 0 0.75rem;
+}
+
+.rlb-vid-transcript__content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Status area (live region) ── */
+
+.rlb-vid-demo__status {
+  margin-top: 1rem;
+  min-height: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-color-muted);
+}
+
+/* ── Captions styling (::cue pseudo-element) ── */
+
+/*
+  Caption contrast: white text on semi-transparent black background
+  meets the 3:1 minimum ratio (white #fff on rgba(0,0,0,0.8) ≈ #333).
+*/
+video::cue {
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--text-color-inverse);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 480px) {
+  .rlb-vid-demo {
+    margin: 1rem;
+  }
+}

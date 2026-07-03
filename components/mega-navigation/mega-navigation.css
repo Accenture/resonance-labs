@@ -1,0 +1,118 @@
+/* Allow submenu to overflow the mount area */
+.mount:has(.rlb-mega) {
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  overflow: visible;
+  min-height: 280px;
+}
+
+.rlb-mega__main,
+.rlb-mega__submenu { list-style: none; padding: 0; margin: 0; }
+
+.rlb-mega__main { display: flex; gap: 4px; align-items: center; }
+
+.rlb-mega__item { position: relative; }
+
+/* ── Top-level buttons (Products, Solutions) ── */
+.rlb-mega__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  min-height: 44px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--text-color-strong);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.rlb-mega__btn:hover {
+  background: var(--surface-muted);
+  border-color: var(--border-color-strong);
+}
+
+.rlb-mega__btn[aria-expanded="true"] {
+  background: var(--surface-subtle);
+  border-color: var(--border-color-strong);
+}
+
+.rlb-mega__icon {
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.rlb-mega__btn[aria-expanded="true"] .rlb-mega__icon {
+  transform: rotate(180deg);
+}
+
+/* ── Support link — animated underline (matches link component) ── */
+.rlb-mega__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  min-height: 44px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-strong);
+  text-decoration: none;
+  position: relative;
+}
+
+.rlb-mega__link::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background-image: linear-gradient(to right, rgb(34, 34, 34) 45%, rgba(34, 34, 34, 0.3) 55%);
+  background-size: 220% 100%;
+  background-position: 100% 50%;
+  transition: background-position 0.3s ease-out;
+}
+
+.rlb-mega__link:hover::after,
+.rlb-mega__link:focus-visible::after {
+  background-position: 0 50%;
+}
+
+/* ── Submenu panel ── */
+.rlb-mega__submenu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 4px 0;
+  min-width: 200px;
+  z-index: 100;
+}
+
+.rlb-mega__submenu[hidden] { display: none; }
+
+/* Submenu links — no decoration by default, highlight on interaction */
+.rlb-mega__submenu a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: var(--text-color-strong);
+  font-size: 0.9375rem;
+}
+
+.rlb-mega__submenu a:hover {
+  background: var(--surface-muted);
+}
+
+/* Focus rings */
+.rlb-mega__btn:focus-visible,
+.rlb-mega__link:focus-visible,
+.rlb-mega__submenu a:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}

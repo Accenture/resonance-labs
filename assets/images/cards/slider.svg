@@ -1,0 +1,8 @@
+<svg width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="249" height="249" fill="#F3F3F3"/>
+<rect x="0.5" y="0.5" width="249" height="249" stroke="#BFBEC4"/>
+<path d="M75 125C75 122.239 77.2386 120 80 120H170C172.761 120 175 122.239 175 125V125C175 127.761 172.761 130 170 130H80C77.2386 130 75 127.761 75 125V125Z" fill="#8D8D8D"/>
+<path d="M75 125C75 122.239 77.2386 120 80 120H138C140.761 120 143 122.239 143 125V125C143 127.761 140.761 130 138 130H80C77.2386 130 75 127.761 75 125V125Z" fill="#222222"/>
+<rect x="135" y="117" width="16" height="16" rx="8" fill="#FEFEFE" stroke="#222222" stroke-width="2"/>
+<rect x="138" y="120" width="10" height="10" rx="5" fill="#222222"/>
+</svg>

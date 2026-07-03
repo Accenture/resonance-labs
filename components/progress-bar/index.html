@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Bar - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="progress-bar.css" />
+    <link
+      rel="icon"
+      href="/resonance-labs/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+
+      <section class="section">
+        <h1>Progress Bar</h1>
+        <p class="component-tagline">A progress bar communicates how far along a process is, using a visual fill and an accessible label or live region to keep all users informed of the current status.</p>
+      </section>
+
+      <section class="section">
+        <h2>Demo</h2>
+        <p>Observe the progress bar as it advances. Pay attention to whether a screen reader would hear meaningful updates as the value changes. Check that the label clearly identifies what process is being tracked and that the current percentage or step is communicated without relying on the visual fill alone.</p>
+        <div class="mount">
+<label for="progress-bar-progress">Upload in progress</label>
+<progress id="progress-bar-progress" max="100" value="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-busy="true"></progress>
+<p id="progress-bar-status" aria-live="polite" class="rlb-status">0%</p>
+
+</div>
+      </section>
+
+      <section class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The progress bar has a visible label that describes the process being tracked.</li>
+          <li>The current progress value is communicated to assistive technologies, not only shown through the visual fill width.</li>
+          <li>For determinate progress, the numeric value or percentage is conveyed to screen readers as it updates.</li>
+          <li>The component does not rely on color alone to communicate a completed, in-progress, or error state.</li>
+          <li>Live region updates are appropriately throttled — screen readers receive meaningful announcements without being flooded.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Track:</strong> The full-width background bar that represents the total range of progress from 0 to 100%.</li>
+          <li><strong>Fill / indicator:</strong> The colored portion of the track that grows to represent current completion.</li>
+          <li><strong>Label:</strong> The visible text that identifies what process or task the progress bar is measuring.</li>
+          <li><strong>Value text:</strong> An optional visible readout of the current numeric progress, such as a percentage or step count.</li>
+          <li><strong>Live region:</strong> The programmatic mechanism that announces progress updates to screen readers as the value changes.</li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>The progress bar must have an accessible label that describes what is being measured, not just a generic "progress" announcement.</li>
+          <li>For determinate bars, the current value and maximum value must be communicated to assistive technologies.</li>
+          <li>For indeterminate bars, the component must signal that progress is happening without implying a known completion point.</li>
+          <li>Progress updates must be announced to screen readers through a live region or equivalent mechanism.</li>
+          <li>Completion and error states must be communicated through text or labels, not only through color changes.</li>
+          <li>The bar must not be keyboard-focusable since it is a status indicator, not an interactive control.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a plain div with CSS width changes and no accessible attributes, so screen readers receive no progress information.</li>
+          <li>Communicating the percentage visually only through the fill width, with no numeric value or text available to assistive technologies.</li>
+          <li>Setting up a live region that announces every fractional change, causing an overwhelming stream of updates for screen reader users.</li>
+          <li>Conveying a completed or failed state solely through a color change, which excludes users who cannot perceive color.</li>
+          <li>Omitting a descriptive label, so users only hear a number with no context about what task is being tracked.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+        <p>Users rely on progress bars during file uploads, form submissions, and multi-step workflows. When progress is communicated only through a growing visual fill, screen reader users have no way to know that a process has started, how far along it is, or when it has finished. Poorly implemented live regions can also cause the opposite problem — bombarding users with constant announcements. The goal is meaningful, timely feedback that keeps everyone informed without being intrusive.</p>
+      </section>
+
+      <section class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </section>
+
+      <section class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/Accenture/resonance-labs"
+              >GitHub Code</a
+            >
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      // Fetch HTML fragment
+      fetch("./progress-bar.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          // Populate HTML code preview (strip leading comment block)
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS
+      fetch("./progress-bar.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      // Fetch JS
+      fetch("./progress-bar.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      // Tab switching
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

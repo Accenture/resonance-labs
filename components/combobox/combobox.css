@@ -1,0 +1,87 @@
+/* Combobox component styles */
+
+.rlb-combobox-demo .rlb-hint { margin-top: 6px; color: var(--text-color); }
+.rlb-combobox-demo .rlb-error { margin-top: 6px; font-weight: 700; color: var(--text-color-strong); }
+
+/* Wrapper provides the positioning context for the absolute listbox */
+.rlb-combobox-wrapper {
+  position: relative;
+  width: min(420px, 100%);
+}
+
+/* Focus: visible + high contrast */
+.rlb-combobox {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--surface-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.rlb-combobox:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 3px;
+}
+
+/* Listbox */
+.rlb-listbox {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  padding: 4px 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  max-height: 220px;
+  overflow: auto;
+  display: none;
+  background: var(--surface-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+.rlb-listbox[hidden] { display: none; }
+.rlb-listbox.open { display: block; }
+
+.rlb-option {
+  padding: 10px 12px;
+  cursor: default;
+}
+
+.rlb-option:hover {
+  background: var(--surface-hover);
+}
+
+.rlb-option[aria-selected="true"] {
+  font-weight: 700;
+}
+
+/* Active option (visual focus — keyboard navigation) */
+.rlb-option.is-active {
+  background: var(--surface-muted);
+  outline: 2px solid var(--focus-color);
+  outline-offset: -2px;
+}
+
+/* Give the mount enough room so the open listbox isn't clipped */
+.mount:has(.rlb-combobox-wrapper) {
+  min-height: 320px;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  overflow: visible;
+}
+
+/* Demo sticky header to test "not obscured" */
+.rlb-demo-sticky {
+  position: sticky;
+  top: 0;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid var(--gray-200);
+  margin: -24px -24px 16px;
+}

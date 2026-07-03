@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Input Toggle - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="password-input-toggle.css" />
+    <link
+      rel="icon"
+      href="/resonance-labs/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+      <div class="section">
+        <h1>Password Input Toggle</h1>
+        <p class="component-tagline">A password field with a show/hide toggle that lets users verify what they have typed, with the button's accessible name updating to reflect the current visibility state.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Tab to the password field and type a value. Tab to the show/hide button and press Enter or Space to toggle visibility. Observe how the input type and button label change with each activation.</p>
+        <div class="mount">
+<div class="rlb-field">
+  <label for="password-input-toggle-password">Password <span aria-hidden="true">*</span></label>
+  <div class="rlb-pw">
+    <input id="password-input-toggle-password" name="password" type="password" required aria-describedby="password-input-toggle-help" />
+    <button type="button" id="password-input-toggle-toggle" class="rlb-pw__toggle" aria-pressed="false" aria-label="Show password">Show</button>
+  </div>
+  <p id="password-input-toggle-help" class="rlb-help">Required</p>
+  <div id="password-input-toggle-live" class="rlb-sr-only" aria-live="polite"></div>
+</div>
+
+</div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>The toggle button is reachable and operable by keyboard</li>
+          <li>The button label or accessible name updates to reflect whether the password is currently shown or hidden</li>
+          <li>The password field switches between masked and visible text when toggled</li>
+          <li>Focus remains on the toggle button after activation and does not jump unexpectedly</li>
+          <li>Screen readers announce the updated button state after toggling</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Password Input</strong> — the text field that accepts the user's password, masked by default</li>
+          <li><strong>Toggle Button</strong> — an interactive control that switches the field between masked and visible states</li>
+          <li><strong>Button Label / Icon</strong> — the visual and accessible indicator of the current show or hide state</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Use a native button element for the toggle to ensure keyboard and assistive technology support</li>
+          <li>Update the button's accessible name dynamically to reflect whether the password is currently shown or hidden</li>
+          <li>Associate the input field with a visible label using a native label element or aria-labelledby</li>
+          <li>Do not move focus away from the toggle button after activation</li>
+          <li>Ensure the toggle is positioned and announced in a way that makes its relationship to the password field clear</li>
+          <li>If using an icon-only button, provide an accessible text alternative that conveys the current action</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a static label such as "Show" that never updates when the password is revealed</li>
+          <li>Implementing the toggle as a non-interactive element such as a span or div</li>
+          <li>Moving focus to the input field after toggling, which disorients keyboard users</li>
+          <li>Using only a visual icon with no accessible text, leaving screen reader users without context</li>
+          <li>Failing to associate the password label with the input, making the field purpose unclear</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Password fields are high-stakes inputs where errors lead to failed logins. When the toggle button has a static or missing label, screen reader users cannot tell whether the password is currently visible or hidden. When focus moves unexpectedly after toggling, keyboard users lose their place. Getting this pattern right reduces friction at a critical point in the user journey and ensures that all users — including those relying on assistive technology — can verify their input confidently.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </div>
+
+      <div class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li>
+            <a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a>
+          </li>
+          <li>
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/Accenture/resonance-labs"
+              >GitHub Code</a
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+      // Fetch HTML fragment
+      fetch("./password-input-toggle.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          // Populate HTML code preview (strip leading comment block)
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS
+      fetch("./password-input-toggle.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      // Fetch JS
+      fetch("./password-input-toggle.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      // Tab switching
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

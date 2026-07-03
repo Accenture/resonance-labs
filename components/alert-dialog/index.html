@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alert Dialog - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="alert-dialog.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/resonance-labs/index.html" class="back-link">
+        <img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" />
+      </a>
+    </header>
+    <main>
+      <div class="section">
+        <h1>Alert Dialog</h1>
+        <p class="component-tagline">A modal dialog that interrupts the user to communicate critical information and requires an explicit confirm or cancel response.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Activate the trigger button to open the alert dialog. Use Tab to move between the dialog's action buttons. Press Escape or activate a button to close it. Notice that focus is trapped inside the dialog while it is open.</p>
+        <div class="mount">
+<div class="section">
+  <section class="rlb-alert-dialog-demo" data-alert-dialog-demo>
+    <button
+      type="button"
+      class="rlb-alert-dialog-trigger"
+      id="alert-dialog-trigger"
+      aria-haspopup="dialog"
+      aria-controls="alert-dialog"
+    >
+      Delete Item
+    </button>
+
+    <div
+      id="alert-dialog-overlay"
+      class="rlb-alert-dialog-overlay"
+      hidden
+    >
+      <div
+        id="alert-dialog"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-desc"
+        class="rlb-alert-dialog-panel"
+      >
+        <h2 id="alert-dialog-title">Delete this item?</h2>
+        <p id="alert-dialog-desc">
+          This action is permanent and cannot be undone. All associated data will be removed immediately.
+        </p>
+        <div class="rlb-alert-dialog-actions">
+          <button type="button" class="rlb-alert-dialog-btn rlb-alert-dialog-btn--cancel" data-alert-cancel>
+            Cancel
+          </button>
+          <button type="button" class="rlb-alert-dialog-btn rlb-alert-dialog-btn--confirm" data-alert-confirm>
+            Confirm Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <p class="rlb-alert-dialog-status" id="alert-dialog-status" aria-live="polite"></p>
+  </section>
+</div>
+
+</div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Focus moves into the dialog immediately when it opens</li>
+          <li>Keyboard focus cannot leave the dialog while it is open</li>
+          <li>The dialog's title and description are announced by screen readers when focus enters</li>
+          <li>Pressing Escape closes the dialog and returns focus to the trigger that opened it</li>
+          <li>Background content is inert and cannot be interacted with while the dialog is open</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Overlay / Backdrop</strong> — a full-screen layer that obscures background content and communicates that the page is blocked until the user responds</li>
+          <li><strong>Dialog Container</strong> — the element with the alertdialog role that contains all dialog content and holds programmatic focus</li>
+          <li><strong>Title</strong> — a heading or labelling element that names the dialog and is associated with the container so screen readers announce it on focus entry</li>
+          <li><strong>Description</strong> — the message explaining the situation or consequence the user needs to respond to</li>
+          <li><strong>Action Buttons</strong> — the confirm and cancel controls that dismiss the dialog and communicate the user's intent</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Use the alertdialog role to signal to assistive technology that the dialog requires immediate user attention and response</li>
+          <li>Move focus into the dialog when it opens, placing it on the first focusable element or the dialog container itself</li>
+          <li>Trap keyboard focus within the dialog so Tab and Shift+Tab cycle only through the dialog's interactive elements</li>
+          <li>Associate the dialog's title with the container using an accessible naming technique so screen readers announce it upon entry</li>
+          <li>Support Escape as a way to dismiss the dialog and return focus to the element that triggered it</li>
+          <li>Return focus to the original trigger when the dialog closes, so keyboard users do not lose their place in the page</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using a generic dialog role instead of alertdialog, which does not communicate the urgency of the required response</li>
+          <li>Failing to trap focus, allowing keyboard users to interact with background content while the dialog is open</li>
+          <li>Not returning focus to the trigger element after the dialog closes, causing keyboard users to lose their position</li>
+          <li>Omitting a visible and programmatic title, leaving screen reader users without context for the dialog's purpose</li>
+          <li>Making the dialog closeable only by clicking outside it, which excludes keyboard-only users</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Alert dialogs represent high-stakes moments in an interface — confirming a deletion, acknowledging an error, or accepting a warning. When focus is not managed correctly, keyboard users may be unable to interact with the dialog at all, or may accidentally trigger actions in the background. When the dialog lacks a proper title and role, screen reader users receive no indication that they are inside a modal requiring a response. Correctly implementing this pattern ensures all users can make informed decisions before an irreversible action takes place.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </div>
+
+      <div class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel"><pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre><button class="code-preview__copy" data-target="code-html">Copy Code</button></div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden><pre class="line-numbers"><code id="code-css" class="language-css"></code></pre><button class="code-preview__copy" data-target="code-css">Copy Code</button></div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden><pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre><button class="code-preview__copy" data-target="code-js">Copy Code</button></div>
+      </div>
+
+      <div class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li><a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
+        </ul>
+      </div>
+    </main>
+    <footer><p><strong>Created and maintained by Accenture Song</strong></p><p>&copy; 2026 Accenture - Resonance</p></footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script>
+      fetch("./alert-dialog.html").then(function(r){return r.text()}).then(function(html){var rawHtml=html.replace(/<!--[\s\S]*?-->\n*/,"").trim();var codeHtml=document.getElementById("code-html");codeHtml.textContent=rawHtml;Prism.highlightElement(codeHtml);});
+      fetch("./alert-dialog.css").then(function(r){return r.text()}).then(function(css){var codeCss=document.getElementById("code-css");codeCss.textContent=css;Prism.highlightElement(codeCss)});
+      fetch("./alert-dialog.js").then(function(r){return r.text()}).then(function(js){var codeJs=document.getElementById("code-js");codeJs.textContent=js;Prism.highlightElement(codeJs)});
+      var tabs=document.querySelectorAll(".code-tabs__tab");var codePanels=document.querySelectorAll("#panel-html,#panel-css,#panel-js");tabs.forEach(function(tab){tab.addEventListener("click",function(){tabs.forEach(function(t){t.classList.remove("code-tabs__tab--active");t.setAttribute("aria-selected","false")});codePanels.forEach(function(p){p.hidden=true});tab.classList.add("code-tabs__tab--active");tab.setAttribute("aria-selected","true");document.getElementById("panel-"+tab.dataset.tab).hidden=false})});
+      document.querySelectorAll(".code-preview__copy").forEach(function(btn){btn.addEventListener("click",function(){var codeEl=document.getElementById(btn.dataset.target);navigator.clipboard.writeText(codeEl.textContent).then(function(){btn.textContent="Copied!";setTimeout(function(){btn.textContent="Copy Code"},2000)})})});
+    </script>
+  </body>
+</html>

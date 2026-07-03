@@ -1,0 +1,79 @@
+input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  min-height: 44px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.rlb-autocomplete-container {
+  max-width: 400px;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.rlb-autocomplete-suggestions {
+  border: 1px solid var(--border-color);
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  background: var(--surface-color);
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  border-radius: var(--border-radius);
+}
+
+.rlb-autocomplete-suggestions [role="option"] {
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.rlb-autocomplete-suggestions [role="option"]:hover {
+  background-color: var(--surface-hover);
+}
+
+.rlb-autocomplete-suggestions [role="option"][aria-selected="true"] {
+  background-color: var(--surface-muted);
+  outline: 2px solid var(--focus-color);
+  outline-offset: -2px;
+}
+
+.rlb-autocomplete-suggestions [role="option"][aria-disabled="true"] {
+  font-style: italic;
+  cursor: default;
+  background: none;
+}
+
+.rlb-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Enough room for the dropdown to show without clipping */
+.mount:has(.rlb-autocomplete-container) {
+  min-height: 320px;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+}

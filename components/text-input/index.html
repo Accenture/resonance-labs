@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Input - Resonance Labs</title>
+    <link rel="stylesheet" href="/resonance-labs/assets/style/global.css" />
+    <link rel="stylesheet" href="text-input.css" />
+    <link rel="icon" href="/resonance-labs/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  </head>
+  <body>
+    <header><a href="/resonance-labs/index.html" class="back-link"><img src="/resonance-labs/assets/images/logo.svg" alt="Resonance Logo" /></a></header>
+    <main>
+
+      <div class="section">
+        <h1>Text Input</h1>
+        <p class="component-tagline">A text input accepts a single line of freeform text from the user, paired with a visible label and optional hint or error text connected through accessible attributes.</p>
+      </div>
+
+      <div class="section">
+        <h2>Demo</h2>
+        <p>Tab to each input field and type to enter text. Observe how the label remains visible above the field at all times. Trigger a validation error by submitting or leaving a required field empty, and listen for how a screen reader announces the error message in relation to the input.</p>
+        <div class="mount">
+<script type="application/json" id="component-manifest">
+{
+  "component": "Text Input",
+  "version": "1.0.0",
+  "artifact": "example-web",
+  "provenance": {
+    "ac": "components/text-input/text-input.md",
+    "tc": "components/text-input/text-input.tc.md",
+    "how": "components/text-input/text-input.how.md",
+    "qa": "components/text-input/text-input.qa.md"
+  },
+  "signals_vocabulary": ["DOM", "AX_TREE", "VISUAL", "SR", "INPUT"],
+  "mappings": {
+    "ac": [
+      "AC-TXT-SEM-INP-01","AC-TXT-SEM-INP-02","AC-TXT-SEM-INP-03","AC-TXT-SEM-INP-04",
+      "AC-TXT-KB-INP-05","AC-TXT-VIS-INP-06","AC-TXT-VIS-INP-07","AC-TXT-VIS-INP-08",
+      "AC-TXT-SEM-HLP-01","AC-TXT-STA-REQ-01","AC-TXT-VIS-REQ-02",
+      "AC-TXT-STA-ERR-01","AC-TXT-SEM-ERR-02","AC-TXT-VIS-ERR-03","AC-TXT-KB-ERR-04",
+      "AC-TXT-SEM-PH-01"
+    ]
+  }
+}
+</script>
+
+<form
+  class="rlb-text-input-form"
+  id="example-text-input-form"
+  data-component="text-input"
+  data-acc-role="form"
+  data-acc-id="text-input-form-1"
+  novalidate
+>
+  <div class="rlb-text-input" data-acc-role="field" data-acc-id="field-1">
+    <label for="username" class="rlb-text-input__label" data-acc-role="label" data-acc-id="label-1">
+      Username <span class="rlb-text-input__required" aria-hidden="true">*</span>
+    </label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      class="rlb-text-input__input"
+      required
+      aria-describedby="username-hint"
+      data-acc-role="input"
+      data-acc-id="input-1"
+    />
+    <span id="username-hint" class="rlb-text-input__hint" data-acc-role="hint" data-acc-id="hint-1">
+      Must be 6–20 characters long.
+    </span>
+    <span id="username-error" class="rlb-text-input__error" hidden data-acc-role="error" data-acc-id="error-1">
+      Please enter a valid username.
+    </span>
+  </div>
+
+  <div class="rlb-text-input" data-acc-role="field" data-acc-id="field-2">
+    <label for="email" class="rlb-text-input__label" data-acc-role="label" data-acc-id="label-2">
+      Email
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="rlb-text-input__input"
+      aria-describedby="email-hint"
+      placeholder="you@example.com"
+      data-acc-role="input"
+      data-acc-id="input-2"
+    />
+    <span id="email-hint" class="rlb-text-input__hint" data-acc-role="hint" data-acc-id="hint-2">
+      We'll never share your email.
+    </span>
+    <span id="email-error" class="rlb-text-input__error" hidden data-acc-role="error" data-acc-id="error-2">
+      Please enter a valid email address.
+    </span>
+  </div>
+
+  <button type="submit" class="rlb-text-input__submit">Submit</button>
+</form>
+
+</div>
+      </div>
+
+      <div class="section">
+        <h2>What to Observe</h2>
+        <ul>
+          <li>Each input has a persistent visible label — no placeholder text is used as a substitute for a label.</li>
+          <li>When focus enters the field, a screen reader announces the label, the input type, and any associated hint text.</li>
+          <li>Error messages appear near the input and are associated programmatically so screen readers announce the error without requiring the user to hunt for it.</li>
+          <li>Required fields communicate that requirement through both a visible indicator and an accessible attribute on the input.</li>
+          <li>The focus ring on each input is clearly visible and has sufficient contrast against the surrounding background.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Anatomy</h2>
+        <p class="anatomy-placeholder">[Anatomy image placeholder — will be added when assets are available]</p>
+        <ol>
+          <li><strong>Label:</strong> A <code>&lt;label&gt;</code> element associated with the input through a matching <code>for</code> and <code>id</code> pair; it is always visible and never replaced by a placeholder.</li>
+          <li><strong>Input field:</strong> The <code>&lt;input&gt;</code> element where the user types, with an appropriate <code>type</code> attribute and an <code>autocomplete</code> hint where applicable.</li>
+          <li><strong>Hint text:</strong> An optional message below the label or field providing format guidance, linked to the input through <code>aria-describedby</code>.</li>
+          <li><strong>Error message:</strong> A validation message displayed when input is invalid, injected into a live region or linked via <code>aria-describedby</code> so it is announced automatically.</li>
+          <li><strong>Required indicator:</strong> A visual marker (typically an asterisk) accompanied by a text explanation, and the <code>required</code> or <code>aria-required</code> attribute on the input.</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Behavior</h2>
+        <ul>
+          <li>Every input must have a visible label that remains on screen at all times — placeholder text alone is never an acceptable label.</li>
+          <li>The label must be programmatically associated with its input so screen readers announce it when focus enters the field.</li>
+          <li>Hint and error messages must be connected to the input through <code>aria-describedby</code> so they are read alongside the field's label.</li>
+          <li>Error messages must be presented in a way that does not rely solely on color — text or an icon with a text alternative must also indicate the problem.</li>
+          <li>Required fields must communicate that requirement both visually and programmatically through the <code>required</code> attribute.</li>
+          <li>The input must use the appropriate <code>type</code> attribute and <code>autocomplete</code> hint to help users with cognitive disabilities and autofill tools complete the field accurately.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Common Mistakes</h2>
+        <ul>
+          <li>Using placeholder text as the only label, which disappears as soon as the user starts typing and is never read reliably by all screen readers.</li>
+          <li>Displaying an error message visually without linking it to the input, so screen readers do not associate the message with the field that caused it.</li>
+          <li>Indicating a required field with an asterisk alone, without a visible legend explaining what the symbol means.</li>
+          <li>Using a generic <code>type="text"</code> for inputs that have a more specific type, such as email or telephone, losing autocomplete and keyboard optimization benefits.</li>
+          <li>Applying error styling only through a red border color, making the error state invisible to users with color vision deficiencies.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why This Matters</h2>
+        <p>Text inputs appear on nearly every form in every application, and form completion is one of the most critical tasks users perform online — account creation, checkout, contact, and support all depend on it. A text input that lacks a persistent label, properly associated error message, or keyboard-accessible behavior can completely block a screen reader user or a keyboard-only user from completing a task. Because forms are so universal, getting this pattern right has the highest possible impact on the number of people who can successfully use an interface.</p>
+      </div>
+
+      <div class="section">
+        <h2>Accessibility Validation</h2>
+        <p>This component is validated against internal accessibility criteria aligned with WCAG standards, using our internally developed system, <strong>Resonance Specs</strong>.</p>
+        <p>To learn more, please contact us.</p>
+      </div>
+
+      <div class="section">
+        <h2>Code</h2>
+        <div class="code-tabs" role="tablist">
+          <button class="code-tabs__tab code-tabs__tab--active" role="tab" aria-selected="true" data-tab="html">HTML</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="css">CSS</button>
+          <button class="code-tabs__tab" role="tab" aria-selected="false" data-tab="js">JS</button>
+        </div>
+        <div class="code-preview" id="panel-html" role="tabpanel">
+          <pre class="line-numbers"><code id="code-html" class="language-markup"></code></pre>
+          <button class="code-preview__copy" data-target="code-html">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-css" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-css" class="language-css"></code></pre>
+          <button class="code-preview__copy" data-target="code-css">Copy Code</button>
+        </div>
+        <div class="code-preview" id="panel-js" role="tabpanel" hidden>
+          <pre class="line-numbers"><code id="code-js" class="language-javascript"></code></pre>
+          <button class="code-preview__copy" data-target="code-js">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Reference Implementation</h2>
+        <ul class="btn-group">
+          <li><a class="btn btn-primary" href="/resonance-labs/index.html">Back to Home</a></li>
+          <li><a class="btn btn-secondary" href="https://github.com/Accenture/resonance-labs">GitHub Code</a></li>
+        </ul>
+      </div>
+
+    </main>
+    <footer>
+      <p><strong>Created and maintained by Accenture Song</strong></p>
+      <p>&copy; 2026 Accenture - Resonance</p>
+    </footer>
+    <script src="/resonance-labs/assets/js/component-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script>
+      // Fetch HTML fragment
+      fetch("./text-input.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          // Populate HTML code preview (strip leading comment block)
+          var rawHtml = html.replace(/<!--[\s\S]*?-->\n*/g, "").replace(/<script type="application\/json"[\s\S]*?<\/script>\n*/g, "").trim();
+          var codeHtml = document.getElementById("code-html");
+          codeHtml.textContent = rawHtml;
+          Prism.highlightElement(codeHtml);
+        });
+
+      // Fetch CSS
+      fetch("./text-input.css")
+        .then(function (r) { return r.text(); })
+        .then(function (css) {
+          var codeCss = document.getElementById("code-css");
+          codeCss.textContent = css;
+          Prism.highlightElement(codeCss);
+        });
+
+      // Fetch JS
+      fetch("./text-input.js")
+        .then(function (r) { return r.text(); })
+        .then(function (js) {
+          var codeJs = document.getElementById("code-js");
+          codeJs.textContent = js;
+          Prism.highlightElement(codeJs);
+        });
+
+      // Tab switching
+      var tabs = document.querySelectorAll(".code-tabs__tab");
+      var codePanels = document.querySelectorAll("#panel-html, #panel-css, #panel-js");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("code-tabs__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          codePanels.forEach(function (p) { p.hidden = true; });
+          tab.classList.add("code-tabs__tab--active");
+          tab.setAttribute("aria-selected", "true");
+          document.getElementById("panel-" + tab.dataset.tab).hidden = false;
+        });
+      });
+
+      // Copy buttons
+      document.querySelectorAll(".code-preview__copy").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var codeEl = document.getElementById(btn.dataset.target);
+          navigator.clipboard.writeText(codeEl.textContent).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy Code"; }, 2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
